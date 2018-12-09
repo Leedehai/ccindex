@@ -1,0 +1,654 @@
+{
+  "symbols": [
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "kind": "class", 
+      "is_template": false, 
+      "location": "test-input-2.h:7:7", 
+      "declaration": "class Complex;", 
+      "usage": "", 
+      "declaration_pretty": "class Complex;", 
+      "spelling": "Complex", 
+      "size": 16, 
+      "type": [
+        "NS::Complex", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": false, 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Complex", 
+          false
+        ]
+      ], 
+      "kind": "field", 
+      "static_member": false, 
+      "access": "private", 
+      "location": "test-input-2.h:9:12", 
+      "usage": "", 
+      "spelling": "re", 
+      "type": [
+        "double", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 8
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Complex", 
+          false
+        ]
+      ], 
+      "kind": "field", 
+      "static_member": false, 
+      "access": "private", 
+      "location": "test-input-2.h:10:12", 
+      "usage": "", 
+      "spelling": "im", 
+      "type": [
+        "double", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 8
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Complex", 
+          false
+        ]
+      ], 
+      "kind": "constructor", 
+      "args_list": [], 
+      "access": "public", 
+      "is_template": false, 
+      "location": "test-input-2.h:12:5", 
+      "declaration": "Complex();", 
+      "usage": "", 
+      "declaration_pretty": "Complex();", 
+      "spelling": "Complex", 
+      "constructor_kind": "default", 
+      "return_type": null, 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Complex", 
+          false
+        ]
+      ], 
+      "kind": "constructor", 
+      "args_list": [
+        [
+          "double", 
+          "re"
+        ], 
+        [
+          "double", 
+          "im"
+        ]
+      ], 
+      "access": "public", 
+      "is_template": false, 
+      "location": "test-input-2.h:13:5", 
+      "declaration": "Complex(double re, double im);", 
+      "usage": "", 
+      "declaration_pretty": "Complex(double re, double im);", 
+      "spelling": "Complex", 
+      "return_type": null, 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "Usage: bool b = complex.isReal();\n-----------------\ncomment for isReal()", 
+      "parent_kind": "class", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Complex", 
+          false
+        ]
+      ], 
+      "kind": "method", 
+      "args_list": [], 
+      "access": "public", 
+      "is_template": false, 
+      "location": "test-input-2.h:19:10", 
+      "declaration": "bool isReal() const;", 
+      "usage": "bool b = complex.isReal();", 
+      "declaration_pretty": "bool isReal() const;", 
+      "spelling": "isReal", 
+      "method_kind": [
+        "const"
+      ], 
+      "return_type": "bool", 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Complex", 
+          false
+        ]
+      ], 
+      "kind": "method", 
+      "args_list": [
+        [
+          "NS::Complex&&", 
+          ""
+        ]
+      ], 
+      "access": "public", 
+      "is_template": false, 
+      "location": "test-input-2.h:22:14", 
+      "declaration": "NS::Complex& operator+=(NS::Complex&&);", 
+      "usage": "", 
+      "declaration_pretty": "NS::Complex& operator+=(NS::Complex&&);", 
+      "spelling": "operator+=", 
+      "method_kind": [], 
+      "return_type": "NS::Complex&", 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "kind": "function", 
+      "args_list": [
+        [
+          "std::vector<Complex>&", 
+          "v1"
+        ], 
+        [
+          "double", 
+          ""
+        ]
+      ], 
+      "is_template": false, 
+      "location": "test-input-2.h:25:22", 
+      "declaration": "std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);", 
+      "usage": "", 
+      "declaration_pretty": "std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);", 
+      "spelling": "independentFunction", 
+      "return_type": "std::vector<Complex>", 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "scoped_enum": false, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "enum_type": "char", 
+      "kind": "enum", 
+      "location": "test-input-2.h:27:6", 
+      "usage": "", 
+      "spelling": "E1"
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "enum", 
+      "enum_value": 0, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "E1", 
+          true
+        ]
+      ], 
+      "enum_type": "char", 
+      "kind": "enum_constant", 
+      "location": "test-input-2.h:27:18", 
+      "usage": "", 
+      "spelling": "e11", 
+      "type": [
+        "NS::E1", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 1
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "enum", 
+      "enum_value": 1, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "E1", 
+          true
+        ]
+      ], 
+      "enum_type": "char", 
+      "kind": "enum_constant", 
+      "location": "test-input-2.h:27:23", 
+      "usage": "", 
+      "spelling": "e12", 
+      "type": [
+        "NS::E1", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 1
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "scoped_enum": true, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "enum_type": "long", 
+      "kind": "enum", 
+      "location": "test-input-2.h:28:12", 
+      "usage": "", 
+      "spelling": "E2"
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "enum", 
+      "enum_value": 2, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "E2", 
+          false
+        ]
+      ], 
+      "enum_type": "long", 
+      "kind": "enum_constant", 
+      "location": "test-input-2.h:28:24", 
+      "usage": "", 
+      "spelling": "e21", 
+      "type": [
+        "NS::E2", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 8
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "enum", 
+      "enum_value": 3, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "E2", 
+          false
+        ]
+      ], 
+      "enum_type": "long", 
+      "kind": "enum_constant", 
+      "location": "test-input-2.h:28:33", 
+      "usage": "", 
+      "spelling": "e22", 
+      "type": [
+        "NS::E2", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 8
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "kind": "class", 
+      "is_template": false, 
+      "location": "test-input-2.h:30:7", 
+      "declaration": "class Aother;", 
+      "usage": "", 
+      "declaration_pretty": "class Aother;", 
+      "spelling": "Aother", 
+      "size": 1, 
+      "type": [
+        "NS::Aother", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "template_args_list": []
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class", 
+      "scoped_enum": true, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Aother", 
+          false
+        ]
+      ], 
+      "enum_type": "int", 
+      "kind": "enum", 
+      "access": "public", 
+      "location": "test-input-2.h:32:16", 
+      "usage": "", 
+      "spelling": "E"
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "enum", 
+      "enum_value": 0, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Aother", 
+          false
+        ], 
+        [
+          "E", 
+          false
+        ]
+      ], 
+      "enum_type": "int", 
+      "kind": "enum_constant", 
+      "location": "test-input-2.h:32:20", 
+      "usage": "", 
+      "spelling": "e1", 
+      "type": [
+        "NS::Aother::E", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 4
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "enum", 
+      "enum_value": 1, 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Aother", 
+          false
+        ], 
+        [
+          "E", 
+          false
+        ]
+      ], 
+      "enum_type": "int", 
+      "kind": "enum_constant", 
+      "location": "test-input-2.h:32:24", 
+      "usage": "", 
+      "spelling": "e2", 
+      "type": [
+        "NS::Aother::E", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 4
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "kind": "function_template", 
+      "args_list": [
+        [
+          "bool", 
+          "b"
+        ], 
+        [
+          "NS::Complex&", 
+          "c"
+        ]
+      ], 
+      "is_template": true, 
+      "location": "test-input-2.h:36:6", 
+      "declaration": "template <typename T, int N>\nvoid foo(bool b, NS::Complex& c);", 
+      "usage": "", 
+      "declaration_pretty": "void foo(bool b, NS::Complex& c);", 
+      "spelling": "foo", 
+      "return_type": "void", 
+      "template_args_list": [
+        [
+          "typename", 
+          "T"
+        ], 
+        [
+          "int", 
+          "N"
+        ]
+      ]
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "namespace", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ]
+      ], 
+      "kind": "class_template", 
+      "is_template": true, 
+      "location": "test-input-2.h:39:7", 
+      "declaration": "template <typename T, typename U> class Bar;", 
+      "usage": "", 
+      "declaration_pretty": "template <typename T, typename U>\ntemplate <typename T, typename U> class Bar;", 
+      "spelling": "Bar", 
+      "template_args_list": [
+        [
+          "typename", 
+          "T"
+        ], 
+        [
+          "typename", 
+          "U"
+        ]
+      ]
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class template", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Bar", 
+          false
+        ]
+      ], 
+      "kind": "field", 
+      "static_member": false, 
+      "access": "public", 
+      "location": "test-input-2.h:41:7", 
+      "usage": "", 
+      "spelling": "t_", 
+      "type": [
+        "T", 
+        {
+          "typename": true, 
+          "typedef": false
+        }
+      ], 
+      "POD": false, 
+      "size": null
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class template", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Bar", 
+          false
+        ]
+      ], 
+      "kind": "field", 
+      "static_member": false, 
+      "access": "public", 
+      "location": "test-input-2.h:42:7", 
+      "usage": "", 
+      "spelling": "u_", 
+      "type": [
+        "U", 
+        {
+          "typename": true, 
+          "typedef": false
+        }
+      ], 
+      "POD": false, 
+      "size": null
+    }, 
+    {
+      "comment": "", 
+      "parent_kind": "class template", 
+      "hierarchy": [
+        [
+          "NS", 
+          false
+        ], 
+        [
+          "Bar", 
+          false
+        ]
+      ], 
+      "kind": "field", 
+      "static_member": false, 
+      "access": "public", 
+      "location": "test-input-2.h:43:9", 
+      "usage": "", 
+      "spelling": "a", 
+      "type": [
+        "int", 
+        {
+          "typename": false, 
+          "typedef": false
+        }
+      ], 
+      "POD": true, 
+      "size": 4
+    }
+  ], 
+  "errors": [], 
+  "indexing_time": 0.01591205596923828, 
+  "traversing_time": 0.7189619541168213
+}

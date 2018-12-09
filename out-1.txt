@@ -1,0 +1,1532 @@
+[TARGET FILE] test-input-1.cc
+spelling:
+	independentVariable
+kind:
+	variable
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:6:11
+comment:
+```
+(none)
+```
+type:
+	('const int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	independentFunction
+kind:
+	function
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:7:5
+comment:
+```
+(none)
+```
+args_list:
+	[]
+is_template:
+	False
+declaration:
+	int independentFunction();
+declaration_pretty:
+	int independentFunction();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	Int
+kind:
+	typedef
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:8:26
+comment:
+```
+(none)
+```
+typedef_underlying:
+	std::vector<int>
+-----
+spelling:
+	MyClass
+kind:
+	class
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:11:7
+comment:
+```
+comment for MyClass
+```
+is_template:
+	False
+declaration:
+	class MyClass;
+declaration_pretty:
+	class MyClass;
+size:
+	48
+type:
+	('MyClass', {'typename': False, 'typedef': False})
+POD:
+	False
+template_args_list:
+	[]
+-----
+spelling:
+	property1
+kind:
+	field
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:12:6
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	method1
+kind:
+	method
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:13:14
+comment:
+```
+(none)
+```
+args_list:
+	[]
+access:
+	private
+is_template:
+	False
+declaration:
+	void method1();
+declaration_pretty:
+	void method1();
+method_kind:
+	['static']
+return_type:
+	void
+template_args_list:
+	[]
+-----
+spelling:
+	MyClass
+kind:
+	constructor
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:16:2
+comment:
+```
+comment for MyClass()
+```
+args_list:
+	[]
+access:
+	public
+is_template:
+	False
+declaration:
+	MyClass();
+declaration_pretty:
+	MyClass();
+constructor_kind:
+	default
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	MyClass
+kind:
+	constructor
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:17:2
+comment:
+```
+(none)
+```
+args_list:
+	[('const MyClass&', '')]
+access:
+	public
+is_template:
+	False
+declaration:
+	MyClass(const MyClass&);
+declaration_pretty:
+	MyClass(const MyClass&);
+constructor_kind:
+	copy
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	MyClass
+kind:
+	constructor
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:18:2
+comment:
+```
+(none)
+```
+args_list:
+	[('int', 'a'), ('Int', 'b')]
+access:
+	public
+is_template:
+	False
+declaration:
+	MyClass(int a, Int b);
+declaration_pretty:
+	MyClass(int a, Int b);
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	method2
+kind:
+	method
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:19:6
+comment:
+```
+(none)
+```
+args_list:
+	[]
+access:
+	public
+is_template:
+	False
+declaration:
+	Int method2();
+declaration_pretty:
+	Int method2();
+method_kind:
+	[]
+return_type:
+	Int
+template_args_list:
+	[]
+-----
+spelling:
+	MyClass
+kind:
+	constructor
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:20:2
+comment:
+```
+(none)
+```
+args_list:
+	[('MyClass&&', '')]
+access:
+	public
+is_template:
+	False
+declaration:
+	MyClass(MyClass&&);
+declaration_pretty:
+	MyClass(MyClass&&);
+constructor_kind:
+	move
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	operator+
+kind:
+	method
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:21:10
+comment:
+```
+(none)
+```
+args_list:
+	[('const MyClass&', '')]
+access:
+	public
+is_template:
+	False
+declaration:
+	MyClass operator+(const MyClass&);
+declaration_pretty:
+	MyClass operator+(const MyClass&);
+method_kind:
+	[]
+return_type:
+	MyClass
+template_args_list:
+	[]
+-----
+spelling:
+	operator int
+kind:
+	conversion_function
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:22:2
+comment:
+```
+(none)
+```
+args_list:
+	[]
+access:
+	public
+is_template:
+	False
+declaration:
+	operator int();
+declaration_pretty:
+	operator int();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	property2
+kind:
+	field
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:25:6
+comment:
+```
+comment for property2
+```
+static_member:
+	False
+access:
+	private
+type:
+	('Int', {'typename': False, 'typedef': True, 'canonical_type': 'std::vector<int, std::allocator<int> >'})
+POD:
+	False
+size:
+	24
+-----
+spelling:
+	propertye3
+kind:
+	field
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:30:14
+comment:
+```
+comment for property 3
+still comment for property 3
+```
+static_member:
+	False
+access:
+	private
+type:
+	('const float', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	InnerClass
+kind:
+	class
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:32:8
+comment:
+```
+(none)
+```
+access:
+	private
+is_template:
+	False
+declaration:
+	class InnerClass;
+declaration_pretty:
+	class InnerClass;
+size:
+	8
+type:
+	('MyClass::InnerClass', {'typename': False, 'typedef': False})
+POD:
+	True
+template_args_list:
+	[]
+-----
+spelling:
+	b
+kind:
+	field
+hierarchy:
+	::MyClass::InnerClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:33:10
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('double', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	8
+-----
+spelling:
+	method3
+kind:
+	method
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:36:15
+comment:
+```
+(none)
+```
+args_list:
+	[]
+access:
+	private
+is_template:
+	False
+declaration:
+	void method3() const;
+declaration_pretty:
+	void method3() const;
+method_kind:
+	['const', 'virtual', 'pure virtual']
+return_type:
+	void
+template_args_list:
+	[]
+-----
+spelling:
+	baz
+kind:
+	function
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:40:5
+comment:
+```
+(none)
+```
+args_list:
+	[]
+is_template:
+	False
+declaration:
+	int baz();
+declaration_pretty:
+	int baz();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	templateFunc
+kind:
+	function_template
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:44:5
+comment:
+```
+(none)
+```
+args_list:
+	[('T*', 'pt'), ('U*', 'pu'), ('int', 'n')]
+is_template:
+	True
+declaration:
+	template <typename T, typename U, int N>
+int templateFunc(T* pt, U* pu, int n);
+declaration_pretty:
+	int templateFunc(T* pt, U* pu, int n);
+return_type:
+	int
+template_args_list:
+	[('typename', 'T'), ('typename', 'U'), ('int', 'N')]
+-----
+spelling:
+	foo
+kind:
+	function
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:47:5
+comment:
+```
+comment for foo()
+```
+args_list:
+	[('int', 'a'), ('Int', 'b')]
+is_template:
+	False
+declaration:
+	int foo(int a, Int b);
+declaration_pretty:
+	int foo(int a, Int b);
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	MyClass
+kind:
+	constructor
+hierarchy:
+	::MyClass
+parent_kind:
+	class
+location:
+	test-input-1.cc:50:10
+comment:
+```
+(none)
+```
+args_list:
+	[('int', 'a'), ('Int', 'b')]
+access:
+	public
+is_template:
+	False
+declaration:
+	MyClass(int a, Int b);
+declaration_pretty:
+	MyClass(int a, Int b);
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	templateClass
+kind:
+	class_template
+hierarchy:
+	::NS2
+parent_kind:
+	namespace
+location:
+	test-input-1.cc:58:7
+comment:
+```
+(none)
+```
+is_template:
+	True
+declaration:
+	template <typename T, char C> class templateClass;
+declaration_pretty:
+	template <typename T, char C>
+template <typename T, char C> class templateClass;
+template_args_list:
+	[('typename', 'T'), ('char', 'C')]
+-----
+spelling:
+	t_
+kind:
+	field
+hierarchy:
+	::NS2::templateClass
+parent_kind:
+	class template
+location:
+	test-input-1.cc:59:4
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('T', {'typename': True, 'typedef': False})
+POD:
+	False
+size:
+	None
+-----
+spelling:
+	c_
+kind:
+	field
+hierarchy:
+	::NS2::templateClass
+parent_kind:
+	class template
+location:
+	test-input-1.cc:60:7
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('char', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	1
+-----
+spelling:
+	E
+kind:
+	enum
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:64:6
+comment:
+```
+(none)
+```
+scoped_enum:
+	False
+enum_type:
+	int
+-----
+spelling:
+	a
+kind:
+	enum_constant
+hierarchy:
+	::(E)
+parent_kind:
+	enum
+location:
+	test-input-1.cc:65:2
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	int
+type:
+	('E', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	b
+kind:
+	enum_constant
+hierarchy:
+	::(E)
+parent_kind:
+	enum
+location:
+	test-input-1.cc:66:2
+comment:
+```
+(none)
+```
+enum_value:
+	2
+enum_type:
+	int
+type:
+	('E', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	foo
+kind:
+	function
+hierarchy:
+	::customNS
+parent_kind:
+	namespace
+location:
+	test-input-1.cc:71:6
+comment:
+```
+(none)
+```
+args_list:
+	[]
+is_template:
+	False
+declaration:
+	int foo();
+declaration_pretty:
+	int foo();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	Class
+kind:
+	class
+hierarchy:
+	::customNS
+parent_kind:
+	namespace
+location:
+	test-input-1.cc:72:8
+comment:
+```
+(none)
+```
+is_template:
+	False
+declaration:
+	class Class;
+declaration_pretty:
+	class Class;
+size:
+	8
+type:
+	('customNS::Class', {'typename': False, 'typedef': False})
+POD:
+	True
+template_args_list:
+	[]
+-----
+spelling:
+	staticGlobal
+kind:
+	variable
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:75:12
+comment:
+```
+(none)
+```
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	Class
+kind:
+	class
+hierarchy:
+	::customNS
+parent_kind:
+	namespace
+location:
+	test-input-1.cc:77:17
+comment:
+```
+(none)
+```
+is_template:
+	False
+declaration:
+	class Class;
+declaration_pretty:
+	class Class;
+size:
+	8
+type:
+	('customNS::Class', {'typename': False, 'typedef': False})
+POD:
+	True
+template_args_list:
+	[]
+-----
+spelling:
+	staticData
+kind:
+	variable
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:78:13
+comment:
+```
+(none)
+```
+static_member:
+	True
+access:
+	private
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	constData
+kind:
+	field
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:79:12
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('const int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	staticConstData
+kind:
+	variable
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:80:19
+comment:
+```
+(none)
+```
+static_member:
+	True
+access:
+	private
+type:
+	('const int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	b
+kind:
+	field
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:81:6
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	fooFriend
+kind:
+	function
+hierarchy:
+	::customNS
+parent_kind:
+	namespace
+location:
+	test-input-1.cc:83:12
+comment:
+```
+(none)
+```
+args_list:
+	[]
+is_template:
+	False
+declaration:
+	int fooFriend();
+declaration_pretty:
+	int fooFriend();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	returnSizeT_int
+kind:
+	method
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:84:8
+comment:
+```
+(none)
+```
+args_list:
+	[('int', 'a')]
+access:
+	private
+is_template:
+	False
+declaration:
+	size_t returnSizeT_int(int a);
+declaration_pretty:
+	size_t returnSizeT_int(int a);
+method_kind:
+	[]
+return_type:
+	size_t
+template_args_list:
+	[]
+-----
+spelling:
+	returnBool_string_myclass_anotherclass
+kind:
+	method
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:85:6
+comment:
+```
+(none)
+```
+args_list:
+	[('std::string', 's'), ('MyClass', 'obj'), ('int', 'obj2')]
+access:
+	private
+is_template:
+	False
+declaration:
+	bool returnBool_string_myclass_anotherclass(std::string s, MyClass obj, int obj2);
+declaration_pretty:
+	bool returnBool_string_myclass_anotherclass(
+	std::string s,
+	MyClass obj,
+	int obj2
+);
+method_kind:
+	[]
+return_type:
+	bool
+template_args_list:
+	[]
+-----
+spelling:
+	returnVector_float_vector
+kind:
+	method
+hierarchy:
+	::customNS::Class
+parent_kind:
+	class
+location:
+	test-input-1.cc:86:19
+comment:
+```
+(none)
+```
+args_list:
+	[('float', 'a'), ('std::vector<int>', 'b')]
+access:
+	private
+is_template:
+	False
+declaration:
+	std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
+declaration_pretty:
+	std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
+method_kind:
+	[]
+return_type:
+	std::vector<int>&
+template_args_list:
+	[]
+-----
+spelling:
+	classFriend
+kind:
+	class
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:89:7
+comment:
+```
+(none)
+```
+is_template:
+	False
+declaration:
+	class classFriend;
+declaration_pretty:
+	class classFriend;
+size:
+	1
+type:
+	('classFriend', {'typename': False, 'typedef': False})
+POD:
+	True
+template_args_list:
+	[]
+-----
+spelling:
+	fooFriend
+kind:
+	function
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:90:5
+comment:
+```
+(none)
+```
+args_list:
+	[]
+is_template:
+	False
+declaration:
+	int fooFriend();
+declaration_pretty:
+	int fooFriend();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	a1
+kind:
+	variable
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:92:5
+comment:
+```
+(none)
+```
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	a2
+kind:
+	variable
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:92:10
+comment:
+```
+(none)
+```
+type:
+	('int*', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	8
+-----
+spelling:
+	m
+kind:
+	variable
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:93:20
+comment:
+```
+(none)
+```
+type:
+	('std::map<int, int>', {'typename': False, 'typedef': False})
+POD:
+	False
+size:
+	24
+-----
+spelling:
+	foo
+kind:
+	function
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:95:5
+comment:
+```
+(none)
+```
+args_list:
+	[]
+is_template:
+	False
+declaration:
+	int foo();
+declaration_pretty:
+	int foo();
+return_type:
+	int
+template_args_list:
+	[]
+-----
+spelling:
+	ano
+kind:
+	variable
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:100:9
+comment:
+```
+(none)
+```
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	EEClass
+kind:
+	struct
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:101:8
+comment:
+```
+(none)
+```
+is_template:
+	False
+declaration:
+	class EEClass;
+declaration_pretty:
+	class EEClass;
+size:
+	1
+type:
+	('EEClass', {'typename': False, 'typedef': False})
+POD:
+	True
+template_args_list:
+	[]
+-----
+spelling:
+	EE
+kind:
+	enum
+hierarchy:
+	::EEClass
+parent_kind:
+	struct
+location:
+	test-input-1.cc:102:13
+comment:
+```
+(none)
+```
+scoped_enum:
+	True
+enum_type:
+	char
+access:
+	public
+-----
+spelling:
+	ee1
+kind:
+	enum_constant
+hierarchy:
+	::EEClass::EE
+parent_kind:
+	enum
+location:
+	test-input-1.cc:102:25
+comment:
+```
+(none)
+```
+enum_value:
+	0
+enum_type:
+	char
+type:
+	('EEClass::EE', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	1
+-----
+spelling:
+	ee2
+kind:
+	enum_constant
+hierarchy:
+	::EEClass::EE
+parent_kind:
+	enum
+location:
+	test-input-1.cc:102:30
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	char
+type:
+	('EEClass::EE', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	1
+-----
+spelling:
+	eee1
+kind:
+	enum_constant
+hierarchy:
+	::(EnumTy)
+parent_kind:
+	enum
+location:
+	test-input-1.cc:104:16
+comment:
+```
+(none)
+```
+enum_value:
+	0
+enum_type:
+	unsigned int
+type:
+	('EnumTy', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	eee2
+kind:
+	enum_constant
+hierarchy:
+	::(EnumTy)
+parent_kind:
+	enum
+location:
+	test-input-1.cc:104:22
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	unsigned int
+type:
+	('EnumTy', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	EnumTy
+kind:
+	typedef
+hierarchy:
+	(none)
+parent_kind:
+	(global)
+location:
+	test-input-1.cc:104:29
+comment:
+```
+(none)
+```
+typedef_underlying:
+	enum EnumTy
+-----
+spelling:
+	eee1
+kind:
+	enum_constant
+hierarchy:
+	::(EnumTy)
+parent_kind:
+	enum
+location:
+	test-input-1.cc:104:16
+comment:
+```
+(none)
+```
+enum_value:
+	0
+enum_type:
+	unsigned int
+type:
+	('EnumTy', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	eee2
+kind:
+	enum_constant
+hierarchy:
+	::(EnumTy)
+parent_kind:
+	enum
+location:
+	test-input-1.cc:104:22
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	unsigned int
+type:
+	('EnumTy', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	aaaaa
+kind:
+	enum_constant
+hierarchy:
+	::((anonymous enum at test-input-1.cc:105:1))
+parent_kind:
+	enum
+location:
+	test-input-1.cc:105:8
+comment:
+```
+(none)
+```
+enum_value:
+	0
+enum_type:
+	unsigned int
+type:
+	('(anonymous enum at test-input-1.cc:105:1)', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	bbbbb
+kind:
+	enum_constant
+hierarchy:
+	::((anonymous enum at test-input-1.cc:105:1))
+parent_kind:
+	enum
+location:
+	test-input-1.cc:105:15
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	unsigned int
+type:
+	('(anonymous enum at test-input-1.cc:105:1)', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+[Diagnostic #1]
+test-input-1.cc:21:10: error: return type 'MyClass' is an abstract class
+[Diagnostic #2]
+test-input-1.cc:50:10: error: redefinition of 'MyClass'
+[Diagnostic #3]
+test-input-1.cc:85:68: error: unknown type name 'Another'
+[Diagnostic #4]
+test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
+[Diagnostic #5]
+test-input-1.cc:100:1: error: unknown type name 'Another'
+[indexing time] 0.02 sec
+[traverse time] 0.85 sec

@@ -1,0 +1,602 @@
+[TARGET FILE] test-input-2.h
+spelling:
+	Complex
+kind:
+	class
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:7:7
+comment:
+```
+(none)
+```
+is_template:
+	False
+declaration:
+	class Complex;
+declaration_pretty:
+	class Complex;
+size:
+	16
+type:
+	('NS::Complex', {'typename': False, 'typedef': False})
+POD:
+	False
+template_args_list:
+	[]
+-----
+spelling:
+	re
+kind:
+	field
+hierarchy:
+	::NS::Complex
+parent_kind:
+	class
+location:
+	test-input-2.h:9:12
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('double', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	8
+-----
+spelling:
+	im
+kind:
+	field
+hierarchy:
+	::NS::Complex
+parent_kind:
+	class
+location:
+	test-input-2.h:10:12
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	private
+type:
+	('double', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	8
+-----
+spelling:
+	Complex
+kind:
+	constructor
+hierarchy:
+	::NS::Complex
+parent_kind:
+	class
+location:
+	test-input-2.h:12:5
+comment:
+```
+(none)
+```
+args_list:
+	[]
+access:
+	public
+is_template:
+	False
+declaration:
+	Complex();
+declaration_pretty:
+	Complex();
+constructor_kind:
+	default
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	Complex
+kind:
+	constructor
+hierarchy:
+	::NS::Complex
+parent_kind:
+	class
+location:
+	test-input-2.h:13:5
+comment:
+```
+(none)
+```
+args_list:
+	[('double', 're'), ('double', 'im')]
+access:
+	public
+is_template:
+	False
+declaration:
+	Complex(double re, double im);
+declaration_pretty:
+	Complex(double re, double im);
+return_type:
+	None
+template_args_list:
+	[]
+-----
+spelling:
+	isReal
+kind:
+	method
+hierarchy:
+	::NS::Complex
+parent_kind:
+	class
+location:
+	test-input-2.h:19:10
+comment:
+```
+Usage: bool b = complex.isReal();
+-----------------
+comment for isReal()
+```
+usage:
+```
+bool b = complex.isReal();
+```
+args_list:
+	[]
+access:
+	public
+is_template:
+	False
+declaration:
+	bool isReal() const;
+declaration_pretty:
+	bool isReal() const;
+method_kind:
+	['const']
+return_type:
+	bool
+template_args_list:
+	[]
+-----
+spelling:
+	operator+=
+kind:
+	method
+hierarchy:
+	::NS::Complex
+parent_kind:
+	class
+location:
+	test-input-2.h:22:14
+comment:
+```
+(none)
+```
+args_list:
+	[('NS::Complex&&', '')]
+access:
+	public
+is_template:
+	False
+declaration:
+	NS::Complex& operator+=(NS::Complex&&);
+declaration_pretty:
+	NS::Complex& operator+=(NS::Complex&&);
+method_kind:
+	[]
+return_type:
+	NS::Complex&
+template_args_list:
+	[]
+-----
+spelling:
+	independentFunction
+kind:
+	function
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:25:22
+comment:
+```
+(none)
+```
+args_list:
+	[('std::vector<Complex>&', 'v1'), ('double', '')]
+is_template:
+	False
+declaration:
+	std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);
+declaration_pretty:
+	std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);
+return_type:
+	std::vector<Complex>
+template_args_list:
+	[]
+-----
+spelling:
+	E1
+kind:
+	enum
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:27:6
+comment:
+```
+(none)
+```
+scoped_enum:
+	False
+enum_type:
+	char
+-----
+spelling:
+	e11
+kind:
+	enum_constant
+hierarchy:
+	::NS::(E1)
+parent_kind:
+	enum
+location:
+	test-input-2.h:27:18
+comment:
+```
+(none)
+```
+enum_value:
+	0
+enum_type:
+	char
+type:
+	('NS::E1', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	1
+-----
+spelling:
+	e12
+kind:
+	enum_constant
+hierarchy:
+	::NS::(E1)
+parent_kind:
+	enum
+location:
+	test-input-2.h:27:23
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	char
+type:
+	('NS::E1', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	1
+-----
+spelling:
+	E2
+kind:
+	enum
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:28:12
+comment:
+```
+(none)
+```
+scoped_enum:
+	True
+enum_type:
+	long
+-----
+spelling:
+	e21
+kind:
+	enum_constant
+hierarchy:
+	::NS::E2
+parent_kind:
+	enum
+location:
+	test-input-2.h:28:24
+comment:
+```
+(none)
+```
+enum_value:
+	2
+enum_type:
+	long
+type:
+	('NS::E2', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	8
+-----
+spelling:
+	e22
+kind:
+	enum_constant
+hierarchy:
+	::NS::E2
+parent_kind:
+	enum
+location:
+	test-input-2.h:28:33
+comment:
+```
+(none)
+```
+enum_value:
+	3
+enum_type:
+	long
+type:
+	('NS::E2', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	8
+-----
+spelling:
+	Aother
+kind:
+	class
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:30:7
+comment:
+```
+(none)
+```
+is_template:
+	False
+declaration:
+	class Aother;
+declaration_pretty:
+	class Aother;
+size:
+	1
+type:
+	('NS::Aother', {'typename': False, 'typedef': False})
+POD:
+	True
+template_args_list:
+	[]
+-----
+spelling:
+	E
+kind:
+	enum
+hierarchy:
+	::NS::Aother
+parent_kind:
+	class
+location:
+	test-input-2.h:32:16
+comment:
+```
+(none)
+```
+scoped_enum:
+	True
+enum_type:
+	int
+access:
+	public
+-----
+spelling:
+	e1
+kind:
+	enum_constant
+hierarchy:
+	::NS::Aother::E
+parent_kind:
+	enum
+location:
+	test-input-2.h:32:20
+comment:
+```
+(none)
+```
+enum_value:
+	0
+enum_type:
+	int
+type:
+	('NS::Aother::E', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	e2
+kind:
+	enum_constant
+hierarchy:
+	::NS::Aother::E
+parent_kind:
+	enum
+location:
+	test-input-2.h:32:24
+comment:
+```
+(none)
+```
+enum_value:
+	1
+enum_type:
+	int
+type:
+	('NS::Aother::E', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+spelling:
+	foo
+kind:
+	function_template
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:36:6
+comment:
+```
+(none)
+```
+args_list:
+	[('bool', 'b'), ('NS::Complex&', 'c')]
+is_template:
+	True
+declaration:
+	template <typename T, int N>
+void foo(bool b, NS::Complex& c);
+declaration_pretty:
+	void foo(bool b, NS::Complex& c);
+return_type:
+	void
+template_args_list:
+	[('typename', 'T'), ('int', 'N')]
+-----
+spelling:
+	Bar
+kind:
+	class_template
+hierarchy:
+	::NS
+parent_kind:
+	namespace
+location:
+	test-input-2.h:39:7
+comment:
+```
+(none)
+```
+is_template:
+	True
+declaration:
+	template <typename T, typename U> class Bar;
+declaration_pretty:
+	template <typename T, typename U>
+template <typename T, typename U> class Bar;
+template_args_list:
+	[('typename', 'T'), ('typename', 'U')]
+-----
+spelling:
+	t_
+kind:
+	field
+hierarchy:
+	::NS::Bar
+parent_kind:
+	class template
+location:
+	test-input-2.h:41:7
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	public
+type:
+	('T', {'typename': True, 'typedef': False})
+POD:
+	False
+size:
+	None
+-----
+spelling:
+	u_
+kind:
+	field
+hierarchy:
+	::NS::Bar
+parent_kind:
+	class template
+location:
+	test-input-2.h:42:7
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	public
+type:
+	('U', {'typename': True, 'typedef': False})
+POD:
+	False
+size:
+	None
+-----
+spelling:
+	a
+kind:
+	field
+hierarchy:
+	::NS::Bar
+parent_kind:
+	class template
+location:
+	test-input-2.h:43:9
+comment:
+```
+(none)
+```
+static_member:
+	False
+access:
+	public
+type:
+	('int', {'typename': False, 'typedef': False})
+POD:
+	True
+size:
+	4
+-----
+[indexing time] 0.03 sec
+[traverse time] 0.71 sec
