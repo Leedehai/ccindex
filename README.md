@@ -12,15 +12,18 @@ C++ file, user include paths (optional)
 
 ## 1. Description
 This is a script that extracts symbols defined in C++, along with each symbol's meta information:
-- syntax kind (e.g. function, class, function template, class template, enum),
+- syntax kind (e.g. function, class, template, enum),
 - type (aware of array, type parameters, and type aliases),
 - type alias chain,
 - function argument list and template parameter list,
-- method properties (e.g. static, const, virtual),
-- class member storage class (`static`).
+- class inheritance,
+- class member storage class (`static`),
+- class method properties (static, const, (pure) virtual),
+- `final`/`override`/`=0` specifiers,
 - scope hierarchy,
 - documentary comments,
 - source location,
+- include stack,
 - etc.
 
 The extracted information could be used to generate API documentations.
@@ -92,13 +95,14 @@ if -json is not given, then write result to stdout
 ```
 
 ## 6. Test: produce the example output files
-`test-input-1.cc` has grammar errors; `test-input-2.h` doesn't.
+`test-input-1.cc` has grammar errors, and its user include path is this directory;<br>
+`test-input-2.h` doesn't have grammar errors.
 ```sh
 # test stdout
-./ccindex.py test-input-1.cc > out-1.txt
+./ccindex.py test-input-1.cc -i. > out-1.txt
 ./ccindex.py test-input-2.h > out-2.txt
 # test JSON
-./ccindex.py test-input-1.cc -json out-1.json
+./ccindex.py test-input-1.cc -i. -json out-1.json
 ./ccindex.py test-input-2.h -json out-2.json
 ```
 

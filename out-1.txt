@@ -10,7 +10,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:6:11
+test-input-1.cc:7:11
 ::::: comment
 (none)
 ::::: type
@@ -32,7 +32,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:7:5
+test-input-1.cc:8:5
 ::::: comment
 (none)
 ::::: specifier
@@ -61,13 +61,13 @@ typedef_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:8:26
+test-input-1.cc:9:26
 ::::: comment
 (none)
 ::::: canonical_type
 std::vector<int, std::allocator<int>>
 ::::: type_alias_chain
-[{'spelling': 'Int', 'location': 'test-input-1.cc:8:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}]
+[{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}]
 ::::: type_alias_underlying_type
 std::vector<int>
 ==================
@@ -82,7 +82,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:11:7
+test-input-1.cc:12:7
 ::::: comment
 comment for MyClass
 ::::: specifier
@@ -115,11 +115,11 @@ property1
 field_declaration
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:12:6
+test-input-1.cc:13:6
 ::::: comment
 (none)
 ::::: static_member
@@ -142,11 +142,11 @@ method1
 method
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:13:14
+test-input-1.cc:14:14
 ::::: comment
 (none)
 ::::: specifier
@@ -176,11 +176,11 @@ MyClass
 constructor
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:16:2
+test-input-1.cc:17:2
 ::::: comment
 comment for MyClass()
 ::::: specifier
@@ -210,11 +210,11 @@ MyClass
 constructor
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:17:2
+test-input-1.cc:18:2
 ::::: comment
 (none)
 ::::: specifier
@@ -244,11 +244,11 @@ MyClass
 constructor
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:18:2
+test-input-1.cc:19:2
 ::::: comment
 (none)
 ::::: specifier
@@ -276,11 +276,11 @@ method2
 method
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:19:6
+test-input-1.cc:20:6
 ::::: comment
 (none)
 ::::: specifier
@@ -310,11 +310,11 @@ MyClass
 constructor
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:20:2
+test-input-1.cc:21:2
 ::::: comment
 (none)
 ::::: specifier
@@ -344,11 +344,11 @@ operator+
 method
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:21:10
+test-input-1.cc:22:10
 ::::: comment
 (none)
 ::::: specifier
@@ -378,11 +378,11 @@ operator int
 conversion_function
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:22:2
+test-input-1.cc:23:2
 ::::: comment
 (none)
 ::::: specifier
@@ -410,11 +410,11 @@ property2
 field_declaration
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:25:6
+test-input-1.cc:26:6
 ::::: comment
 comment for property2
 ::::: static_member
@@ -423,7 +423,7 @@ False
 private
 ::::: type
 Int
-{'canonical_type': 'std::vector<int, std::allocator<int>>', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:8:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>'}
+{'canonical_type': 'std::vector<int, std::allocator<int>>', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>'}
 ::::: POD
 False
 ::::: size
@@ -437,11 +437,11 @@ propertye3
 field_declaration
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:30:14
+test-input-1.cc:31:14
 ::::: comment
 comment for property 3
 still comment for property 3
@@ -465,11 +465,11 @@ InnerClass
 class_declaration
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:32:8
+test-input-1.cc:33:8
 ::::: comment
 (none)
 ::::: specifier
@@ -504,12 +504,12 @@ b
 field_declaration
 ::::: hierarchy
 ::MyClass::InnerClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
-{'spelling': 'InnerClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:32:8'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
+{'spelling': 'InnerClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:33:8'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:33:10
+test-input-1.cc:34:10
 ::::: comment
 (none)
 ::::: static_member
@@ -532,11 +532,11 @@ method3
 method
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:36:15
+test-input-1.cc:37:15
 ::::: comment
 (none)
 ::::: specifier
@@ -569,7 +569,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:40:5
+test-input-1.cc:41:5
 ::::: comment
 (none)
 ::::: specifier
@@ -598,7 +598,7 @@ function_template
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:44:5
+test-input-1.cc:45:5
 ::::: comment
 (none)
 ::::: specifier
@@ -629,7 +629,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:47:5
+test-input-1.cc:48:5
 ::::: comment
 comment for foo()
 ::::: specifier
@@ -655,11 +655,11 @@ MyClass
 constructor
 ::::: hierarchy
 ::MyClass
-{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:11:7'}
+{'spelling': 'MyClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:12:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:50:10
+test-input-1.cc:51:10
 ::::: comment
 (none)
 ::::: specifier
@@ -690,7 +690,7 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:55:11
+test-input-1.cc:56:11
 ::::: comment
 (none)
 ==================
@@ -702,11 +702,11 @@ templateClass
 class_template
 ::::: hierarchy
 ::NS2
-{'spelling': 'NS2', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:55:11'}
+{'spelling': 'NS2', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:56:11'}
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:58:7
+test-input-1.cc:59:7
 ::::: comment
 (none)
 ::::: specifier
@@ -733,12 +733,12 @@ t_
 field_declaration
 ::::: hierarchy
 ::NS2::templateClass
-{'spelling': 'NS2', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:55:11'}
-{'spelling': 'templateClass', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-1.cc:58:7'}
+{'spelling': 'NS2', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:56:11'}
+{'spelling': 'templateClass', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-1.cc:59:7'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-1.cc:59:4
+test-input-1.cc:60:4
 ::::: comment
 (none)
 ::::: static_member
@@ -747,7 +747,7 @@ False
 private
 ::::: type
 T
-{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'templateClass', 'location': 'test-input-1.cc:58:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
+{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'templateClass', 'location': 'test-input-1.cc:59:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -761,12 +761,12 @@ c_
 field_declaration
 ::::: hierarchy
 ::NS2::templateClass
-{'spelling': 'NS2', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:55:11'}
-{'spelling': 'templateClass', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-1.cc:58:7'}
+{'spelling': 'NS2', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:56:11'}
+{'spelling': 'templateClass', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-1.cc:59:7'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-1.cc:60:7
+test-input-1.cc:61:7
 ::::: comment
 (none)
 ::::: static_member
@@ -792,7 +792,7 @@ enum_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:64:6
+test-input-1.cc:65:6
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -808,11 +808,11 @@ a
 enum_constant_declaration
 ::::: hierarchy
 ::(E)
-{'spelling': 'E', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:64:6'}
+{'spelling': 'E', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:65:6'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:65:2
+test-input-1.cc:66:2
 ::::: comment
 (none)
 ::::: enum_value
@@ -835,11 +835,11 @@ b
 enum_constant_declaration
 ::::: hierarchy
 ::(E)
-{'spelling': 'E', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:64:6'}
+{'spelling': 'E', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:65:6'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:66:2
+test-input-1.cc:67:2
 ::::: comment
 (none)
 ::::: enum_value
@@ -865,7 +865,7 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:70:11
+test-input-1.cc:71:11
 ::::: comment
 comment for namespace
 ==================
@@ -877,11 +877,11 @@ foo
 function_declaration
 ::::: hierarchy
 ::customNS
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:71:6
+test-input-1.cc:72:6
 ::::: comment
 (none)
 ::::: specifier
@@ -907,11 +907,11 @@ Class
 class_declaration
 ::::: hierarchy
 ::customNS
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:72:8
+test-input-1.cc:73:8
 ::::: comment
 (none)
 ::::: specifier
@@ -947,7 +947,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:75:12
+test-input-1.cc:76:12
 ::::: comment
 (none)
 ::::: type
@@ -966,11 +966,11 @@ Class
 class_declaration
 ::::: hierarchy
 ::customNS
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:77:17
+test-input-1.cc:78:17
 ::::: comment
 (none)
 ::::: specifier
@@ -1003,12 +1003,12 @@ staticData
 variable_declaration
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:78:13
+test-input-1.cc:79:13
 ::::: comment
 (none)
 ::::: static_member
@@ -1031,12 +1031,12 @@ constData
 field_declaration
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:79:12
+test-input-1.cc:80:12
 ::::: comment
 (none)
 ::::: static_member
@@ -1059,12 +1059,12 @@ staticConstData
 variable_declaration
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:80:19
+test-input-1.cc:81:19
 ::::: comment
 (none)
 ::::: static_member
@@ -1087,12 +1087,12 @@ b
 field_declaration
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:81:6
+test-input-1.cc:82:6
 ::::: comment
 (none)
 ::::: static_member
@@ -1115,11 +1115,11 @@ fooFriend
 function_declaration
 ::::: hierarchy
 ::customNS
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:83:12
+test-input-1.cc:84:12
 ::::: comment
 (none)
 ::::: specifier
@@ -1145,12 +1145,12 @@ returnSizeT_int
 method
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:84:8
+test-input-1.cc:85:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1180,12 +1180,12 @@ returnBool_string_myclass_anotherclass
 method
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:85:6
+test-input-1.cc:86:6
 ::::: comment
 (none)
 ::::: specifier
@@ -1219,12 +1219,12 @@ returnVector_float_vector
 method
 ::::: hierarchy
 ::customNS::Class
-{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:70:11'}
-{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:77:17'}
+{'spelling': 'customNS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-1.cc:71:11'}
+{'spelling': 'Class', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:78:17'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:86:19
+test-input-1.cc:87:19
 ::::: comment
 (none)
 ::::: specifier
@@ -1257,7 +1257,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:89:7
+test-input-1.cc:90:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1293,7 +1293,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:90:5
+test-input-1.cc:91:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1322,7 +1322,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:92:5
+test-input-1.cc:93:5
 ::::: comment
 (none)
 ::::: type
@@ -1344,7 +1344,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:92:10
+test-input-1.cc:93:10
 ::::: comment
 (none)
 ::::: type
@@ -1366,7 +1366,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:93:20
+test-input-1.cc:94:20
 ::::: comment
 (none)
 ::::: type
@@ -1388,7 +1388,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:95:5
+test-input-1.cc:96:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1417,7 +1417,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:100:9
+test-input-1.cc:101:9
 ::::: comment
 (none)
 ::::: type
@@ -1439,7 +1439,7 @@ struct_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:101:8
+test-input-1.cc:102:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1472,11 +1472,11 @@ EE
 enum_declaration
 ::::: hierarchy
 ::EEClass
-{'spelling': 'EEClass', 'transparent': False, 'kind': 'struct_declaration', 'location': 'test-input-1.cc:101:8'}
+{'spelling': 'EEClass', 'transparent': False, 'kind': 'struct_declaration', 'location': 'test-input-1.cc:102:8'}
 ::::: parent_kind
 struct_declaration
 ::::: location
-test-input-1.cc:102:13
+test-input-1.cc:103:13
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -1494,12 +1494,12 @@ ee1
 enum_constant_declaration
 ::::: hierarchy
 ::EEClass::EE
-{'spelling': 'EEClass', 'transparent': False, 'kind': 'struct_declaration', 'location': 'test-input-1.cc:101:8'}
-{'spelling': 'EE', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:102:13'}
+{'spelling': 'EEClass', 'transparent': False, 'kind': 'struct_declaration', 'location': 'test-input-1.cc:102:8'}
+{'spelling': 'EE', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:103:13'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:102:25
+test-input-1.cc:103:25
 ::::: comment
 (none)
 ::::: enum_value
@@ -1522,12 +1522,12 @@ ee2
 enum_constant_declaration
 ::::: hierarchy
 ::EEClass::EE
-{'spelling': 'EEClass', 'transparent': False, 'kind': 'struct_declaration', 'location': 'test-input-1.cc:101:8'}
-{'spelling': 'EE', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:102:13'}
+{'spelling': 'EEClass', 'transparent': False, 'kind': 'struct_declaration', 'location': 'test-input-1.cc:102:8'}
+{'spelling': 'EE', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:103:13'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:102:30
+test-input-1.cc:103:30
 ::::: comment
 (none)
 ::::: enum_value
@@ -1550,11 +1550,11 @@ eee1
 enum_constant_declaration
 ::::: hierarchy
 ::(EnumTy)
-{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:104:9'}
+{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:105:9'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:104:16
+test-input-1.cc:105:16
 ::::: comment
 (none)
 ::::: enum_value
@@ -1577,11 +1577,11 @@ eee2
 enum_constant_declaration
 ::::: hierarchy
 ::(EnumTy)
-{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:104:9'}
+{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:105:9'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:104:22
+test-input-1.cc:105:22
 ::::: comment
 (none)
 ::::: enum_value
@@ -1607,13 +1607,13 @@ typedef_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:104:29
+test-input-1.cc:105:29
 ::::: comment
 (none)
 ::::: canonical_type
 EnumTy
 ::::: type_alias_chain
-[{'spelling': 'EnumTy', 'location': 'test-input-1.cc:104:29'}, {'spelling': 'enum EnumTy', 'location': 'test-input-1.cc:104:9'}]
+[{'spelling': 'EnumTy', 'location': 'test-input-1.cc:105:29'}, {'spelling': 'enum EnumTy', 'location': 'test-input-1.cc:105:9'}]
 ::::: type_alias_underlying_type
 enum EnumTy
 ==================
@@ -1625,11 +1625,11 @@ eee1
 enum_constant_declaration
 ::::: hierarchy
 ::(EnumTy)
-{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:104:9'}
+{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:105:9'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:104:16
+test-input-1.cc:105:16
 ::::: comment
 (none)
 ::::: enum_value
@@ -1652,11 +1652,11 @@ eee2
 enum_constant_declaration
 ::::: hierarchy
 ::(EnumTy)
-{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:104:9'}
+{'spelling': 'EnumTy', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:105:9'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:104:22
+test-input-1.cc:105:22
 ::::: comment
 (none)
 ::::: enum_value
@@ -1678,12 +1678,12 @@ aaaaa
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
-::((anonymous enum at test-input-1.cc:105:1))
-{'spelling': '(anonymous enum at test-input-1.cc:105:1)', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:105:1'}
+::((anonymous enum at test-input-1.cc:106:1))
+{'spelling': '(anonymous enum at test-input-1.cc:106:1)', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:106:1'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:105:8
+test-input-1.cc:106:8
 ::::: comment
 (none)
 ::::: enum_value
@@ -1691,7 +1691,7 @@ test-input-1.cc:105:8
 ::::: enum_underlying_type
 unsigned int
 ::::: type
-(anonymous enum at test-input-1.cc:105:1)
+(anonymous enum at test-input-1.cc:106:1)
 {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
@@ -1705,12 +1705,12 @@ bbbbb
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
-::((anonymous enum at test-input-1.cc:105:1))
-{'spelling': '(anonymous enum at test-input-1.cc:105:1)', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:105:1'}
+::((anonymous enum at test-input-1.cc:106:1))
+{'spelling': '(anonymous enum at test-input-1.cc:106:1)', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-1.cc:106:1'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:105:15
+test-input-1.cc:106:15
 ::::: comment
 (none)
 ::::: enum_value
@@ -1718,7 +1718,7 @@ test-input-1.cc:105:15
 ::::: enum_underlying_type
 unsigned int
 ::::: type
-(anonymous enum at test-input-1.cc:105:1)
+(anonymous enum at test-input-1.cc:106:1)
 {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
@@ -1736,7 +1736,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:107:7
+test-input-1.cc:108:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1772,7 +1772,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:109:8
+test-input-1.cc:110:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1802,7 +1802,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:111:7
+test-input-1.cc:112:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1832,7 +1832,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:113:7
+test-input-1.cc:114:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1865,11 +1865,11 @@ VClass
 constructor
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:113:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:114:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:116:5
+test-input-1.cc:117:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1899,11 +1899,11 @@ test-input-1.cc#66
 destructor
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:113:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:114:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:117:13
+test-input-1.cc:118:13
 ::::: comment
 (none)
 ::::: specifier
@@ -1933,11 +1933,11 @@ foo
 method
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:113:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:114:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:118:18
+test-input-1.cc:119:18
 ::::: comment
 (none)
 ::::: specifier
@@ -1970,7 +1970,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:121:6
+test-input-1.cc:122:6
 ::::: comment
 (none)
 ::::: type
@@ -1992,7 +1992,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:122:6
+test-input-1.cc:123:6
 ::::: comment
 (none)
 ::::: type
@@ -2014,7 +2014,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:124:11
+test-input-1.cc:125:11
 ::::: comment
 (none)
 ::::: type
@@ -2036,7 +2036,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:129:1
+test-input-1.cc:130:1
 ::::: comment
 (none)
 ::::: specifier
@@ -2065,7 +2065,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:129:1
+test-input-1.cc:130:1
 ::::: comment
 (none)
 ::::: specifier
@@ -2084,18 +2084,23 @@ void
 []
 ==================
 [Diagnostic #1]
-test-input-1.cc:21:10: error: return type 'MyClass' is an abstract class
+test-input-1.cc:22:10: error: return type 'MyClass' is an abstract class
 [Diagnostic #2]
-test-input-1.cc:50:10: error: redefinition of 'MyClass'
+test-input-1.cc:51:10: error: redefinition of 'MyClass'
 [Diagnostic #3]
-test-input-1.cc:85:68: error: unknown type name 'Another'
+test-input-1.cc:86:68: error: unknown type name 'Another'
 [Diagnostic #4]
-test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
+test-input-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
 [Diagnostic #5]
-test-input-1.cc:100:1: error: unknown type name 'Another'
+test-input-1.cc:101:1: error: unknown type name 'Another'
 [Diagnostic #6]
-test-input-1.cc:113:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+test-input-1.cc:114:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
 [Diagnostic #7]
-test-input-1.cc:124:11: error: definition of variable with array type needs an explicit size or an initializer
+test-input-1.cc:125:11: error: definition of variable with array type needs an explicit size or an initializer
+[includes]
+{'depth': 1, 'included_at': 'test-input-1.cc:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
+{'depth': 1, 'included_at': 'test-input-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
+{'depth': 1, 'included_at': 'test-input-1.cc:4:10', 'file': './test-input-2.h'}
+{'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.22 sec
+[time traverse] 1.43 sec

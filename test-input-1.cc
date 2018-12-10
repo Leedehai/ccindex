@@ -1,6 +1,7 @@
 // this is a test input with grammar errors
 #include <vector>
 #include <map>
+#include "test-input-2.h"
 using namespace std;
 
 const int independentVariable = 1;

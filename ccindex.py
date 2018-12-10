@@ -559,6 +559,14 @@ def _verify_include_paths(include_paths, user_include_paths):
         return False
     return True
 
+def _is_in_paths(filename, path_list):
+    filename = os.path.abspath(filename)
+    for path_item in path_list:
+        path_item = os.path.abspath(path_item)
+        if filename.startswith(path_item):
+            return True
+    return False
+
 def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
     include_paths = SYS_INCLUDE_PATHS
     user_include_paths = []
@@ -599,13 +607,29 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
         errors.append(str(diagnostic))
         if print_out:
             print("[Diagnostic #%d]\n%s" % (error_count, errors[error_count - 1]))
+    
+    # include stack traverse list, excluding files included by system headers
+    include_list = [] # list of dict
+    for inc in tu.get_includes():
+        included_by = str(inc.location.file) # the file in which the "#include" exists
+        # we only want to list files that are 1) included by this target file, or 2) included
+        # by a user header (instead of by a system header)
+        if (included_by == target_filename
+            or _is_in_paths(included_by, user_include_paths)):
+            include_list.append({
+                "file": str(inc.include), # str, the header file that is included
+                "included_at": _format_location(inc.location), # str, the location of "#include"
+                "depth": int(inc.depth),  # int, the file directly included by the target file has depth 1
+            })
     if print_out:
+        print "[includes]\n%s" % '\n'.join([ str(item) for item in include_list ])
         print("[time indexing] %.2f sec" % indexing_time)
         print("[time traverse] %.2f sec" % traversing_time)
     # build result
     result = {
-        "symbols": symbols, # list of symbol dicts
-        "errors": errors,   # list of error strings
+        "symbols": symbols,       # list of symbol dicts
+        "includes": include_list, # list of dict
+        "errors": errors,         # list of error strings
         "time_indexing": indexing_time,    # float, in seconds
         "time_traversing": traversing_time # float, in seconds
     }
