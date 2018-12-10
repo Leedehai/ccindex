@@ -17,10 +17,10 @@
 #        ./ccindex.py path/file.[h|cc] -i UserIncludeDir1,UserIncludeDir2
 # 2) as a commandline tool, store as JSON:
 #        ./ccindex.py path/file.[h|cc]
-#        ./ccindex.py path/file.[h|cc] -i UserIncludeDir1,UserIncludeDir2 -json
-# 3) as a commandline tool, store as sqlite database:
+#        ./ccindex.py path/file.[h|cc] -i UserIncludeDir1,UserIncludeDir2 -json out.json
+# 3) as a commandline tool, store as SQLite database:
 #        ./ccindex.py path/file.[h|cc]
-#        ./ccindex.py path/file.[h|cc] -i UserIncludeDir1,UserIncludeDir2 -db
+#        ./ccindex.py path/file.[h|cc] -i UserIncludeDir1,UserIncludeDir2 -db out.db
 # 4) as Python library (import ccindex):
 #        result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 #        the return is a dict
@@ -67,6 +67,7 @@ if not found_candidate:
     sys.exit(1)
 
 interested_CursorKinds = [
+    cindex.CursorKind.NAMESPACE,
     cindex.CursorKind.CONSTRUCTOR,
     cindex.CursorKind.DESTRUCTOR,
     cindex.CursorKind.CXX_METHOD,
@@ -81,6 +82,7 @@ interested_CursorKinds = [
     cindex.CursorKind.FUNCTION_DECL,
     cindex.CursorKind.VAR_DECL,
     cindex.CursorKind.TYPEDEF_DECL,
+    cindex.CursorKind.TYPE_ALIAS_DECL,
     # ...
 ]
 
@@ -115,12 +117,15 @@ def _format_location(location):
 def _is_transparent_decl(cursor):
     return (cursor.kind == cindex.CursorKind.ENUM_DECL) and (not cursor.is_scoped_enum())
 
-def _format_sematic_parent(cursor):
+def _format_semantic_parent(cursor):
     if cursor.semantic_parent.kind == cindex.CursorKind.TRANSLATION_UNIT:
-        return "", "(global)"
+        return [], "(global)"
     # return tuple element #0
-    hierarchy_list = [] # top first, each level's spelling
-    transparency_list = [] # top first, each level's transparency (e.g. non-scoped enum is transparent)
+    # top-level first
+    spelling_list = []     # each level's spelling
+    transparency_list = [] # each level's transparency (e.g. non-scoped enum is transparent)
+    syntax_kind_list = []  # each level's syntax kind (e.g. namespace, class, enum)
+    location_list = []     # each level's source location string
     temp_cursor = cursor
     while True: # from child to parent, all the way up to the translation unit node
         temp_cursor = temp_cursor.semantic_parent
@@ -130,25 +135,86 @@ def _format_sematic_parent(cursor):
         if not temp_cursor_spelling:
             # anonymous, e.g. "typedef struct { ... } MyType_t;", then we use the type alias "MyType_t"
             temp_cursor_spelling = temp_cursor.type.spelling.split("::")[-1]
-        # insert to front, because we are going from buttom-up
-        hierarchy_list.insert(0, temp_cursor_spelling)
+        # insert to front, because we are going buttom-up
+        spelling_list.insert(0, temp_cursor_spelling)
         transparency_list.insert(0, True if _is_transparent_decl(temp_cursor) else False)
+        syntax_kind_list.insert(0, _format_syntax_kind(temp_cursor.kind))
+        location_list.insert(0, _format_location(temp_cursor.location))
     # return tuple element #1
-    parent_kind_str = str(cursor.semantic_parent.kind).split(".")[-1]
-    parent_kind_str = "%s" % parent_kind_str.replace("_DECL", "").replace("_", " ").lower()
-    return zip(hierarchy_list, transparency_list), parent_kind_str
+    parent_kind_str = _format_syntax_kind(cursor.semantic_parent.kind)
+    # build return
+    hierarchy_dict_list = []
+    for i in range(len(spelling_list)):
+        hierarchy_dict_list.append({
+            "spelling": spelling_list[i],
+            "transparent": transparency_list[i],
+            "kind": syntax_kind_list[i],
+            "location": location_list[i]
+        })
+    return hierarchy_dict_list, parent_kind_str
 
 def _format_syntax_kind(kind):
     kind_str = str(kind).split(".")[-1]
-    kind_str = kind_str.replace("CXX_", "").replace("_DECL", "").replace(" ", "").replace("VAR", "VARIABLE")
+    kind_str = kind_str.replace("CXX_", "").replace("_DECL", "_DECLARATION").replace(" ", "").replace("VAR_", "VARIABLE_")
     return kind_str.lower()
+
+def _find_hierarchy_item_for_owning_template(hierarchy, template_level):
+    template_hierarchy_list = [ item for item in hierarchy if ("template" in item["kind"]) ]
+    if template_level >= len(template_hierarchy_list):
+        return None # unexpected
+    return template_hierarchy_list[template_level] # dict
+def _format_type_param_decl_location(type_obj, hierarchy):
+    # the canonical type of a template type param is "type-parameter-X-Y",
+    # where X is the level of nested template (the outmost is 0), and Y
+    # is the position of this param (starts with 0) in that level's template
+    # declaration. e.g.
+    # template <typename T> class A {                      // level 0
+    #     class Class B {                                  // not a template declaration
+    #         template <unsigned N, typename U> class C {  // level 1
+    #             using UU = U;
+    #             // type alias UU's canonical type spelling is "type-parameter-1-1"
+    #         };
+    #     };
+    # };
+    canonical_spelling = type_obj.get_canonical().spelling # "type-parameter-X-Y"
+    assert canonical_spelling.startswith("type-parameter-")
+    owning_template_level, template_param_pos = tuple(int(n) for n in canonical_spelling.split("-")[-2:])
+    owning_template_hierarchy_item = _find_hierarchy_item_for_owning_template(hierarchy, owning_template_level)
+    if not owning_template_hierarchy_item:
+        return "(owning template not found)", -1
+    return {
+        "location": owning_template_hierarchy_item["location"],
+        "spelling": owning_template_hierarchy_item["spelling"],
+        "index":    template_param_pos
+    }
 
 def _format_type(type_obj):
     type_str = type_obj.spelling
+    if type_str.startswith("type-parameter-"):
+        return "(type parameter)"
     type_str = type_str.replace("std::__1::", "std::")
-    type_str = re.sub(r" *\*", "*", type_str)
-    type_str = re.sub(r" *&", "&", type_str)
+    type_str = re.sub(r" *\*", "*", type_str) # e.g. "int *" => "int*"
+    type_str = re.sub(r" *&", "&", type_str)  # e.g. "int &" => "int&"
     return type_str
+
+def _get_type_alias_chain(type_obj):
+    chain = [ type_obj ] # list of cindex.Type object
+    temp_type = type_obj
+    while True:
+        if temp_type.get_declaration().kind == cindex.CursorKind.NO_DECL_FOUND:
+            break
+        temp_type = temp_type.get_declaration().underlying_typedef_type
+        if temp_type.spelling and chain[-1].spelling != temp_type.spelling:
+            chain.append(temp_type)
+        else:
+            break
+    return chain # this type obj first, completely resoluted last
+def _format_type_alias_chain(type_obj):
+    chain = _get_type_alias_chain(type_obj)
+    return [ {
+        "spelling": item.spelling,
+        "location": _format_location(item.get_declaration().location)
+    } for item in chain ]
 
 no_return_funcs_CursorKindCursorKind = [ # no return type
     cindex.CursorKind.CONSTRUCTOR,
@@ -239,9 +305,9 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     symbol = {} # dict for this symbol
     # part 1. mandated fields
     symbol["spelling"] = "%s" % c.spelling # str
-    hierarchy_and_kind = _format_sematic_parent(c) # tuple
-    symbol["hierarchy"] = hierarchy_and_kind[0] # list of tuple (spelling, transparency), might be empty, starting from top-level
-    symbol["parent_kind"] = hierarchy_and_kind[1] # str
+    hierarchy_info = _format_semantic_parent(c)
+    symbol["hierarchy"] = hierarchy_info[0] # list of dict, might be empty, top-down
+    symbol["parent_kind"] = hierarchy_info[1] # str
     symbol["location"] = _format_location(c.location) # str
     symbol["kind"] = _format_syntax_kind(c.kind) # str
     comment_tuple = _format_comment(c.raw_comment)
@@ -252,7 +318,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         func_proto_tuple = _format_func_proto(c)
         symbol["declaration"] = "%s;" % func_proto_tuple[0][0] # str
         symbol["declaration_pretty"] = "%s;" % func_proto_tuple[0][1] # str
-        symbol["is_template"] = True if func_proto_tuple[1] else False# boolean
+        symbol["is_template"] = True if func_proto_tuple[1] else False# bool
         symbol["template_args_list"] = func_proto_tuple[1] # list of tuple (type, arg name)
         symbol["args_list"] = func_proto_tuple[2] # # list of tuple (type, arg name)
         symbol["return_type"] = func_proto_tuple[3] # str or NoneType (e.g. constructor's return type is None)
@@ -260,28 +326,52 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         class_proto_tuple = _format_class_proto(c)
         symbol["declaration"] = "%s;" % class_proto_tuple[0][0] # str
         symbol["declaration_pretty"] = "%s;" % class_proto_tuple[0][1] # str
-        symbol["is_template"] = True if class_proto_tuple[1] else False# boolean
+        symbol["is_template"] = True if class_proto_tuple[1] else False# bool
         symbol["template_args_list"] = class_proto_tuple[1] # list of tuple (type, arg name)
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
     if c.kind in val_like_CursorKind + [ cindex.CursorKind.CLASS_DECL, cindex.CursorKind.STRUCT_DECL ]:
         sizeof_type = c.type.get_size()
         symbol["size"] = sizeof_type if sizeof_type > 0 else None # int or NoneType
-        symbol["POD"] = c.type.is_pod() # boolean (POD: Plain Old Data)
-        if c.type.kind == cindex.TypeKind.TYPEDEF:
+        symbol["POD"] = c.type.is_pod() # bool (POD: Plain Old Data)
+        # C++ has a very complicated type system
+        if c.type.kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
             symbol["type"] = (
                 _format_type(c.type), {
-                    "typedef": True,
-                    "typename": False,
-                    "canonical_type": _format_type(c.type.get_canonical()) # real type, completely resoluted
+                    # though this type is not a type param, yet as a
+                    # type alias, its underlying type may be a type param
+                    "is_type_param": False, # bool
+                    "is_type_alias": True,  # bool
+                    # real type, alias resoluted one step only
+                    "type_alias_underlying_type": _format_type(c.type.get_declaration().underlying_typedef_type), # str
+                    # type alias chain, from this type to completely resoluted type
+                    "type_alias_chain": _format_type_alias_chain(c.type), # list of str
+                    # real type, alias completely resoluted
+                    # if it is not a type param, then it is the same as type_alias_chain[-1].spelling;
+                    # if it is a type param, then it is "(type parameter)"
+                    "canonical_type": _format_type(c.type.get_canonical()) # str
                 }
-             ) # tuple of (str, dict)
+            ) # tuple of (str, dict)
         elif c.type.kind == cindex.TypeKind.UNEXPOSED:
-            symbol["type"] = ( _format_type(c.type), { "typedef": False, "typename": True } ) # tuple of (str, dict)
+            symbol["type"] = (
+                _format_type(c.type), {
+                    "is_type_param": True,  # bool
+                    "is_type_alias": False, # bool
+                    "type_param_decl_location": _format_type_param_decl_location(c.type, symbol["hierarchy"]), # dict
+                }
+            ) # tuple of (str, dict)
         else:
-            symbol["type"] = ( _format_type(c.type), { "typedef": False, "typename": False } ) # tuple of (str, dict)
-    if c.kind == cindex.CursorKind.TYPEDEF_DECL:
-        symbol["typedef_underlying"] = _format_type(c.underlying_typedef_type) # str
+            symbol["type"] = (
+                _format_type(c.type), {
+                    "is_type_param": False, # bool
+                    "is_type_alias": False  # bool
+                }
+            ) # tuple of (str, dict)
+    if c.kind in [ cindex.CursorKind.TYPEDEF_DECL, cindex.CursorKind.TYPE_ALIAS_DECL ]:
+        # e.g. "typedef float Float;", "using Float = float;"
+        symbol["type_alias_underlying_type"] = _format_type(c.underlying_typedef_type) # str, one-step resoluted
+        symbol["type_alias_chain"] = _format_type_alias_chain(c.type) # list of str, from this type to completely resoluted
+        symbol["canonical_type"] = _format_type(c.type.get_canonical()) # str, completely resoluted
     if c.kind == cindex.CursorKind.CONSTRUCTOR:
         if c.is_default_constructor():
             symbol["constructor_kind"] = "default" # str
@@ -294,32 +384,33 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     if (c.semantic_parent.kind in class_like_CursorKind
         and c.kind == cindex.CursorKind.VAR_DECL):
         # static member is of VAR_DECL kind instead of FIELD_DECL kind
-        symbol["static_member"] = True # boolean
+        symbol["static_member"] = True # bool
     if c.kind == cindex.CursorKind.FIELD_DECL:
-        symbol["static_member"] = False # boolean
+        symbol["static_member"] = False # bool
     if c.kind == cindex.CursorKind.CXX_METHOD:
-        method_kind = []
+        method_property = []
         if c.is_static_method():
-            method_kind.append("static")
+            method_property.append("static")
         if c.is_const_method():
-            method_kind.append("const")
+            method_property.append("const")
         if c.is_default_method(): # marked by "= default"
-            method_kind.append("default")
+            method_property.append("default")
         if c.is_virtual_method():
-            method_kind.append("virtual")
+            method_property.append("virtual")
         if c.is_pure_virtual_method():
-            method_kind.append("pure virtual")
-        symbol["method_kind"] = method_kind # list
+            method_property.append("pure virtual")
+        symbol["method_property"] = method_property # list
     if c.kind == cindex.CursorKind.ENUM_DECL:
         symbol["scoped_enum"] = True if c.is_scoped_enum() else False
-        symbol["enum_type"] = c.enum_type.spelling
+        symbol["enum_underlying_type"] = _format_type(c.enum_type)
     if c.kind == cindex.CursorKind.ENUM_CONSTANT_DECL:
-        symbol["enum_type"] = c.type.get_declaration().enum_type.spelling
+        symbol["enum_underlying_type"] = _format_type(c.type.get_declaration().enum_type)
         symbol["enum_value"] = c.enum_value
     return symbol
 
 def _traverse_ast(root_node, target_filename, print_out):
     symbols = [] # list of symbol dicts
+    count = 0
     for c in root_node.walk_preorder():
         if str(c.location.file) != target_filename:
             continue # skip header files
@@ -329,6 +420,8 @@ def _traverse_ast(root_node, target_filename, print_out):
             continue # skip anonymous node, e.g. anonymous struct declaration
         # visit this node entity, get a dict
         symbol = _visit_cursor(c)
+        count += 1
+        symbol["id"] = "%s#%d" % (target_filename, count)
         # collect to symbols list
         symbols.append(symbol)
         # print to stdout
@@ -339,34 +432,6 @@ def _traverse_ast(root_node, target_filename, print_out):
 """
 Input/Output
 """
-
-ordered_keys = ["spelling", "kind", "hierarchy", "parent_kind", "location", "comment", "usage"]
-def _print_to_stdout(symbol):
-    # print keys in ordered_keys first, in order; they are present in all symbol dicts
-    for key in ordered_keys:
-        if key == "hierarchy":
-            if not symbol[key]:
-                print("hierarchy:\n\t(none)")
-            else:
-                hierarchy_repr_list = []
-                for i in range(len(symbol[key])):
-                    spelling, transparent = symbol[key][i][0], symbol[key][i][1]
-                    hierarchy_repr_list.append(spelling if not transparent else ("(%s)" % spelling))
-                print("hierarchy:\n\t%s" % ("::" + "::".join(hierarchy_repr_list)))
-        elif key == "comment":
-            comment = symbol[key]
-            print("comment:\n```\n%s\n```" % (comment if comment else "(none)"))
-        elif key == "usage":
-            usage = symbol[key]
-            if usage:
-                print("usage:\n```\n%s\n```" % usage)
-        else:
-            print("%s:\n\t%s" % (key, symbol[key]))
-    # print other keys
-    for key, value in symbol.items():
-        if key not in ordered_keys:
-            print("%s:\n\t%s" % (key, str(value)))
-    print("-----")
 
 def _verify_include_paths(include_paths, user_include_paths):
     path_not_found = []
@@ -436,12 +501,56 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_databas
             json.dump(result, json_file, indent=2)
     return result
 
+ordered_keys = [
+    "id",          "spelling", "kind",    "hierarchy",
+    "parent_kind", "location", "comment", "usage"
+]
+def _print_to_stdout(symbol):
+    # print keys in ordered_keys first, in order; they are present in all symbol dicts
+    for key in ordered_keys:
+        if key == "hierarchy":
+            if not symbol[key]:
+                print("::::: hierarchy\n(none)")
+            else:
+                hierarchy_repr_list = []
+                hierarchy_list = []
+                for i in range(len(symbol[key])):
+                    spelling = symbol[key][i]["spelling"]
+                    transparent = symbol[key][i]["transparent"]
+                    hierarchy_repr_list.append(spelling if not transparent else ("(%s)" % spelling))
+                    hierarchy_list.append(symbol[key][i])
+                print("::::: hierarchy\n%s" % ("::" + "::".join(hierarchy_repr_list)))
+                for item in hierarchy_list:
+                    print item # dict
+        elif key == "comment":
+            comment = symbol[key]
+            print("::::: comment\n%s" % (comment if comment else "(none)"))
+        elif key == "usage":
+            usage = symbol[key]
+            if usage:
+                print("::::: usage\n%s" % usage)
+        else:
+            print("::::: %s\n%s" % (key, symbol[key]))
+    # print other keys
+    for key, value in symbol.items():
+        if key not in ordered_keys:
+            if key == "type":
+                print("::::: type\n%s\n%s" % (symbol[key][0], symbol[key][1]))
+            else:
+                print("::::: %s\n%s" % (key, str(value)))
+    print("==================")
+
+"""
+Library interface
+"""
+
 # exposed as library interface, returning a dict
 def get(target_filename, user_include_path_list=[]):
     result = _get_symbols(target_filename=args.filename,
                           user_include_paths_str=','.join(user_include_path_list),
                           as_library=True, to_database=None, to_json=None)
     return result
+
 
 """
 Commandline utility interface
@@ -455,9 +564,9 @@ def get_arg_parser():
     arg_parser.add_argument("-i", "--user-include-paths", type=str, default="",
                         help="comma separated list of user include paths, e.g. dir1/dir2,dir3/dir4")
     arg_parser.add_argument("-json", "--to-json", nargs='?', type=str, const="out.json", default=None,
-                        help="write to json file (default: out.json)")
+                        help="write to a JSON file (default: out.json)")
     arg_parser.add_argument("-db", "--to-database", nargs='?', type=str, const="out.db", default=None,
-                        help="write to a sqlite database file (default: out.db)")
+                        help="write to a SQLite database file (default: out.db)")
     return arg_parser
 
 if __name__ == "__main__":

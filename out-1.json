@@ -3,16 +3,17 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "variable", 
+      "hierarchy": [], 
+      "kind": "variable_declaration", 
+      "id": "test-input-1.cc#1", 
       "location": "test-input-1.cc:6:11", 
       "usage": "", 
       "spelling": "independentVariable", 
       "type": [
         "const int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -21,8 +22,9 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "function", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#2", 
+      "kind": "function_declaration", 
       "args_list": [], 
       "is_template": false, 
       "location": "test-input-1.cc:7:5", 
@@ -36,18 +38,31 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "typedef", 
+      "hierarchy": [], 
+      "canonical_type": "std::vector<int, std::allocator<int> >", 
+      "kind": "typedef_declaration", 
       "location": "test-input-1.cc:8:26", 
       "usage": "", 
       "spelling": "Int", 
-      "typedef_underlying": "std::vector<int>"
+      "type_alias_chain": [
+        {
+          "spelling": "Int", 
+          "location": "test-input-1.cc:8:26"
+        }, 
+        {
+          "spelling": "std::vector<int>", 
+          "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28"
+        }
+      ], 
+      "id": "test-input-1.cc#3", 
+      "type_alias_underlying_type": "std::vector<int>"
     }, 
     {
       "comment": "comment for MyClass", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "class", 
+      "hierarchy": [], 
+      "kind": "class_declaration", 
+      "id": "test-input-1.cc#4", 
       "is_template": false, 
       "location": "test-input-1.cc:11:7", 
       "declaration": "class MyClass;", 
@@ -58,8 +73,8 @@
       "type": [
         "MyClass", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": false, 
@@ -67,15 +82,18 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#5", 
       "access": "private", 
       "location": "test-input-1.cc:12:6", 
       "usage": "", 
@@ -83,8 +101,8 @@
       "type": [
         "int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -92,37 +110,43 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
+      ], 
+      "method_property": [
+        "static"
       ], 
       "kind": "method", 
       "args_list": [], 
       "access": "private", 
       "is_template": false, 
+      "id": "test-input-1.cc#6", 
       "location": "test-input-1.cc:13:14", 
       "declaration": "void method1();", 
       "usage": "", 
       "declaration_pretty": "void method1();", 
       "spelling": "method1", 
-      "method_kind": [
-        "static"
-      ], 
       "return_type": "void", 
       "template_args_list": []
     }, 
     {
       "comment": "comment for MyClass()", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "id": "test-input-1.cc#7", 
       "kind": "constructor", 
       "args_list": [], 
       "access": "public", 
@@ -138,13 +162,16 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "id": "test-input-1.cc#8", 
       "kind": "constructor", 
       "args_list": [
         [
@@ -165,13 +192,16 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "id": "test-input-1.cc#9", 
       "kind": "constructor", 
       "args_list": [
         [
@@ -195,35 +225,41 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "method_property": [], 
       "kind": "method", 
       "args_list": [], 
       "access": "public", 
       "is_template": false, 
+      "id": "test-input-1.cc#10", 
       "location": "test-input-1.cc:19:6", 
       "declaration": "Int method2();", 
       "usage": "", 
       "declaration_pretty": "Int method2();", 
       "spelling": "method2", 
-      "method_kind": [], 
       "return_type": "Int", 
       "template_args_list": []
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "id": "test-input-1.cc#11", 
       "kind": "constructor", 
       "args_list": [
         [
@@ -244,13 +280,16 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "method_property": [], 
       "kind": "method", 
       "args_list": [
         [
@@ -260,24 +299,27 @@
       ], 
       "access": "public", 
       "is_template": false, 
+      "id": "test-input-1.cc#12", 
       "location": "test-input-1.cc:21:10", 
       "declaration": "MyClass operator+(const MyClass&);", 
       "usage": "", 
       "declaration_pretty": "MyClass operator+(const MyClass&);", 
       "spelling": "operator+", 
-      "method_kind": [], 
       "return_type": "MyClass", 
       "template_args_list": []
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "id": "test-input-1.cc#13", 
       "kind": "conversion_function", 
       "args_list": [], 
       "access": "public", 
@@ -292,15 +334,18 @@
     }, 
     {
       "comment": "comment for property2", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#14", 
       "access": "private", 
       "location": "test-input-1.cc:25:6", 
       "usage": "", 
@@ -308,9 +353,20 @@
       "type": [
         "Int", 
         {
-          "typename": false, 
-          "typedef": true, 
-          "canonical_type": "std::vector<int, std::allocator<int> >"
+          "is_type_param": false, 
+          "is_type_alias": true, 
+          "canonical_type": "std::vector<int, std::allocator<int> >", 
+          "type_alias_underlying_type": "std::vector<int>", 
+          "type_alias_chain": [
+            {
+              "spelling": "Int", 
+              "location": "test-input-1.cc:8:26"
+            }, 
+            {
+              "spelling": "std::vector<int>", 
+              "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28"
+            }
+          ]
         }
       ], 
       "POD": false, 
@@ -318,15 +374,18 @@
     }, 
     {
       "comment": "comment for property 3\nstill comment for property 3", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#15", 
       "access": "private", 
       "location": "test-input-1.cc:30:14", 
       "usage": "", 
@@ -334,8 +393,8 @@
       "type": [
         "const float", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -343,14 +402,17 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
-      "kind": "class", 
+      "kind": "class_declaration", 
+      "id": "test-input-1.cc#16", 
       "access": "private", 
       "is_template": false, 
       "location": "test-input-1.cc:32:8", 
@@ -362,8 +424,8 @@
       "type": [
         "MyClass::InnerClass", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -371,19 +433,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ], 
-        [
-          "InnerClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }, 
+        {
+          "spelling": "InnerClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:32:8"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#17", 
       "access": "private", 
       "location": "test-input-1.cc:33:10", 
       "usage": "", 
@@ -391,8 +458,8 @@
       "type": [
         "double", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -400,35 +467,39 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
+      ], 
+      "method_property": [
+        "const", 
+        "virtual", 
+        "pure virtual"
       ], 
       "kind": "method", 
       "args_list": [], 
       "access": "private", 
       "is_template": false, 
+      "id": "test-input-1.cc#18", 
       "location": "test-input-1.cc:36:15", 
       "declaration": "void method3() const;", 
       "usage": "", 
       "declaration_pretty": "void method3() const;", 
       "spelling": "method3", 
-      "method_kind": [
-        "const", 
-        "virtual", 
-        "pure virtual"
-      ], 
       "return_type": "void", 
       "template_args_list": []
     }, 
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "function", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#19", 
+      "kind": "function_declaration", 
       "args_list": [], 
       "is_template": false, 
       "location": "test-input-1.cc:40:5", 
@@ -442,7 +513,8 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#20", 
       "kind": "function_template", 
       "args_list": [
         [
@@ -483,8 +555,9 @@
     {
       "comment": "comment for foo()", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "function", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#21", 
+      "kind": "function_declaration", 
       "args_list": [
         [
           "int", 
@@ -506,13 +579,16 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "MyClass", 
-          false
-        ]
+        {
+          "spelling": "MyClass", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:11:7"
+        }
       ], 
+      "id": "test-input-1.cc#22", 
       "kind": "constructor", 
       "args_list": [
         [
@@ -536,12 +612,24 @@
     }, 
     {
       "comment": "", 
+      "parent_kind": "(global)", 
+      "hierarchy": [], 
+      "kind": "namespace", 
+      "location": "test-input-1.cc:55:11", 
+      "usage": "", 
+      "spelling": "NS2", 
+      "id": "test-input-1.cc#23"
+    }, 
+    {
+      "comment": "", 
       "parent_kind": "namespace", 
       "hierarchy": [
-        [
-          "NS2", 
-          false
-        ]
+        {
+          "spelling": "NS2", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:55:11"
+        }
       ], 
       "kind": "class_template", 
       "is_template": true, 
@@ -550,6 +638,7 @@
       "usage": "", 
       "declaration_pretty": "template <typename T, char C>\ntemplate <typename T, char C> class templateClass;", 
       "spelling": "templateClass", 
+      "id": "test-input-1.cc#24", 
       "template_args_list": [
         [
           "typename", 
@@ -563,19 +652,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class template", 
+      "parent_kind": "class_template", 
       "hierarchy": [
-        [
-          "NS2", 
-          false
-        ], 
-        [
-          "templateClass", 
-          false
-        ]
+        {
+          "spelling": "NS2", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:55:11"
+        }, 
+        {
+          "spelling": "templateClass", 
+          "transparent": false, 
+          "kind": "class_template", 
+          "location": "test-input-1.cc:58:7"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#25", 
       "access": "private", 
       "location": "test-input-1.cc:59:4", 
       "usage": "", 
@@ -583,8 +677,13 @@
       "type": [
         "T", 
         {
-          "typename": true, 
-          "typedef": false
+          "is_type_param": true, 
+          "type_param_decl_location": {
+            "index": 0, 
+            "spelling": "templateClass", 
+            "location": "test-input-1.cc:58:7"
+          }, 
+          "is_type_alias": false
         }
       ], 
       "POD": false, 
@@ -592,19 +691,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class template", 
+      "parent_kind": "class_template", 
       "hierarchy": [
-        [
-          "NS2", 
-          false
-        ], 
-        [
-          "templateClass", 
-          false
-        ]
+        {
+          "spelling": "NS2", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:55:11"
+        }, 
+        {
+          "spelling": "templateClass", 
+          "transparent": false, 
+          "kind": "class_template", 
+          "location": "test-input-1.cc:58:7"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#26", 
       "access": "private", 
       "location": "test-input-1.cc:60:7", 
       "usage": "", 
@@ -612,8 +716,8 @@
       "type": [
         "char", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -623,33 +727,37 @@
       "comment": "", 
       "parent_kind": "(global)", 
       "scoped_enum": false, 
-      "hierarchy": "", 
-      "enum_type": "int", 
-      "kind": "enum", 
+      "hierarchy": [], 
+      "enum_underlying_type": "int", 
+      "kind": "enum_declaration", 
       "location": "test-input-1.cc:64:6", 
       "usage": "", 
-      "spelling": "E"
+      "spelling": "E", 
+      "id": "test-input-1.cc#27"
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 1, 
       "hierarchy": [
-        [
-          "E", 
-          true
-        ]
+        {
+          "spelling": "E", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:64:6"
+        }
       ], 
-      "enum_type": "int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#28", 
       "location": "test-input-1.cc:65:2", 
       "usage": "", 
       "spelling": "a", 
       "type": [
         "E", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -657,39 +765,55 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 2, 
       "hierarchy": [
-        [
-          "E", 
-          true
-        ]
+        {
+          "spelling": "E", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:64:6"
+        }
       ], 
-      "enum_type": "int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#29", 
       "location": "test-input-1.cc:66:2", 
       "usage": "", 
       "spelling": "b", 
       "type": [
         "E", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
       "size": 4
     }, 
     {
+      "comment": "comment for namespace", 
+      "parent_kind": "(global)", 
+      "hierarchy": [], 
+      "kind": "namespace", 
+      "location": "test-input-1.cc:70:11", 
+      "usage": "", 
+      "spelling": "customNS", 
+      "id": "test-input-1.cc#30"
+    }, 
+    {
       "comment": "", 
       "parent_kind": "namespace", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }
       ], 
-      "kind": "function", 
+      "id": "test-input-1.cc#31", 
+      "kind": "function_declaration", 
       "args_list": [], 
       "is_template": false, 
       "location": "test-input-1.cc:71:6", 
@@ -704,12 +828,15 @@
       "comment": "", 
       "parent_kind": "namespace", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }
       ], 
-      "kind": "class", 
+      "kind": "class_declaration", 
+      "id": "test-input-1.cc#32", 
       "is_template": false, 
       "location": "test-input-1.cc:72:8", 
       "declaration": "class Class;", 
@@ -720,8 +847,8 @@
       "type": [
         "customNS::Class", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -730,16 +857,17 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "variable", 
+      "hierarchy": [], 
+      "kind": "variable_declaration", 
+      "id": "test-input-1.cc#33", 
       "location": "test-input-1.cc:75:12", 
       "usage": "", 
       "spelling": "staticGlobal", 
       "type": [
         "int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -749,12 +877,15 @@
       "comment": "", 
       "parent_kind": "namespace", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }
       ], 
-      "kind": "class", 
+      "kind": "class_declaration", 
+      "id": "test-input-1.cc#34", 
       "is_template": false, 
       "location": "test-input-1.cc:77:17", 
       "declaration": "class Class;", 
@@ -765,8 +896,8 @@
       "type": [
         "customNS::Class", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -774,19 +905,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
-      "kind": "variable", 
+      "kind": "variable_declaration", 
       "static_member": true, 
+      "id": "test-input-1.cc#35", 
       "access": "private", 
       "location": "test-input-1.cc:78:13", 
       "usage": "", 
@@ -794,8 +930,8 @@
       "type": [
         "int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -803,19 +939,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#36", 
       "access": "private", 
       "location": "test-input-1.cc:79:12", 
       "usage": "", 
@@ -823,8 +964,8 @@
       "type": [
         "const int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -832,19 +973,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
-      "kind": "variable", 
+      "kind": "variable_declaration", 
       "static_member": true, 
+      "id": "test-input-1.cc#37", 
       "access": "private", 
       "location": "test-input-1.cc:80:19", 
       "usage": "", 
@@ -852,8 +998,8 @@
       "type": [
         "const int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -861,19 +1007,24 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
-      "kind": "field", 
+      "kind": "field_declaration", 
       "static_member": false, 
+      "id": "test-input-1.cc#38", 
       "access": "private", 
       "location": "test-input-1.cc:81:6", 
       "usage": "", 
@@ -881,8 +1032,8 @@
       "type": [
         "int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -892,12 +1043,15 @@
       "comment": "", 
       "parent_kind": "namespace", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }
       ], 
-      "kind": "function", 
+      "id": "test-input-1.cc#39", 
+      "kind": "function_declaration", 
       "args_list": [], 
       "is_template": false, 
       "location": "test-input-1.cc:83:12", 
@@ -910,17 +1064,22 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
+      "method_property": [], 
       "kind": "method", 
       "args_list": [
         [
@@ -930,28 +1089,33 @@
       ], 
       "access": "private", 
       "is_template": false, 
+      "id": "test-input-1.cc#40", 
       "location": "test-input-1.cc:84:8", 
       "declaration": "size_t returnSizeT_int(int a);", 
       "usage": "", 
       "declaration_pretty": "size_t returnSizeT_int(int a);", 
       "spelling": "returnSizeT_int", 
-      "method_kind": [], 
       "return_type": "size_t", 
       "template_args_list": []
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
+      "method_property": [], 
       "kind": "method", 
       "args_list": [
         [
@@ -969,28 +1133,33 @@
       ], 
       "access": "private", 
       "is_template": false, 
+      "id": "test-input-1.cc#41", 
       "location": "test-input-1.cc:85:6", 
       "declaration": "bool returnBool_string_myclass_anotherclass(std::string s, MyClass obj, int obj2);", 
       "usage": "", 
       "declaration_pretty": "bool returnBool_string_myclass_anotherclass(\n\tstd::string s,\n\tMyClass obj,\n\tint obj2\n);", 
       "spelling": "returnBool_string_myclass_anotherclass", 
-      "method_kind": [], 
       "return_type": "bool", 
       "template_args_list": []
     }, 
     {
       "comment": "", 
-      "parent_kind": "class", 
+      "parent_kind": "class_declaration", 
       "hierarchy": [
-        [
-          "customNS", 
-          false
-        ], 
-        [
-          "Class", 
-          false
-        ]
+        {
+          "spelling": "customNS", 
+          "transparent": false, 
+          "kind": "namespace", 
+          "location": "test-input-1.cc:70:11"
+        }, 
+        {
+          "spelling": "Class", 
+          "transparent": false, 
+          "kind": "class_declaration", 
+          "location": "test-input-1.cc:77:17"
+        }
       ], 
+      "method_property": [], 
       "kind": "method", 
       "args_list": [
         [
@@ -1004,20 +1173,21 @@
       ], 
       "access": "private", 
       "is_template": false, 
+      "id": "test-input-1.cc#42", 
       "location": "test-input-1.cc:86:19", 
       "declaration": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
       "usage": "", 
       "declaration_pretty": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
       "spelling": "returnVector_float_vector", 
-      "method_kind": [], 
       "return_type": "std::vector<int>&", 
       "template_args_list": []
     }, 
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "class", 
+      "hierarchy": [], 
+      "kind": "class_declaration", 
+      "id": "test-input-1.cc#43", 
       "is_template": false, 
       "location": "test-input-1.cc:89:7", 
       "declaration": "class classFriend;", 
@@ -1028,8 +1198,8 @@
       "type": [
         "classFriend", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1038,8 +1208,9 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "function", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#44", 
+      "kind": "function_declaration", 
       "args_list": [], 
       "is_template": false, 
       "location": "test-input-1.cc:90:5", 
@@ -1053,16 +1224,17 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "variable", 
+      "hierarchy": [], 
+      "kind": "variable_declaration", 
+      "id": "test-input-1.cc#45", 
       "location": "test-input-1.cc:92:5", 
       "usage": "", 
       "spelling": "a1", 
       "type": [
         "int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1071,16 +1243,17 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "variable", 
+      "hierarchy": [], 
+      "kind": "variable_declaration", 
+      "id": "test-input-1.cc#46", 
       "location": "test-input-1.cc:92:10", 
       "usage": "", 
       "spelling": "a2", 
       "type": [
         "int*", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1089,16 +1262,25 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "variable", 
+      "hierarchy": [], 
+      "kind": "variable_declaration", 
+      "id": "test-input-1.cc#47", 
       "location": "test-input-1.cc:93:20", 
       "usage": "", 
       "spelling": "m", 
       "type": [
         "std::map<int, int>", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": true, 
+          "canonical_type": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int> > >", 
+          "type_alias_underlying_type": "", 
+          "type_alias_chain": [
+            {
+              "spelling": "std::map<int, int>", 
+              "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28"
+            }
+          ]
         }
       ], 
       "POD": false, 
@@ -1107,8 +1289,9 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "function", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#48", 
+      "kind": "function_declaration", 
       "args_list": [], 
       "is_template": false, 
       "location": "test-input-1.cc:95:5", 
@@ -1122,16 +1305,17 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "variable", 
+      "hierarchy": [], 
+      "kind": "variable_declaration", 
+      "id": "test-input-1.cc#49", 
       "location": "test-input-1.cc:100:9", 
       "usage": "", 
       "spelling": "ano", 
       "type": [
         "int", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1140,8 +1324,9 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "struct", 
+      "hierarchy": [], 
+      "kind": "struct_declaration", 
+      "id": "test-input-1.cc#50", 
       "is_template": false, 
       "location": "test-input-1.cc:101:8", 
       "declaration": "class EEClass;", 
@@ -1152,8 +1337,8 @@
       "type": [
         "EEClass", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1161,45 +1346,53 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "struct", 
+      "parent_kind": "struct_declaration", 
       "scoped_enum": true, 
       "hierarchy": [
-        [
-          "EEClass", 
-          false
-        ]
+        {
+          "spelling": "EEClass", 
+          "transparent": false, 
+          "kind": "struct_declaration", 
+          "location": "test-input-1.cc:101:8"
+        }
       ], 
-      "enum_type": "char", 
-      "kind": "enum", 
+      "enum_underlying_type": "char", 
+      "kind": "enum_declaration", 
       "access": "public", 
       "location": "test-input-1.cc:102:13", 
       "usage": "", 
-      "spelling": "EE"
+      "spelling": "EE", 
+      "id": "test-input-1.cc#51"
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 0, 
       "hierarchy": [
-        [
-          "EEClass", 
-          false
-        ], 
-        [
-          "EE", 
-          false
-        ]
+        {
+          "spelling": "EEClass", 
+          "transparent": false, 
+          "kind": "struct_declaration", 
+          "location": "test-input-1.cc:101:8"
+        }, 
+        {
+          "spelling": "EE", 
+          "transparent": false, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:102:13"
+        }
       ], 
-      "enum_type": "char", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "char", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#52", 
       "location": "test-input-1.cc:102:25", 
       "usage": "", 
       "spelling": "ee1", 
       "type": [
         "EEClass::EE", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1207,28 +1400,33 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 1, 
       "hierarchy": [
-        [
-          "EEClass", 
-          false
-        ], 
-        [
-          "EE", 
-          false
-        ]
+        {
+          "spelling": "EEClass", 
+          "transparent": false, 
+          "kind": "struct_declaration", 
+          "location": "test-input-1.cc:101:8"
+        }, 
+        {
+          "spelling": "EE", 
+          "transparent": false, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:102:13"
+        }
       ], 
-      "enum_type": "char", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "char", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#53", 
       "location": "test-input-1.cc:102:30", 
       "usage": "", 
       "spelling": "ee2", 
       "type": [
         "EEClass::EE", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1236,24 +1434,27 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 0, 
       "hierarchy": [
-        [
-          "EnumTy", 
-          true
-        ]
+        {
+          "spelling": "EnumTy", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:104:9"
+        }
       ], 
-      "enum_type": "unsigned int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "unsigned int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#54", 
       "location": "test-input-1.cc:104:16", 
       "usage": "", 
       "spelling": "eee1", 
       "type": [
         "EnumTy", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1261,24 +1462,27 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 1, 
       "hierarchy": [
-        [
-          "EnumTy", 
-          true
-        ]
+        {
+          "spelling": "EnumTy", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:104:9"
+        }
       ], 
-      "enum_type": "unsigned int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "unsigned int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#55", 
       "location": "test-input-1.cc:104:22", 
       "usage": "", 
       "spelling": "eee2", 
       "type": [
         "EnumTy", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1287,33 +1491,48 @@
     {
       "comment": "", 
       "parent_kind": "(global)", 
-      "hierarchy": "", 
-      "kind": "typedef", 
+      "hierarchy": [], 
+      "canonical_type": "EnumTy", 
+      "kind": "typedef_declaration", 
       "location": "test-input-1.cc:104:29", 
       "usage": "", 
       "spelling": "EnumTy", 
-      "typedef_underlying": "enum EnumTy"
+      "type_alias_chain": [
+        {
+          "spelling": "EnumTy", 
+          "location": "test-input-1.cc:104:29"
+        }, 
+        {
+          "spelling": "enum EnumTy", 
+          "location": "test-input-1.cc:104:9"
+        }
+      ], 
+      "id": "test-input-1.cc#56", 
+      "type_alias_underlying_type": "enum EnumTy"
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 0, 
       "hierarchy": [
-        [
-          "EnumTy", 
-          true
-        ]
+        {
+          "spelling": "EnumTy", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:104:9"
+        }
       ], 
-      "enum_type": "unsigned int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "unsigned int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#57", 
       "location": "test-input-1.cc:104:16", 
       "usage": "", 
       "spelling": "eee1", 
       "type": [
         "EnumTy", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1321,24 +1540,27 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 1, 
       "hierarchy": [
-        [
-          "EnumTy", 
-          true
-        ]
+        {
+          "spelling": "EnumTy", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:104:9"
+        }
       ], 
-      "enum_type": "unsigned int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "unsigned int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#58", 
       "location": "test-input-1.cc:104:22", 
       "usage": "", 
       "spelling": "eee2", 
       "type": [
         "EnumTy", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1346,24 +1568,27 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 0, 
       "hierarchy": [
-        [
-          "(anonymous enum at test-input-1.cc:105:1)", 
-          true
-        ]
+        {
+          "spelling": "(anonymous enum at test-input-1.cc:105:1)", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:105:1"
+        }
       ], 
-      "enum_type": "unsigned int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "unsigned int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#59", 
       "location": "test-input-1.cc:105:8", 
       "usage": "", 
       "spelling": "aaaaa", 
       "type": [
         "(anonymous enum at test-input-1.cc:105:1)", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1371,24 +1596,27 @@
     }, 
     {
       "comment": "", 
-      "parent_kind": "enum", 
+      "parent_kind": "enum_declaration", 
       "enum_value": 1, 
       "hierarchy": [
-        [
-          "(anonymous enum at test-input-1.cc:105:1)", 
-          true
-        ]
+        {
+          "spelling": "(anonymous enum at test-input-1.cc:105:1)", 
+          "transparent": true, 
+          "kind": "enum_declaration", 
+          "location": "test-input-1.cc:105:1"
+        }
       ], 
-      "enum_type": "unsigned int", 
-      "kind": "enum_constant", 
+      "enum_underlying_type": "unsigned int", 
+      "kind": "enum_constant_declaration", 
+      "id": "test-input-1.cc#60", 
       "location": "test-input-1.cc:105:15", 
       "usage": "", 
       "spelling": "bbbbb", 
       "type": [
         "(anonymous enum at test-input-1.cc:105:1)", 
         {
-          "typename": false, 
-          "typedef": false
+          "is_type_param": false, 
+          "is_type_alias": false
         }
       ], 
       "POD": true, 
@@ -1402,6 +1630,6 @@
     "test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members", 
     "test-input-1.cc:100:1: error: unknown type name 'Another'"
   ], 
-  "indexing_time": 0.015697956085205078, 
-  "traversing_time": 0.8695590496063232
+  "indexing_time": 0.014923095703125, 
+  "traversing_time": 0.926832914352417
 }
