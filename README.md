@@ -7,8 +7,8 @@ C++ file, user include paths (optional)
 
 #### Output
 - [x] write to stdout (e.g. [out-1.txt](out-1.txt) and [out-2.txt](out-2.txt))
-- [x] write to JSON (e.g. [out-1.json](out-1.json) and [out-2.json](out-2.json))
-- [ ] write to SQLite database
+- [x] write to JSON file (e.g. [out-1.json](out-1.json) and [out-2.json](out-2.json))
+- [x] as Python library: return dict (equivalent to the JSON file's content above)
 
 ## 1. Description
 This is a script that extracts symbols defined in C++, along with each symbol's meta information:
@@ -48,9 +48,6 @@ Can be used as a commandline tool or a Python library.
 # store as a JSON file:
 ./ccindex.py path/file.[h|cc]
 ./ccindex.py path/file.[h|cc] -i UserIncludeDir1/SubDir,UserIncludeDir2 -json out.json
-# store as a SQLite database:
-./ccindex.py path/file.[h|cc]
-./ccindex.py path/file.[h|cc] -i UserIncludeDir1/SubDir,UserIncludeDir2 -db out.db
 ```
 
 #### 4.2 As a Python library
@@ -76,9 +73,7 @@ result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 ## 5. Help message
 ```
 $ ./cindex.py -h
-usage: ccindex.py [-h] [-i USER_INCLUDE_PATHS] [-json [TO_JSON]]
-                  [-db [TO_DATABASE]]
-                  filename
+usage: ccindex.py [-h] [-i USER_INCLUDE_PATHS] [-json [TO_JSON]] filename
 
 Generate summary of symbols in a C++ source file
 
@@ -92,10 +87,8 @@ optional arguments:
                         dir1/dir2,dir3/dir4
   -json [TO_JSON], --to-json [TO_JSON]
                         write to a JSON file (default: out.json)
-  -db [TO_DATABASE], --to-database [TO_DATABASE]
-                        write to a SQLite database file (default: out.db)
 
-if neither -json nor -db is given, then write result to stdout
+if -json is not given, then write result to stdout
 ```
 
 ## 6. Test: produce the example output files

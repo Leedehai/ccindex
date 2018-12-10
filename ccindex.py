@@ -559,7 +559,7 @@ def _verify_include_paths(include_paths, user_include_paths):
         return False
     return True
 
-def _get_symbols(target_filename, user_include_paths_str, as_library, to_database, to_json):
+def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
     include_paths = SYS_INCLUDE_PATHS
     user_include_paths = []
     # user include paths
@@ -570,7 +570,7 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_databas
         sys.exit(1)
 
     # check printing
-    print_out = (not as_library) and (not to_json) and (not to_database)
+    print_out = (not as_library) and (not to_json)
 
     # build index of source
     start_time = time.time()
@@ -662,7 +662,7 @@ Library interface
 def get(target_filename, user_include_path_list=[]):
     result = _get_symbols(target_filename=args.filename,
                           user_include_paths_str=','.join(user_include_path_list),
-                          as_library=True, to_database=None, to_json=None)
+                          as_library=True, to_json=None)
     return result
 
 
@@ -672,15 +672,13 @@ Commandline utility interface
 
 def get_arg_parser():
     arg_parser = argparse.ArgumentParser(description="Generate summary of symbols in a C++ source file",
-                                         epilog="if neither -json nor -db is given, then write result to stdout")
+                                         epilog="if -json is not given, then write result to stdout")
     arg_parser.add_argument("filename", nargs=1, type=str, default="",
                             help="path to file to be parsed")
     arg_parser.add_argument("-i", "--user-include-paths", type=str, default="",
                         help="comma separated list of user include paths, e.g. dir1/dir2,dir3/dir4")
     arg_parser.add_argument("-json", "--to-json", nargs='?', type=str, const="out.json", default=None,
                         help="write to a JSON file (default: out.json)")
-    arg_parser.add_argument("-db", "--to-database", nargs='?', type=str, const="out.db", default=None,
-                        help="write to a SQLite database file (default: out.db)")
     return arg_parser
 
 if __name__ == "__main__":
@@ -697,5 +695,4 @@ if __name__ == "__main__":
     _get_symbols(target_filename=args.filename,
                  user_include_paths_str=args.user_include_paths,
                  as_library=False,
-                 to_database=args.to_database,
                  to_json=args.to_json)
