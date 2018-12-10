@@ -31,6 +31,8 @@ test-input-2.h:7:7
 (none)
 ::::: specifier
 []
+::::: size
+16
 ::::: POD
 False
 ::::: is_template
@@ -39,8 +41,8 @@ False
 class Complex;
 ::::: declaration_pretty
 class Complex;
-::::: size
-16
+::::: inheritance_list
+[]
 ::::: type
 NS::Complex
 {'is_type_param': False, 'is_type_alias': False}
@@ -446,6 +448,8 @@ test-input-2.h:30:7
 (none)
 ::::: specifier
 []
+::::: size
+1
 ::::: POD
 True
 ::::: is_template
@@ -454,8 +458,8 @@ False
 class Aother;
 ::::: declaration_pretty
 class Aother;
-::::: size
-1
+::::: inheritance_list
+[]
 ::::: type
 NS::Aother
 {'is_type_param': False, 'is_type_alias': False}
@@ -601,6 +605,8 @@ template <typename T, typename U> class BarTemplated;
 ::::: declaration_pretty
 template <typename T, typename U>
 template <typename T, typename U> class BarTemplated;
+::::: inheritance_list
+[]
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -707,6 +713,8 @@ test-input-2.h:46:7
 (none)
 ::::: specifier
 []
+::::: size
+1
 ::::: POD
 True
 ::::: is_template
@@ -715,8 +723,8 @@ False
 class Class2;
 ::::: declaration_pretty
 class Class2;
-::::: size
-1
+::::: inheritance_list
+[]
 ::::: type
 NS::Class2
 {'is_type_param': False, 'is_type_alias': False}
@@ -774,6 +782,8 @@ template <typename T1, typename T2> class Class3Templated;
 ::::: declaration_pretty
 template <typename T1, typename T2>
 template <typename T1, typename T2> class Class3Templated;
+::::: inheritance_list
+[]
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -822,6 +832,8 @@ test-input-2.h:55:11
 (none)
 ::::: specifier
 []
+::::: size
+None
 ::::: POD
 False
 ::::: access
@@ -832,8 +844,8 @@ False
 class Class3Mid;
 ::::: declaration_pretty
 class Class3Mid;
-::::: size
-None
+::::: inheritance_list
+[]
 ::::: type
 NS::Class3Templated::Class3Mid
 {'is_type_param': False, 'is_type_alias': False}
@@ -870,6 +882,8 @@ template <unsigned int N, typename U> class Class3InnerTemplated;
 ::::: declaration_pretty
 template <unsigned int N, typename U>
 template <unsigned int N, typename U> class Class3InnerTemplated;
+::::: inheritance_list
+[]
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1171,4 +1185,4 @@ True
 4
 ==================
 [indexing time] 0.02 sec
-[traverse time] 0.77 sec
+[traverse time] 0.69 sec

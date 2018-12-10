@@ -296,6 +296,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
 
 def _format_class_proto(cursor):
     template_params_list = []
+    inheritance_list = []
     is_final = False
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
@@ -304,6 +305,8 @@ def _format_class_proto(cursor):
             template_params_list.append((_format_type(c.type), c.spelling))
         elif c.kind == cindex.CursorKind.CXX_FINAL_ATTR:
             is_final = True
+        elif c.kind == cindex.CursorKind.CXX_BASE_SPECIFIER:
+            inheritance_list.append(str(c.spelling).replace("class ", "").replace("struct ", ""))
     template_header = ""
     if template_params_list:
         template_header = "template <%s>" % ", ".join(["%s %s" % item for item in template_params_list])
@@ -311,7 +314,12 @@ def _format_class_proto(cursor):
     class_name_str = class_name_str if not is_final else ("%s final" % class_name_str)
     class_name_str = class_name_str if not template_header else "%s %s" % (template_header, class_name_str)
     class_name_str_pretty = class_name_str if not template_header else "%s\n%s" % (template_header, class_name_str)
-    return (class_name_str.strip(), class_name_str_pretty.strip()), template_params_list, is_final
+    return (
+        (class_name_str.strip(), class_name_str_pretty.strip()),
+        template_params_list,
+        is_final,
+        inheritance_list
+    )
 
 """
 Index visiting
@@ -373,6 +381,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["is_template"] = True if class_proto_tuple[1] else False# bool
         symbol["template_args_list"] = class_proto_tuple[1] # list of tuple (type, arg name)
         symbol["specifier"] = ["final"] if class_proto_tuple[2] else [] # "final" specifier
+        symbol["inheritance_list"] = class_proto_tuple[3] # list of str
         symbol["is_abstract"] = c.is_abstract_record() # bool
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
@@ -548,13 +557,13 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_databas
     result = {
         "symbols": symbols, # list of symbol dicts
         "errors": errors,   # list of error strings
-        "indexing_time": indexing_time,    # float, in seconds
-        "traversing_time": traversing_time # float, in seconds
+        "time_indexing": indexing_time,    # float, in seconds
+        "time_traversing": traversing_time # float, in seconds
     }
     if to_json:
         import json
         with open(to_json, 'w') as json_file: # overwrite if exists
-            json.dump(result, json_file, indent=2)
+            json.dump(result, json_file, indent=2, sort_keys=True)
     return result
 
 ordered_keys = [

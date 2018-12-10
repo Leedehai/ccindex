@@ -87,6 +87,8 @@ test-input-1.cc:11:7
 comment for MyClass
 ::::: specifier
 []
+::::: size
+48
 ::::: POD
 False
 ::::: is_template
@@ -95,8 +97,8 @@ False
 class MyClass;
 ::::: declaration_pretty
 class MyClass;
-::::: size
-48
+::::: inheritance_list
+[]
 ::::: type
 MyClass
 {'is_type_param': False, 'is_type_alias': False}
@@ -472,6 +474,8 @@ test-input-1.cc:32:8
 (none)
 ::::: specifier
 []
+::::: size
+8
 ::::: POD
 True
 ::::: access
@@ -482,8 +486,8 @@ False
 class InnerClass;
 ::::: declaration_pretty
 class InnerClass;
-::::: size
-8
+::::: inheritance_list
+[]
 ::::: type
 MyClass::InnerClass
 {'is_type_param': False, 'is_type_alias': False}
@@ -538,7 +542,7 @@ test-input-1.cc:36:15
 ::::: specifier
 ['=0']
 ::::: method_property
-['const', 'virtual', 'pure virtual']
+['const', 'virtual', 'pure_virtual']
 ::::: args_list
 []
 ::::: access
@@ -714,6 +718,8 @@ template <typename T, char C> class templateClass;
 ::::: declaration_pretty
 template <typename T, char C>
 template <typename T, char C> class templateClass;
+::::: inheritance_list
+[]
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -910,6 +916,8 @@ test-input-1.cc:72:8
 (none)
 ::::: specifier
 []
+::::: size
+8
 ::::: POD
 True
 ::::: is_template
@@ -918,8 +926,8 @@ False
 class Class;
 ::::: declaration_pretty
 class Class;
-::::: size
-8
+::::: inheritance_list
+[]
 ::::: type
 customNS::Class
 {'is_type_param': False, 'is_type_alias': False}
@@ -967,6 +975,8 @@ test-input-1.cc:77:17
 (none)
 ::::: specifier
 ['final']
+::::: size
+8
 ::::: POD
 True
 ::::: is_template
@@ -975,8 +985,8 @@ False
 class Class final;
 ::::: declaration_pretty
 class Class final;
-::::: size
-8
+::::: inheritance_list
+[]
 ::::: type
 customNS::Class
 {'is_type_param': False, 'is_type_alias': False}
@@ -1252,6 +1262,8 @@ test-input-1.cc:89:7
 (none)
 ::::: specifier
 []
+::::: size
+1
 ::::: POD
 True
 ::::: is_template
@@ -1260,8 +1272,8 @@ False
 class classFriend;
 ::::: declaration_pretty
 class classFriend;
-::::: size
-1
+::::: inheritance_list
+[]
 ::::: type
 classFriend
 {'is_type_param': False, 'is_type_alias': False}
@@ -1432,6 +1444,8 @@ test-input-1.cc:101:8
 (none)
 ::::: specifier
 []
+::::: size
+1
 ::::: POD
 True
 ::::: is_template
@@ -1440,8 +1454,8 @@ False
 class EEClass;
 ::::: declaration_pretty
 class EEClass;
-::::: size
-1
+::::: inheritance_list
+[]
 ::::: type
 EEClass
 {'is_type_param': False, 'is_type_alias': False}
@@ -1714,7 +1728,7 @@ True
 ::::: id
 test-input-1.cc#61
 ::::: spelling
-VClass
+BaseClass
 ::::: kind
 class_declaration
 ::::: hierarchy
@@ -1727,16 +1741,84 @@ test-input-1.cc:107:7
 (none)
 ::::: specifier
 []
+::::: size
+1
+::::: POD
+True
+::::: is_template
+False
+::::: declaration
+class BaseClass;
+::::: declaration_pretty
+class BaseClass;
+::::: inheritance_list
+[]
+::::: type
+BaseClass
+{'is_type_param': False, 'is_type_alias': False}
+::::: is_abstract
+False
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-1.cc#62
+::::: spelling
+BaseClass2
+::::: kind
+class_template
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-1.cc:109:8
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_template
+True
+::::: declaration
+template <typename T> class BaseClass2;
+::::: declaration_pretty
+template <typename T>
+template <typename T> class BaseClass2;
+::::: inheritance_list
+[]
+::::: is_abstract
+False
+::::: template_args_list
+[('typename', 'T')]
+==================
+::::: id
+test-input-1.cc#63
+::::: spelling
+VClass
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-1.cc:111:7
+::::: comment
+(none)
+::::: specifier
+['final']
+::::: size
+8
 ::::: POD
 False
 ::::: is_template
 False
 ::::: declaration
-class VClass;
+class VClass final;
 ::::: declaration_pretty
-class VClass;
-::::: size
-8
+class VClass final;
+::::: inheritance_list
+['BaseClass', 'BaseClass2<int>']
 ::::: type
 VClass
 {'is_type_param': False, 'is_type_alias': False}
@@ -1746,18 +1828,18 @@ True
 []
 ==================
 ::::: id
-test-input-1.cc#62
+test-input-1.cc#64
 ::::: spelling
 VClass
 ::::: kind
 constructor
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:107:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:111:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:109:5
+test-input-1.cc:113:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1780,24 +1862,24 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#63
+test-input-1.cc#65
 ::::: spelling
 ~VClass
 ::::: kind
 destructor
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:107:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:111:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:110:13
+test-input-1.cc:114:13
 ::::: comment
 (none)
 ::::: specifier
 ['=0']
 ::::: destructor_property
-['virtual', 'pure virtual']
+['virtual', 'pure_virtual']
 ::::: args_list
 []
 ::::: access
@@ -1814,24 +1896,24 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#64
+test-input-1.cc#66
 ::::: spelling
 foo
 ::::: kind
 method
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:107:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:111:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:111:18
+test-input-1.cc:115:18
 ::::: comment
 (none)
 ::::: specifier
 ['=0']
 ::::: method_property
-['virtual', 'pure virtual']
+['virtual', 'pure_virtual']
 ::::: args_list
 []
 ::::: access
@@ -1857,5 +1939,7 @@ test-input-1.cc:85:68: error: unknown type name 'Another'
 test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
 [Diagnostic #5]
 test-input-1.cc:100:1: error: unknown type name 'Another'
+[Diagnostic #6]
+test-input-1.cc:111:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
 [indexing time] 0.02 sec
-[traverse time] 0.89 sec
+[traverse time] 0.82 sec

@@ -104,7 +104,11 @@ struct EEClass {
 typedef enum { eee1, eee2 } EnumTy;
 enum { aaaaa, bbbbb };
 
-class VClass {
+class BaseClass {};
+template <typename T>
+struct BaseClass2 {};
+
+class VClass final : private BaseClass, BaseClass2<int> {
 public:
     VClass();
     virtual ~VClass() = 0;
