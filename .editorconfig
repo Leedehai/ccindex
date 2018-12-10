@@ -1,0 +1,4 @@
+# Use this to make GitHub respect my indent-size
+[*.{py, json}]
+indent_style = tab
+indent_size = 4
