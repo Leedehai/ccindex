@@ -120,4 +120,11 @@ public:
 
 int *arrIntPtr[5];
 char arrChar[] = { 'h', 'e', 'l', 'l', 'o', '\n' };
+
 BaseClass arrVar[];
+
+#define FUNCS(func_name, T)   \
+	void func_name(T &in) {}  \
+	void func_name(T &&in) {}
+FUNCS(returnVoid, char *) // two functions in one line; they'll have the same source location
+

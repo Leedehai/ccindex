@@ -6,7 +6,7 @@
     "test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members", 
     "test-input-1.cc:100:1: error: unknown type name 'Another'", 
     "test-input-1.cc:113:7: warning: abstract class is marked 'final' [-Wabstract-final-class]", 
-    "test-input-1.cc:123:11: error: definition of variable with array type needs an explicit size or an initializer"
+    "test-input-1.cc:124:11: error: definition of variable with array type needs an explicit size or an initializer"
   ], 
   "symbols": [
     {
@@ -1999,7 +1999,7 @@
       "hierarchy": [], 
       "id": "test-input-1.cc#70", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:123:11", 
+      "location": "test-input-1.cc:124:11", 
       "parent_kind": "(global)", 
       "size": null, 
       "spelling": "arrVar", 
@@ -2015,8 +2015,52 @@
         }
       ], 
       "usage": ""
+    }, 
+    {
+      "args_list": [
+        [
+          "char*&", 
+          "in"
+        ]
+      ], 
+      "comment": "", 
+      "declaration": "void returnVoid(char*& in);", 
+      "declaration_pretty": "void returnVoid(char*& in);", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#71", 
+      "is_template": false, 
+      "kind": "function_declaration", 
+      "location": "test-input-1.cc:129:1", 
+      "parent_kind": "(global)", 
+      "return_type": "void", 
+      "specifier": [], 
+      "spelling": "returnVoid", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "args_list": [
+        [
+          "char*&&", 
+          "in"
+        ]
+      ], 
+      "comment": "", 
+      "declaration": "void returnVoid(char*&& in);", 
+      "declaration_pretty": "void returnVoid(char*&& in);", 
+      "hierarchy": [], 
+      "id": "test-input-1.cc#72", 
+      "is_template": false, 
+      "kind": "function_declaration", 
+      "location": "test-input-1.cc:129:1", 
+      "parent_kind": "(global)", 
+      "return_type": "void", 
+      "specifier": [], 
+      "spelling": "returnVoid", 
+      "template_args_list": [], 
+      "usage": ""
     }
   ], 
-  "time_indexing": 0.015707969665527344, 
-  "time_traversing": 1.231767177581787
+  "time_indexing": 0.01666712760925293, 
+  "time_traversing": 1.2471990585327148
 }

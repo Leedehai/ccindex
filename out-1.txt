@@ -2014,7 +2014,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:123:11
+test-input-1.cc:124:11
 ::::: comment
 (none)
 ::::: type
@@ -2024,6 +2024,64 @@ BaseClass[]
 True
 ::::: size
 None
+==================
+::::: id
+test-input-1.cc#71
+::::: spelling
+returnVoid
+::::: kind
+function_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-1.cc:129:1
+::::: comment
+(none)
+::::: specifier
+[]
+::::: args_list
+[('char*&', 'in')]
+::::: is_template
+False
+::::: declaration
+void returnVoid(char*& in);
+::::: declaration_pretty
+void returnVoid(char*& in);
+::::: return_type
+void
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-1.cc#72
+::::: spelling
+returnVoid
+::::: kind
+function_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-1.cc:129:1
+::::: comment
+(none)
+::::: specifier
+[]
+::::: args_list
+[('char*&&', 'in')]
+::::: is_template
+False
+::::: declaration
+void returnVoid(char*&& in);
+::::: declaration_pretty
+void returnVoid(char*&& in);
+::::: return_type
+void
+::::: template_args_list
+[]
 ==================
 [Diagnostic #1]
 test-input-1.cc:21:10: error: return type 'MyClass' is an abstract class
@@ -2038,6 +2096,6 @@ test-input-1.cc:100:1: error: unknown type name 'Another'
 [Diagnostic #6]
 test-input-1.cc:113:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
 [Diagnostic #7]
-test-input-1.cc:123:11: error: definition of variable with array type needs an explicit size or an initializer
+test-input-1.cc:124:11: error: definition of variable with array type needs an explicit size or an initializer
 [time indexing] 0.02 sec
-[time traverse] 1.19 sec
+[time traverse] 1.22 sec
