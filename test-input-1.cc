@@ -107,8 +107,11 @@ enum { aaaaa, bbbbb };
 class BaseClass {};
 template <typename T>
 struct BaseClass2 {};
+template <typename T>
+class ClassAgain {};
 
-class VClass final : private BaseClass, BaseClass2<int> {
+class VClass final
+: private BaseClass, BaseClass2<ClassAgain<int>>, public virtual EEClass {
 public:
     VClass();
     virtual ~VClass() = 0;

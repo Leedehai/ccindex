@@ -13,6 +13,7 @@
     }, 
     {
       "POD": false, 
+      "base_clause": [], 
       "comment": "", 
       "declaration": "class Complex;", 
       "declaration_pretty": "class Complex;", 
@@ -25,7 +26,6 @@
         }
       ], 
       "id": "test-input-2.h#2", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
@@ -39,7 +39,8 @@
         "NS::Complex", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 16
         }
       ], 
       "usage": ""
@@ -73,7 +74,8 @@
         "double", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 8
         }
       ], 
       "usage": ""
@@ -107,7 +109,8 @@
         "double", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 8
         }
       ], 
       "usage": ""
@@ -336,7 +339,8 @@
         "NS::E1", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 1
         }
       ], 
       "usage": ""
@@ -370,7 +374,8 @@
         "NS::E1", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 1
         }
       ], 
       "usage": ""
@@ -423,7 +428,8 @@
         "NS::E2", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 8
         }
       ], 
       "usage": ""
@@ -457,13 +463,15 @@
         "NS::E2", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 8
         }
       ], 
       "usage": ""
     }, 
     {
       "POD": true, 
+      "base_clause": [], 
       "comment": "", 
       "declaration": "class Aother;", 
       "declaration_pretty": "class Aother;", 
@@ -476,7 +484,6 @@
         }
       ], 
       "id": "test-input-2.h#16", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
@@ -490,7 +497,8 @@
         "NS::Aother", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 1
         }
       ], 
       "usage": ""
@@ -556,7 +564,8 @@
         "NS::Aother::E", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 4
         }
       ], 
       "usage": ""
@@ -596,7 +605,8 @@
         "NS::Aother::E", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 4
         }
       ], 
       "usage": ""
@@ -644,6 +654,7 @@
       "usage": ""
     }, 
     {
+      "base_clause": [], 
       "comment": "", 
       "declaration": "template <typename T, typename U> class BarTemplated;", 
       "declaration_pretty": "template <typename T, typename U>\ntemplate <typename T, typename U> class BarTemplated;", 
@@ -656,7 +667,6 @@
         }
       ], 
       "id": "test-input-2.h#21", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
@@ -710,7 +720,8 @@
             "index": 0, 
             "location": "test-input-2.h:39:7", 
             "spelling": "BarTemplated"
-          }
+          }, 
+          "type_size": null
         }
       ], 
       "usage": ""
@@ -749,7 +760,8 @@
             "index": 1, 
             "location": "test-input-2.h:39:7", 
             "spelling": "BarTemplated"
-          }
+          }, 
+          "type_size": null
         }
       ], 
       "usage": ""
@@ -783,13 +795,15 @@
         "int", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 4
         }
       ], 
       "usage": ""
     }, 
     {
       "POD": true, 
+      "base_clause": [], 
       "comment": "", 
       "declaration": "class Class2;", 
       "declaration_pretty": "class Class2;", 
@@ -802,7 +816,6 @@
         }
       ], 
       "id": "test-input-2.h#25", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
@@ -816,7 +829,8 @@
         "NS::Class2", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": 1
         }
       ], 
       "usage": ""
@@ -858,6 +872,7 @@
       "usage": ""
     }, 
     {
+      "base_clause": [], 
       "comment": "", 
       "declaration": "template <typename T1, typename T2> class Class3Templated;", 
       "declaration_pretty": "template <typename T1, typename T2>\ntemplate <typename T1, typename T2> class Class3Templated;", 
@@ -870,7 +885,6 @@
         }
       ], 
       "id": "test-input-2.h#27", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
@@ -929,6 +943,7 @@
     {
       "POD": false, 
       "access": "private", 
+      "base_clause": [], 
       "comment": "", 
       "declaration": "class Class3Mid;", 
       "declaration_pretty": "class Class3Mid;", 
@@ -947,7 +962,6 @@
         }
       ], 
       "id": "test-input-2.h#29", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
@@ -961,13 +975,15 @@
         "NS::Class3Templated::Class3Mid", 
         {
           "is_type_alias": false, 
-          "is_type_param": false
+          "is_type_param": false, 
+          "type_size": null
         }
       ], 
       "usage": ""
     }, 
     {
       "access": "private", 
+      "base_clause": [], 
       "comment": "", 
       "declaration": "template <unsigned int N, typename U> class Class3InnerTemplated;", 
       "declaration_pretty": "template <unsigned int N, typename U>\ntemplate <unsigned int N, typename U> class Class3InnerTemplated;", 
@@ -992,7 +1008,6 @@
         }
       ], 
       "id": "test-input-2.h#30", 
-      "inheritance_list": [], 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
@@ -1058,7 +1073,8 @@
             "index": 1, 
             "location": "test-input-2.h:57:15", 
             "spelling": "Class3InnerTemplated"
-          }
+          }, 
+          "type_size": null
         }
       ], 
       "usage": ""
@@ -1164,7 +1180,8 @@
               "spelling": "U"
             }
           ], 
-          "type_alias_underlying_type": "U"
+          "type_alias_underlying_type": "U", 
+          "type_size": null
         }
       ], 
       "usage": ""
@@ -1210,7 +1227,8 @@
               "spelling": "T2"
             }
           ], 
-          "type_alias_underlying_type": "T2"
+          "type_alias_underlying_type": "T2", 
+          "type_size": null
         }
       ], 
       "usage": ""
@@ -1310,7 +1328,8 @@
               "spelling": "int"
             }
           ], 
-          "type_alias_underlying_type": "int"
+          "type_alias_underlying_type": "int", 
+          "type_size": 4
         }
       ], 
       "usage": ""
@@ -1348,7 +1367,8 @@
               "spelling": "int"
             }
           ], 
-          "type_alias_underlying_type": "int"
+          "type_alias_underlying_type": "int", 
+          "type_size": 4
         }
       ], 
       "usage": ""
@@ -1415,7 +1435,8 @@
               "spelling": "float"
             }
           ], 
-          "type_alias_underlying_type": "float"
+          "type_alias_underlying_type": "float", 
+          "type_size": 4
         }
       ], 
       "usage": ""
@@ -1490,12 +1511,13 @@
               "spelling": "float"
             }
           ], 
-          "type_alias_underlying_type": "NS::Float"
+          "type_alias_underlying_type": "NS::Float", 
+          "type_size": 4
         }
       ], 
       "usage": ""
     }
   ], 
-  "time_indexing": 0.017117023468017578, 
-  "time_traversing": 0.7566280364990234
+  "time_indexing": 0.016479969024658203, 
+  "time_traversing": 1.0404129028320312
 }

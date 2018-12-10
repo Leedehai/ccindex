@@ -154,9 +154,9 @@ def _format_hierarchy(cursor):
     return hierarchy_dict_list, parent_kind_str
 
 def _format_syntax_kind(kind):
-    kind_str = str(kind).split(".")[-1]
-    kind_str = kind_str.replace("CXX_", "").replace("_DECL", "_DECLARATION").replace(" ", "").replace("VAR_", "VARIABLE_")
-    return kind_str.lower()
+    kind_str = str(kind).split(".")[-1].lower().replace("cxx_", "")
+    kind_str = kind_str.replace("_decl", "_declaration").replace("var_", "variable_")
+    return kind_str
 
 def _find_hierarchy_item_for_owning_template(hierarchy, template_level):
     template_hierarchy_list = [ item for item in hierarchy if ("template" in item["kind"]) ]
@@ -167,7 +167,7 @@ def _format_type_param_decl_location(type_obj, hierarchy):
     # the canonical type of a template type param is "type-parameter-X-Y",
     # where X is the level of nested template (the outmost is 0), and Y
     # is the position of this param (starts with 0) in that level's template
-    # declaration. e.g.
+    # declaration. Example:
     # template <typename T> class A {                      // level 0
     #     class Class B {                                  // not a template declaration
     #         template <unsigned N, typename U> class C {  // level 1
@@ -186,14 +186,18 @@ def _format_type_param_decl_location(type_obj, hierarchy):
         "index":    template_param_pos if owning_template else -1,
     }
 
+def _format_type_spelling(type_str):
+    type_str = type_str.replace("std::__1::", "std::")
+    type_str = re.sub(r" *\*", "*", type_str)     # e.g. "int *" => "int*"
+    type_str = re.sub(r" *&", "&", type_str)      # e.g. "int &" => "int&"
+    type_str = re.sub(r"\> *\>", ">>", type_str)  # e.g. "C1<C2<int> >" => "C1<C2<int>>"
+    return type_str
+
 def _format_type(type_obj):
     type_str = type_obj.spelling
     if type_str.startswith("type-parameter-"):
         return "(type parameter)"
-    type_str = type_str.replace("std::__1::", "std::")
-    type_str = re.sub(r" *\*", "*", type_str) # e.g. "int *" => "int*"
-    type_str = re.sub(r" *&", "&", type_str)  # e.g. "int &" => "int&"
-    return type_str
+    return _format_type_spelling(type_str)
 
 def _get_type_alias_chain(type_obj):
     chain = [ type_obj ] # list of cindex.Type object
@@ -256,7 +260,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     postfix_str_list = []
     if cursor.is_const_method():
         postfix_str_list.append("const")
-    # if cursor.is_volatile_method(): # clang.cindex didn't provide this
+    # if cursor.is_volatile_method(): # defect in clang.index: this method not provided
     #     postfix_str_list.append("volatile")
     if is_final:
         postfix_str_list.append("final")
@@ -294,9 +298,10 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
         (is_final, is_override, is_pure_virtual)
     )
 
+inheritance_access_specifiers = ["public", "protected", "private"]
 def _format_class_proto(cursor):
     template_params_list = []
-    inheritance_list = []
+    base_list = []
     is_final = False
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
@@ -306,7 +311,24 @@ def _format_class_proto(cursor):
         elif c.kind == cindex.CursorKind.CXX_FINAL_ATTR:
             is_final = True
         elif c.kind == cindex.CursorKind.CXX_BASE_SPECIFIER:
-            inheritance_list.append(str(c.spelling).replace("class ", "").replace("struct ", ""))
+            base_spelling = str(c.spelling).replace("class ", "").replace("struct ", "")
+            base_spelling = _format_type_spelling(base_spelling)
+            inheritance_access_specifier = "public" # the default
+            is_virtual_inheritance = False # the default
+            # defect in clang.cindex:
+            #   no way to check inheritance access and virtual-ness from Cursor's method,
+            #   soI have to go through the tokens
+            for t in c.get_tokens():
+                if t.kind == cindex.TokenKind.KEYWORD:
+                    if t.spelling in inheritance_access_specifiers:
+                        inheritance_access_specifier = t.spelling
+                    if t.spelling == "virtual":
+                        is_virtual_inheritance = True
+            base_list.append({
+                "access": inheritance_access_specifier,
+                "virtual": is_virtual_inheritance,
+                "base":  base_spelling
+            })
     template_header = ""
     if template_params_list:
         template_header = "template <%s>" % ", ".join(["%s %s" % item for item in template_params_list])
@@ -318,7 +340,7 @@ def _format_class_proto(cursor):
         (class_name_str.strip(), class_name_str_pretty.strip()),
         template_params_list,
         is_final,
-        inheritance_list
+        base_list
     )
 
 """
@@ -381,19 +403,20 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["is_template"] = True if class_proto_tuple[1] else False# bool
         symbol["template_args_list"] = class_proto_tuple[1] # list of tuple (type, arg name)
         symbol["specifier"] = ["final"] if class_proto_tuple[2] else [] # "final" specifier
-        symbol["inheritance_list"] = class_proto_tuple[3] # list of str
+        symbol["base_clause"] = class_proto_tuple[3] # list of str
         symbol["is_abstract"] = c.is_abstract_record() # bool
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
     if c.kind in val_like_CursorKind + [ cindex.CursorKind.CLASS_DECL, cindex.CursorKind.STRUCT_DECL ]:
         sizeof_type = c.type.get_size()
-        symbol["size"] = sizeof_type if sizeof_type > 0 else None # int or NoneType
+        symbol["size"] = sizeof_type if sizeof_type > 0 else None # int or NoneType (e.g. type param)
         symbol["POD"] = c.type.is_pod() # bool (POD: Plain Old Data)
         # C++ has a very complicated type system
         if c.type.kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
             symbol["type"] = (
                 _format_type(c.type), {
-                    # though this type is not a type param, yet as a
+                    "type_size": symbol["size"], # int or NoneType
+                    # though this type itself is not a type param, yet as a
                     # type alias, its underlying type may be a type param
                     "is_type_param": False, # bool
                     "is_type_alias": True,  # bool
@@ -404,12 +427,13 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
                     # real type, alias completely resoluted
                     # if it is not a type param, then it is the same as type_alias_chain[-1].spelling;
                     # if it is a type param, then it is "(type parameter)"
-                    "canonical_type": _format_type(c.type.get_canonical()) # str
+                    "canonical_type": _format_type(c.type.get_canonical()), # str
                 }
             ) # tuple of (str, dict)
         elif c.type.kind == cindex.TypeKind.UNEXPOSED:
             symbol["type"] = (
                 _format_type(c.type), {
+                    "type_size": symbol["size"], # int or NoneType
                     "is_type_param": True,  # bool
                     "is_type_alias": False, # bool
                     "type_param_decl_location": _format_type_param_decl_location(c.type, symbol["hierarchy"]), # dict
@@ -418,6 +442,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         else:
             symbol["type"] = (
                 _format_type(c.type), {
+                    "type_size": symbol["size"], # int or NoneType
                     "is_type_param": False, # bool
                     "is_type_alias": False  # bool
                 }
@@ -551,8 +576,8 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_databas
         if print_out:
             print("[Diagnostic #%d]\n%s" % (error_count, errors[error_count - 1]))
     if print_out:
-        print("[indexing time] %.2f sec" % indexing_time)
-        print("[traverse time] %.2f sec" % traversing_time)
+        print("[time indexing] %.2f sec" % indexing_time)
+        print("[time traverse] %.2f sec" % traversing_time)
     # build result
     result = {
         "symbols": symbols, # list of symbol dicts

@@ -15,7 +15,7 @@ test-input-1.cc:6:11
 (none)
 ::::: type
 const int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -65,7 +65,7 @@ test-input-1.cc:8:26
 ::::: comment
 (none)
 ::::: canonical_type
-std::vector<int, std::allocator<int> >
+std::vector<int, std::allocator<int>>
 ::::: type_alias_chain
 [{'spelling': 'Int', 'location': 'test-input-1.cc:8:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}]
 ::::: type_alias_underlying_type
@@ -87,8 +87,8 @@ test-input-1.cc:11:7
 comment for MyClass
 ::::: specifier
 []
-::::: size
-48
+::::: base_clause
+[]
 ::::: POD
 False
 ::::: is_template
@@ -97,11 +97,11 @@ False
 class MyClass;
 ::::: declaration_pretty
 class MyClass;
-::::: inheritance_list
-[]
+::::: size
+48
 ::::: type
 MyClass
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 48}
 ::::: is_abstract
 True
 ::::: template_args_list
@@ -128,7 +128,7 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -423,7 +423,7 @@ False
 private
 ::::: type
 Int
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'std::vector<int, std::allocator<int> >', 'type_alias_underlying_type': 'std::vector<int>', 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:8:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}]}
+{'is_type_alias': True, 'canonical_type': 'std::vector<int, std::allocator<int>>', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:8:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>'}
 ::::: POD
 False
 ::::: size
@@ -451,7 +451,7 @@ False
 private
 ::::: type
 const float
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -474,8 +474,8 @@ test-input-1.cc:32:8
 (none)
 ::::: specifier
 []
-::::: size
-8
+::::: base_clause
+[]
 ::::: POD
 True
 ::::: access
@@ -486,11 +486,11 @@ False
 class InnerClass;
 ::::: declaration_pretty
 class InnerClass;
-::::: inheritance_list
-[]
+::::: size
+8
 ::::: type
 MyClass::InnerClass
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -518,7 +518,7 @@ False
 private
 ::::: type
 double
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -711,6 +711,8 @@ test-input-1.cc:58:7
 (none)
 ::::: specifier
 []
+::::: base_clause
+[]
 ::::: is_template
 True
 ::::: declaration
@@ -718,8 +720,6 @@ template <typename T, char C> class templateClass;
 ::::: declaration_pretty
 template <typename T, char C>
 template <typename T, char C> class templateClass;
-::::: inheritance_list
-[]
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -747,7 +747,7 @@ False
 private
 ::::: type
 T
-{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'templateClass', 'location': 'test-input-1.cc:58:7'}, 'is_type_alias': False}
+{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'templateClass', 'location': 'test-input-1.cc:58:7'}, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -775,7 +775,7 @@ False
 private
 ::::: type
 char
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -821,7 +821,7 @@ test-input-1.cc:65:2
 int
 ::::: type
 E
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -848,7 +848,7 @@ test-input-1.cc:66:2
 int
 ::::: type
 E
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -916,8 +916,8 @@ test-input-1.cc:72:8
 (none)
 ::::: specifier
 []
-::::: size
-8
+::::: base_clause
+[]
 ::::: POD
 True
 ::::: is_template
@@ -926,11 +926,11 @@ False
 class Class;
 ::::: declaration_pretty
 class Class;
-::::: inheritance_list
-[]
+::::: size
+8
 ::::: type
 customNS::Class
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -952,7 +952,7 @@ test-input-1.cc:75:12
 (none)
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -975,8 +975,8 @@ test-input-1.cc:77:17
 (none)
 ::::: specifier
 ['final']
-::::: size
-8
+::::: base_clause
+[]
 ::::: POD
 True
 ::::: is_template
@@ -985,11 +985,11 @@ False
 class Class final;
 ::::: declaration_pretty
 class Class final;
-::::: inheritance_list
-[]
+::::: size
+8
 ::::: type
 customNS::Class
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1017,7 +1017,7 @@ True
 private
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1045,7 +1045,7 @@ False
 private
 ::::: type
 const int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1073,7 +1073,7 @@ True
 private
 ::::: type
 const int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1101,7 +1101,7 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1262,8 +1262,8 @@ test-input-1.cc:89:7
 (none)
 ::::: specifier
 []
-::::: size
-1
+::::: base_clause
+[]
 ::::: POD
 True
 ::::: is_template
@@ -1272,11 +1272,11 @@ False
 class classFriend;
 ::::: declaration_pretty
 class classFriend;
-::::: inheritance_list
-[]
+::::: size
+1
 ::::: type
 classFriend
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1327,7 +1327,7 @@ test-input-1.cc:92:5
 (none)
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1349,7 +1349,7 @@ test-input-1.cc:92:10
 (none)
 ::::: type
 int*
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -1371,7 +1371,7 @@ test-input-1.cc:93:20
 (none)
 ::::: type
 std::map<int, int>
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int> > >', 'type_alias_underlying_type': '', 'type_alias_chain': [{'spelling': 'std::map<int, int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28'}]}
+{'is_type_alias': True, 'canonical_type': 'std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::map<int, int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28'}], 'type_size': 24, 'type_alias_underlying_type': ''}
 ::::: POD
 False
 ::::: size
@@ -1422,7 +1422,7 @@ test-input-1.cc:100:9
 (none)
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1444,8 +1444,8 @@ test-input-1.cc:101:8
 (none)
 ::::: specifier
 []
-::::: size
-1
+::::: base_clause
+[]
 ::::: POD
 True
 ::::: is_template
@@ -1454,11 +1454,11 @@ False
 class EEClass;
 ::::: declaration_pretty
 class EEClass;
-::::: inheritance_list
-[]
+::::: size
+1
 ::::: type
 EEClass
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1508,7 +1508,7 @@ test-input-1.cc:102:25
 char
 ::::: type
 EEClass::EE
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -1536,7 +1536,7 @@ test-input-1.cc:102:30
 char
 ::::: type
 EEClass::EE
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -1563,7 +1563,7 @@ test-input-1.cc:104:16
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1590,7 +1590,7 @@ test-input-1.cc:104:22
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1638,7 +1638,7 @@ test-input-1.cc:104:16
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1665,7 +1665,7 @@ test-input-1.cc:104:22
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1692,7 +1692,7 @@ test-input-1.cc:105:8
 unsigned int
 ::::: type
 (anonymous enum at test-input-1.cc:105:1)
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1719,7 +1719,7 @@ test-input-1.cc:105:15
 unsigned int
 ::::: type
 (anonymous enum at test-input-1.cc:105:1)
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1741,8 +1741,8 @@ test-input-1.cc:107:7
 (none)
 ::::: specifier
 []
-::::: size
-1
+::::: base_clause
+[]
 ::::: POD
 True
 ::::: is_template
@@ -1751,11 +1751,11 @@ False
 class BaseClass;
 ::::: declaration_pretty
 class BaseClass;
-::::: inheritance_list
-[]
+::::: size
+1
 ::::: type
 BaseClass
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1777,6 +1777,8 @@ test-input-1.cc:109:8
 (none)
 ::::: specifier
 []
+::::: base_clause
+[]
 ::::: is_template
 True
 ::::: declaration
@@ -1784,8 +1786,6 @@ template <typename T> class BaseClass2;
 ::::: declaration_pretty
 template <typename T>
 template <typename T> class BaseClass2;
-::::: inheritance_list
-[]
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1794,9 +1794,9 @@ False
 ::::: id
 test-input-1.cc#63
 ::::: spelling
-VClass
+ClassAgain
 ::::: kind
-class_declaration
+class_template
 ::::: hierarchy
 (none)
 ::::: parent_kind
@@ -1806,9 +1806,39 @@ test-input-1.cc:111:7
 ::::: comment
 (none)
 ::::: specifier
+[]
+::::: base_clause
+[]
+::::: is_template
+True
+::::: declaration
+template <typename T> class ClassAgain;
+::::: declaration_pretty
+template <typename T>
+template <typename T> class ClassAgain;
+::::: is_abstract
+False
+::::: template_args_list
+[('typename', 'T')]
+==================
+::::: id
+test-input-1.cc#64
+::::: spelling
+VClass
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-1.cc:113:7
+::::: comment
+(none)
+::::: specifier
 ['final']
-::::: size
-8
+::::: base_clause
+[{'access': 'private', 'base': 'BaseClass', 'virtual': False}, {'access': 'public', 'base': 'BaseClass2<ClassAgain<int>>', 'virtual': False}, {'access': 'public', 'base': 'EEClass', 'virtual': True}]
 ::::: POD
 False
 ::::: is_template
@@ -1817,29 +1847,29 @@ False
 class VClass final;
 ::::: declaration_pretty
 class VClass final;
-::::: inheritance_list
-['BaseClass', 'BaseClass2<int>']
+::::: size
+8
 ::::: type
 VClass
-{'is_type_param': False, 'is_type_alias': False}
+{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
 ::::: is_abstract
 True
 ::::: template_args_list
 []
 ==================
 ::::: id
-test-input-1.cc#64
+test-input-1.cc#65
 ::::: spelling
 VClass
 ::::: kind
 constructor
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:111:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:113:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:113:5
+test-input-1.cc:116:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1862,18 +1892,18 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#65
+test-input-1.cc#66
 ::::: spelling
 ~VClass
 ::::: kind
 destructor
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:111:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:113:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:114:13
+test-input-1.cc:117:13
 ::::: comment
 (none)
 ::::: specifier
@@ -1896,18 +1926,18 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#66
+test-input-1.cc#67
 ::::: spelling
 foo
 ::::: kind
 method
 ::::: hierarchy
 ::VClass
-{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:111:7'}
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:113:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:115:18
+test-input-1.cc:118:18
 ::::: comment
 (none)
 ::::: specifier
@@ -1940,6 +1970,6 @@ test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor t
 [Diagnostic #5]
 test-input-1.cc:100:1: error: unknown type name 'Another'
 [Diagnostic #6]
-test-input-1.cc:111:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
-[indexing time] 0.02 sec
-[traverse time] 0.82 sec
+test-input-1.cc:113:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+[time indexing] 0.02 sec
+[time traverse] 1.23 sec
