@@ -74,7 +74,7 @@ namespace customNS {
 
 static int staticGlobal;
 
-class customNS::Class {
+class customNS::Class final {
 	static int staticData;
 	const int constData;
 	static const int staticConstData;
@@ -103,3 +103,10 @@ struct EEClass {
 };
 typedef enum { eee1, eee2 } EnumTy;
 enum { aaaaa, bbbbb };
+
+class VClass {
+public:
+    VClass();
+    virtual ~VClass() = 0;
+    virtual void foo() = 0;
+};

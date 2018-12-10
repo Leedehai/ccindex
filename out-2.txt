@@ -29,6 +29,10 @@ namespace
 test-input-2.h:7:7
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+False
 ::::: is_template
 False
 ::::: declaration
@@ -40,7 +44,7 @@ class Complex;
 ::::: type
 NS::Complex
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
+::::: is_abstract
 False
 ::::: template_args_list
 []
@@ -117,6 +121,8 @@ class_declaration
 test-input-2.h:12:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: access
@@ -150,6 +156,8 @@ class_declaration
 test-input-2.h:13:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('double', 're'), ('double', 'im')]
 ::::: access
@@ -185,6 +193,8 @@ Usage: bool b = complex.isReal();
 comment for isReal()
 ::::: usage
 bool b = complex.isReal();
+::::: specifier
+[]
 ::::: method_property
 ['const']
 ::::: args_list
@@ -218,6 +228,8 @@ class_declaration
 test-input-2.h:22:14
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 []
 ::::: args_list
@@ -250,6 +262,8 @@ namespace
 test-input-2.h:25:22
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('std::vector<Complex>&', 'v1'), ('double', '')]
 ::::: is_template
@@ -430,6 +444,10 @@ namespace
 test-input-2.h:30:7
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+True
 ::::: is_template
 False
 ::::: declaration
@@ -441,8 +459,8 @@ class Aother;
 ::::: type
 NS::Aother
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -542,6 +560,8 @@ namespace
 test-input-2.h:36:6
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('bool', 'b'), ('NS::Complex&', 'c')]
 ::::: is_template
@@ -550,6 +570,7 @@ True
 template <typename T, int N>
 void fooTemplated(bool b, NS::Complex& c);
 ::::: declaration_pretty
+template <typename T, int N>
 void fooTemplated(bool b, NS::Complex& c);
 ::::: return_type
 void
@@ -571,6 +592,8 @@ namespace
 test-input-2.h:39:7
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: is_template
 True
 ::::: declaration
@@ -578,6 +601,8 @@ template <typename T, typename U> class BarTemplated;
 ::::: declaration_pretty
 template <typename T, typename U>
 template <typename T, typename U> class BarTemplated;
+::::: is_abstract
+False
 ::::: template_args_list
 [('typename', 'T'), ('typename', 'U')]
 ==================
@@ -680,6 +705,10 @@ namespace
 test-input-2.h:46:7
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+True
 ::::: is_template
 False
 ::::: declaration
@@ -691,8 +720,8 @@ class Class2;
 ::::: type
 NS::Class2
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -736,6 +765,8 @@ namespace
 test-input-2.h:53:7
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: is_template
 True
 ::::: declaration
@@ -743,6 +774,8 @@ template <typename T1, typename T2> class Class3Templated;
 ::::: declaration_pretty
 template <typename T1, typename T2>
 template <typename T1, typename T2> class Class3Templated;
+::::: is_abstract
+False
 ::::: template_args_list
 [('typename', 'T1'), ('typename', 'T2')]
 ==================
@@ -787,6 +820,10 @@ class_template
 test-input-2.h:55:11
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+False
 ::::: access
 private
 ::::: is_template
@@ -800,7 +837,7 @@ None
 ::::: type
 NS::Class3Templated::Class3Mid
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
+::::: is_abstract
 False
 ::::: template_args_list
 []
@@ -822,6 +859,8 @@ class_declaration
 test-input-2.h:57:15
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: access
 private
 ::::: is_template
@@ -831,6 +870,8 @@ template <unsigned int N, typename U> class Class3InnerTemplated;
 ::::: declaration_pretty
 template <unsigned int N, typename U>
 template <unsigned int N, typename U> class Class3InnerTemplated;
+::::: is_abstract
+False
 ::::: template_args_list
 [('unsigned int', 'N'), ('typename', 'U')]
 ==================
@@ -1130,4 +1171,4 @@ True
 4
 ==================
 [indexing time] 0.02 sec
-[traverse time] 0.69 sec
+[traverse time] 0.77 sec

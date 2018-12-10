@@ -12,6 +12,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -21,8 +22,9 @@
           "location": "test-input-2.h:6:11"
         }
       ], 
-      "kind": "class_declaration", 
       "id": "test-input-2.h#2", 
+      "kind": "class_declaration", 
+      "POD": false, 
       "is_template": false, 
       "location": "test-input-2.h:7:7", 
       "declaration": "class Complex;", 
@@ -37,7 +39,7 @@
           "is_type_alias": false
         }
       ], 
-      "POD": false, 
+      "is_abstract": false, 
       "template_args_list": []
     }, 
     {
@@ -110,6 +112,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "class_declaration", 
       "hierarchy": [
         {
@@ -141,6 +144,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "class_declaration", 
       "hierarchy": [
         {
@@ -180,6 +184,7 @@
     }, 
     {
       "comment": "Usage: bool b = complex.isReal();\n-----------------\ncomment for isReal()", 
+      "specifier": [], 
       "parent_kind": "class_declaration", 
       "hierarchy": [
         {
@@ -213,6 +218,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "class_declaration", 
       "hierarchy": [
         {
@@ -249,6 +255,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -455,6 +462,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -464,8 +472,9 @@
           "location": "test-input-2.h:6:11"
         }
       ], 
-      "kind": "class_declaration", 
       "id": "test-input-2.h#16", 
+      "kind": "class_declaration", 
+      "POD": true, 
       "is_template": false, 
       "location": "test-input-2.h:30:7", 
       "declaration": "class Aother;", 
@@ -480,7 +489,7 @@
           "is_type_alias": false
         }
       ], 
-      "POD": true, 
+      "is_abstract": false, 
       "template_args_list": []
     }, 
     {
@@ -591,6 +600,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -616,7 +626,7 @@
       "location": "test-input-2.h:36:6", 
       "declaration": "template <typename T, int N>\nvoid fooTemplated(bool b, NS::Complex& c);", 
       "usage": "", 
-      "declaration_pretty": "void fooTemplated(bool b, NS::Complex& c);", 
+      "declaration_pretty": "template <typename T, int N>\nvoid fooTemplated(bool b, NS::Complex& c);", 
       "spelling": "fooTemplated", 
       "return_type": "void", 
       "template_args_list": [
@@ -632,6 +642,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -642,13 +653,14 @@
         }
       ], 
       "kind": "class_template", 
+      "id": "test-input-2.h#21", 
       "is_template": true, 
       "location": "test-input-2.h:39:7", 
       "declaration": "template <typename T, typename U> class BarTemplated;", 
       "usage": "", 
       "declaration_pretty": "template <typename T, typename U>\ntemplate <typename T, typename U> class BarTemplated;", 
       "spelling": "BarTemplated", 
-      "id": "test-input-2.h#21", 
+      "is_abstract": false, 
       "template_args_list": [
         [
           "typename", 
@@ -774,6 +786,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -783,8 +796,9 @@
           "location": "test-input-2.h:6:11"
         }
       ], 
-      "kind": "class_declaration", 
       "id": "test-input-2.h#25", 
+      "kind": "class_declaration", 
+      "POD": true, 
       "is_template": false, 
       "location": "test-input-2.h:46:7", 
       "declaration": "class Class2;", 
@@ -799,7 +813,7 @@
           "is_type_alias": false
         }
       ], 
-      "POD": true, 
+      "is_abstract": false, 
       "template_args_list": []
     }, 
     {
@@ -840,6 +854,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "namespace", 
       "hierarchy": [
         {
@@ -850,13 +865,14 @@
         }
       ], 
       "kind": "class_template", 
+      "id": "test-input-2.h#27", 
       "is_template": true, 
       "location": "test-input-2.h:53:7", 
       "declaration": "template <typename T1, typename T2> class Class3Templated;", 
       "usage": "", 
       "declaration_pretty": "template <typename T1, typename T2>\ntemplate <typename T1, typename T2> class Class3Templated;", 
       "spelling": "Class3Templated", 
-      "id": "test-input-2.h#27", 
+      "is_abstract": false, 
       "template_args_list": [
         [
           "typename", 
@@ -906,6 +922,7 @@
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "class_template", 
       "hierarchy": [
         {
@@ -921,8 +938,9 @@
           "location": "test-input-2.h:53:7"
         }
       ], 
-      "kind": "class_declaration", 
       "id": "test-input-2.h#29", 
+      "kind": "class_declaration", 
+      "POD": false, 
       "access": "private", 
       "is_template": false, 
       "location": "test-input-2.h:55:11", 
@@ -938,11 +956,12 @@
           "is_type_alias": false
         }
       ], 
-      "POD": false, 
+      "is_abstract": false, 
       "template_args_list": []
     }, 
     {
       "comment": "", 
+      "specifier": [], 
       "parent_kind": "class_declaration", 
       "hierarchy": [
         {
@@ -965,6 +984,7 @@
         }
       ], 
       "kind": "class_template", 
+      "id": "test-input-2.h#30", 
       "access": "private", 
       "is_template": true, 
       "location": "test-input-2.h:57:15", 
@@ -972,7 +992,7 @@
       "usage": "", 
       "declaration_pretty": "template <unsigned int N, typename U>\ntemplate <unsigned int N, typename U> class Class3InnerTemplated;", 
       "spelling": "Class3InnerTemplated", 
-      "id": "test-input-2.h#30", 
+      "is_abstract": false, 
       "template_args_list": [
         [
           "unsigned int", 
@@ -1469,6 +1489,6 @@
     }
   ], 
   "errors": [], 
-  "indexing_time": 0.017095088958740234, 
-  "traversing_time": 0.7681689262390137
+  "indexing_time": 0.017501115798950195, 
+  "traversing_time": 0.7768218517303467
 }

@@ -35,6 +35,8 @@ function_declaration
 test-input-1.cc:7:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: is_template
@@ -83,6 +85,10 @@ class_declaration
 test-input-1.cc:11:7
 ::::: comment
 comment for MyClass
+::::: specifier
+[]
+::::: POD
+False
 ::::: is_template
 False
 ::::: declaration
@@ -94,8 +100,8 @@ class MyClass;
 ::::: type
 MyClass
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-False
+::::: is_abstract
+True
 ::::: template_args_list
 []
 ==================
@@ -141,6 +147,8 @@ class_declaration
 test-input-1.cc:13:14
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 ['static']
 ::::: args_list
@@ -173,6 +181,8 @@ class_declaration
 test-input-1.cc:16:2
 ::::: comment
 comment for MyClass()
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: access
@@ -205,6 +215,8 @@ class_declaration
 test-input-1.cc:17:2
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('const MyClass&', '')]
 ::::: access
@@ -237,6 +249,8 @@ class_declaration
 test-input-1.cc:18:2
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
@@ -267,6 +281,8 @@ class_declaration
 test-input-1.cc:19:6
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 []
 ::::: args_list
@@ -299,6 +315,8 @@ class_declaration
 test-input-1.cc:20:2
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('MyClass&&', '')]
 ::::: access
@@ -331,6 +349,8 @@ class_declaration
 test-input-1.cc:21:10
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 []
 ::::: args_list
@@ -363,6 +383,8 @@ class_declaration
 test-input-1.cc:22:2
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: access
@@ -448,6 +470,10 @@ class_declaration
 test-input-1.cc:32:8
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+True
 ::::: access
 private
 ::::: is_template
@@ -461,8 +487,8 @@ class InnerClass;
 ::::: type
 MyClass::InnerClass
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -509,6 +535,8 @@ class_declaration
 test-input-1.cc:36:15
 ::::: comment
 (none)
+::::: specifier
+['=0']
 ::::: method_property
 ['const', 'virtual', 'pure virtual']
 ::::: args_list
@@ -518,9 +546,9 @@ private
 ::::: is_template
 False
 ::::: declaration
-void method3() const;
+virtual void method3() const =0;
 ::::: declaration_pretty
-void method3() const;
+virtual void method3() const =0;
 ::::: return_type
 void
 ::::: template_args_list
@@ -540,6 +568,8 @@ function_declaration
 test-input-1.cc:40:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: is_template
@@ -567,6 +597,8 @@ function_template
 test-input-1.cc:44:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('T*', 'pt'), ('U*', 'pu'), ('int', 'n')]
 ::::: is_template
@@ -575,6 +607,7 @@ True
 template <typename T, typename U, int N>
 int templateFunc(T* pt, U* pu, int n);
 ::::: declaration_pretty
+template <typename T, typename U, int N>
 int templateFunc(T* pt, U* pu, int n);
 ::::: return_type
 int
@@ -595,6 +628,8 @@ function_declaration
 test-input-1.cc:47:5
 ::::: comment
 comment for foo()
+::::: specifier
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: is_template
@@ -623,6 +658,8 @@ class_declaration
 test-input-1.cc:50:10
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
@@ -668,6 +705,8 @@ namespace
 test-input-1.cc:58:7
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: is_template
 True
 ::::: declaration
@@ -675,6 +714,8 @@ template <typename T, char C> class templateClass;
 ::::: declaration_pretty
 template <typename T, char C>
 template <typename T, char C> class templateClass;
+::::: is_abstract
+False
 ::::: template_args_list
 [('typename', 'T'), ('char', 'C')]
 ==================
@@ -837,6 +878,8 @@ namespace
 test-input-1.cc:71:6
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: is_template
@@ -865,6 +908,10 @@ namespace
 test-input-1.cc:72:8
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+True
 ::::: is_template
 False
 ::::: declaration
@@ -876,8 +923,8 @@ class Class;
 ::::: type
 customNS::Class
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -918,19 +965,23 @@ namespace
 test-input-1.cc:77:17
 ::::: comment
 (none)
+::::: specifier
+['final']
+::::: POD
+True
 ::::: is_template
 False
 ::::: declaration
-class Class;
+class Class final;
 ::::: declaration_pretty
-class Class;
+class Class final;
 ::::: size
 8
 ::::: type
 customNS::Class
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -1061,6 +1112,8 @@ namespace
 test-input-1.cc:83:12
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: is_template
@@ -1090,6 +1143,8 @@ class_declaration
 test-input-1.cc:84:8
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 []
 ::::: args_list
@@ -1123,6 +1178,8 @@ class_declaration
 test-input-1.cc:85:6
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 []
 ::::: args_list
@@ -1160,6 +1217,8 @@ class_declaration
 test-input-1.cc:86:19
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: method_property
 []
 ::::: args_list
@@ -1191,6 +1250,10 @@ class_declaration
 test-input-1.cc:89:7
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+True
 ::::: is_template
 False
 ::::: declaration
@@ -1202,8 +1265,8 @@ class classFriend;
 ::::: type
 classFriend
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -1221,6 +1284,8 @@ function_declaration
 test-input-1.cc:90:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: is_template
@@ -1314,6 +1379,8 @@ function_declaration
 test-input-1.cc:95:5
 ::::: comment
 (none)
+::::: specifier
+[]
 ::::: args_list
 []
 ::::: is_template
@@ -1363,6 +1430,10 @@ struct_declaration
 test-input-1.cc:101:8
 ::::: comment
 (none)
+::::: specifier
+[]
+::::: POD
+True
 ::::: is_template
 False
 ::::: declaration
@@ -1374,8 +1445,8 @@ class EEClass;
 ::::: type
 EEClass
 {'is_type_param': False, 'is_type_alias': False}
-::::: POD
-True
+::::: is_abstract
+False
 ::::: template_args_list
 []
 ==================
@@ -1640,6 +1711,142 @@ True
 ::::: size
 4
 ==================
+::::: id
+test-input-1.cc#61
+::::: spelling
+VClass
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-1.cc:107:7
+::::: comment
+(none)
+::::: specifier
+[]
+::::: POD
+False
+::::: is_template
+False
+::::: declaration
+class VClass;
+::::: declaration_pretty
+class VClass;
+::::: size
+8
+::::: type
+VClass
+{'is_type_param': False, 'is_type_alias': False}
+::::: is_abstract
+True
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-1.cc#62
+::::: spelling
+VClass
+::::: kind
+constructor
+::::: hierarchy
+::VClass
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:107:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-1.cc:109:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: args_list
+[]
+::::: access
+public
+::::: is_template
+False
+::::: declaration
+VClass();
+::::: declaration_pretty
+VClass();
+::::: constructor_kind
+default
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-1.cc#63
+::::: spelling
+~VClass
+::::: kind
+destructor
+::::: hierarchy
+::VClass
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:107:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-1.cc:110:13
+::::: comment
+(none)
+::::: specifier
+['=0']
+::::: destructor_property
+['virtual', 'pure virtual']
+::::: args_list
+[]
+::::: access
+public
+::::: is_template
+False
+::::: declaration
+virtual ~VClass() =0;
+::::: declaration_pretty
+virtual ~VClass() =0;
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-1.cc#64
+::::: spelling
+foo
+::::: kind
+method
+::::: hierarchy
+::VClass
+{'spelling': 'VClass', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-1.cc:107:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-1.cc:111:18
+::::: comment
+(none)
+::::: specifier
+['=0']
+::::: method_property
+['virtual', 'pure virtual']
+::::: args_list
+[]
+::::: access
+public
+::::: is_template
+False
+::::: declaration
+virtual void foo() =0;
+::::: declaration_pretty
+virtual void foo() =0;
+::::: return_type
+void
+::::: template_args_list
+[]
+==================
 [Diagnostic #1]
 test-input-1.cc:21:10: error: return type 'MyClass' is an abstract class
 [Diagnostic #2]
@@ -1651,4 +1858,4 @@ test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor t
 [Diagnostic #5]
 test-input-1.cc:100:1: error: unknown type name 'Another'
 [indexing time] 0.02 sec
-[traverse time] 0.85 sec
+[traverse time] 0.89 sec

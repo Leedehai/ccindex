@@ -119,7 +119,7 @@ def _format_location(location):
 def _is_transparent_decl(cursor):
     return (cursor.kind == cindex.CursorKind.ENUM_DECL) and (not cursor.is_scoped_enum())
 
-def _format_semantic_parent(cursor):
+def _format_hierarchy(cursor):
     if cursor.semantic_parent.kind == cindex.CursorKind.TRANSLATION_UNIT:
         return [], "(global)"
     # return tuple element #0
@@ -143,16 +143,14 @@ def _format_semantic_parent(cursor):
         syntax_kind_list.insert(0, _format_syntax_kind(temp_cursor.kind))
         location_list.insert(0, _format_location(temp_cursor.location))
     # return tuple element #1
-    parent_kind_str = _format_syntax_kind(cursor.semantic_parent.kind)
-    # build return
-    hierarchy_dict_list = []
-    for i in range(len(spelling_list)):
-        hierarchy_dict_list.append({
-            "spelling": spelling_list[i],
-            "transparent": transparency_list[i],
-            "kind": syntax_kind_list[i],
-            "location": location_list[i]
-        })
+    parent_kind_str = syntax_kind_list[-1] # the intermediate parent
+    # build return list
+    hierarchy_dict_list = [ {
+        "spelling": spelling_list[i],
+        "transparent": transparency_list[i],
+        "kind": syntax_kind_list[i],
+        "location": location_list[i]
+    } for i in range(len(spelling_list)) ]
     return hierarchy_dict_list, parent_kind_str
 
 def _format_syntax_kind(kind):
@@ -181,13 +179,11 @@ def _format_type_param_decl_location(type_obj, hierarchy):
     canonical_spelling = type_obj.get_canonical().spelling # "type-parameter-X-Y"
     assert canonical_spelling.startswith("type-parameter-")
     owning_template_level, template_param_pos = tuple(int(n) for n in canonical_spelling.split("-")[-2:])
-    owning_template_hierarchy_item = _find_hierarchy_item_for_owning_template(hierarchy, owning_template_level)
-    if not owning_template_hierarchy_item:
-        return "(owning template not found)", -1
+    owning_template = _find_hierarchy_item_for_owning_template(hierarchy, owning_template_level)
     return {
-        "location": owning_template_hierarchy_item["location"],
-        "spelling": owning_template_hierarchy_item["spelling"],
-        "index":    template_param_pos
+        "location": owning_template["location"] if owning_template else "",
+        "spelling": owning_template["spelling"] if owning_template else "(not found)",
+        "index":    template_param_pos if owning_template else -1,
     }
 
 def _format_type(type_obj):
@@ -226,6 +222,10 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     # go through child elements, collecting ordinary args and possibly template params
     template_params_list = []
     args_list = []
+    # specifiers
+    is_final = False
+    is_override = False
+    is_pure_virtual = False
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
             template_params_list.append(("typename", c.spelling))
@@ -236,6 +236,11 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
                 args_list.append((_format_type(c.type), c.spelling))
             else: # unamed argument in prototype declaration
                 args_list.append((_format_type(c.type), ""))
+        elif c.kind == cindex.CursorKind.CXX_FINAL_ATTR:
+            is_final = True
+        elif c.kind == cindex.CursorKind.CXX_OVERRIDE_ATTR:
+            is_override = True
+        # NOTE is_pure_virtual is not checked by inspecting c.kind
     # 1. possibly function template header
     template_header = ""
     if template_params_list:
@@ -247,37 +252,66 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
         return_type = _format_type(cursor.result_type)
     # 3. function name
     func_name = str(cursor.displayname).split('(')[0]
-    # 4. const qualifier
-    const_qualifier = "const" if cursor.is_const_method() else ""
-    # build prototype string (without template header)
-    args_repr_list = [ ("%s %s" % item).strip() for item in args_list] # join type and arg name (may be absent)
+    # 4. for methods: cv-qualifier, "=0", "final", "override"
+    postfix_str_list = []
+    if cursor.is_const_method():
+        postfix_str_list.append("const")
+    # if cursor.is_volatile_method(): # clang.cindex didn't provide this
+    #     postfix_str_list.append("volatile")
+    if is_final:
+        postfix_str_list.append("final")
+    if is_override:
+        postfix_str_list.append("override")
+    if cursor.is_pure_virtual_method():
+        is_pure_virtual = True
+        postfix_str_list.append("=0")
+    postfix_str = ' '.join(postfix_str_list)
+    # build prototype string, without template header
     if return_type and cursor.kind != cindex.CursorKind.CONVERSION_FUNCTION:
-        return_type_func_name = "%s %s" % (return_type, func_name)
+        accumulate_proto_str = "%s %s" % (return_type, func_name)
     else:
-        return_type_func_name = func_name
-    proto_str = "%s(%s) %s" % (return_type_func_name, ', '.join(args_repr_list), const_qualifier)
+        accumulate_proto_str = func_name
+    if cursor.is_virtual_method():
+        accumulate_proto_str = "virtual %s" % accumulate_proto_str
+    args_repr_list = [ ("%s %s" % item).strip() for item in args_list] # join type and arg name (may be absent)
+    proto_str = "%s(%s) %s" % (accumulate_proto_str,
+                               ', '.join(args_repr_list),
+                               postfix_str)
     proto_str_pretty = proto_str
     if len(proto_str) > 75:
-        proto_str_pretty = "%s(\n%s\n) %s" % (return_type_func_name,
+        proto_str_pretty = "%s(\n%s\n) %s" % (accumulate_proto_str,
                                               ",\n".join(["\t%s" % arg for arg in args_repr_list]),
-                                              const_qualifier)
+                                              postfix_str)
+    # add template header
     proto_str = proto_str if not template_header else template_header + "\n" + proto_str
-    return (proto_str.strip(), proto_str_pretty.strip()), template_params_list, args_list, return_type
+    proto_str_pretty = proto_str_pretty if not template_header else template_header + "\n" + proto_str_pretty
+    # strip redundant whitespaces at both ends
+    proto_str = proto_str.strip()
+    proto_str_pretty = proto_str_pretty.strip()
+    return (
+        (proto_str, proto_str_pretty),
+        template_params_list, args_list, return_type,
+        (is_final, is_override, is_pure_virtual)
+    )
 
 def _format_class_proto(cursor):
     template_params_list = []
+    is_final = False
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
             template_params_list.append(("typename", c.spelling))
         elif c.kind == cindex.CursorKind.TEMPLATE_NON_TYPE_PARAMETER:
             template_params_list.append((_format_type(c.type), c.spelling))
+        elif c.kind == cindex.CursorKind.CXX_FINAL_ATTR:
+            is_final = True
     template_header = ""
     if template_params_list:
         template_header = "template <%s>" % ", ".join(["%s %s" % item for item in template_params_list])
     class_name_str = "class %s" % cursor.spelling
+    class_name_str = class_name_str if not is_final else ("%s final" % class_name_str)
     class_name_str = class_name_str if not template_header else "%s %s" % (template_header, class_name_str)
     class_name_str_pretty = class_name_str if not template_header else "%s\n%s" % (template_header, class_name_str)
-    return (class_name_str.strip(), class_name_str_pretty.strip()), template_params_list
+    return (class_name_str.strip(), class_name_str_pretty.strip()), template_params_list, is_final
 
 """
 Index visiting
@@ -307,7 +341,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     symbol = {} # dict for this symbol
     # part 1. mandated fields
     symbol["spelling"] = "%s" % c.spelling # str
-    hierarchy_info = _format_semantic_parent(c)
+    hierarchy_info = _format_hierarchy(c)
     symbol["hierarchy"] = hierarchy_info[0] # list of dict, might be empty, top-down
     symbol["parent_kind"] = hierarchy_info[1] # str
     symbol["location"] = _format_location(c.location) # str
@@ -322,14 +356,24 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["declaration_pretty"] = "%s;" % func_proto_tuple[0][1] # str
         symbol["is_template"] = True if func_proto_tuple[1] else False# bool
         symbol["template_args_list"] = func_proto_tuple[1] # list of tuple (type, arg name)
-        symbol["args_list"] = func_proto_tuple[2] # # list of tuple (type, arg name)
+        symbol["args_list"] = func_proto_tuple[2] # list of tuple (type, arg name)
         symbol["return_type"] = func_proto_tuple[3] # str or NoneType (e.g. constructor's return type is None)
+        specifier_list = []
+        if func_proto_tuple[4][0]: # "final" specifier
+            specifier_list.append("final")
+        if func_proto_tuple[4][1]: # "override" specifier
+            specifier_list.append("override")
+        if func_proto_tuple[4][2]: # "=0", pure specifier
+            specifier_list.append("=0")
+        symbol["specifier"] = specifier_list
     elif c.kind in class_like_CursorKind:
         class_proto_tuple = _format_class_proto(c)
         symbol["declaration"] = "%s;" % class_proto_tuple[0][0] # str
         symbol["declaration_pretty"] = "%s;" % class_proto_tuple[0][1] # str
         symbol["is_template"] = True if class_proto_tuple[1] else False# bool
         symbol["template_args_list"] = class_proto_tuple[1] # list of tuple (type, arg name)
+        symbol["specifier"] = ["final"] if class_proto_tuple[2] else [] # "final" specifier
+        symbol["is_abstract"] = c.is_abstract_record() # bool
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
     if c.kind in val_like_CursorKind + [ cindex.CursorKind.CLASS_DECL, cindex.CursorKind.STRUCT_DECL ]:
@@ -400,8 +444,18 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         if c.is_virtual_method():
             method_property.append("virtual")
         if c.is_pure_virtual_method():
-            method_property.append("pure virtual")
+            method_property.append("pure_virtual")
         symbol["method_property"] = method_property # list
+    if c.kind == cindex.CursorKind.DESTRUCTOR:
+        destructor_property = []
+        # destructor cannot be 'static' or 'const'
+        if c.is_default_method(): # marked by "= default"
+            destructor_property.append("default")
+        if c.is_virtual_method():
+            destructor_property.append("virtual")
+        if c.is_pure_virtual_method():
+            destructor_property.append("pure_virtual")
+        symbol["destructor_property"] = destructor_property # list
     if c.kind == cindex.CursorKind.ENUM_DECL:
         symbol["scoped_enum"] = True if c.is_scoped_enum() else False
         symbol["enum_underlying_type"] = _format_type(c.enum_type)
@@ -429,7 +483,7 @@ def _traverse_ast(root_node, target_filename, print_out):
         # print to stdout
         if symbol and print_out:
             _print_to_stdout(symbol)
-    return symbols # [ symbol_dict_1, symbol_dict_2 ]
+    return symbols # list of symbol dicts
 
 """
 Input/Output
