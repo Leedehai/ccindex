@@ -1,16 +1,16 @@
 # ccindex
 
-Extract API with libclang's Python bindings.
+Extract C++ symbols with libclang's Python bindings.
 
-Input:<br>
-C++ target file, user include paths
+#### Input<br>
+C++ file, user include paths (optional)
 
-Output:
-- [x] write to stdout
-- [x] write to JSON
+#### Output
+- [x] write to stdout (e.g. [out-1.txt](out-1.txt) and [out-2.txt](out-2.txt))
+- [x] write to JSON (e.g. [out-1.json](out-1.json) and [out-2.json](out-2.json))
 - [ ] write to SQLite database
 
-## Description
+## 1. Description
 This is a script that extracts symbols defined in C++, along with each symbol's meta information:
 - syntax kind (e.g. function, class, function template, class template, enum),
 - type (aware of template type parameters and type aliases),
@@ -23,23 +23,22 @@ This is a script that extracts symbols defined in C++, along with each symbol's 
 - source location,
 - etc.
 
-For example JSON outputs, see [out-1.json](out-1.json) and [out-2.json](out-2.json).
-
 The extracted information could be used to generate API documentations.
 
 > For functions/methods and their templates, the implementation bodies are skipped.
 
-## Required
+## 2. Required
 - [libclang](http://www.llvm.org/devmtg/2010-11/Gregor-libclang.pdf), normally came with a [Clang](http://clang.llvm.org) installation
 - Python module 'clang', install: `pip install clang` or just copy-paste the [source](https://github.com/llvm-mirror/clang/tree/master/bindings/python/clang)
 
-## Limitation:
-only on macOS; for Linux, modify `LIBCLANG_PATH_CANDIDATES` and `SYS_INCLUDE_PATHS` in [ccindex.py](ccindex.py).
+## 3. Limitation
 
-## Usage
+Runnable on macOS.<br>For Linux, modify `LIBCLANG_PATH_CANDIDATES` and `SYS_INCLUDE_PATHS` in [ccindex.py](ccindex.py).
+
+## 4. Usage
 Can be used as a commandline tool or a Python library.
 
-#### as a commandline tool
+#### 4.1 As a commandline tool
 ```sh
 # help
 ./ccindex.py -h
@@ -54,7 +53,7 @@ Can be used as a commandline tool or a Python library.
 ./ccindex.py path/file.[h|cc] -i UserIncludeDir1/SubDir,UserIncludeDir2 -db out.db
 ```
 
-#### as a Python library
+#### 4.2 As a Python library
 ```python
 import ccindex
 result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
@@ -74,7 +73,7 @@ result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 
 **NOTE** tested on Python2, but should work with Python3
 
-## Help message:
+## 5. Help message
 ```
 $ ./cindex.py -h
 usage: ccindex.py [-h] [-i USER_INCLUDE_PATHS] [-json [TO_JSON]]
@@ -99,7 +98,7 @@ optional arguments:
 if neither -json nor -db is given, then write result to stdout
 ```
 
-## How to run test:
+## 6. Test: produce the example output files
 `test-input-1.cc` has grammar errors; `test-input-2.h` doesn't.
 ```sh
 # test stdout
@@ -110,7 +109,7 @@ if neither -json nor -db is given, then write result to stdout
 ./ccindex.py test-input-2.h -json out-2.json
 ```
 
-## License:
+#### License
 MIT License
 
 ###### EOF
