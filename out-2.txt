@@ -717,7 +717,7 @@ int
 ::::: access
 public
 ::::: type_alias_chain
-[{'spelling': 'NS::Class2::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': 'None:0:0'}]
+[{'spelling': 'NS::Class2::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}]
 ::::: type_alias_underlying_type
 int
 ==================
@@ -767,7 +767,7 @@ test-input-2.h:54:11
 ::::: access
 private
 ::::: type_alias_chain
-[{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:54:11'}, {'spelling': 'T2', 'location': 'None:0:0'}]
+[{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:54:11'}, {'spelling': 'T2', 'location': ''}]
 ::::: type_alias_underlying_type
 T2
 ==================
@@ -887,7 +887,7 @@ test-input-2.h:59:19
 ::::: access
 private
 ::::: type_alias_chain
-[{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:59:19'}, {'spelling': 'U', 'location': 'None:0:0'}]
+[{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:59:19'}, {'spelling': 'U', 'location': ''}]
 ::::: type_alias_underlying_type
 U
 ==================
@@ -915,7 +915,7 @@ False
 private
 ::::: type
 NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': '(type parameter)', 'type_alias_underlying_type': 'U', 'type_alias_chain': [{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:59:19'}, {'spelling': 'U', 'location': 'None:0:0'}]}
+{'is_type_param': False, 'is_type_alias': True, 'canonical_type': '(type parameter)', 'type_alias_underlying_type': 'U', 'type_alias_chain': [{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:59:19'}, {'spelling': 'U', 'location': ''}]}
 ::::: POD
 False
 ::::: size
@@ -943,7 +943,7 @@ False
 private
 ::::: type
 NS::Class3Templated::TT
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': '(type parameter)', 'type_alias_underlying_type': 'T2', 'type_alias_chain': [{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:54:11'}, {'spelling': 'T2', 'location': 'None:0:0'}]}
+{'is_type_param': False, 'is_type_alias': True, 'canonical_type': '(type parameter)', 'type_alias_underlying_type': 'T2', 'type_alias_chain': [{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:54:11'}, {'spelling': 'T2', 'location': ''}]}
 ::::: POD
 False
 ::::: size
@@ -1010,7 +1010,7 @@ test-input-2.h:69:21
 (none)
 ::::: type
 Class2Ty::Class2Int
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'int', 'type_alias_underlying_type': 'int', 'type_alias_chain': [{'spelling': 'Class2Ty::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': 'None:0:0'}]}
+{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'int', 'type_alias_underlying_type': 'int', 'type_alias_chain': [{'spelling': 'Class2Ty::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}]}
 ::::: POD
 True
 ::::: size
@@ -1033,7 +1033,7 @@ test-input-2.h:70:22
 (none)
 ::::: type
 Class2Ty2::Class2Int
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'int', 'type_alias_underlying_type': 'int', 'type_alias_chain': [{'spelling': 'Class2Ty2::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': 'None:0:0'}]}
+{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'int', 'type_alias_underlying_type': 'int', 'type_alias_chain': [{'spelling': 'Class2Ty2::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}]}
 ::::: POD
 True
 ::::: size
@@ -1057,7 +1057,7 @@ test-input-2.h:72:7
 ::::: canonical_type
 float
 ::::: type_alias_chain
-[{'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': 'None:0:0'}]
+[{'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}]
 ::::: type_alias_underlying_type
 float
 ==================
@@ -1078,7 +1078,7 @@ test-input-2.h:73:7
 (none)
 ::::: type
 NS::Float
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'float', 'type_alias_underlying_type': 'float', 'type_alias_chain': [{'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': 'None:0:0'}]}
+{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'float', 'type_alias_underlying_type': 'float', 'type_alias_chain': [{'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}]}
 ::::: POD
 True
 ::::: size
@@ -1102,7 +1102,7 @@ test-input-2.h:75:7
 ::::: canonical_type
 float
 ::::: type_alias_chain
-[{'spelling': 'NS::Float2', 'location': 'test-input-2.h:75:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': 'None:0:0'}]
+[{'spelling': 'NS::Float2', 'location': 'test-input-2.h:75:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}]
 ::::: type_alias_underlying_type
 NS::Float
 ==================
@@ -1123,11 +1123,11 @@ test-input-2.h:76:8
 (none)
 ::::: type
 NS::Float2
-{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'float', 'type_alias_underlying_type': 'NS::Float', 'type_alias_chain': [{'spelling': 'NS::Float2', 'location': 'test-input-2.h:75:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': 'None:0:0'}]}
+{'is_type_param': False, 'is_type_alias': True, 'canonical_type': 'float', 'type_alias_underlying_type': 'NS::Float', 'type_alias_chain': [{'spelling': 'NS::Float2', 'location': 'test-input-2.h:75:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}]}
 ::::: POD
 True
 ::::: size
 4
 ==================
 [indexing time] 0.02 sec
-[traverse time] 0.74 sec
+[traverse time] 0.69 sec

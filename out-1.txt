@@ -1650,5 +1650,5 @@ test-input-1.cc:85:68: error: unknown type name 'Another'
 test-input-1.cc:77:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
 [Diagnostic #5]
 test-input-1.cc:100:1: error: unknown type name 'Another'
-[indexing time] 0.01 sec
-[traverse time] 0.84 sec
+[indexing time] 0.02 sec
+[traverse time] 0.85 sec

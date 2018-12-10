@@ -832,7 +832,7 @@
         }, 
         {
           "spelling": "int", 
-          "location": "None:0:0"
+          "location": ""
         }
       ], 
       "id": "test-input-2.h#26", 
@@ -898,7 +898,7 @@
         }, 
         {
           "spelling": "T2", 
-          "location": "None:0:0"
+          "location": ""
         }
       ], 
       "id": "test-input-2.h#28", 
@@ -1077,7 +1077,7 @@
         }, 
         {
           "spelling": "U", 
-          "location": "None:0:0"
+          "location": ""
         }
       ], 
       "id": "test-input-2.h#32", 
@@ -1133,7 +1133,7 @@
             }, 
             {
               "spelling": "U", 
-              "location": "None:0:0"
+              "location": ""
             }
           ]
         }
@@ -1179,7 +1179,7 @@
             }, 
             {
               "spelling": "T2", 
-              "location": "None:0:0"
+              "location": ""
             }
           ]
         }
@@ -1279,7 +1279,7 @@
             }, 
             {
               "spelling": "int", 
-              "location": "None:0:0"
+              "location": ""
             }
           ]
         }
@@ -1317,7 +1317,7 @@
             }, 
             {
               "spelling": "int", 
-              "location": "None:0:0"
+              "location": ""
             }
           ]
         }
@@ -1348,7 +1348,7 @@
         }, 
         {
           "spelling": "float", 
-          "location": "None:0:0"
+          "location": ""
         }
       ], 
       "id": "test-input-2.h#39", 
@@ -1384,7 +1384,7 @@
             }, 
             {
               "spelling": "float", 
-              "location": "None:0:0"
+              "location": ""
             }
           ]
         }
@@ -1419,7 +1419,7 @@
         }, 
         {
           "spelling": "float", 
-          "location": "None:0:0"
+          "location": ""
         }
       ], 
       "id": "test-input-2.h#41", 
@@ -1459,7 +1459,7 @@
             }, 
             {
               "spelling": "float", 
-              "location": "None:0:0"
+              "location": ""
             }
           ]
         }
@@ -1469,6 +1469,6 @@
     }
   ], 
   "errors": [], 
-  "indexing_time": 0.016679048538208008, 
-  "traversing_time": 0.7580339908599854
+  "indexing_time": 0.017095088958740234, 
+  "traversing_time": 0.7681689262390137
 }

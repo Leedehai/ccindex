@@ -112,6 +112,8 @@ def _format_comment(raw_comment):
     return entire_content, "\n".join(usage_lines)
 
 def _format_location(location):
+    if not location.file:
+        return "" # e.g. the location of built-in "float" type
     return "%s:%s:%s" % (str(location.file), int(location.line), int(location.column))
 
 def _is_transparent_decl(cursor):
