@@ -191,6 +191,7 @@ def _format_type_spelling(type_str):
     type_str = re.sub(r" *\*", "*", type_str)     # e.g. "int *" => "int*"
     type_str = re.sub(r" *&", "&", type_str)      # e.g. "int &" => "int&"
     type_str = re.sub(r"\> *\>", ">>", type_str)  # e.g. "C1<C2<int> >" => "C1<C2<int>>"
+    type_str = type_str.replace(" [", "[")        # e.g. "int [5]" => "int[5]"
     return type_str
 
 def _format_type(type_obj):
@@ -367,6 +368,12 @@ val_like_CursorKind = [ # value-like
     cindex.CursorKind.ENUM_CONSTANT_DECL
 ]
 
+array_TypeKind = [
+    cindex.TypeKind.CONSTANTARRAY,
+    cindex.TypeKind.INCOMPLETEARRAY,
+    cindex.TypeKind.VARIABLEARRAY,
+    cindex.TypeKind.DEPENDENTSIZEDARRAY,
+]
 def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbol dict
     symbol = {} # dict for this symbol
     # part 1. mandated fields
@@ -411,15 +418,18 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         sizeof_type = c.type.get_size()
         symbol["size"] = sizeof_type if sizeof_type > 0 else None # int or NoneType (e.g. type param)
         symbol["POD"] = c.type.is_pod() # bool (POD: Plain Old Data)
+        type_kind = c.type.kind
+        type_spelling = _format_type(c.type)
         # C++ has a very complicated type system
-        if c.type.kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
+        if type_kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
             symbol["type"] = (
-                _format_type(c.type), {
+                type_spelling, {
                     "type_size": symbol["size"], # int or NoneType
                     # though this type itself is not a type param, yet as a
                     # type alias, its underlying type may be a type param
                     "is_type_param": False, # bool
                     "is_type_alias": True,  # bool
+                    "is_array": False,      # bool
                     # real type, alias resoluted one step only
                     "type_alias_underlying_type": _format_type(c.type.get_declaration().underlying_typedef_type), # str
                     # type alias chain, from this type to completely resoluted type
@@ -430,21 +440,35 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
                     "canonical_type": _format_type(c.type.get_canonical()), # str
                 }
             ) # tuple of (str, dict)
-        elif c.type.kind == cindex.TypeKind.UNEXPOSED:
+        elif type_kind == cindex.TypeKind.UNEXPOSED:
             symbol["type"] = (
-                _format_type(c.type), {
+                type_spelling, {
                     "type_size": symbol["size"], # int or NoneType
                     "is_type_param": True,  # bool
                     "is_type_alias": False, # bool
+                    "is_array": False,      # bool
                     "type_param_decl_location": _format_type_param_decl_location(c.type, symbol["hierarchy"]), # dict
+                }
+            ) # tuple of (str, dict)
+        elif type_kind in array_TypeKind:
+            array_size = c.type.get_array_size()
+            symbol["type"] = (
+                type_spelling, {
+                    "type_size": symbol["size"], # int or NoneType, the number of bytes of the whole array
+                    "is_type_param": False, # bool
+                    "is_type_alias": False, # bool
+                    "is_array": True,       # bool
+                    "array_size": array_size if array_size > 0 else None, # int or NoneType, the number of elements
+                    "array_element_type": _format_type(c.type.get_array_element_type()), # str
                 }
             ) # tuple of (str, dict)
         else:
             symbol["type"] = (
-                _format_type(c.type), {
+                type_spelling, {
                     "type_size": symbol["size"], # int or NoneType
                     "is_type_param": False, # bool
-                    "is_type_alias": False  # bool
+                    "is_type_alias": False, # bool
+                    "is_array": False,      # bool
                 }
             ) # tuple of (str, dict)
     if c.kind in [ cindex.CursorKind.TYPEDEF_DECL, cindex.CursorKind.TYPE_ALIAS_DECL ]:

@@ -13,7 +13,7 @@ C++ file, user include paths (optional)
 ## 1. Description
 This is a script that extracts symbols defined in C++, along with each symbol's meta information:
 - syntax kind (e.g. function, class, function template, class template, enum),
-- type (aware of template type parameters and type aliases),
+- type (aware of array, type parameters, and type aliases),
 - type alias chain,
 - function argument list and template parameter list,
 - method properties (e.g. static, const, virtual),

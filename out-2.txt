@@ -45,7 +45,7 @@ class Complex;
 16
 ::::: type
 NS::Complex
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 16}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 16}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -73,7 +73,7 @@ False
 private
 ::::: type
 double
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -101,7 +101,7 @@ False
 private
 ::::: type
 double
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -321,7 +321,7 @@ test-input-2.h:27:18
 char
 ::::: type
 NS::E1
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -349,7 +349,7 @@ test-input-2.h:27:23
 char
 ::::: type
 NS::E1
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -397,7 +397,7 @@ test-input-2.h:28:24
 long
 ::::: type
 NS::E2
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -425,7 +425,7 @@ test-input-2.h:28:33
 long
 ::::: type
 NS::E2
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -462,7 +462,7 @@ class Aother;
 1
 ::::: type
 NS::Aother
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -514,7 +514,7 @@ test-input-2.h:32:20
 int
 ::::: type
 NS::Aother::E
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -543,7 +543,7 @@ test-input-2.h:32:24
 int
 ::::: type
 NS::Aother::E
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -634,7 +634,7 @@ False
 public
 ::::: type
 T
-{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:39:7'}, 'is_type_alias': False, 'type_size': None}
+{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:39:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -662,7 +662,7 @@ False
 public
 ::::: type
 U
-{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:39:7'}, 'is_type_alias': False, 'type_size': None}
+{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:39:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -690,7 +690,7 @@ False
 public
 ::::: type
 int
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -727,7 +727,7 @@ class Class2;
 1
 ::::: type
 NS::Class2
-{'is_type_param': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -848,7 +848,7 @@ class Class3Mid;
 None
 ::::: type
 NS::Class3Templated::Class3Mid
-{'is_type_param': False, 'is_type_alias': False, 'type_size': None}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -913,7 +913,7 @@ False
 private
 ::::: type
 U
-{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'Class3InnerTemplated', 'location': 'test-input-2.h:57:15'}, 'is_type_alias': False, 'type_size': None}
+{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'Class3InnerTemplated', 'location': 'test-input-2.h:57:15'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -970,7 +970,7 @@ False
 private
 ::::: type
 NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU
-{'is_type_alias': True, 'canonical_type': '(type parameter)', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:59:19'}, {'spelling': 'U', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'U'}
+{'canonical_type': '(type parameter)', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:59:19'}, {'spelling': 'U', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'U'}
 ::::: POD
 False
 ::::: size
@@ -998,7 +998,7 @@ False
 private
 ::::: type
 NS::Class3Templated::TT
-{'is_type_alias': True, 'canonical_type': '(type parameter)', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:54:11'}, {'spelling': 'T2', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'T2'}
+{'canonical_type': '(type parameter)', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:54:11'}, {'spelling': 'T2', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'T2'}
 ::::: POD
 False
 ::::: size
@@ -1065,7 +1065,7 @@ test-input-2.h:69:21
 (none)
 ::::: type
 Class2Ty::Class2Int
-{'is_type_alias': True, 'canonical_type': 'int', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
+{'canonical_type': 'int', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
 ::::: POD
 True
 ::::: size
@@ -1088,7 +1088,7 @@ test-input-2.h:70:22
 (none)
 ::::: type
 Class2Ty2::Class2Int
-{'is_type_alias': True, 'canonical_type': 'int', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty2::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
+{'canonical_type': 'int', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty2::Class2Int', 'location': 'test-input-2.h:48:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
 ::::: POD
 True
 ::::: size
@@ -1133,7 +1133,7 @@ test-input-2.h:73:7
 (none)
 ::::: type
 NS::Float
-{'is_type_alias': True, 'canonical_type': 'float', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'float'}
+{'canonical_type': 'float', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'float'}
 ::::: POD
 True
 ::::: size
@@ -1178,11 +1178,11 @@ test-input-2.h:76:8
 (none)
 ::::: type
 NS::Float2
-{'is_type_alias': True, 'canonical_type': 'float', 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float2', 'location': 'test-input-2.h:75:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'NS::Float'}
+{'canonical_type': 'float', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float2', 'location': 'test-input-2.h:75:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:72:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'NS::Float'}
 ::::: POD
 True
 ::::: size
 4
 ==================
 [time indexing] 0.02 sec
-[time traverse] 1.03 sec
+[time traverse] 0.99 sec

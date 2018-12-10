@@ -117,3 +117,7 @@ public:
     virtual ~VClass() = 0;
     virtual void foo() = 0;
 };
+
+int *arrIntPtr[5];
+char arrChar[] = { 'h', 'e', 'l', 'l', 'o', '\n' };
+BaseClass arrVar[];
