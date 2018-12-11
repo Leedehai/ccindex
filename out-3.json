@@ -1,0 +1,552 @@
+{
+  "errors": [], 
+  "includes": [
+    {
+      "depth": 1, 
+      "file": "./test-input-2.h", 
+      "included_at": "test-input-3.cc:1:10"
+    }, 
+    {
+      "depth": 2, 
+      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector", 
+      "included_at": "./test-input-2.h:1:10"
+    }, 
+    {
+      "depth": 2, 
+      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map", 
+      "included_at": "./test-input-2.h:2:10"
+    }
+  ], 
+  "symbols": [
+    {
+      "POD": false, 
+      "base_clause": [], 
+      "comment": "", 
+      "declaration": "class A;", 
+      "declaration_pretty": "class A;", 
+      "hierarchy": [], 
+      "id": "test-input-3.cc#1", 
+      "is_abstract": false, 
+      "is_template": false, 
+      "kind": "class_declaration", 
+      "location": "test-input-3.cc:3:7", 
+      "parent_kind": "(global)", 
+      "size": 4, 
+      "specifier": [], 
+      "spelling": "A", 
+      "template_args_list": [], 
+      "type": [
+        "A", 
+        {
+          "is_array": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
+      "POD": true, 
+      "access": "private", 
+      "comment": "", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:3:7", 
+          "spelling": "A", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#2", 
+      "kind": "field_declaration", 
+      "location": "test-input-3.cc:4:9", 
+      "parent_kind": "class_declaration", 
+      "size": 4, 
+      "spelling": "a", 
+      "static_member": false, 
+      "type": [
+        "int", 
+        {
+          "is_array": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [], 
+      "comment": "", 
+      "constructor_property": [
+        "default"
+      ], 
+      "declaration": "A();", 
+      "declaration_pretty": "A();", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:3:7", 
+          "spelling": "A", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#3", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:6:5", 
+      "method_property": [], 
+      "no_throw_guarantee": "not_guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "A", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [
+        [
+          "int", 
+          "a"
+        ]
+      ], 
+      "comment": "", 
+      "constructor_property": [
+        "converting"
+      ], 
+      "declaration": "A(int a);", 
+      "declaration_pretty": "A(int a);", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:3:7", 
+          "spelling": "A", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#4", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:7:5", 
+      "method_property": [], 
+      "no_throw_guarantee": "not_guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "A", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [], 
+      "comment": "", 
+      "declaration": "~A();", 
+      "declaration_pretty": "~A();", 
+      "destructor_property": [], 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:3:7", 
+          "spelling": "A", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#5", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "destructor", 
+      "location": "test-input-3.cc:8:5", 
+      "method_property": [], 
+      "no_throw_guarantee": "unevaluated", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "~A", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [
+        [
+          "const A&", 
+          ""
+        ]
+      ], 
+      "comment": "", 
+      "constructor_property": [
+        "delete", 
+        "copy", 
+        "converting"
+      ], 
+      "declaration": "A(const A&);", 
+      "declaration_pretty": "A(const A&);", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:3:7", 
+          "spelling": "A", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#6", 
+      "is_deleted": true, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:9:5", 
+      "method_property": [
+        "delete"
+      ], 
+      "no_throw_guarantee": "not_guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "A", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [
+        [
+          "A&&", 
+          ""
+        ]
+      ], 
+      "comment": "", 
+      "constructor_property": [
+        "delete", 
+        "move", 
+        "converting"
+      ], 
+      "declaration": "A(A&&);", 
+      "declaration_pretty": "A(A&&);", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:3:7", 
+          "spelling": "A", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#7", 
+      "is_deleted": true, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:10:5", 
+      "method_property": [
+        "delete"
+      ], 
+      "no_throw_guarantee": "not_guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "A", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "POD": false, 
+      "base_clause": [], 
+      "comment": "", 
+      "declaration": "class B;", 
+      "declaration_pretty": "class B;", 
+      "hierarchy": [], 
+      "id": "test-input-3.cc#8", 
+      "is_abstract": false, 
+      "is_template": false, 
+      "kind": "class_declaration", 
+      "location": "test-input-3.cc:13:7", 
+      "parent_kind": "(global)", 
+      "size": 4, 
+      "specifier": [], 
+      "spelling": "B", 
+      "template_args_list": [], 
+      "type": [
+        "B", 
+        {
+          "is_array": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
+      "POD": true, 
+      "access": "private", 
+      "comment": "", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:13:7", 
+          "spelling": "B", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#9", 
+      "kind": "field_declaration", 
+      "location": "test-input-3.cc:14:9", 
+      "parent_kind": "class_declaration", 
+      "size": 4, 
+      "spelling": "b", 
+      "static_member": false, 
+      "type": [
+        "int", 
+        {
+          "is_array": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [], 
+      "comment": "", 
+      "constructor_property": [
+        "default"
+      ], 
+      "declaration": "B();", 
+      "declaration_pretty": "B();", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:13:7", 
+          "spelling": "B", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#10", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:16:5", 
+      "method_property": [
+        "default"
+      ], 
+      "no_throw_guarantee": "unevaluated", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "B", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [
+        [
+          "int", 
+          "b"
+        ]
+      ], 
+      "comment": "", 
+      "constructor_property": [
+        "converting"
+      ], 
+      "declaration": "B(int b);", 
+      "declaration_pretty": "B(int b);", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:13:7", 
+          "spelling": "B", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#11", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:17:5", 
+      "method_property": [], 
+      "no_throw_guarantee": "not_guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "B", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [], 
+      "comment": "", 
+      "declaration": "~B() noexcept;", 
+      "declaration_pretty": "~B() noexcept;", 
+      "destructor_property": [], 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:13:7", 
+          "spelling": "B", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#12", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "destructor", 
+      "location": "test-input-3.cc:18:5", 
+      "method_property": [], 
+      "no_throw_guarantee": "guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [
+        "noexcept"
+      ], 
+      "spelling": "~B", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [
+        [
+          "const B&", 
+          ""
+        ]
+      ], 
+      "comment": "", 
+      "constructor_property": [
+        "copy", 
+        "converting"
+      ], 
+      "declaration": "B(const B&);", 
+      "declaration_pretty": "B(const B&);", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:13:7", 
+          "spelling": "B", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#13", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:19:5", 
+      "method_property": [
+        "default"
+      ], 
+      "no_throw_guarantee": "unevaluated", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "B", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "access": "public", 
+      "args_list": [
+        [
+          "B&&", 
+          ""
+        ]
+      ], 
+      "comment": "", 
+      "constructor_property": [
+        "move", 
+        "converting"
+      ], 
+      "declaration": "B(B&&);", 
+      "declaration_pretty": "B(B&&);", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:13:7", 
+          "spelling": "B", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#14", 
+      "is_deleted": false, 
+      "is_template": false, 
+      "kind": "constructor", 
+      "location": "test-input-3.cc:20:5", 
+      "method_property": [
+        "default"
+      ], 
+      "no_throw_guarantee": "unevaluated", 
+      "parent_kind": "class_declaration", 
+      "return_type": null, 
+      "specifier": [], 
+      "spelling": "B", 
+      "template_args_list": [], 
+      "usage": ""
+    }, 
+    {
+      "POD": true, 
+      "base_clause": [], 
+      "comment": "", 
+      "declaration": "class C;", 
+      "declaration_pretty": "class C;", 
+      "hierarchy": [], 
+      "id": "test-input-3.cc#15", 
+      "is_abstract": false, 
+      "is_template": false, 
+      "kind": "class_declaration", 
+      "location": "test-input-3.cc:23:7", 
+      "parent_kind": "(global)", 
+      "size": 4, 
+      "specifier": [], 
+      "spelling": "C", 
+      "template_args_list": [], 
+      "type": [
+        "C", 
+        {
+          "is_array": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
+      "POD": true, 
+      "access": "private", 
+      "comment": "", 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "test-input-3.cc:23:7", 
+          "spelling": "C", 
+          "transparent": false
+        }
+      ], 
+      "id": "test-input-3.cc#16", 
+      "kind": "field_declaration", 
+      "location": "test-input-3.cc:24:9", 
+      "parent_kind": "class_declaration", 
+      "size": 4, 
+      "spelling": "c", 
+      "static_member": false, 
+      "type": [
+        "int", 
+        {
+          "is_array": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
+      "usage": ""
+    }
+  ], 
+  "time_indexing": 0.014868021011352539, 
+  "time_traversing": 0.8838038444519043
+}

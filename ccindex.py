@@ -235,7 +235,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     is_final = False
     is_override = False
     is_pure_virtual = False
-    is_noexcept = False # "noexcept" or "throw()"
+    is_no_throw_bool_or_None = False # True, False, None (for reason, see below)
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
             template_params_list.append(("typename", c.spelling))
@@ -250,7 +250,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
             is_final = True
         elif c.kind == cindex.CursorKind.CXX_OVERRIDE_ATTR:
             is_override = True
-        # NOTE is_pure_virtual and is_noexcept are not checked by inspecting c.kind
+        # NOTE is_pure_virtual and is_no_throw_bool_or_None are not checked by inspecting c.kind
     # 1. possibly function template header
     template_header = ""
     if template_params_list:
@@ -275,9 +275,15 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     if cursor.is_pure_virtual_method():
         is_pure_virtual = True
         postfix_str_list.append("=0")
-    if cursor.exception_specification_kind in noexcept_ExceptionSpecificationKind:
-        is_noexcept = True
+    exception_spec = cursor.exception_specification_kind
+    if exception_spec in noexcept_ExceptionSpecificationKind:
+        is_no_throw_bool_or_None = True
         postfix_str_list.append("noexcept")
+    elif exception_spec == cindex.ExceptionSpecificationKind.UNEVALUATED:
+        # not knowing if it's True or False, this is because per C++11, some functions
+        # are non-throwing even if they are not marked with "noexcept" or "throw()" -
+        # rule is very complicated: https://en.cppreference.com/w/cpp/language/noexcept_spec
+        is_no_throw_bool_or_None = None # not True or False
     postfix_str = ' '.join(postfix_str_list)
     # build prototype string, without template header
     if return_type and cursor.kind != cindex.CursorKind.CONVERSION_FUNCTION:
@@ -304,7 +310,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     return (
         (proto_str, proto_str_pretty),
         template_params_list, args_list, return_type,
-        (is_final, is_override, is_pure_virtual, is_noexcept)
+        (is_final, is_override, is_pure_virtual, is_no_throw_bool_or_None)
     )
 
 inheritance_access_specifiers = ["public", "protected", "private"]
@@ -373,6 +379,12 @@ func_like_CursorKind = [ # function-like
     cindex.CursorKind.CXX_METHOD
 ]
 
+method_like_CursorKind = [ # method-like
+    cindex.CursorKind.CONSTRUCTOR,
+    cindex.CursorKind.DESTRUCTOR,
+    cindex.CursorKind.CXX_METHOD
+]
+
 class_like_CursorKind = [ # class-like
     cindex.CursorKind.CLASS_DECL,
     cindex.CursorKind.STRUCT_DECL,
@@ -420,19 +432,18 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
             specifier_list.append("override")
         if func_proto_tuple[4][2]: # "=0", pure specifier
             specifier_list.append("=0")
-        if func_proto_tuple[4][3]: # "noexcept" or "throw()" (deprecated since C++11)
+        if func_proto_tuple[4][3] == True: # "noexcept" or "throw()" (deprecated since C++11)
             specifier_list.append("noexcept")
         symbol["specifier"] = specifier_list
         # each function-like is either non-throwing or potentially-throwing
         # non-throwing are said to have "no-throw guarantee":
         # C++ exception safety: https://en.wikipedia.org/wiki/Exception_safety
         if func_proto_tuple[4][3] == True:
-            symbol["no_throw_guarantee"] = True
-        else:
-            # defect: per C++11, in some cases functions without "noexcept"/"throw()"
-            # have "no-throw guarantee", too, but the rule is overly too complicated.
-            # see: https://en.cppreference.com/w/cpp/language/noexcept_spec
-            symbol["no_throw_guarantee"] = False
+            symbol["no_throw_guarantee"] = "guaranteed"
+        elif func_proto_tuple[4][3] == None:
+            symbol["no_throw_guarantee"] = "unevaluated" # what it means: see _format_func_proto()
+        else: # False
+            symbol["no_throw_guarantee"] = "not_guaranteed"
     elif c.kind in class_like_CursorKind:
         class_proto_tuple = _format_class_proto(c)
         symbol["declaration"] = "%s;" % class_proto_tuple[0][0] # str
@@ -506,14 +517,27 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["type_alias_underlying_type"] = _format_type(c.underlying_typedef_type) # str, one-step resoluted
         symbol["type_alias_chain"] = _format_type_alias_chain(c.type) # list of str, from this type to completely resoluted
         symbol["canonical_type"] = _format_type(c.type.get_canonical()) # str, completely resoluted
+    if c.kind in method_like_CursorKind:
+        symbol["is_deleted"] = is_deleted_method(c) # bool
+        method_property = []
+        if c.is_static_method():
+            method_property.append("static")
+        if c.is_const_method():
+            method_property.append("const")
+        if c.is_virtual_method():
+            method_property.append("virtual")
+        if c.is_pure_virtual_method():
+            method_property.append("pure_virtual")
+        if c.is_default_method(): # marked by "= default"
+            method_property.append("default")
+        if symbol["is_deleted"]: # marked by "= delete"
+            method_property.append("delete")
+        symbol["method_property"] = method_property # list
     if c.kind == cindex.CursorKind.CONSTRUCTOR:
         constructor_property = []
-        if is_deleted_method(c):
+        if symbol["is_deleted"]: # marked by "= delete"
             constructor_property.append("delete")
-            symbol["is_deleted"] = True # bool
-        else:
-            symbol["is_deleted"] = False # bool
-        if c.is_default_constructor():
+        if c.is_default_constructor(): # marked by "= default"
             constructor_property.append("default")
         if c.is_copy_constructor():
             constructor_property.append("copy")
@@ -522,30 +546,11 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         if c.is_converting_constructor():
             constructor_property.append("converting")
         symbol["constructor_property"] = constructor_property # list of str
-    if (c.semantic_parent.kind in class_like_CursorKind
-        and c.kind == cindex.CursorKind.VAR_DECL):
-        # static member is of VAR_DECL kind instead of FIELD_DECL kind
-        symbol["static_member"] = True # bool
-    if c.kind == cindex.CursorKind.FIELD_DECL:
-        symbol["static_member"] = False # bool
-    if c.kind == cindex.CursorKind.CXX_METHOD:
-        symbol["is_deleted"] = is_deleted_method(c) # bool
-        method_property = []
-        if c.is_static_method():
-            method_property.append("static")
-        if c.is_const_method():
-            method_property.append("const")
-        if c.is_default_method(): # marked by "= default"
-            method_property.append("default")
-        if c.is_virtual_method():
-            method_property.append("virtual")
-        if c.is_pure_virtual_method():
-            method_property.append("pure_virtual")
-        symbol["method_property"] = method_property # list
     if c.kind == cindex.CursorKind.DESTRUCTOR:
-        symbol["is_deleted"] = is_deleted_method(c) # bool
         destructor_property = []
         # destructor cannot be 'static' or 'const'
+        if symbol["is_deleted"]: # marked by "= delete"
+            constructor_property.append("delete")
         if c.is_default_method(): # marked by "= default"
             destructor_property.append("default")
         if c.is_virtual_method():
@@ -553,6 +558,12 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         if c.is_pure_virtual_method():
             destructor_property.append("pure_virtual")
         symbol["destructor_property"] = destructor_property # list
+    if (c.semantic_parent.kind in class_like_CursorKind
+        and c.kind == cindex.CursorKind.VAR_DECL):
+        # static member is of VAR_DECL kind instead of FIELD_DECL kind
+        symbol["static_member"] = True # bool
+    if c.kind == cindex.CursorKind.FIELD_DECL:
+        symbol["static_member"] = False # bool
     if c.kind == cindex.CursorKind.ENUM_DECL:
         symbol["scoped_enum"] = True if c.is_scoped_enum() else False
         symbol["enum_underlying_type"] = _format_type(c.enum_type)

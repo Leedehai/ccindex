@@ -129,12 +129,14 @@ test-input-2.h:13:5
 False
 ::::: constructor_property
 ['default']
+::::: method_property
+[]
 ::::: args_list
 []
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -168,12 +170,14 @@ test-input-2.h:14:5
 False
 ::::: constructor_property
 []
+::::: method_property
+[]
 ::::: args_list
 [('double', 're'), ('double', 'im')]
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -207,12 +211,14 @@ test-input-2.h:15:5
 True
 ::::: constructor_property
 ['delete', 'move', 'converting']
+::::: method_property
+['delete']
 ::::: args_list
 [('NS::Complex&&', '')]
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -255,7 +261,7 @@ False
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -294,7 +300,7 @@ False
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -326,7 +332,7 @@ test-input-2.h:27:22
 ::::: args_list
 [('std::vector<Complex>&', 'v1'), ('double', '')]
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -628,7 +634,7 @@ test-input-2.h:38:6
 ::::: args_list
 [('bool', 'b'), ('NS::Complex&', 'c')]
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 True
 ::::: declaration
@@ -1248,5 +1254,5 @@ True
 [includes]
 {'depth': 1, 'included_at': 'test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time indexing] 0.02 sec
-[time traverse] 0.96 sec
+[time indexing] 0.01 sec
+[time traverse] 0.92 sec

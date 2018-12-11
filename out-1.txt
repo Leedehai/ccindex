@@ -40,7 +40,7 @@ test-input-1.cc:8:5
 ::::: args_list
 []
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -162,7 +162,7 @@ False
 ::::: access
 private
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -195,12 +195,14 @@ comment for MyClass()
 False
 ::::: constructor_property
 ['default']
+::::: method_property
+[]
 ::::: args_list
 []
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -233,12 +235,14 @@ test-input-1.cc:18:2
 False
 ::::: constructor_property
 ['copy', 'converting']
+::::: method_property
+[]
 ::::: args_list
 [('const MyClass&', '')]
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -271,12 +275,14 @@ test-input-1.cc:19:2
 False
 ::::: constructor_property
 []
+::::: method_property
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -314,7 +320,7 @@ False
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -347,12 +353,14 @@ test-input-1.cc:21:2
 False
 ::::: constructor_property
 ['move', 'converting']
+::::: method_property
+[]
 ::::: args_list
 [('MyClass&&', '')]
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -390,7 +398,7 @@ False
 ::::: access
 public
 ::::: no_throw_guarantee
-True
+guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -424,7 +432,7 @@ test-input-1.cc:23:2
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -584,7 +592,7 @@ False
 ::::: access
 private
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -615,7 +623,7 @@ test-input-1.cc:41:5
 ::::: args_list
 []
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -646,7 +654,7 @@ test-input-1.cc:45:5
 ::::: args_list
 [('T*', 'pt'), ('U*', 'pu'), ('int', 'n')]
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 True
 ::::: declaration
@@ -679,7 +687,7 @@ comment for foo()
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -712,12 +720,14 @@ test-input-1.cc:51:10
 False
 ::::: constructor_property
 []
+::::: method_property
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -939,7 +949,7 @@ test-input-1.cc:72:6
 ::::: args_list
 []
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1179,7 +1189,7 @@ test-input-1.cc:84:12
 ::::: args_list
 []
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1218,7 +1228,7 @@ False
 ::::: access
 private
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1257,7 +1267,7 @@ False
 ::::: access
 private
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1300,7 +1310,7 @@ False
 ::::: access
 private
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1367,7 +1377,7 @@ test-input-1.cc:91:5
 ::::: args_list
 []
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1464,7 +1474,7 @@ test-input-1.cc:96:5
 ::::: args_list
 []
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1948,12 +1958,14 @@ test-input-1.cc:117:5
 False
 ::::: constructor_property
 ['default']
+::::: method_property
+[]
 ::::: args_list
 []
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -1986,12 +1998,14 @@ test-input-1.cc:118:13
 ['virtual', 'pure_virtual']
 ::::: is_deleted
 False
+::::: method_property
+['virtual', 'pure_virtual']
 ::::: args_list
 []
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+unevaluated
 ::::: is_template
 False
 ::::: declaration
@@ -2029,7 +2043,7 @@ False
 ::::: access
 public
 ::::: no_throw_guarantee
-False
+not_guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -2126,7 +2140,7 @@ test-input-1.cc:130:1
 ::::: args_list
 [('char*&', 'in')]
 ::::: no_throw_guarantee
-True
+guaranteed
 ::::: is_template
 False
 ::::: declaration
@@ -2157,7 +2171,7 @@ test-input-1.cc:130:1
 ::::: args_list
 [('char*&&', 'in')]
 ::::: no_throw_guarantee
-True
+guaranteed
 ::::: is_template
 False
 ::::: declaration

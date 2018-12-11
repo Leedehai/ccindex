@@ -158,7 +158,8 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-2.h:13:5", 
-      "no_throw_guarantee": false, 
+      "method_property": [], 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -201,7 +202,8 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-2.h:14:5", 
-      "no_throw_guarantee": false, 
+      "method_property": [], 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -244,7 +246,10 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-2.h:15:5", 
-      "no_throw_guarantee": false, 
+      "method_property": [
+        "delete"
+      ], 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -280,7 +285,7 @@
       "method_property": [
         "const"
       ], 
-      "no_throw_guarantee": false, 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": "bool", 
       "specifier": [], 
@@ -319,7 +324,7 @@
       "kind": "method", 
       "location": "test-input-2.h:24:14", 
       "method_property": [], 
-      "no_throw_guarantee": false, 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": "NS::Complex&", 
       "specifier": [], 
@@ -353,7 +358,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-2.h:27:22", 
-      "no_throw_guarantee": false, 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
       "return_type": "std::vector<Complex>", 
       "specifier": [], 
@@ -714,7 +719,7 @@
       "is_template": true, 
       "kind": "function_template", 
       "location": "test-input-2.h:38:6", 
-      "no_throw_guarantee": false, 
+      "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
       "return_type": "void", 
       "specifier": [], 
@@ -1608,6 +1613,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.016966819763183594, 
-  "time_traversing": 1.0040419101715088
+  "time_indexing": 0.01456904411315918, 
+  "time_traversing": 0.9086339473724365
 }

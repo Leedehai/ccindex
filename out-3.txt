@@ -1,0 +1,596 @@
+[TARGET FILE] test-input-3.cc
+::::: id
+test-input-3.cc#1
+::::: spelling
+A
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-3.cc:3:7
+::::: comment
+(none)
+::::: specifier
+[]
+::::: base_clause
+[]
+::::: POD
+False
+::::: is_template
+False
+::::: declaration
+class A;
+::::: declaration_pretty
+class A;
+::::: size
+4
+::::: type
+A
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+::::: is_abstract
+False
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#2
+::::: spelling
+a
+::::: kind
+field_declaration
+::::: hierarchy
+::A
+{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:4:9
+::::: comment
+(none)
+::::: static_member
+False
+::::: access
+private
+::::: type
+int
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+::::: POD
+True
+::::: size
+4
+==================
+::::: id
+test-input-3.cc#3
+::::: spelling
+A
+::::: kind
+constructor
+::::: hierarchy
+::A
+{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:6:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+False
+::::: constructor_property
+['default']
+::::: method_property
+[]
+::::: args_list
+[]
+::::: access
+public
+::::: no_throw_guarantee
+not_guaranteed
+::::: is_template
+False
+::::: declaration
+A();
+::::: declaration_pretty
+A();
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#4
+::::: spelling
+A
+::::: kind
+constructor
+::::: hierarchy
+::A
+{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:7:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+False
+::::: constructor_property
+['converting']
+::::: method_property
+[]
+::::: args_list
+[('int', 'a')]
+::::: access
+public
+::::: no_throw_guarantee
+not_guaranteed
+::::: is_template
+False
+::::: declaration
+A(int a);
+::::: declaration_pretty
+A(int a);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#5
+::::: spelling
+~A
+::::: kind
+destructor
+::::: hierarchy
+::A
+{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:8:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: destructor_property
+[]
+::::: is_deleted
+False
+::::: method_property
+[]
+::::: args_list
+[]
+::::: access
+public
+::::: no_throw_guarantee
+unevaluated
+::::: is_template
+False
+::::: declaration
+~A();
+::::: declaration_pretty
+~A();
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#6
+::::: spelling
+A
+::::: kind
+constructor
+::::: hierarchy
+::A
+{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:9:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+True
+::::: constructor_property
+['delete', 'copy', 'converting']
+::::: method_property
+['delete']
+::::: args_list
+[('const A&', '')]
+::::: access
+public
+::::: no_throw_guarantee
+not_guaranteed
+::::: is_template
+False
+::::: declaration
+A(const A&);
+::::: declaration_pretty
+A(const A&);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#7
+::::: spelling
+A
+::::: kind
+constructor
+::::: hierarchy
+::A
+{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:10:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+True
+::::: constructor_property
+['delete', 'move', 'converting']
+::::: method_property
+['delete']
+::::: args_list
+[('A&&', '')]
+::::: access
+public
+::::: no_throw_guarantee
+not_guaranteed
+::::: is_template
+False
+::::: declaration
+A(A&&);
+::::: declaration_pretty
+A(A&&);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#8
+::::: spelling
+B
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-3.cc:13:7
+::::: comment
+(none)
+::::: specifier
+[]
+::::: base_clause
+[]
+::::: POD
+False
+::::: is_template
+False
+::::: declaration
+class B;
+::::: declaration_pretty
+class B;
+::::: size
+4
+::::: type
+B
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+::::: is_abstract
+False
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#9
+::::: spelling
+b
+::::: kind
+field_declaration
+::::: hierarchy
+::B
+{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:14:9
+::::: comment
+(none)
+::::: static_member
+False
+::::: access
+private
+::::: type
+int
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+::::: POD
+True
+::::: size
+4
+==================
+::::: id
+test-input-3.cc#10
+::::: spelling
+B
+::::: kind
+constructor
+::::: hierarchy
+::B
+{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:16:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+False
+::::: constructor_property
+['default']
+::::: method_property
+['default']
+::::: args_list
+[]
+::::: access
+public
+::::: no_throw_guarantee
+unevaluated
+::::: is_template
+False
+::::: declaration
+B();
+::::: declaration_pretty
+B();
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#11
+::::: spelling
+B
+::::: kind
+constructor
+::::: hierarchy
+::B
+{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:17:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+False
+::::: constructor_property
+['converting']
+::::: method_property
+[]
+::::: args_list
+[('int', 'b')]
+::::: access
+public
+::::: no_throw_guarantee
+not_guaranteed
+::::: is_template
+False
+::::: declaration
+B(int b);
+::::: declaration_pretty
+B(int b);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#12
+::::: spelling
+~B
+::::: kind
+destructor
+::::: hierarchy
+::B
+{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:18:5
+::::: comment
+(none)
+::::: specifier
+['noexcept']
+::::: destructor_property
+[]
+::::: is_deleted
+False
+::::: method_property
+[]
+::::: args_list
+[]
+::::: access
+public
+::::: no_throw_guarantee
+guaranteed
+::::: is_template
+False
+::::: declaration
+~B() noexcept;
+::::: declaration_pretty
+~B() noexcept;
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#13
+::::: spelling
+B
+::::: kind
+constructor
+::::: hierarchy
+::B
+{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:19:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+False
+::::: constructor_property
+['copy', 'converting']
+::::: method_property
+['default']
+::::: args_list
+[('const B&', '')]
+::::: access
+public
+::::: no_throw_guarantee
+unevaluated
+::::: is_template
+False
+::::: declaration
+B(const B&);
+::::: declaration_pretty
+B(const B&);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#14
+::::: spelling
+B
+::::: kind
+constructor
+::::: hierarchy
+::B
+{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:20:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+False
+::::: constructor_property
+['move', 'converting']
+::::: method_property
+['default']
+::::: args_list
+[('B&&', '')]
+::::: access
+public
+::::: no_throw_guarantee
+unevaluated
+::::: is_template
+False
+::::: declaration
+B(B&&);
+::::: declaration_pretty
+B(B&&);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#15
+::::: spelling
+C
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+test-input-3.cc:23:7
+::::: comment
+(none)
+::::: specifier
+[]
+::::: base_clause
+[]
+::::: POD
+True
+::::: is_template
+False
+::::: declaration
+class C;
+::::: declaration_pretty
+class C;
+::::: size
+4
+::::: type
+C
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+::::: is_abstract
+False
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-3.cc#16
+::::: spelling
+c
+::::: kind
+field_declaration
+::::: hierarchy
+::C
+{'spelling': 'C', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:23:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-3.cc:24:9
+::::: comment
+(none)
+::::: static_member
+False
+::::: access
+private
+::::: type
+int
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+::::: POD
+True
+::::: size
+4
+==================
+[includes]
+{'depth': 1, 'included_at': 'test-input-3.cc:1:10', 'file': './test-input-2.h'}
+{'depth': 2, 'included_at': './test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
+{'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
+[time indexing] 0.01 sec
+[time traverse] 1.01 sec
