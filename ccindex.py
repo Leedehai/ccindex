@@ -223,6 +223,10 @@ no_return_funcs_CursorKindCursorKind = [ # no return type
     cindex.CursorKind.CONSTRUCTOR,
     cindex.CursorKind.DESTRUCTOR,
 ]
+noexcept_ExceptionSpecificationKind = [
+    cindex.ExceptionSpecificationKind.DYNAMIC_NONE,   # throw(), deprecated since C++11, supported for legacy
+    cindex.ExceptionSpecificationKind.BASIC_NOEXCEPT, # noexcept
+]
 def _format_func_proto(cursor): # ordinary function/method templated function/method
     # go through child elements, collecting ordinary args and possibly template params
     template_params_list = []
@@ -231,6 +235,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     is_final = False
     is_override = False
     is_pure_virtual = False
+    is_noexcept = False # "noexcept" or "throw()"
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
             template_params_list.append(("typename", c.spelling))
@@ -245,7 +250,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
             is_final = True
         elif c.kind == cindex.CursorKind.CXX_OVERRIDE_ATTR:
             is_override = True
-        # NOTE is_pure_virtual is not checked by inspecting c.kind
+        # NOTE is_pure_virtual and is_noexcept are not checked by inspecting c.kind
     # 1. possibly function template header
     template_header = ""
     if template_params_list:
@@ -270,6 +275,9 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     if cursor.is_pure_virtual_method():
         is_pure_virtual = True
         postfix_str_list.append("=0")
+    if cursor.exception_specification_kind in noexcept_ExceptionSpecificationKind:
+        is_noexcept = True
+        postfix_str_list.append("noexcept")
     postfix_str = ' '.join(postfix_str_list)
     # build prototype string, without template header
     if return_type and cursor.kind != cindex.CursorKind.CONVERSION_FUNCTION:
@@ -296,7 +304,7 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
     return (
         (proto_str, proto_str_pretty),
         template_params_list, args_list, return_type,
-        (is_final, is_override, is_pure_virtual)
+        (is_final, is_override, is_pure_virtual, is_noexcept)
     )
 
 inheritance_access_specifiers = ["public", "protected", "private"]
@@ -402,7 +410,18 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
             specifier_list.append("override")
         if func_proto_tuple[4][2]: # "=0", pure specifier
             specifier_list.append("=0")
+        if func_proto_tuple[4][3]: # "noexcept" or "throw()" (deprecated since C++11)
+            specifier_list.append("noexcept")
         symbol["specifier"] = specifier_list
+        # each function-like is either non-throwing or potentially-throwing
+        if func_proto_tuple[4][3] == True:
+            symbol["no_exception_guarantee"] = True
+        else:
+            # defect: per C++11, in some cases functions without "noexcept"/"throw()"
+            # have no exception guarantee, too, but the rule is complicated.
+            # see: https://en.cppreference.com/w/cpp/language/noexcept_spec
+            symbol["no_exception_guarantee"] = False
+
     elif c.kind in class_like_CursorKind:
         class_proto_tuple = _format_class_proto(c)
         symbol["declaration"] = "%s;" % class_proto_tuple[0][0] # str

@@ -125,6 +125,8 @@ test-input-2.h:13:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -160,6 +162,8 @@ test-input-2.h:14:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('double', 're'), ('double', 'im')]
 ::::: access
@@ -199,6 +203,8 @@ bool b = complex.isReal();
 []
 ::::: method_property
 ['const']
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -234,6 +240,8 @@ test-input-2.h:23:14
 []
 ::::: method_property
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('NS::Complex&&', '')]
 ::::: access
@@ -266,6 +274,8 @@ test-input-2.h:26:22
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('std::vector<Complex>&', 'v1'), ('double', '')]
 ::::: is_template
@@ -566,6 +576,8 @@ test-input-2.h:37:6
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('bool', 'b'), ('NS::Complex&', 'c')]
 ::::: is_template
@@ -1188,4 +1200,4 @@ True
 {'depth': 1, 'included_at': 'test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.42 sec
+[time traverse] 1.43 sec

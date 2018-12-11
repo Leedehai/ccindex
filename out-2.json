@@ -155,6 +155,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-2.h:13:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -195,6 +196,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-2.h:14:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -229,6 +231,7 @@
       "method_property": [
         "const"
       ], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "bool", 
       "specifier": [], 
@@ -266,6 +269,7 @@
       "kind": "method", 
       "location": "test-input-2.h:23:14", 
       "method_property": [], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "NS::Complex&", 
       "specifier": [], 
@@ -299,6 +303,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-2.h:26:22", 
+      "no_exception_guarantee": false, 
       "parent_kind": "namespace", 
       "return_type": "std::vector<Complex>", 
       "specifier": [], 
@@ -659,6 +664,7 @@
       "is_template": true, 
       "kind": "function_template", 
       "location": "test-input-2.h:37:6", 
+      "no_exception_guarantee": false, 
       "parent_kind": "namespace", 
       "return_type": "void", 
       "specifier": [], 
@@ -1552,6 +1558,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.01599287986755371, 
-  "time_traversing": 1.2941079139709473
+  "time_indexing": 0.018332958221435547, 
+  "time_traversing": 1.4628660678863525
 }

@@ -62,6 +62,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:8:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -170,6 +171,7 @@
       "method_property": [
         "static"
       ], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "void", 
       "specifier": [], 
@@ -196,6 +198,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:17:2", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -227,6 +230,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:18:2", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -261,6 +265,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:19:2", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -287,6 +292,7 @@
       "kind": "method", 
       "location": "test-input-1.cc:20:6", 
       "method_property": [], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "Int", 
       "specifier": [], 
@@ -318,6 +324,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:21:2", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -334,8 +341,8 @@
         ]
       ], 
       "comment": "", 
-      "declaration": "MyClass operator+(const MyClass&);", 
-      "declaration_pretty": "MyClass operator+(const MyClass&);", 
+      "declaration": "MyClass operator+(const MyClass&) noexcept;", 
+      "declaration_pretty": "MyClass operator+(const MyClass&) noexcept;", 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -349,9 +356,12 @@
       "kind": "method", 
       "location": "test-input-1.cc:22:10", 
       "method_property": [], 
+      "no_exception_guarantee": true, 
       "parent_kind": "class_declaration", 
       "return_type": "MyClass", 
-      "specifier": [], 
+      "specifier": [
+        "noexcept"
+      ], 
       "spelling": "operator+", 
       "template_args_list": [], 
       "usage": ""
@@ -374,6 +384,7 @@
       "is_template": false, 
       "kind": "conversion_function", 
       "location": "test-input-1.cc:23:2", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "int", 
       "specifier": [], 
@@ -548,6 +559,7 @@
         "virtual", 
         "pure_virtual"
       ], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "void", 
       "specifier": [
@@ -567,6 +579,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:41:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -597,6 +610,7 @@
       "is_template": true, 
       "kind": "function_template", 
       "location": "test-input-1.cc:45:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -636,6 +650,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:48:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -670,6 +685,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:51:10", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -896,6 +912,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:72:6", 
+      "no_exception_guarantee": false, 
       "parent_kind": "namespace", 
       "return_type": "int", 
       "specifier": [], 
@@ -1157,6 +1174,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:84:12", 
+      "no_exception_guarantee": false, 
       "parent_kind": "namespace", 
       "return_type": "int", 
       "specifier": [], 
@@ -1194,6 +1212,7 @@
       "kind": "method", 
       "location": "test-input-1.cc:85:8", 
       "method_property": [], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "size_t", 
       "specifier": [], 
@@ -1239,6 +1258,7 @@
       "kind": "method", 
       "location": "test-input-1.cc:86:6", 
       "method_property": [], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "bool", 
       "specifier": [], 
@@ -1280,6 +1300,7 @@
       "kind": "method", 
       "location": "test-input-1.cc:87:19", 
       "method_property": [], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "std::vector<int>&", 
       "specifier": [], 
@@ -1325,6 +1346,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:91:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -1413,6 +1435,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:96:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -1900,6 +1923,7 @@
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:117:5", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -1929,6 +1953,7 @@
       "is_template": false, 
       "kind": "destructor", 
       "location": "test-input-1.cc:118:13", 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [
@@ -1960,6 +1985,7 @@
         "virtual", 
         "pure_virtual"
       ], 
+      "no_exception_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "void", 
       "specifier": [
@@ -2046,16 +2072,19 @@
         ]
       ], 
       "comment": "", 
-      "declaration": "void returnVoid(char*& in);", 
-      "declaration_pretty": "void returnVoid(char*& in);", 
+      "declaration": "void returnVoid(char*& in) noexcept;", 
+      "declaration_pretty": "void returnVoid(char*& in) noexcept;", 
       "hierarchy": [], 
       "id": "test-input-1.cc#71", 
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:130:1", 
+      "no_exception_guarantee": true, 
       "parent_kind": "(global)", 
       "return_type": "void", 
-      "specifier": [], 
+      "specifier": [
+        "noexcept"
+      ], 
       "spelling": "returnVoid", 
       "template_args_list": [], 
       "usage": ""
@@ -2068,21 +2097,24 @@
         ]
       ], 
       "comment": "", 
-      "declaration": "void returnVoid(char*&& in);", 
-      "declaration_pretty": "void returnVoid(char*&& in);", 
+      "declaration": "void returnVoid(char*&& in) noexcept;", 
+      "declaration_pretty": "void returnVoid(char*&& in) noexcept;", 
       "hierarchy": [], 
       "id": "test-input-1.cc#72", 
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:130:1", 
+      "no_exception_guarantee": true, 
       "parent_kind": "(global)", 
       "return_type": "void", 
-      "specifier": [], 
+      "specifier": [
+        "noexcept"
+      ], 
       "spelling": "returnVoid", 
       "template_args_list": [], 
       "usage": ""
     }
   ], 
-  "time_indexing": 0.015965938568115234, 
-  "time_traversing": 1.4783871173858643
+  "time_indexing": 0.017332077026367188, 
+  "time_traversing": 1.415950059890747
 }

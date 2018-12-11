@@ -19,7 +19,7 @@ public:
 	MyClass(int a, Int b) : property2(a) {} /*< comment for MyClass(int, Int) */
 	Int method2();
 	MyClass(MyClass &&);
-	MyClass operator+(const MyClass &);
+	MyClass operator+(const MyClass &) noexcept;
 	operator int();
 private:
 	/** comment for property2 */
@@ -125,7 +125,7 @@ char arrChar[] = { 'h', 'e', 'l', 'l', 'o', '\n' };
 BaseClass arrVar[];
 
 #define FUNCS(func_name, T)   \
-	void func_name(T &in) {}  \
-	void func_name(T &&in) {}
+	void func_name(T &in) noexcept {}  \
+	void func_name(T &&in) throw() {}
 FUNCS(returnVoid, char *) // two functions in one line; they'll have the same source location
 

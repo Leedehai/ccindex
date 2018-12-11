@@ -37,6 +37,8 @@ test-input-1.cc:8:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: is_template
@@ -153,6 +155,8 @@ test-input-1.cc:14:14
 []
 ::::: method_property
 ['static']
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -185,6 +189,8 @@ test-input-1.cc:17:2
 comment for MyClass()
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -219,6 +225,8 @@ test-input-1.cc:18:2
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('const MyClass&', '')]
 ::::: access
@@ -253,6 +261,8 @@ test-input-1.cc:19:2
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
@@ -287,6 +297,8 @@ test-input-1.cc:20:6
 []
 ::::: method_property
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -319,6 +331,8 @@ test-input-1.cc:21:2
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('MyClass&&', '')]
 ::::: access
@@ -352,9 +366,11 @@ test-input-1.cc:22:10
 ::::: comment
 (none)
 ::::: specifier
-[]
+['noexcept']
 ::::: method_property
 []
+::::: no_exception_guarantee
+True
 ::::: args_list
 [('const MyClass&', '')]
 ::::: access
@@ -362,9 +378,9 @@ public
 ::::: is_template
 False
 ::::: declaration
-MyClass operator+(const MyClass&);
+MyClass operator+(const MyClass&) noexcept;
 ::::: declaration_pretty
-MyClass operator+(const MyClass&);
+MyClass operator+(const MyClass&) noexcept;
 ::::: return_type
 MyClass
 ::::: template_args_list
@@ -387,6 +403,8 @@ test-input-1.cc:23:2
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -543,6 +561,8 @@ test-input-1.cc:37:15
 ['=0']
 ::::: method_property
 ['const', 'virtual', 'pure_virtual']
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -574,6 +594,8 @@ test-input-1.cc:41:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: is_template
@@ -603,6 +625,8 @@ test-input-1.cc:45:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('T*', 'pt'), ('U*', 'pu'), ('int', 'n')]
 ::::: is_template
@@ -634,6 +658,8 @@ test-input-1.cc:48:5
 comment for foo()
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: is_template
@@ -664,6 +690,8 @@ test-input-1.cc:51:10
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
@@ -886,6 +914,8 @@ test-input-1.cc:72:6
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: is_template
@@ -1124,6 +1154,8 @@ test-input-1.cc:84:12
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: is_template
@@ -1157,6 +1189,8 @@ test-input-1.cc:85:8
 []
 ::::: method_property
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('int', 'a')]
 ::::: access
@@ -1192,6 +1226,8 @@ test-input-1.cc:86:6
 []
 ::::: method_property
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('std::string', 's'), ('MyClass', 'obj'), ('int', 'obj2')]
 ::::: access
@@ -1231,6 +1267,8 @@ test-input-1.cc:87:19
 []
 ::::: method_property
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 [('float', 'a'), ('std::vector<int>', 'b')]
 ::::: access
@@ -1298,6 +1336,8 @@ test-input-1.cc:91:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: is_template
@@ -1393,6 +1433,8 @@ test-input-1.cc:96:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: is_template
@@ -1874,6 +1916,8 @@ test-input-1.cc:117:5
 (none)
 ::::: specifier
 []
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -1910,6 +1954,8 @@ test-input-1.cc:118:13
 ['=0']
 ::::: destructor_property
 ['virtual', 'pure_virtual']
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -1944,6 +1990,8 @@ test-input-1.cc:119:18
 ['=0']
 ::::: method_property
 ['virtual', 'pure_virtual']
+::::: no_exception_guarantee
+False
 ::::: args_list
 []
 ::::: access
@@ -2040,15 +2088,17 @@ test-input-1.cc:130:1
 ::::: comment
 (none)
 ::::: specifier
-[]
+['noexcept']
+::::: no_exception_guarantee
+True
 ::::: args_list
 [('char*&', 'in')]
 ::::: is_template
 False
 ::::: declaration
-void returnVoid(char*& in);
+void returnVoid(char*& in) noexcept;
 ::::: declaration_pretty
-void returnVoid(char*& in);
+void returnVoid(char*& in) noexcept;
 ::::: return_type
 void
 ::::: template_args_list
@@ -2069,15 +2119,17 @@ test-input-1.cc:130:1
 ::::: comment
 (none)
 ::::: specifier
-[]
+['noexcept']
+::::: no_exception_guarantee
+True
 ::::: args_list
 [('char*&&', 'in')]
 ::::: is_template
 False
 ::::: declaration
-void returnVoid(char*&& in);
+void returnVoid(char*&& in) noexcept;
 ::::: declaration_pretty
-void returnVoid(char*&& in);
+void returnVoid(char*&& in) noexcept;
 ::::: return_type
 void
 ::::: template_args_list
@@ -2103,4 +2155,4 @@ test-input-1.cc:125:11: error: definition of variable with array type needs an e
 {'depth': 1, 'included_at': 'test-input-1.cc:4:10', 'file': './test-input-2.h'}
 {'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.43 sec
+[time traverse] 1.42 sec
