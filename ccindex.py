@@ -31,7 +31,7 @@
 # only on macOS; for Linux, modify LIBCLANG_PATH_CANDIDATES and SYS_INCLUDE_PATHS
 
 import sys, os, time
-import re
+import re, json
 import argparse
 try:
     import clang.cindex as cindex # pip install clang
@@ -119,7 +119,7 @@ def _format_location(location):
 def _is_transparent_decl(cursor):
     return (cursor.kind == cindex.CursorKind.ENUM_DECL) and (not cursor.is_scoped_enum())
 
-def _format_hierarchy(cursor):
+def _collect_hierarchy(cursor):
     if cursor.semantic_parent.kind == cindex.CursorKind.TRANSLATION_UNIT:
         return [], "(global)"
     # return tuple element #0
@@ -177,13 +177,15 @@ def _format_type_param_decl_location(type_obj, hierarchy):
     #     };
     # };
     canonical_spelling = type_obj.get_canonical().spelling # "type-parameter-X-Y"
+    if not canonical_spelling.startswith("type-parameter-"):
+        raise ValueError("not a type parameter: '%s', please file a bug" % type_obj.spelling)
     assert canonical_spelling.startswith("type-parameter-")
     owning_template_level, template_param_pos = tuple(int(n) for n in canonical_spelling.split("-")[-2:])
     owning_template = _find_hierarchy_item_for_owning_template(hierarchy, owning_template_level)
     return {
-        "location": owning_template["location"] if owning_template else "",
-        "spelling": owning_template["spelling"] if owning_template else "(not found)",
-        "index":    template_param_pos if owning_template else -1,
+        "spelling": owning_template["spelling"] if owning_template else "", # the name of template that declared with this type param explicitly
+        "location": owning_template["location"] if owning_template else "", # the source location of that template
+        "index":    template_param_pos if owning_template else -1, # the position (from 0) in that template declaration's template param list
     }
 
 def _format_type_spelling(type_str):
@@ -197,7 +199,7 @@ def _format_type_spelling(type_str):
 def _format_type(type_obj):
     type_str = type_obj.spelling
     if type_str.startswith("type-parameter-"):
-        return "(type parameter)"
+        return "(type_parameter)"
     return _format_type_spelling(type_str)
 
 def _get_type_alias_chain(type_obj):
@@ -215,8 +217,8 @@ def _get_type_alias_chain(type_obj):
 def _format_type_alias_chain(type_obj):
     chain = _get_type_alias_chain(type_obj)
     return [ {
-        "spelling": item.spelling,
-        "location": _format_location(item.get_declaration().location)
+        "spelling": item.spelling, # str
+        "location": _format_location(item.get_declaration().location), # str
     } for item in chain ]
 
 no_return_funcs_CursorKindCursorKind = [ # no return type
@@ -224,7 +226,7 @@ no_return_funcs_CursorKindCursorKind = [ # no return type
     cindex.CursorKind.DESTRUCTOR,
 ]
 noexcept_ExceptionSpecificationKind = [
-    cindex.ExceptionSpecificationKind.DYNAMIC_NONE,   # throw(), deprecated since C++11, supported for legacy
+    cindex.ExceptionSpecificationKind.DYNAMIC_NONE,   # throw(), not recommended since C++11
     cindex.ExceptionSpecificationKind.BASIC_NOEXCEPT, # noexcept
 ]
 def _format_func_proto(cursor): # ordinary function/method templated function/method
@@ -365,6 +367,11 @@ def is_deleted_method(cursor):
             return True
     return False
 
+def _format_sizeof_type(type_obj):
+    sizeof_type_raw = type_obj.get_size()
+    sizeof_type = sizeof_type_raw if sizeof_type_raw > 0 else None # int or NoneType (e.g. type param)
+    return sizeof_type
+
 """
 Index visiting
 """
@@ -374,44 +381,148 @@ func_like_CursorKind = [ # function-like
     cindex.CursorKind.CONVERSION_FUNCTION,
     cindex.CursorKind.CONSTRUCTOR,
     cindex.CursorKind.DESTRUCTOR,
-    cindex.CursorKind.CXX_METHOD
+    cindex.CursorKind.CXX_METHOD,
 ]
 
 method_like_CursorKind = [ # method-like
     cindex.CursorKind.CONSTRUCTOR,
     cindex.CursorKind.DESTRUCTOR,
-    cindex.CursorKind.CXX_METHOD
+    cindex.CursorKind.CXX_METHOD,
 ]
 
 class_like_CursorKind = [ # class-like
     cindex.CursorKind.CLASS_DECL,
     cindex.CursorKind.STRUCT_DECL,
-    cindex.CursorKind.CLASS_TEMPLATE
+    cindex.CursorKind.CLASS_TEMPLATE,
 ]
 
 val_like_CursorKind = [ # value-like
     cindex.CursorKind.VAR_DECL,
     cindex.CursorKind.FIELD_DECL,
-    cindex.CursorKind.ENUM_CONSTANT_DECL
+    cindex.CursorKind.ENUM_CONSTANT_DECL,
 ]
 
 array_TypeKind = [
-    cindex.TypeKind.CONSTANTARRAY,   # int arr[5]
-    cindex.TypeKind.INCOMPLETEARRAY, # int arr[]
-    cindex.TypeKind.VARIABLEARRAY,
-    cindex.TypeKind.DEPENDENTSIZEDARRAY, # int arr[] = { 'o', 'k', '\0' };
+    cindex.TypeKind.CONSTANTARRAY,   # 1) int arr[5]; int arr[] = {..}; int arr[expr] where expr is an Integral Constant Expression
+    cindex.TypeKind.INCOMPLETEARRAY, # 2) int arr[], as a function formal arg
+    cindex.TypeKind.VARIABLEARRAY,   # 3) int arr[expr]; where expr is not an Integral Constant Expression
+    cindex.TypeKind.DEPENDENTSIZEDARRAY, # 4) size unknown until template instantiation, then it becomes either 1) or 3)
 ]
 
 pointer_TypeKind = [
-    cindex.TypeKind.POINTER,
-    cindex.TypeKind.MEMBERPOINTER,
+    cindex.TypeKind.POINTER,       # 1) int *p = &n; Class *p = &objClass; int (*p)(int) = &func;
+    cindex.TypeKind.MEMBERPOINTER, # 2) int Class::* p = &Class::member; int (Class::* p)(int) = &Class::method;
 ]
+
+# C++ has a very complicated type system
+# this function is potentially called recursively
+def _collect_type_info(c_type, hierarchy=[]): # return a tuple (spelling str, dict)
+    type_kind = c_type.kind
+    type_spelling = _format_type(c_type)
+    sizeof_type = _format_sizeof_type(c_type) # int or NoneType (e.g. type param)
+    if type_kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
+        # if the canonical type (real type under all the layers of typedef) is not a type param, then it is the same
+        # as type_alias_chain[-1].spelling, i.e. completely resoluted;
+        # if it is a type param, then it is "(type_parameter)"
+        canonical_type = c_type.get_canonical()
+        canonical_type_kind = canonical_type.kind
+        canonical_type_spelling = _format_type(canonical_type) # str
+        res = (
+            type_spelling, {
+                "type_size": sizeof_type, # int or NoneType
+                # though this type itself is not a type param, yet as a
+                # type alias, its underlying type may be a type param
+                "is_type_alias": True,  # bool
+                "is_type_param": False, # bool
+                "is_array": False,      # bool
+                "is_pointer": False,    # bool
+                "is_function": False,   # bool
+                # real type, alias resoluted one step only
+                "type_alias_underlying_type": _format_type(c_type.get_declaration().underlying_typedef_type), # str
+                # type alias chain, this type first, completely resoluted last
+                "type_alias_chain": _format_type_alias_chain(c_type), # str or NoneType
+                # real type under all the layers of typedef
+                "canonical_type": _collect_type_info(canonical_type, hierarchy), # tuple of (str, dict)
+                # "canonical_type": (
+                #     canonical_type_spelling, {
+                #         "is_type_alias": False, # bool, guaranteed to be False: it is the canonical type, after all
+                #         "is_type_param": canonical_type_spelling == "(type_parameter)", # bool
+                #         "is_array": canonical_type_kind in array_TypeKind,              # bool
+                #         "is_pointer": canonical_type_kind in pointer_TypeKind           # bool
+                #     }
+                # )
+            }
+        ) # tuple of (str, dict)
+    elif type_kind == cindex.TypeKind.UNEXPOSED:
+        if type_spelling.endswith(")"): # this is a function type, e.g. "int (int, int)"
+            res = (
+                type_spelling, {
+                    "type_size": None,      # NoneType, function does not have a sizeof result
+                    "is_type_alias": False, # bool
+                    "is_type_param": False, # bool
+                    "is_array": False,      # bool
+                    "is_pointer": False,    # bool
+                    "is_function": True,    # bool
+                    # type_kind is TypeKind.UNEXPOSED, so we cannot extract function return
+                    # type or argument types from this cursor
+                }
+            ) # tuple of (str, dict)
+        else: # this is a type param
+            res = (
+                type_spelling, {
+                    "type_size": sizeof_type, # int or NoneType
+                    "is_type_alias": False, # bool
+                    "is_type_param": True,  # bool
+                    "is_array": False,      # bool
+                    "is_pointer": False,    # bool
+                    "is_function": False,   # bool
+                    "type_param_decl_location": _format_type_param_decl_location(c_type, hierarchy), # dict
+                }
+            ) # tuple of (str, dict)
+    elif type_kind in array_TypeKind:
+        array_size = c_type.get_array_size()
+        res = (
+            type_spelling, {
+                "type_size": sizeof_type, # int or NoneType, the number of bytes of the whole array
+                "is_type_alias": False, # bool
+                "is_type_param": False, # bool
+                "is_array": True,       # bool
+                "is_pointer": False,    # bool
+                "is_function": False,   # bool
+                "array_size": array_size if array_size > 0 else None, # int or NoneType, the number of elements
+                "array_element_type": _collect_type_info(c_type.get_array_element_type(), hierarchy), # tuple of (str, dict)
+            }
+        ) # tuple of (str, dict)
+    elif type_kind in pointer_TypeKind:
+        res = (
+            type_spelling, {
+                "type_size": sizeof_type, # int or NoneType, the number of bytes of the whole array
+                "is_type_alias": False, # bool
+                "is_type_param": False, # bool
+                "is_array": False,      # bool
+                "is_pointer": True,     # bool
+                "is_function": False,   # bool
+                "pointee_type": _collect_type_info(c_type.get_pointee(), hierarchy), # tuple of (str, dict)
+            }
+        ) # tuple of (str, dict)
+    else:
+        # record type (class, struct, union), primitive type (int, float, enum, ...), or their reference type
+        res = (
+            type_spelling, {
+                "type_size": sizeof_type, # int or NoneType
+                "is_type_alias": False, # bool
+                "is_type_param": False, # bool
+                "is_array": False,      # bool
+                "is_pointer": False,    # bool
+            }
+        ) # tuple of (str, dict)
+    return res # tuple (spelling str, dict)
 
 def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbol dict
     symbol = {} # dict for this symbol
     # part 1. mandated fields
     symbol["spelling"] = "%s" % c.spelling # str
-    hierarchy_info = _format_hierarchy(c)
+    hierarchy_info = _collect_hierarchy(c)
     symbol["hierarchy"] = hierarchy_info[0] # list of dict, might be empty, top-down
     symbol["parent_kind"] = hierarchy_info[1] # str
     symbol["location"] = _format_location(c.location) # str
@@ -457,80 +568,14 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["specifier"] = ["final"] if class_proto_tuple[2] else [] # "final" specifier
         symbol["base_clause"] = class_proto_tuple[3] # list of str
         symbol["is_abstract"] = c.is_abstract_record() # bool
+        symbol["size"] = _format_sizeof_type(c_type) # int or NoneType (e.g. type param) # int or NoneType (e.g. type param)
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
     if c.kind in val_like_CursorKind + [ cindex.CursorKind.CLASS_DECL, cindex.CursorKind.STRUCT_DECL ]:
-        sizeof_type = c_type.get_size()
-        symbol["size"] = sizeof_type if sizeof_type > 0 else None # int or NoneType (e.g. type param)
         symbol["POD"] = c_type.is_pod() # bool (POD: Plain Old Data)
-        type_kind = c_type.kind
-        type_spelling = _format_type(c_type)
         # C++ has a very complicated type system
-        if type_kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
-            symbol["type"] = (
-                type_spelling, {
-                    "type_size": symbol["size"], # int or NoneType
-                    # though this type itself is not a type param, yet as a
-                    # type alias, its underlying type may be a type param
-                    "is_type_alias": True,  # bool
-                    "is_type_param": False, # bool
-                    "is_array": False,      # bool
-                    "is_pointer": False,    # bool
-                    # real type, alias resoluted one step only
-                    "type_alias_underlying_type": _format_type(c_type.get_declaration().underlying_typedef_type), # str
-                    # type alias chain, from this type to completely resoluted type
-                    "type_alias_chain": _format_type_alias_chain(c_type), # list of str
-                    # real type, alias completely resoluted
-                    # if it is not a type param, then it is the same as type_alias_chain[-1].spelling;
-                    # if it is a type param, then it is "(type parameter)"
-                    "canonical_type": _format_type(c_type.get_canonical()), # str
-                }
-            ) # tuple of (str, dict)
-        elif type_kind == cindex.TypeKind.UNEXPOSED:
-            symbol["type"] = (
-                type_spelling, {
-                    "type_size": symbol["size"], # int or NoneType
-                    "is_type_alias": False, # bool
-                    "is_type_param": True,  # bool
-                    "is_array": False,      # bool
-                    "is_pointer": False,    # bool
-                    "type_param_decl_location": _format_type_param_decl_location(c_type, symbol["hierarchy"]), # dict
-                }
-            ) # tuple of (str, dict)
-        elif type_kind in array_TypeKind:
-            array_size = c_type.get_array_size()
-            symbol["type"] = (
-                type_spelling, {
-                    "type_size": symbol["size"], # int or NoneType, the number of bytes of the whole array
-                    "is_type_alias": False, # bool
-                    "is_type_param": False, # bool
-                    "is_array": True,       # bool
-                    "is_pointer": False,    # bool
-                    "array_size": array_size if array_size > 0 else None, # int or NoneType, the number of elements
-                    "array_element_type": _format_type(c_type.get_array_element_type()), # str
-                }
-            ) # tuple of (str, dict)
-        elif type_kind in pointer_TypeKind:
-            symbol["type"] = (
-                type_spelling, {
-                    "type_size": symbol["size"], # int or NoneType, the number of bytes of the whole array
-                    "is_type_alias": False, # bool
-                    "is_type_param": False, # bool
-                    "is_array": False,      # bool
-                    "is_pointer": True,     # bool
-                    "pointee_type": _format_type(c_type.get_pointee()), # str
-                }
-            ) # tuple of (str, dict)
-        else:
-            symbol["type"] = (
-                type_spelling, {
-                    "type_size": symbol["size"], # int or NoneType
-                    "is_type_alias": False, # bool
-                    "is_type_param": False, # bool
-                    "is_array": False,      # bool
-                    "is_pointer": False,    # bool
-                }
-            ) # tuple of (str, dict)
+        symbol["type"] = _collect_type_info(c_type) # tuple (spelling str, dict)
+        symbol["size"] = symbol["type"][1]["type_size"] # int or NoneType (e.g. type param) # int or NoneType (e.g. type param)
     if c.kind in [ cindex.CursorKind.TYPEDEF_DECL, cindex.CursorKind.TYPE_ALIAS_DECL ]:
         # e.g. "typedef float Float;", "using Float = float;"
         symbol["type_alias_underlying_type"] = _format_type(c.underlying_typedef_type) # str, one-step resoluted
@@ -585,9 +630,9 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["static_member"] = False # bool
     if c.kind == cindex.CursorKind.ENUM_DECL:
         symbol["scoped_enum"] = True if c.is_scoped_enum() else False
-        symbol["enum_underlying_type"] = _format_type(c.enum_type)
+        symbol["enum_underlying_type"] = _collect_type_info(c.enum_type)
     if c.kind == cindex.CursorKind.ENUM_CONSTANT_DECL:
-        symbol["enum_underlying_type"] = _format_type(c_type.get_declaration().enum_type)
+        symbol["enum_underlying_type"] = _collect_type_info(c_type.get_declaration().enum_type)
         symbol["enum_value"] = c.enum_value
     return symbol
 
@@ -703,7 +748,6 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
         "time_traversing": traversing_time # float, in seconds
     }
     if to_json:
-        import json
         with open(to_json, 'w') as json_file: # overwrite if exists
             json.dump(result, json_file, indent=2, sort_keys=True)
     return result
@@ -727,8 +771,7 @@ def _print_to_stdout(symbol):
                     hierarchy_repr_list.append(spelling if not transparent else ("(%s)" % spelling))
                     hierarchy_list.append(symbol[key][i])
                 print("::::: hierarchy\n%s" % ("::" + "::".join(hierarchy_repr_list)))
-                for item in hierarchy_list:
-                    print item # dict
+                print json.dumps(hierarchy_list, indent=2, sort_keys=True)
         elif key == "comment":
             comment = symbol[key]
             print("::::: comment\n%s" % (comment if comment else "(none)"))
@@ -742,7 +785,9 @@ def _print_to_stdout(symbol):
     for key, value in symbol.items():
         if key not in ordered_keys:
             if key == "type":
-                print("::::: type\n%s\n%s" % (symbol[key][0], symbol[key][1]))
+                print("::::: type\n%s\n%s" % (symbol[key][0], json.dumps(symbol[key][1], indent=2, sort_keys=True)))
+            elif key == "type_alias_chain":
+                print("::::: type_alias_chain:%s" % json.dumps(symbol[key], indent=2, sort_keys=True))
             else:
                 print("::::: %s\n%s" % (key, str(value)))
     print("==================")

@@ -661,10 +661,21 @@
         "float (*)(float, float*)", 
         {
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": true, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "pointee_type": "float (float, float*)", 
+          "pointee_type": [
+            "float (float, float*)", 
+            {
+              "is_array": false, 
+              "is_function": true, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": null
+            }
+          ], 
           "type_size": 8
         }
       ], 
@@ -683,8 +694,29 @@
       "type": [
         "FuncPtrTy", 
         {
-          "canonical_type": "float (*)(float, float*)", 
+          "canonical_type": [
+            "float (*)(float, float*)", 
+            {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": true, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "pointee_type": [
+                "float (float, float*)", 
+                {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 1
+                }
+              ], 
+              "type_size": 8
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -705,6 +737,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.01709914207458496, 
-  "time_traversing": 1.3284738063812256
+  "time_indexing": 0.017267942428588867, 
+  "time_traversing": 1.3156630992889404
 }

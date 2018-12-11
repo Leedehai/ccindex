@@ -371,7 +371,16 @@
     }, 
     {
       "comment": "", 
-      "enum_underlying_type": "char", 
+      "enum_underlying_type": [
+        "char", 
+        {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      ], 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -464,7 +473,16 @@
     }, 
     {
       "comment": "", 
-      "enum_underlying_type": "long", 
+      "enum_underlying_type": [
+        "long", 
+        {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 8
+        }
+      ], 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -594,7 +612,16 @@
     {
       "access": "public", 
       "comment": "", 
-      "enum_underlying_type": "int", 
+      "enum_underlying_type": [
+        "int", 
+        {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -765,6 +792,7 @@
       "kind": "class_template", 
       "location": "test-input-2.h:41:7", 
       "parent_kind": "namespace", 
+      "size": null, 
       "specifier": [], 
       "spelling": "BarTemplated", 
       "template_args_list": [
@@ -808,13 +836,14 @@
         "T", 
         {
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
-            "index": 0, 
-            "location": "test-input-2.h:41:7", 
-            "spelling": "BarTemplated"
+            "index": -1, 
+            "location": "", 
+            "spelling": ""
           }, 
           "type_size": null
         }
@@ -850,13 +879,14 @@
         "U", 
         {
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
-            "index": 1, 
-            "location": "test-input-2.h:41:7", 
-            "spelling": "BarTemplated"
+            "index": -1, 
+            "location": "", 
+            "spelling": ""
           }, 
           "type_size": null
         }
@@ -991,6 +1021,7 @@
       "kind": "class_template", 
       "location": "test-input-2.h:55:7", 
       "parent_kind": "namespace", 
+      "size": null, 
       "specifier": [], 
       "spelling": "Class3Templated", 
       "template_args_list": [
@@ -1007,7 +1038,7 @@
     }, 
     {
       "access": "private", 
-      "canonical_type": "(type parameter)", 
+      "canonical_type": "(type_parameter)", 
       "comment": "", 
       "hierarchy": [
         {
@@ -1116,6 +1147,7 @@
       "kind": "class_template", 
       "location": "test-input-2.h:59:15", 
       "parent_kind": "class_declaration", 
+      "size": null, 
       "specifier": [], 
       "spelling": "Class3InnerTemplated", 
       "template_args_list": [
@@ -1171,13 +1203,14 @@
         "U", 
         {
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
-            "index": 1, 
-            "location": "test-input-2.h:59:15", 
-            "spelling": "Class3InnerTemplated"
+            "index": -1, 
+            "location": "", 
+            "spelling": ""
           }, 
           "type_size": null
         }
@@ -1186,7 +1219,7 @@
     }, 
     {
       "access": "private", 
-      "canonical_type": "(type parameter)", 
+      "canonical_type": "(type_parameter)", 
       "comment": "", 
       "hierarchy": [
         {
@@ -1272,8 +1305,19 @@
       "type": [
         "NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU", 
         {
-          "canonical_type": "(type parameter)", 
+          "canonical_type": [
+            "(type_parameter)", 
+            {
+              "is_array": false, 
+              "is_function": true, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": null
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1321,8 +1365,19 @@
       "type": [
         "NS::Class3Templated::TT", 
         {
-          "canonical_type": "(type parameter)", 
+          "canonical_type": [
+            "(type_parameter)", 
+            {
+              "is_array": false, 
+              "is_function": true, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": null
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1424,8 +1479,18 @@
       "type": [
         "Class2Ty::Class2Int", 
         {
-          "canonical_type": "int", 
+          "canonical_type": [
+            "int", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1465,8 +1530,18 @@
       "type": [
         "Class2Ty2::Class2Int", 
         {
-          "canonical_type": "int", 
+          "canonical_type": [
+            "int", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1535,8 +1610,18 @@
       "type": [
         "NS::Float", 
         {
-          "canonical_type": "float", 
+          "canonical_type": [
+            "float", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1609,8 +1694,18 @@
       "type": [
         "NS::Float2", 
         {
-          "canonical_type": "float", 
+          "canonical_type": [
+            "float", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1635,6 +1730,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.01753091812133789, 
-  "time_traversing": 1.336756944656372
+  "time_indexing": 0.01744985580444336, 
+  "time_traversing": 1.3025569915771484
 }

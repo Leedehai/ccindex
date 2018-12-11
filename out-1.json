@@ -437,8 +437,18 @@
       "type": [
         "Int", 
         {
-          "canonical_type": "std::vector<int, std::allocator<int>>", 
+          "canonical_type": [
+            "std::vector<int, std::allocator<int>>", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 24
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -753,6 +763,7 @@
       "kind": "class_template", 
       "location": "test-input-1.cc:59:7", 
       "parent_kind": "namespace", 
+      "size": null, 
       "specifier": [], 
       "spelling": "templateClass", 
       "template_args_list": [
@@ -796,13 +807,14 @@
         "T", 
         {
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
-            "index": 0, 
-            "location": "test-input-1.cc:59:7", 
-            "spelling": "templateClass"
+            "index": -1, 
+            "location": "", 
+            "spelling": ""
           }, 
           "type_size": null
         }
@@ -848,7 +860,16 @@
     }, 
     {
       "comment": "", 
-      "enum_underlying_type": "int", 
+      "enum_underlying_type": [
+        "int", 
+        {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      ], 
       "hierarchy": [], 
       "id": "test-input-1.cc#27", 
       "kind": "enum_declaration", 
@@ -1436,10 +1457,20 @@
         "int*", 
         {
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": true, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "pointee_type": "int", 
+          "pointee_type": [
+            "int", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          ], 
           "type_size": 8
         }
       ], 
@@ -1458,8 +1489,18 @@
       "type": [
         "std::map<int, int>", 
         {
-          "canonical_type": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >", 
+          "canonical_type": [
+            "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 24
+            }
+          ], 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
@@ -1547,7 +1588,16 @@
     {
       "access": "public", 
       "comment": "", 
-      "enum_underlying_type": "char", 
+      "enum_underlying_type": [
+        "char", 
+        {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      ], 
       "hierarchy": [
         {
           "kind": "struct_declaration", 
@@ -1887,6 +1937,7 @@
       "kind": "class_template", 
       "location": "test-input-1.cc:110:8", 
       "parent_kind": "(global)", 
+      "size": null, 
       "specifier": [], 
       "spelling": "BaseClass2", 
       "template_args_list": [
@@ -1909,6 +1960,7 @@
       "kind": "class_template", 
       "location": "test-input-1.cc:112:7", 
       "parent_kind": "(global)", 
+      "size": null, 
       "specifier": [], 
       "spelling": "ClassAgain", 
       "template_args_list": [
@@ -2080,9 +2132,30 @@
       "type": [
         "int*[5]", 
         {
-          "array_element_type": "int*", 
+          "array_element_type": [
+            "int*", 
+            {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": true, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "pointee_type": [
+                "int", 
+                {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 4
+                }
+              ], 
+              "type_size": 8
+            }
+          ], 
           "array_size": 5, 
           "is_array": true, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
@@ -2104,9 +2177,19 @@
       "type": [
         "char[6]", 
         {
-          "array_element_type": "char", 
+          "array_element_type": [
+            "char", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 1
+            }
+          ], 
           "array_size": 6, 
           "is_array": true, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
@@ -2128,9 +2211,19 @@
       "type": [
         "BaseClass[]", 
         {
-          "array_element_type": "BaseClass", 
+          "array_element_type": [
+            "BaseClass", 
+            {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 1
+            }
+          ], 
           "array_size": null, 
           "is_array": true, 
+          "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
@@ -2190,6 +2283,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.017332792282104492, 
-  "time_traversing": 1.4504070281982422
+  "time_indexing": 0.017477989196777344, 
+  "time_traversing": 1.4410731792449951
 }

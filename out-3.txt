@@ -29,7 +29,13 @@ class A;
 4
 ::::: type
 A
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -43,7 +49,14 @@ a
 field_declaration
 ::::: hierarchy
 ::A
-{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:3:7", 
+    "spelling": "A", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -56,7 +69,13 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
 ::::: POD
 True
 ::::: size
@@ -70,7 +89,14 @@ A
 constructor
 ::::: hierarchy
 ::A
-{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:3:7", 
+    "spelling": "A", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -110,7 +136,14 @@ A
 constructor
 ::::: hierarchy
 ::A
-{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:3:7", 
+    "spelling": "A", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -150,7 +183,14 @@ test-input-3.cc#5
 destructor
 ::::: hierarchy
 ::A
-{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:3:7", 
+    "spelling": "A", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -190,7 +230,14 @@ A
 constructor
 ::::: hierarchy
 ::A
-{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:3:7", 
+    "spelling": "A", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -230,7 +277,14 @@ A
 constructor
 ::::: hierarchy
 ::A
-{'spelling': 'A', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:3:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:3:7", 
+    "spelling": "A", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -292,7 +346,13 @@ class B;
 4
 ::::: type
 B
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -306,7 +366,14 @@ b
 field_declaration
 ::::: hierarchy
 ::B
-{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:13:7", 
+    "spelling": "B", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -319,7 +386,13 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
 ::::: POD
 True
 ::::: size
@@ -333,7 +406,14 @@ B
 constructor
 ::::: hierarchy
 ::B
-{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:13:7", 
+    "spelling": "B", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -373,7 +453,14 @@ B
 constructor
 ::::: hierarchy
 ::B
-{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:13:7", 
+    "spelling": "B", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -413,7 +500,14 @@ test-input-3.cc#12
 destructor
 ::::: hierarchy
 ::B
-{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:13:7", 
+    "spelling": "B", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -453,7 +547,14 @@ B
 constructor
 ::::: hierarchy
 ::B
-{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:13:7", 
+    "spelling": "B", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -493,7 +594,14 @@ B
 constructor
 ::::: hierarchy
 ::B
-{'spelling': 'B', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:13:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:13:7", 
+    "spelling": "B", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -555,7 +663,13 @@ class C;
 4
 ::::: type
 C
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -569,7 +683,14 @@ c
 field_declaration
 ::::: hierarchy
 ::C
-{'spelling': 'C', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-3.cc:23:7'}
+[
+  {
+    "kind": "class_declaration", 
+    "location": "test-input-3.cc:23:7", 
+    "spelling": "C", 
+    "transparent": false
+  }
+]
 ::::: parent_kind
 class_declaration
 ::::: location
@@ -582,7 +703,13 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
 ::::: POD
 True
 ::::: size
@@ -666,8 +793,16 @@ test-input-3.cc:31:17
 (none)
 ::::: canonical_type
 float (*)(float, float*)
-::::: type_alias_chain
-[{'spelling': 'FuncPtrTy', 'location': 'test-input-3.cc:31:17'}, {'spelling': 'float (*)(float, float *)', 'location': ''}]
+::::: type_alias_chain:[
+  {
+    "location": "test-input-3.cc:31:17", 
+    "spelling": "FuncPtrTy"
+  }, 
+  {
+    "location": "", 
+    "spelling": "float (*)(float, float *)"
+  }
+]
 ::::: type_alias_underlying_type
 float (*)(float, float*)
 ==================
@@ -718,7 +853,25 @@ test-input-3.cc:34:9
 (none)
 ::::: type
 float (*)(float, float*)
-{'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': 'float (float, float*)'}
+{
+  "is_array": false, 
+  "is_function": false, 
+  "is_pointer": true, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "pointee_type": [
+    "float (float, float*)", 
+    {
+      "is_array": false, 
+      "is_function": true, 
+      "is_pointer": false, 
+      "is_type_alias": false, 
+      "is_type_param": false, 
+      "type_size": null
+    }
+  ], 
+  "type_size": 8
+}
 ::::: POD
 True
 ::::: size
@@ -740,7 +893,46 @@ test-input-3.cc:35:11
 (none)
 ::::: type
 FuncPtrTy
-{'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'test-input-3.cc:31:17'}, {'spelling': 'float (*)(float, float *)', 'location': ''}], 'is_pointer': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': 'float (*)(float, float*)'}
+{
+  "canonical_type": [
+    "float (*)(float, float*)", 
+    {
+      "is_array": false, 
+      "is_function": false, 
+      "is_pointer": true, 
+      "is_type_alias": false, 
+      "is_type_param": false, 
+      "pointee_type": [
+        "float (float, float*)", 
+        {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      ], 
+      "type_size": 8
+    }
+  ], 
+  "is_array": false, 
+  "is_function": false, 
+  "is_pointer": false, 
+  "is_type_alias": true, 
+  "is_type_param": false, 
+  "type_alias_chain": [
+    {
+      "location": "test-input-3.cc:31:17", 
+      "spelling": "FuncPtrTy"
+    }, 
+    {
+      "location": "", 
+      "spelling": "float (*)(float, float *)"
+    }
+  ], 
+  "type_alias_underlying_type": "float (*)(float, float*)", 
+  "type_size": 8
+}
 ::::: POD
 True
 ::::: size
@@ -751,4 +943,4 @@ True
 {'depth': 2, 'included_at': './test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.32 sec
+[time traverse] 1.33 sec
