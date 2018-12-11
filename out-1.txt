@@ -15,7 +15,7 @@ test-input-1.cc:7:11
 (none)
 ::::: type
 const int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -103,7 +103,7 @@ class MyClass;
 48
 ::::: type
 MyClass
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 48}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}
 ::::: is_abstract
 True
 ::::: template_args_list
@@ -130,7 +130,7 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -465,7 +465,7 @@ False
 private
 ::::: type
 Int
-{'canonical_type': 'std::vector<int, std::allocator<int>>', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>'}
+{'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': 'std::vector<int, std::allocator<int>>'}
 ::::: POD
 False
 ::::: size
@@ -493,7 +493,7 @@ False
 private
 ::::: type
 const float
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -532,7 +532,7 @@ class InnerClass;
 8
 ::::: type
 MyClass::InnerClass
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -560,7 +560,7 @@ False
 private
 ::::: type
 double
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}
 ::::: POD
 True
 ::::: size
@@ -807,7 +807,7 @@ False
 private
 ::::: type
 T
-{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'templateClass', 'location': 'test-input-1.cc:59:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
+{'type_param_decl_location': {'index': 0, 'spelling': 'templateClass', 'location': 'test-input-1.cc:59:7'}, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -835,7 +835,7 @@ False
 private
 ::::: type
 char
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -881,7 +881,7 @@ test-input-1.cc:66:2
 int
 ::::: type
 E
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -908,7 +908,7 @@ test-input-1.cc:67:2
 int
 ::::: type
 E
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -992,7 +992,7 @@ class Class;
 8
 ::::: type
 customNS::Class
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1014,7 +1014,7 @@ test-input-1.cc:76:12
 (none)
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1051,7 +1051,7 @@ class Class final;
 8
 ::::: type
 customNS::Class
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1079,7 +1079,7 @@ True
 private
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1107,7 +1107,7 @@ False
 private
 ::::: type
 const int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1135,7 +1135,7 @@ True
 private
 ::::: type
 const int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1163,7 +1163,7 @@ False
 private
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1352,7 +1352,7 @@ class classFriend;
 1
 ::::: type
 classFriend
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1405,7 +1405,7 @@ test-input-1.cc:93:5
 (none)
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1427,7 +1427,7 @@ test-input-1.cc:93:10
 (none)
 ::::: type
 int*
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
+{'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': 'int'}
 ::::: POD
 True
 ::::: size
@@ -1449,7 +1449,7 @@ test-input-1.cc:94:20
 (none)
 ::::: type
 std::map<int, int>
-{'canonical_type': 'std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::map<int, int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28'}], 'type_size': 24, 'type_alias_underlying_type': ''}
+{'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::map<int, int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28'}], 'is_pointer': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': '', 'canonical_type': 'std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >'}
 ::::: POD
 False
 ::::: size
@@ -1502,7 +1502,7 @@ test-input-1.cc:101:9
 (none)
 ::::: type
 int
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1538,7 +1538,7 @@ class EEClass;
 1
 ::::: type
 EEClass
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1588,7 +1588,7 @@ test-input-1.cc:103:25
 char
 ::::: type
 EEClass::EE
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -1616,7 +1616,7 @@ test-input-1.cc:103:30
 char
 ::::: type
 EEClass::EE
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}
 ::::: POD
 True
 ::::: size
@@ -1643,7 +1643,7 @@ test-input-1.cc:105:16
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1670,7 +1670,7 @@ test-input-1.cc:105:22
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1718,7 +1718,7 @@ test-input-1.cc:105:16
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1745,7 +1745,7 @@ test-input-1.cc:105:22
 unsigned int
 ::::: type
 EnumTy
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1772,7 +1772,7 @@ test-input-1.cc:106:8
 unsigned int
 ::::: type
 (anonymous enum at test-input-1.cc:106:1)
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1799,7 +1799,7 @@ test-input-1.cc:106:15
 unsigned int
 ::::: type
 (anonymous enum at test-input-1.cc:106:1)
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 4}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}
 ::::: POD
 True
 ::::: size
@@ -1835,7 +1835,7 @@ class BaseClass;
 1
 ::::: type
 BaseClass
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 1}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}
 ::::: is_abstract
 False
 ::::: template_args_list
@@ -1931,7 +1931,7 @@ class VClass final;
 8
 ::::: type
 VClass
-{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'type_size': 8}
+{'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}
 ::::: is_abstract
 True
 ::::: template_args_list
@@ -2071,7 +2071,7 @@ test-input-1.cc:122:6
 (none)
 ::::: type
 int*[5]
-{'is_type_alias': False, 'array_size': 5, 'is_array': True, 'array_element_type': 'int*', 'is_type_param': False, 'type_size': 40}
+{'array_element_type': 'int*', 'array_size': 5, 'is_array': True, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': False, 'type_size': 40}
 ::::: POD
 True
 ::::: size
@@ -2093,7 +2093,7 @@ test-input-1.cc:123:6
 (none)
 ::::: type
 char[6]
-{'is_type_alias': False, 'array_size': 6, 'is_array': True, 'array_element_type': 'char', 'is_type_param': False, 'type_size': 6}
+{'array_element_type': 'char', 'array_size': 6, 'is_array': True, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': False, 'type_size': 6}
 ::::: POD
 True
 ::::: size
@@ -2115,7 +2115,7 @@ test-input-1.cc:125:11
 (none)
 ::::: type
 BaseClass[]
-{'is_type_alias': False, 'array_size': None, 'is_array': True, 'array_element_type': 'BaseClass', 'is_type_param': False, 'type_size': None}
+{'array_element_type': 'BaseClass', 'array_size': None, 'is_array': True, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': False, 'type_size': None}
 ::::: POD
 True
 ::::: size
@@ -2203,4 +2203,4 @@ test-input-1.cc:125:11: error: definition of variable with array type needs an e
 {'depth': 1, 'included_at': 'test-input-1.cc:4:10', 'file': './test-input-2.h'}
 {'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.01 sec
+[time traverse] 1.47 sec

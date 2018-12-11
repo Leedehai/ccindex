@@ -45,6 +45,7 @@
         "const int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -113,6 +114,7 @@
         "MyClass", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 48
@@ -143,6 +145,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -436,6 +439,7 @@
         {
           "canonical_type": "std::vector<int, std::allocator<int>>", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -477,6 +481,7 @@
         "const float", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -513,6 +518,7 @@
         "MyClass::InnerClass", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -549,6 +555,7 @@
         "double", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -789,6 +796,7 @@
         "T", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
@@ -830,6 +838,7 @@
         "char", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -872,6 +881,7 @@
         "E", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -902,6 +912,7 @@
         "E", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -972,6 +983,7 @@
         "customNS::Class", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -993,6 +1005,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1030,6 +1043,7 @@
         "customNS::Class", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -1066,6 +1080,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1102,6 +1117,7 @@
         "const int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1138,6 +1154,7 @@
         "const int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1174,6 +1191,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1356,6 +1374,7 @@
         "classFriend", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -1395,6 +1414,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1416,8 +1436,10 @@
         "int*", 
         {
           "is_array": false, 
+          "is_pointer": true, 
           "is_type_alias": false, 
           "is_type_param": false, 
+          "pointee_type": "int", 
           "type_size": 8
         }
       ], 
@@ -1438,6 +1460,7 @@
         {
           "canonical_type": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1484,6 +1507,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1512,6 +1536,7 @@
         "EEClass", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -1568,6 +1593,7 @@
         "EEClass::EE", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -1604,6 +1630,7 @@
         "EEClass::EE", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -1634,6 +1661,7 @@
         "EnumTy", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1664,6 +1692,7 @@
         "EnumTy", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1716,6 +1745,7 @@
         "EnumTy", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1746,6 +1776,7 @@
         "EnumTy", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1776,6 +1807,7 @@
         "(anonymous enum at test-input-1.cc:106:1)", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1806,6 +1838,7 @@
         "(anonymous enum at test-input-1.cc:106:1)", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -1834,6 +1867,7 @@
         "BaseClass", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -1924,6 +1958,7 @@
         "VClass", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -2048,6 +2083,7 @@
           "array_element_type": "int*", 
           "array_size": 5, 
           "is_array": true, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 40
@@ -2071,6 +2107,7 @@
           "array_element_type": "char", 
           "array_size": 6, 
           "is_array": true, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 6
@@ -2094,6 +2131,7 @@
           "array_element_type": "BaseClass", 
           "array_size": null, 
           "is_array": true, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": null
@@ -2152,6 +2190,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.016484975814819336, 
-  "time_traversing": 1.0604419708251953
+  "time_indexing": 0.017332792282104492, 
+  "time_traversing": 1.4504070281982422
 }

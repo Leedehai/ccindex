@@ -51,6 +51,7 @@
         "NS::Complex", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 16
@@ -87,6 +88,7 @@
         "double", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -123,6 +125,7 @@
         "double", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -414,6 +417,7 @@
         "NS::E1", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -450,6 +454,7 @@
         "NS::E1", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -505,6 +510,7 @@
         "NS::E2", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -541,6 +547,7 @@
         "NS::E2", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
@@ -576,6 +583,7 @@
         "NS::Aother", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -644,6 +652,7 @@
         "NS::Aother::E", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -686,6 +695,7 @@
         "NS::Aother::E", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -798,6 +808,7 @@
         "T", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
@@ -839,6 +850,7 @@
         "U", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
@@ -880,6 +892,7 @@
         "int", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
@@ -915,6 +928,7 @@
         "NS::Class2", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
@@ -1062,6 +1076,7 @@
         "NS::Class3Templated::Class3Mid", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": null
@@ -1156,6 +1171,7 @@
         "U", 
         {
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
@@ -1258,6 +1274,7 @@
         {
           "canonical_type": "(type parameter)", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1306,6 +1323,7 @@
         {
           "canonical_type": "(type parameter)", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1408,6 +1426,7 @@
         {
           "canonical_type": "int", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1448,6 +1467,7 @@
         {
           "canonical_type": "int", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1517,6 +1537,7 @@
         {
           "canonical_type": "float", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1590,6 +1611,7 @@
         {
           "canonical_type": "float", 
           "is_array": false, 
+          "is_pointer": false, 
           "is_type_alias": true, 
           "is_type_param": false, 
           "type_alias_chain": [
@@ -1613,6 +1635,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.01456904411315918, 
-  "time_traversing": 0.9086339473724365
+  "time_indexing": 0.01753091812133789, 
+  "time_traversing": 1.336756944656372
 }

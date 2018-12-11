@@ -242,10 +242,8 @@ def _format_func_proto(cursor): # ordinary function/method templated function/me
         elif c.kind == cindex.CursorKind.TEMPLATE_NON_TYPE_PARAMETER:
             template_params_list.append((_format_type(c.type), c.spelling))
         elif c.kind == cindex.CursorKind.PARM_DECL: # the args in the parenthesis
-            if len(str(c.spelling)):
-                args_list.append((_format_type(c.type), c.spelling))
-            else: # unamed argument in prototype declaration
-                args_list.append((_format_type(c.type), ""))
+            # if the prototype doesn't name the argument, then c.spelling is ""
+            args_list.append((_format_type(c.type), c.spelling))
         elif c.kind == cindex.CursorKind.CXX_FINAL_ATTR:
             is_final = True
         elif c.kind == cindex.CursorKind.CXX_OVERRIDE_ATTR:
@@ -398,10 +396,15 @@ val_like_CursorKind = [ # value-like
 ]
 
 array_TypeKind = [
-    cindex.TypeKind.CONSTANTARRAY,
-    cindex.TypeKind.INCOMPLETEARRAY,
+    cindex.TypeKind.CONSTANTARRAY,   # int arr[5]
+    cindex.TypeKind.INCOMPLETEARRAY, # int arr[]
     cindex.TypeKind.VARIABLEARRAY,
-    cindex.TypeKind.DEPENDENTSIZEDARRAY,
+    cindex.TypeKind.DEPENDENTSIZEDARRAY, # int arr[] = { 'o', 'k', '\0' };
+]
+
+pointer_TypeKind = [
+    cindex.TypeKind.POINTER,
+    cindex.TypeKind.MEMBERPOINTER,
 ]
 
 def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbol dict
@@ -416,6 +419,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     comment_tuple = _format_comment(c.raw_comment)
     symbol["comment"] = comment_tuple[0] # str
     symbol["usage"] = comment_tuple[1] # str
+    c_type = c.type
     # part 2. optional fields
     if c.kind in func_like_CursorKind:
         func_proto_tuple = _format_func_proto(c)
@@ -456,11 +460,11 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
     if c.kind in val_like_CursorKind + [ cindex.CursorKind.CLASS_DECL, cindex.CursorKind.STRUCT_DECL ]:
-        sizeof_type = c.type.get_size()
+        sizeof_type = c_type.get_size()
         symbol["size"] = sizeof_type if sizeof_type > 0 else None # int or NoneType (e.g. type param)
-        symbol["POD"] = c.type.is_pod() # bool (POD: Plain Old Data)
-        type_kind = c.type.kind
-        type_spelling = _format_type(c.type)
+        symbol["POD"] = c_type.is_pod() # bool (POD: Plain Old Data)
+        type_kind = c_type.kind
+        type_spelling = _format_type(c_type)
         # C++ has a very complicated type system
         if type_kind in [ cindex.TypeKind.TYPEDEF, cindex.TypeKind.ELABORATED ]:
             symbol["type"] = (
@@ -468,55 +472,70 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
                     "type_size": symbol["size"], # int or NoneType
                     # though this type itself is not a type param, yet as a
                     # type alias, its underlying type may be a type param
-                    "is_type_param": False, # bool
                     "is_type_alias": True,  # bool
+                    "is_type_param": False, # bool
                     "is_array": False,      # bool
+                    "is_pointer": False,    # bool
                     # real type, alias resoluted one step only
-                    "type_alias_underlying_type": _format_type(c.type.get_declaration().underlying_typedef_type), # str
+                    "type_alias_underlying_type": _format_type(c_type.get_declaration().underlying_typedef_type), # str
                     # type alias chain, from this type to completely resoluted type
-                    "type_alias_chain": _format_type_alias_chain(c.type), # list of str
+                    "type_alias_chain": _format_type_alias_chain(c_type), # list of str
                     # real type, alias completely resoluted
                     # if it is not a type param, then it is the same as type_alias_chain[-1].spelling;
                     # if it is a type param, then it is "(type parameter)"
-                    "canonical_type": _format_type(c.type.get_canonical()), # str
+                    "canonical_type": _format_type(c_type.get_canonical()), # str
                 }
             ) # tuple of (str, dict)
         elif type_kind == cindex.TypeKind.UNEXPOSED:
             symbol["type"] = (
                 type_spelling, {
                     "type_size": symbol["size"], # int or NoneType
-                    "is_type_param": True,  # bool
                     "is_type_alias": False, # bool
+                    "is_type_param": True,  # bool
                     "is_array": False,      # bool
-                    "type_param_decl_location": _format_type_param_decl_location(c.type, symbol["hierarchy"]), # dict
+                    "is_pointer": False,    # bool
+                    "type_param_decl_location": _format_type_param_decl_location(c_type, symbol["hierarchy"]), # dict
                 }
             ) # tuple of (str, dict)
         elif type_kind in array_TypeKind:
-            array_size = c.type.get_array_size()
+            array_size = c_type.get_array_size()
             symbol["type"] = (
                 type_spelling, {
                     "type_size": symbol["size"], # int or NoneType, the number of bytes of the whole array
-                    "is_type_param": False, # bool
                     "is_type_alias": False, # bool
+                    "is_type_param": False, # bool
                     "is_array": True,       # bool
+                    "is_pointer": False,    # bool
                     "array_size": array_size if array_size > 0 else None, # int or NoneType, the number of elements
-                    "array_element_type": _format_type(c.type.get_array_element_type()), # str
+                    "array_element_type": _format_type(c_type.get_array_element_type()), # str
+                }
+            ) # tuple of (str, dict)
+        elif type_kind in pointer_TypeKind:
+            symbol["type"] = (
+                type_spelling, {
+                    "type_size": symbol["size"], # int or NoneType, the number of bytes of the whole array
+                    "is_type_alias": False, # bool
+                    "is_type_param": False, # bool
+                    "is_array": False,      # bool
+                    "is_pointer": True,     # bool
+                    "pointee_type": _format_type(c_type.get_pointee()), # str
                 }
             ) # tuple of (str, dict)
         else:
             symbol["type"] = (
                 type_spelling, {
                     "type_size": symbol["size"], # int or NoneType
-                    "is_type_param": False, # bool
                     "is_type_alias": False, # bool
+                    "is_type_param": False, # bool
                     "is_array": False,      # bool
+                    "is_pointer": False,    # bool
                 }
             ) # tuple of (str, dict)
     if c.kind in [ cindex.CursorKind.TYPEDEF_DECL, cindex.CursorKind.TYPE_ALIAS_DECL ]:
         # e.g. "typedef float Float;", "using Float = float;"
         symbol["type_alias_underlying_type"] = _format_type(c.underlying_typedef_type) # str, one-step resoluted
-        symbol["type_alias_chain"] = _format_type_alias_chain(c.type) # list of str, from this type to completely resoluted
-        symbol["canonical_type"] = _format_type(c.type.get_canonical()) # str, completely resoluted
+        symbol["type_alias_chain"] = _format_type_alias_chain(c_type) # list of str, from this type to completely resoluted
+        symbol["canonical_type"] = _format_type(c_type.get_canonical()) # str, completely resoluted
     if c.kind in method_like_CursorKind:
         symbol["is_deleted"] = is_deleted_method(c) # bool
         method_property = []
@@ -568,7 +587,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["scoped_enum"] = True if c.is_scoped_enum() else False
         symbol["enum_underlying_type"] = _format_type(c.enum_type)
     if c.kind == cindex.CursorKind.ENUM_CONSTANT_DECL:
-        symbol["enum_underlying_type"] = _format_type(c.type.get_declaration().enum_type)
+        symbol["enum_underlying_type"] = _format_type(c_type.get_declaration().enum_type)
         symbol["enum_value"] = c.enum_value
     return symbol
 

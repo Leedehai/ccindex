@@ -24,3 +24,12 @@ class C {
     int c;
 // no explicit constructor
 };
+
+// func decl
+float func(float, float *);
+char returnChar_takeFunc1(float (*func)(float, float *));
+typedef float (*FuncPtrTy)(float, float *);
+char returnChar_takeFunc2(FuncPtrTy func);
+// var decl
+float (*funcPtr1)(float, float *);
+FuncPtrTy funcPtr2;
