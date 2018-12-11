@@ -62,7 +62,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:8:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -165,13 +165,14 @@
         }
       ], 
       "id": "test-input-1.cc#6", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:14:14", 
       "method_property": [
         "static"
       ], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "void", 
       "specifier": [], 
@@ -183,7 +184,9 @@
       "access": "public", 
       "args_list": [], 
       "comment": "comment for MyClass()", 
-      "constructor_kind": "default", 
+      "constructor_property": [
+        "default"
+      ], 
       "declaration": "MyClass();", 
       "declaration_pretty": "MyClass();", 
       "hierarchy": [
@@ -195,10 +198,11 @@
         }
       ], 
       "id": "test-input-1.cc#7", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:17:2", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -215,7 +219,10 @@
         ]
       ], 
       "comment": "", 
-      "constructor_kind": "copy", 
+      "constructor_property": [
+        "copy", 
+        "converting"
+      ], 
       "declaration": "MyClass(const MyClass&);", 
       "declaration_pretty": "MyClass(const MyClass&);", 
       "hierarchy": [
@@ -227,10 +234,11 @@
         }
       ], 
       "id": "test-input-1.cc#8", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:18:2", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -251,6 +259,7 @@
         ]
       ], 
       "comment": "", 
+      "constructor_property": [], 
       "declaration": "MyClass(int a, Int b);", 
       "declaration_pretty": "MyClass(int a, Int b);", 
       "hierarchy": [
@@ -262,10 +271,11 @@
         }
       ], 
       "id": "test-input-1.cc#9", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:19:2", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -288,11 +298,12 @@
         }
       ], 
       "id": "test-input-1.cc#10", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:20:6", 
       "method_property": [], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "Int", 
       "specifier": [], 
@@ -309,7 +320,10 @@
         ]
       ], 
       "comment": "", 
-      "constructor_kind": "move", 
+      "constructor_property": [
+        "move", 
+        "converting"
+      ], 
       "declaration": "MyClass(MyClass&&);", 
       "declaration_pretty": "MyClass(MyClass&&);", 
       "hierarchy": [
@@ -321,10 +335,11 @@
         }
       ], 
       "id": "test-input-1.cc#11", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:21:2", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -352,11 +367,12 @@
         }
       ], 
       "id": "test-input-1.cc#12", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:22:10", 
       "method_property": [], 
-      "no_exception_guarantee": true, 
+      "no_throw_guarantee": true, 
       "parent_kind": "class_declaration", 
       "return_type": "MyClass", 
       "specifier": [
@@ -384,7 +400,7 @@
       "is_template": false, 
       "kind": "conversion_function", 
       "location": "test-input-1.cc:23:2", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "int", 
       "specifier": [], 
@@ -551,6 +567,7 @@
         }
       ], 
       "id": "test-input-1.cc#18", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:37:15", 
@@ -559,7 +576,7 @@
         "virtual", 
         "pure_virtual"
       ], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "void", 
       "specifier": [
@@ -579,7 +596,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:41:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -610,7 +627,7 @@
       "is_template": true, 
       "kind": "function_template", 
       "location": "test-input-1.cc:45:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -650,7 +667,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:48:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -671,6 +688,7 @@
         ]
       ], 
       "comment": "", 
+      "constructor_property": [], 
       "declaration": "MyClass(int a, Int b);", 
       "declaration_pretty": "MyClass(int a, Int b);", 
       "hierarchy": [
@@ -682,10 +700,11 @@
         }
       ], 
       "id": "test-input-1.cc#22", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:51:10", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -912,7 +931,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:72:6", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "namespace", 
       "return_type": "int", 
       "specifier": [], 
@@ -1174,7 +1193,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:84:12", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "namespace", 
       "return_type": "int", 
       "specifier": [], 
@@ -1208,11 +1227,12 @@
         }
       ], 
       "id": "test-input-1.cc#40", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:85:8", 
       "method_property": [], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "size_t", 
       "specifier": [], 
@@ -1254,11 +1274,12 @@
         }
       ], 
       "id": "test-input-1.cc#41", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:86:6", 
       "method_property": [], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "bool", 
       "specifier": [], 
@@ -1296,11 +1317,12 @@
         }
       ], 
       "id": "test-input-1.cc#42", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:87:19", 
       "method_property": [], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "std::vector<int>&", 
       "specifier": [], 
@@ -1346,7 +1368,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:91:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -1435,7 +1457,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:96:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "(global)", 
       "return_type": "int", 
       "specifier": [], 
@@ -1908,7 +1930,9 @@
       "access": "public", 
       "args_list": [], 
       "comment": "", 
-      "constructor_kind": "default", 
+      "constructor_property": [
+        "default"
+      ], 
       "declaration": "VClass();", 
       "declaration_pretty": "VClass();", 
       "hierarchy": [
@@ -1920,10 +1944,11 @@
         }
       ], 
       "id": "test-input-1.cc#65", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "test-input-1.cc:117:5", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [], 
@@ -1950,10 +1975,11 @@
         }
       ], 
       "id": "test-input-1.cc#66", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "destructor", 
       "location": "test-input-1.cc:118:13", 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [
@@ -1978,6 +2004,7 @@
         }
       ], 
       "id": "test-input-1.cc#67", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
       "location": "test-input-1.cc:119:18", 
@@ -1985,7 +2012,7 @@
         "virtual", 
         "pure_virtual"
       ], 
-      "no_exception_guarantee": false, 
+      "no_throw_guarantee": false, 
       "parent_kind": "class_declaration", 
       "return_type": "void", 
       "specifier": [
@@ -2079,7 +2106,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:130:1", 
-      "no_exception_guarantee": true, 
+      "no_throw_guarantee": true, 
       "parent_kind": "(global)", 
       "return_type": "void", 
       "specifier": [
@@ -2104,7 +2131,7 @@
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "test-input-1.cc:130:1", 
-      "no_exception_guarantee": true, 
+      "no_throw_guarantee": true, 
       "parent_kind": "(global)", 
       "return_type": "void", 
       "specifier": [
@@ -2115,6 +2142,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.017332077026367188, 
-  "time_traversing": 1.415950059890747
+  "time_indexing": 0.01594686508178711, 
+  "time_traversing": 1.1611998081207275
 }

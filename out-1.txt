@@ -37,10 +37,10 @@ test-input-1.cc:8:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -153,14 +153,16 @@ test-input-1.cc:14:14
 (none)
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 ['static']
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
 ::::: access
 private
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -189,20 +191,22 @@ test-input-1.cc:17:2
 comment for MyClass()
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+['default']
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
 MyClass();
 ::::: declaration_pretty
 MyClass();
-::::: constructor_kind
-default
 ::::: return_type
 None
 ::::: template_args_list
@@ -225,20 +229,22 @@ test-input-1.cc:18:2
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+['copy', 'converting']
 ::::: args_list
 [('const MyClass&', '')]
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
 MyClass(const MyClass&);
 ::::: declaration_pretty
 MyClass(const MyClass&);
-::::: constructor_kind
-copy
 ::::: return_type
 None
 ::::: template_args_list
@@ -261,12 +267,16 @@ test-input-1.cc:19:2
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -295,14 +305,16 @@ test-input-1.cc:20:6
 (none)
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -331,20 +343,22 @@ test-input-1.cc:21:2
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+['move', 'converting']
 ::::: args_list
 [('MyClass&&', '')]
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
 MyClass(MyClass&&);
 ::::: declaration_pretty
 MyClass(MyClass&&);
-::::: constructor_kind
-move
 ::::: return_type
 None
 ::::: template_args_list
@@ -367,14 +381,16 @@ test-input-1.cc:22:10
 (none)
 ::::: specifier
 ['noexcept']
+::::: is_deleted
+False
 ::::: method_property
 []
-::::: no_exception_guarantee
-True
 ::::: args_list
 [('const MyClass&', '')]
 ::::: access
 public
+::::: no_throw_guarantee
+True
 ::::: is_template
 False
 ::::: declaration
@@ -403,12 +419,12 @@ test-input-1.cc:23:2
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -559,14 +575,16 @@ test-input-1.cc:37:15
 (none)
 ::::: specifier
 ['=0']
+::::: is_deleted
+False
 ::::: method_property
 ['const', 'virtual', 'pure_virtual']
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
 ::::: access
 private
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -594,10 +612,10 @@ test-input-1.cc:41:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -625,10 +643,10 @@ test-input-1.cc:45:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('T*', 'pt'), ('U*', 'pu'), ('int', 'n')]
+::::: no_throw_guarantee
+False
 ::::: is_template
 True
 ::::: declaration
@@ -658,10 +676,10 @@ test-input-1.cc:48:5
 comment for foo()
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -690,12 +708,16 @@ test-input-1.cc:51:10
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+[]
 ::::: args_list
 [('int', 'a'), ('Int', 'b')]
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -914,10 +936,10 @@ test-input-1.cc:72:6
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1154,10 +1176,10 @@ test-input-1.cc:84:12
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1187,14 +1209,16 @@ test-input-1.cc:85:8
 (none)
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('int', 'a')]
 ::::: access
 private
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1224,14 +1248,16 @@ test-input-1.cc:86:6
 (none)
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('std::string', 's'), ('MyClass', 'obj'), ('int', 'obj2')]
 ::::: access
 private
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1265,14 +1291,16 @@ test-input-1.cc:87:19
 (none)
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('float', 'a'), ('std::vector<int>', 'b')]
 ::::: access
 private
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1336,10 +1364,10 @@ test-input-1.cc:91:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1433,10 +1461,10 @@ test-input-1.cc:96:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1916,20 +1944,22 @@ test-input-1.cc:117:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+['default']
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
 VClass();
 ::::: declaration_pretty
 VClass();
-::::: constructor_kind
-default
 ::::: return_type
 None
 ::::: template_args_list
@@ -1954,12 +1984,14 @@ test-input-1.cc:118:13
 ['=0']
 ::::: destructor_property
 ['virtual', 'pure_virtual']
-::::: no_exception_guarantee
+::::: is_deleted
 False
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1988,14 +2020,16 @@ test-input-1.cc:119:18
 (none)
 ::::: specifier
 ['=0']
+::::: is_deleted
+False
 ::::: method_property
 ['virtual', 'pure_virtual']
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -2089,10 +2123,10 @@ test-input-1.cc:130:1
 (none)
 ::::: specifier
 ['noexcept']
-::::: no_exception_guarantee
-True
 ::::: args_list
 [('char*&', 'in')]
+::::: no_throw_guarantee
+True
 ::::: is_template
 False
 ::::: declaration
@@ -2120,10 +2154,10 @@ test-input-1.cc:130:1
 (none)
 ::::: specifier
 ['noexcept']
-::::: no_exception_guarantee
-True
 ::::: args_list
 [('char*&&', 'in')]
+::::: no_throw_guarantee
+True
 ::::: is_template
 False
 ::::: declaration
@@ -2155,4 +2189,4 @@ test-input-1.cc:125:11: error: definition of variable with array type needs an e
 {'depth': 1, 'included_at': 'test-input-1.cc:4:10', 'file': './test-input-2.h'}
 {'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.42 sec
+[time traverse] 1.01 sec

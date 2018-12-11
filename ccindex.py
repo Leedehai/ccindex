@@ -325,8 +325,8 @@ def _format_class_proto(cursor):
             inheritance_access_specifier = "public" # the default
             is_virtual_inheritance = False # the default
             # defect in clang.cindex:
-            #   no way to check inheritance access and virtual-ness from Cursor's method,
-            #   soI have to go through the tokens
+            #   no way to check inheritance access and virtual-ness from cindex.Cursor's method,
+            #   so I have to go through the tokens
             for t in c.get_tokens():
                 if t.kind == cindex.TokenKind.KEYWORD:
                     if t.spelling in inheritance_access_specifiers:
@@ -351,6 +351,15 @@ def _format_class_proto(cursor):
         is_final,
         base_list
     )
+
+def is_deleted_method(cursor):
+    # defect in clang.cindex: no way to check method being marked by "=delete" from
+    # cindex.Cursor's method, so I have to go through the tokens
+    for t in cursor.get_tokens():
+        if (t.kind == cindex.TokenKind.KEYWORD
+            and t.spelling == "delete"):
+            return True
+    return False
 
 """
 Index visiting
@@ -382,6 +391,7 @@ array_TypeKind = [
     cindex.TypeKind.VARIABLEARRAY,
     cindex.TypeKind.DEPENDENTSIZEDARRAY,
 ]
+
 def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbol dict
     symbol = {} # dict for this symbol
     # part 1. mandated fields
@@ -414,14 +424,15 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
             specifier_list.append("noexcept")
         symbol["specifier"] = specifier_list
         # each function-like is either non-throwing or potentially-throwing
+        # non-throwing are said to have "no-throw guarantee":
+        # C++ exception safety: https://en.wikipedia.org/wiki/Exception_safety
         if func_proto_tuple[4][3] == True:
-            symbol["no_exception_guarantee"] = True
+            symbol["no_throw_guarantee"] = True
         else:
             # defect: per C++11, in some cases functions without "noexcept"/"throw()"
-            # have no exception guarantee, too, but the rule is complicated.
+            # have "no-throw guarantee", too, but the rule is overly too complicated.
             # see: https://en.cppreference.com/w/cpp/language/noexcept_spec
-            symbol["no_exception_guarantee"] = False
-
+            symbol["no_throw_guarantee"] = False
     elif c.kind in class_like_CursorKind:
         class_proto_tuple = _format_class_proto(c)
         symbol["declaration"] = "%s;" % class_proto_tuple[0][0] # str
@@ -496,14 +507,21 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
         symbol["type_alias_chain"] = _format_type_alias_chain(c.type) # list of str, from this type to completely resoluted
         symbol["canonical_type"] = _format_type(c.type.get_canonical()) # str, completely resoluted
     if c.kind == cindex.CursorKind.CONSTRUCTOR:
+        constructor_property = []
+        if is_deleted_method(c):
+            constructor_property.append("delete")
+            symbol["is_deleted"] = True # bool
+        else:
+            symbol["is_deleted"] = False # bool
         if c.is_default_constructor():
-            symbol["constructor_kind"] = "default" # str
-        elif c.is_copy_constructor():
-            symbol["constructor_kind"] = "copy" # str
-        elif c.is_move_constructor():
-            symbol["constructor_kind"] = "move" # str
-        elif c.is_converting_constructor():
-            symbol["constructor_kind"] = "converting" # str
+            constructor_property.append("default")
+        if c.is_copy_constructor():
+            constructor_property.append("copy")
+        if c.is_move_constructor():
+            constructor_property.append("move")
+        if c.is_converting_constructor():
+            constructor_property.append("converting")
+        symbol["constructor_property"] = constructor_property # list of str
     if (c.semantic_parent.kind in class_like_CursorKind
         and c.kind == cindex.CursorKind.VAR_DECL):
         # static member is of VAR_DECL kind instead of FIELD_DECL kind
@@ -511,6 +529,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     if c.kind == cindex.CursorKind.FIELD_DECL:
         symbol["static_member"] = False # bool
     if c.kind == cindex.CursorKind.CXX_METHOD:
+        symbol["is_deleted"] = is_deleted_method(c) # bool
         method_property = []
         if c.is_static_method():
             method_property.append("static")
@@ -524,6 +543,7 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
             method_property.append("pure_virtual")
         symbol["method_property"] = method_property # list
     if c.kind == cindex.CursorKind.DESTRUCTOR:
+        symbol["is_deleted"] = is_deleted_method(c) # bool
         destructor_property = []
         # destructor cannot be 'static' or 'const'
         if c.is_default_method(): # marked by "= default"
@@ -626,7 +646,7 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
         errors.append(str(diagnostic))
         if print_out:
             print("[Diagnostic #%d]\n%s" % (error_count, errors[error_count - 1]))
-    
+
     # include stack traverse list, excluding files included by system headers
     include_list = [] # list of dict
     for inc in tu.get_includes():

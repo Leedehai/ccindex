@@ -125,20 +125,22 @@ test-input-2.h:13:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+['default']
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
 Complex();
 ::::: declaration_pretty
 Complex();
-::::: constructor_kind
-default
 ::::: return_type
 None
 ::::: template_args_list
@@ -162,12 +164,16 @@ test-input-2.h:14:5
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
+::::: is_deleted
 False
+::::: constructor_property
+[]
 ::::: args_list
 [('double', 're'), ('double', 'im')]
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -182,6 +188,45 @@ None
 ::::: id
 test-input-2.h#7
 ::::: spelling
+Complex
+::::: kind
+constructor
+::::: hierarchy
+::NS::Complex
+{'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
+{'spelling': 'Complex', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:8:7'}
+::::: parent_kind
+class_declaration
+::::: location
+test-input-2.h:15:5
+::::: comment
+(none)
+::::: specifier
+[]
+::::: is_deleted
+True
+::::: constructor_property
+['delete', 'move', 'converting']
+::::: args_list
+[('NS::Complex&&', '')]
+::::: access
+public
+::::: no_throw_guarantee
+False
+::::: is_template
+False
+::::: declaration
+Complex(NS::Complex&&);
+::::: declaration_pretty
+Complex(NS::Complex&&);
+::::: return_type
+None
+::::: template_args_list
+[]
+==================
+::::: id
+test-input-2.h#8
+::::: spelling
 isReal
 ::::: kind
 method
@@ -192,7 +237,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:20:10
+test-input-2.h:21:10
 ::::: comment
 Usage: bool b = complex.isReal();
 -----------------
@@ -201,14 +246,16 @@ comment for isReal()
 bool b = complex.isReal();
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 ['const']
-::::: no_exception_guarantee
-False
 ::::: args_list
 []
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -221,7 +268,7 @@ bool
 []
 ==================
 ::::: id
-test-input-2.h#8
+test-input-2.h#9
 ::::: spelling
 operator+=
 ::::: kind
@@ -233,19 +280,21 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:23:14
+test-input-2.h:24:14
 ::::: comment
 (none)
 ::::: specifier
 []
+::::: is_deleted
+False
 ::::: method_property
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('NS::Complex&&', '')]
 ::::: access
 public
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -258,7 +307,7 @@ NS::Complex&
 []
 ==================
 ::::: id
-test-input-2.h#9
+test-input-2.h#10
 ::::: spelling
 independentFunction
 ::::: kind
@@ -269,15 +318,15 @@ function_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:26:22
+test-input-2.h:27:22
 ::::: comment
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('std::vector<Complex>&', 'v1'), ('double', '')]
+::::: no_throw_guarantee
+False
 ::::: is_template
 False
 ::::: declaration
@@ -290,7 +339,7 @@ std::vector<Complex>
 []
 ==================
 ::::: id
-test-input-2.h#10
+test-input-2.h#11
 ::::: spelling
 E1
 ::::: kind
@@ -301,7 +350,7 @@ enum_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:28:6
+test-input-2.h:29:6
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -310,7 +359,7 @@ False
 char
 ==================
 ::::: id
-test-input-2.h#11
+test-input-2.h#12
 ::::: spelling
 e11
 ::::: kind
@@ -318,11 +367,11 @@ enum_constant_declaration
 ::::: hierarchy
 ::NS::(E1)
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'E1', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-2.h:28:6'}
+{'spelling': 'E1', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-2.h:29:6'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:28:18
+test-input-2.h:29:18
 ::::: comment
 (none)
 ::::: enum_value
@@ -338,7 +387,7 @@ True
 1
 ==================
 ::::: id
-test-input-2.h#12
+test-input-2.h#13
 ::::: spelling
 e12
 ::::: kind
@@ -346,11 +395,11 @@ enum_constant_declaration
 ::::: hierarchy
 ::NS::(E1)
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'E1', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-2.h:28:6'}
+{'spelling': 'E1', 'transparent': True, 'kind': 'enum_declaration', 'location': 'test-input-2.h:29:6'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:28:23
+test-input-2.h:29:23
 ::::: comment
 (none)
 ::::: enum_value
@@ -366,7 +415,7 @@ True
 1
 ==================
 ::::: id
-test-input-2.h#13
+test-input-2.h#14
 ::::: spelling
 E2
 ::::: kind
@@ -377,7 +426,7 @@ enum_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:29:12
+test-input-2.h:30:12
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -386,7 +435,7 @@ True
 long
 ==================
 ::::: id
-test-input-2.h#14
+test-input-2.h#15
 ::::: spelling
 e21
 ::::: kind
@@ -394,11 +443,11 @@ enum_constant_declaration
 ::::: hierarchy
 ::NS::E2
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'E2', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:29:12'}
+{'spelling': 'E2', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:30:12'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:29:24
+test-input-2.h:30:24
 ::::: comment
 (none)
 ::::: enum_value
@@ -414,7 +463,7 @@ True
 8
 ==================
 ::::: id
-test-input-2.h#15
+test-input-2.h#16
 ::::: spelling
 e22
 ::::: kind
@@ -422,11 +471,11 @@ enum_constant_declaration
 ::::: hierarchy
 ::NS::E2
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'E2', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:29:12'}
+{'spelling': 'E2', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:30:12'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:29:33
+test-input-2.h:30:33
 ::::: comment
 (none)
 ::::: enum_value
@@ -442,7 +491,7 @@ True
 8
 ==================
 ::::: id
-test-input-2.h#16
+test-input-2.h#17
 ::::: spelling
 Aother
 ::::: kind
@@ -453,7 +502,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:31:7
+test-input-2.h:32:7
 ::::: comment
 (none)
 ::::: specifier
@@ -479,7 +528,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#17
+test-input-2.h#18
 ::::: spelling
 E
 ::::: kind
@@ -487,11 +536,11 @@ enum_declaration
 ::::: hierarchy
 ::NS::Aother
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Aother', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:31:7'}
+{'spelling': 'Aother', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:32:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:33:16
+test-input-2.h:34:16
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -502,7 +551,7 @@ int
 public
 ==================
 ::::: id
-test-input-2.h#18
+test-input-2.h#19
 ::::: spelling
 e1
 ::::: kind
@@ -510,12 +559,12 @@ enum_constant_declaration
 ::::: hierarchy
 ::NS::Aother::E
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Aother', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:31:7'}
-{'spelling': 'E', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:33:16'}
+{'spelling': 'Aother', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:32:7'}
+{'spelling': 'E', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:34:16'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:33:20
+test-input-2.h:34:20
 ::::: comment
 (none)
 ::::: enum_value
@@ -531,7 +580,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#19
+test-input-2.h#20
 ::::: spelling
 e2
 ::::: kind
@@ -539,12 +588,12 @@ enum_constant_declaration
 ::::: hierarchy
 ::NS::Aother::E
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Aother', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:31:7'}
-{'spelling': 'E', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:33:16'}
+{'spelling': 'Aother', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:32:7'}
+{'spelling': 'E', 'transparent': False, 'kind': 'enum_declaration', 'location': 'test-input-2.h:34:16'}
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:33:24
+test-input-2.h:34:24
 ::::: comment
 (none)
 ::::: enum_value
@@ -560,7 +609,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#20
+test-input-2.h#21
 ::::: spelling
 fooTemplated
 ::::: kind
@@ -571,15 +620,15 @@ function_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:37:6
+test-input-2.h:38:6
 ::::: comment
 (none)
 ::::: specifier
 []
-::::: no_exception_guarantee
-False
 ::::: args_list
 [('bool', 'b'), ('NS::Complex&', 'c')]
+::::: no_throw_guarantee
+False
 ::::: is_template
 True
 ::::: declaration
@@ -594,7 +643,7 @@ void
 [('typename', 'T'), ('int', 'N')]
 ==================
 ::::: id
-test-input-2.h#21
+test-input-2.h#22
 ::::: spelling
 BarTemplated
 ::::: kind
@@ -605,7 +654,7 @@ class_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:40:7
+test-input-2.h:41:7
 ::::: comment
 (none)
 ::::: specifier
@@ -625,7 +674,7 @@ False
 [('typename', 'T'), ('typename', 'U')]
 ==================
 ::::: id
-test-input-2.h#22
+test-input-2.h#23
 ::::: spelling
 t_
 ::::: kind
@@ -633,35 +682,7 @@ field_declaration
 ::::: hierarchy
 ::NS::BarTemplated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'BarTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:40:7'}
-::::: parent_kind
-class_template
-::::: location
-test-input-2.h:42:7
-::::: comment
-(none)
-::::: static_member
-False
-::::: access
-public
-::::: type
-T
-{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:40:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
-::::: POD
-False
-::::: size
-None
-==================
-::::: id
-test-input-2.h#23
-::::: spelling
-u_
-::::: kind
-field_declaration
-::::: hierarchy
-::NS::BarTemplated
-{'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'BarTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:40:7'}
+{'spelling': 'BarTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:41:7'}
 ::::: parent_kind
 class_template
 ::::: location
@@ -673,8 +694,8 @@ False
 ::::: access
 public
 ::::: type
-U
-{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:40:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
+T
+{'is_type_param': True, 'type_param_decl_location': {'index': 0, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:41:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
@@ -683,17 +704,45 @@ None
 ::::: id
 test-input-2.h#24
 ::::: spelling
+u_
+::::: kind
+field_declaration
+::::: hierarchy
+::NS::BarTemplated
+{'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
+{'spelling': 'BarTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:41:7'}
+::::: parent_kind
+class_template
+::::: location
+test-input-2.h:44:7
+::::: comment
+(none)
+::::: static_member
+False
+::::: access
+public
+::::: type
+U
+{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'BarTemplated', 'location': 'test-input-2.h:41:7'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
+::::: POD
+False
+::::: size
+None
+==================
+::::: id
+test-input-2.h#25
+::::: spelling
 a
 ::::: kind
 field_declaration
 ::::: hierarchy
 ::NS::BarTemplated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'BarTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:40:7'}
+{'spelling': 'BarTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:41:7'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:44:9
+test-input-2.h:45:9
 ::::: comment
 (none)
 ::::: static_member
@@ -709,7 +758,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#25
+test-input-2.h#26
 ::::: spelling
 Class2
 ::::: kind
@@ -720,7 +769,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:47:7
+test-input-2.h:48:7
 ::::: comment
 (none)
 ::::: specifier
@@ -746,7 +795,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#26
+test-input-2.h#27
 ::::: spelling
 Class2Int
 ::::: kind
@@ -754,11 +803,11 @@ typedef_declaration
 ::::: hierarchy
 ::NS::Class2
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class2', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:47:7'}
+{'spelling': 'Class2', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:48:7'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:49:17
+test-input-2.h:50:17
 ::::: comment
 (none)
 ::::: canonical_type
@@ -766,12 +815,12 @@ int
 ::::: access
 public
 ::::: type_alias_chain
-[{'spelling': 'NS::Class2::Class2Int', 'location': 'test-input-2.h:49:17'}, {'spelling': 'int', 'location': ''}]
+[{'spelling': 'NS::Class2::Class2Int', 'location': 'test-input-2.h:50:17'}, {'spelling': 'int', 'location': ''}]
 ::::: type_alias_underlying_type
 int
 ==================
 ::::: id
-test-input-2.h#27
+test-input-2.h#28
 ::::: spelling
 Class3Templated
 ::::: kind
@@ -782,7 +831,7 @@ class_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:54:7
+test-input-2.h:55:7
 ::::: comment
 (none)
 ::::: specifier
@@ -802,7 +851,7 @@ False
 [('typename', 'T1'), ('typename', 'T2')]
 ==================
 ::::: id
-test-input-2.h#28
+test-input-2.h#29
 ::::: spelling
 TT
 ::::: kind
@@ -810,11 +859,11 @@ type_alias_declaration
 ::::: hierarchy
 ::NS::Class3Templated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:55:11
+test-input-2.h:56:11
 ::::: comment
 (none)
 ::::: canonical_type
@@ -822,12 +871,12 @@ test-input-2.h:55:11
 ::::: access
 private
 ::::: type_alias_chain
-[{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:55:11'}, {'spelling': 'T2', 'location': ''}]
+[{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:56:11'}, {'spelling': 'T2', 'location': ''}]
 ::::: type_alias_underlying_type
 T2
 ==================
 ::::: id
-test-input-2.h#29
+test-input-2.h#30
 ::::: spelling
 Class3Mid
 ::::: kind
@@ -835,11 +884,11 @@ class_declaration
 ::::: hierarchy
 ::NS::Class3Templated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:56:11
+test-input-2.h:57:11
 ::::: comment
 (none)
 ::::: specifier
@@ -867,7 +916,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#30
+test-input-2.h#31
 ::::: spelling
 Class3InnerTemplated
 ::::: kind
@@ -875,12 +924,12 @@ class_template
 ::::: hierarchy
 ::NS::Class3Templated::Class3Mid
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
-{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:56:11'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
+{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:57:11'}
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:58:15
+test-input-2.h:59:15
 ::::: comment
 (none)
 ::::: specifier
@@ -902,7 +951,7 @@ False
 [('unsigned int', 'N'), ('typename', 'U')]
 ==================
 ::::: id
-test-input-2.h#31
+test-input-2.h#32
 ::::: spelling
 u1_
 ::::: kind
@@ -910,13 +959,13 @@ field_declaration
 ::::: hierarchy
 ::NS::Class3Templated::Class3Mid::Class3InnerTemplated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
-{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:56:11'}
-{'spelling': 'Class3InnerTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:58:15'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
+{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:57:11'}
+{'spelling': 'Class3InnerTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:59:15'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:59:15
+test-input-2.h:60:15
 ::::: comment
 (none)
 ::::: static_member
@@ -925,14 +974,14 @@ False
 private
 ::::: type
 U
-{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'Class3InnerTemplated', 'location': 'test-input-2.h:58:15'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
+{'is_type_param': True, 'type_param_decl_location': {'index': 1, 'spelling': 'Class3InnerTemplated', 'location': 'test-input-2.h:59:15'}, 'is_array': False, 'is_type_alias': False, 'type_size': None}
 ::::: POD
 False
 ::::: size
 None
 ==================
 ::::: id
-test-input-2.h#32
+test-input-2.h#33
 ::::: spelling
 UU
 ::::: kind
@@ -940,13 +989,13 @@ type_alias_declaration
 ::::: hierarchy
 ::NS::Class3Templated::Class3Mid::Class3InnerTemplated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
-{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:56:11'}
-{'spelling': 'Class3InnerTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:58:15'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
+{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:57:11'}
+{'spelling': 'Class3InnerTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:59:15'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:60:19
+test-input-2.h:61:19
 ::::: comment
 (none)
 ::::: canonical_type
@@ -954,12 +1003,12 @@ test-input-2.h:60:19
 ::::: access
 private
 ::::: type_alias_chain
-[{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:60:19'}, {'spelling': 'U', 'location': ''}]
+[{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:61:19'}, {'spelling': 'U', 'location': ''}]
 ::::: type_alias_underlying_type
 U
 ==================
 ::::: id
-test-input-2.h#33
+test-input-2.h#34
 ::::: spelling
 u2_
 ::::: kind
@@ -967,13 +1016,13 @@ field_declaration
 ::::: hierarchy
 ::NS::Class3Templated::Class3Mid::Class3InnerTemplated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
-{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:56:11'}
-{'spelling': 'Class3InnerTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:58:15'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
+{'spelling': 'Class3Mid', 'transparent': False, 'kind': 'class_declaration', 'location': 'test-input-2.h:57:11'}
+{'spelling': 'Class3InnerTemplated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:59:15'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:61:16
+test-input-2.h:62:16
 ::::: comment
 (none)
 ::::: static_member
@@ -982,14 +1031,14 @@ False
 private
 ::::: type
 NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU
-{'canonical_type': '(type parameter)', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:60:19'}, {'spelling': 'U', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'U'}
+{'canonical_type': '(type parameter)', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU', 'location': 'test-input-2.h:61:19'}, {'spelling': 'U', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'U'}
 ::::: POD
 False
 ::::: size
 None
 ==================
 ::::: id
-test-input-2.h#34
+test-input-2.h#35
 ::::: spelling
 tt_
 ::::: kind
@@ -997,11 +1046,11 @@ field_declaration
 ::::: hierarchy
 ::NS::Class3Templated
 {'spelling': 'NS', 'transparent': False, 'kind': 'namespace', 'location': 'test-input-2.h:7:11'}
-{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:54:7'}
+{'spelling': 'Class3Templated', 'transparent': False, 'kind': 'class_template', 'location': 'test-input-2.h:55:7'}
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:64:8
+test-input-2.h:65:8
 ::::: comment
 (none)
 ::::: static_member
@@ -1010,14 +1059,14 @@ False
 private
 ::::: type
 NS::Class3Templated::TT
-{'canonical_type': '(type parameter)', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:55:11'}, {'spelling': 'T2', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'T2'}
+{'canonical_type': '(type parameter)', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Class3Templated::TT', 'location': 'test-input-2.h:56:11'}, {'spelling': 'T2', 'location': ''}], 'type_size': None, 'type_alias_underlying_type': 'T2'}
 ::::: POD
 False
 ::::: size
 None
 ==================
 ::::: id
-test-input-2.h#35
+test-input-2.h#36
 ::::: spelling
 Class2Ty
 ::::: kind
@@ -1028,18 +1077,18 @@ typedef_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:67:16
+test-input-2.h:68:16
 ::::: comment
 (none)
 ::::: canonical_type
 NS::Class2
 ::::: type_alias_chain
-[{'spelling': 'NS::Class2Ty', 'location': 'test-input-2.h:67:16'}, {'spelling': 'NS::Class2', 'location': 'test-input-2.h:47:7'}]
+[{'spelling': 'NS::Class2Ty', 'location': 'test-input-2.h:68:16'}, {'spelling': 'NS::Class2', 'location': 'test-input-2.h:48:7'}]
 ::::: type_alias_underlying_type
 NS::Class2
 ==================
 ::::: id
-test-input-2.h#36
+test-input-2.h#37
 ::::: spelling
 Class2Ty2
 ::::: kind
@@ -1050,18 +1099,18 @@ type_alias_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:68:7
+test-input-2.h:69:7
 ::::: comment
 (none)
 ::::: canonical_type
 NS::Class2
 ::::: type_alias_chain
-[{'spelling': 'NS::Class2Ty2', 'location': 'test-input-2.h:68:7'}, {'spelling': 'NS::Class2Ty', 'location': 'test-input-2.h:67:16'}, {'spelling': 'NS::Class2', 'location': 'test-input-2.h:47:7'}]
+[{'spelling': 'NS::Class2Ty2', 'location': 'test-input-2.h:69:7'}, {'spelling': 'NS::Class2Ty', 'location': 'test-input-2.h:68:16'}, {'spelling': 'NS::Class2', 'location': 'test-input-2.h:48:7'}]
 ::::: type_alias_underlying_type
 NS::Class2Ty
 ==================
 ::::: id
-test-input-2.h#37
+test-input-2.h#38
 ::::: spelling
 var1
 ::::: kind
@@ -1072,19 +1121,19 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:70:21
+test-input-2.h:71:21
 ::::: comment
 (none)
 ::::: type
 Class2Ty::Class2Int
-{'canonical_type': 'int', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty::Class2Int', 'location': 'test-input-2.h:49:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
+{'canonical_type': 'int', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty::Class2Int', 'location': 'test-input-2.h:50:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
 ::::: POD
 True
 ::::: size
 4
 ==================
 ::::: id
-test-input-2.h#38
+test-input-2.h#39
 ::::: spelling
 var2
 ::::: kind
@@ -1095,19 +1144,19 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:71:22
+test-input-2.h:72:22
 ::::: comment
 (none)
 ::::: type
 Class2Ty2::Class2Int
-{'canonical_type': 'int', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty2::Class2Int', 'location': 'test-input-2.h:49:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
+{'canonical_type': 'int', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'Class2Ty2::Class2Int', 'location': 'test-input-2.h:50:17'}, {'spelling': 'int', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'int'}
 ::::: POD
 True
 ::::: size
 4
 ==================
 ::::: id
-test-input-2.h#39
+test-input-2.h#40
 ::::: spelling
 Float
 ::::: kind
@@ -1118,18 +1167,18 @@ type_alias_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:73:7
+test-input-2.h:74:7
 ::::: comment
 (none)
 ::::: canonical_type
 float
 ::::: type_alias_chain
-[{'spelling': 'NS::Float', 'location': 'test-input-2.h:73:7'}, {'spelling': 'float', 'location': ''}]
+[{'spelling': 'NS::Float', 'location': 'test-input-2.h:74:7'}, {'spelling': 'float', 'location': ''}]
 ::::: type_alias_underlying_type
 float
 ==================
 ::::: id
-test-input-2.h#40
+test-input-2.h#41
 ::::: spelling
 var3
 ::::: kind
@@ -1140,19 +1189,19 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:74:7
+test-input-2.h:75:7
 ::::: comment
 (none)
 ::::: type
 NS::Float
-{'canonical_type': 'float', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float', 'location': 'test-input-2.h:73:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'float'}
+{'canonical_type': 'float', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float', 'location': 'test-input-2.h:74:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'float'}
 ::::: POD
 True
 ::::: size
 4
 ==================
 ::::: id
-test-input-2.h#41
+test-input-2.h#42
 ::::: spelling
 Float2
 ::::: kind
@@ -1163,18 +1212,18 @@ type_alias_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:76:7
+test-input-2.h:77:7
 ::::: comment
 (none)
 ::::: canonical_type
 float
 ::::: type_alias_chain
-[{'spelling': 'NS::Float2', 'location': 'test-input-2.h:76:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:73:7'}, {'spelling': 'float', 'location': ''}]
+[{'spelling': 'NS::Float2', 'location': 'test-input-2.h:77:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:74:7'}, {'spelling': 'float', 'location': ''}]
 ::::: type_alias_underlying_type
 NS::Float
 ==================
 ::::: id
-test-input-2.h#42
+test-input-2.h#43
 ::::: spelling
 var4
 ::::: kind
@@ -1185,12 +1234,12 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:77:8
+test-input-2.h:78:8
 ::::: comment
 (none)
 ::::: type
 NS::Float2
-{'canonical_type': 'float', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float2', 'location': 'test-input-2.h:76:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:73:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'NS::Float'}
+{'canonical_type': 'float', 'is_array': False, 'is_type_alias': True, 'is_type_param': False, 'type_alias_chain': [{'spelling': 'NS::Float2', 'location': 'test-input-2.h:77:7'}, {'spelling': 'NS::Float', 'location': 'test-input-2.h:74:7'}, {'spelling': 'float', 'location': ''}], 'type_size': 4, 'type_alias_underlying_type': 'NS::Float'}
 ::::: POD
 True
 ::::: size
@@ -1200,4 +1249,4 @@ True
 {'depth': 1, 'included_at': 'test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.43 sec
+[time traverse] 0.96 sec

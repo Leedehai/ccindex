@@ -12,6 +12,7 @@ private:
 public:
     Complex() : re(0), im(0) {}
     Complex(double re, double im) : re(re), im(im) {}
+    Complex(Complex &&) = delete;
     /**
      * Usage: bool b = complex.isReal();
      * -----------------
