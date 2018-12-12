@@ -1,6 +1,6 @@
-[TARGET FILE] test-input-1.cc
+[TARGET FILE] example-1.cc
 ::::: id
-test-input-1.cc#1
+example-1.cc#1
 ::::: spelling
 independentVariable
 ::::: kind
@@ -10,7 +10,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:7:11
+example-1.cc:7:11
 ::::: comment
 (none)
 ::::: type
@@ -28,7 +28,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#2
+example-1.cc#2
 ::::: spelling
 independentFunction
 ::::: kind
@@ -38,7 +38,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:8:5
+example-1.cc:8:5
 ::::: comment
 (none)
 ::::: specifier
@@ -59,7 +59,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#3
+example-1.cc#3
 ::::: spelling
 Int
 ::::: kind
@@ -69,14 +69,14 @@ typedef_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:9:26
+example-1.cc:9:26
 ::::: comment
 (none)
 ::::: canonical_type
 std::vector<int, std::allocator<int>>
 ::::: type_alias_chain:[
   {
-    "location": "test-input-1.cc:9:26", 
+    "location": "example-1.cc:9:26", 
     "spelling": "Int"
   }, 
   {
@@ -88,7 +88,7 @@ std::vector<int, std::allocator<int>>
 std::vector<int>
 ==================
 ::::: id
-test-input-1.cc#4
+example-1.cc#4
 ::::: spelling
 MyClass
 ::::: kind
@@ -98,7 +98,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:12:7
+example-1.cc:12:7
 ::::: comment
 comment for MyClass
 ::::: specifier
@@ -114,7 +114,7 @@ class MyClass;
 ::::: declaration_pretty
 class MyClass;
 ::::: size
-48
+1
 ::::: type
 MyClass
 {
@@ -122,7 +122,7 @@ MyClass
   "is_pointer": false, 
   "is_type_alias": false, 
   "is_type_param": false, 
-  "type_size": 48
+  "type_size": 1
 }
 ::::: is_abstract
 True
@@ -130,7 +130,7 @@ True
 []
 ==================
 ::::: id
-test-input-1.cc#5
+example-1.cc#5
 ::::: spelling
 property1
 ::::: kind
@@ -140,7 +140,7 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -148,7 +148,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:13:6
+example-1.cc:13:6
 ::::: comment
 (none)
 ::::: static_member
@@ -170,7 +170,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#6
+example-1.cc#6
 ::::: spelling
 method1
 ::::: kind
@@ -180,7 +180,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -188,7 +188,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:14:14
+example-1.cc:14:14
 ::::: comment
 (none)
 ::::: specifier
@@ -215,7 +215,7 @@ void
 []
 ==================
 ::::: id
-test-input-1.cc#7
+example-1.cc#7
 ::::: spelling
 MyClass
 ::::: kind
@@ -225,7 +225,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -233,7 +233,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:17:2
+example-1.cc:17:2
 ::::: comment
 comment for MyClass()
 ::::: specifier
@@ -262,7 +262,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#8
+example-1.cc#8
 ::::: spelling
 MyClass
 ::::: kind
@@ -272,7 +272,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -280,7 +280,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:18:2
+example-1.cc:18:2
 ::::: comment
 (none)
 ::::: specifier
@@ -292,7 +292,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -309,7 +309,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#9
+example-1.cc#9
 ::::: spelling
 MyClass
 ::::: kind
@@ -319,7 +319,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -327,7 +327,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:19:2
+example-1.cc:19:2
 ::::: comment
 (none)
 ::::: specifier
@@ -339,7 +339,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -356,7 +356,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#10
+example-1.cc#10
 ::::: spelling
 method2
 ::::: kind
@@ -366,7 +366,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -374,7 +374,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:20:6
+example-1.cc:20:6
 ::::: comment
 (none)
 ::::: specifier
@@ -401,7 +401,7 @@ Int
 []
 ==================
 ::::: id
-test-input-1.cc#11
+example-1.cc#11
 ::::: spelling
 MyClass
 ::::: kind
@@ -411,7 +411,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -419,7 +419,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:21:2
+example-1.cc:21:2
 ::::: comment
 (none)
 ::::: specifier
@@ -431,7 +431,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -448,7 +448,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#12
+example-1.cc#12
 ::::: spelling
 operator+
 ::::: kind
@@ -458,7 +458,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -466,7 +466,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:22:10
+example-1.cc:22:10
 ::::: comment
 (none)
 ::::: specifier
@@ -476,7 +476,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -493,7 +493,7 @@ MyClass
 []
 ==================
 ::::: id
-test-input-1.cc#13
+example-1.cc#13
 ::::: spelling
 operator int
 ::::: kind
@@ -503,7 +503,7 @@ conversion_function
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -511,7 +511,7 @@ conversion_function
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:23:2
+example-1.cc:23:2
 ::::: comment
 (none)
 ::::: specifier
@@ -534,7 +534,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#14
+example-1.cc#14
 ::::: spelling
 property2
 ::::: kind
@@ -544,7 +544,7 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -552,7 +552,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:26:6
+example-1.cc:26:6
 ::::: comment
 comment for property2
 ::::: static_member
@@ -569,7 +569,7 @@ Int
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
-      "type_size": 24
+      "type_size": null
     }
   }, 
   "is_array": false, 
@@ -579,7 +579,7 @@ Int
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-1.cc:9:26", 
+      "location": "example-1.cc:9:26", 
       "spelling": "Int"
     }, 
     {
@@ -588,15 +588,15 @@ Int
     }
   ], 
   "type_alias_underlying_type": "std::vector<int>", 
-  "type_size": 24
+  "type_size": null
 }
 ::::: POD
 False
 ::::: size
-24
+None
 ==================
 ::::: id
-test-input-1.cc#15
+example-1.cc#15
 ::::: spelling
 propertye3
 ::::: kind
@@ -606,7 +606,7 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -614,7 +614,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:31:14
+example-1.cc:31:14
 ::::: comment
 comment for property 3
 still comment for property 3
@@ -637,7 +637,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#16
+example-1.cc#16
 ::::: spelling
 InnerClass
 ::::: kind
@@ -647,7 +647,7 @@ class_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -655,7 +655,7 @@ class_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:33:8
+example-1.cc:33:8
 ::::: comment
 (none)
 ::::: specifier
@@ -689,7 +689,7 @@ False
 []
 ==================
 ::::: id
-test-input-1.cc#17
+example-1.cc#17
 ::::: spelling
 b
 ::::: kind
@@ -699,13 +699,13 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:33:8", 
+    "location": "example-1.cc:33:8", 
     "spelling": "InnerClass", 
     "transparent": false
   }
@@ -713,7 +713,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:34:10
+example-1.cc:34:10
 ::::: comment
 (none)
 ::::: static_member
@@ -735,7 +735,7 @@ True
 8
 ==================
 ::::: id
-test-input-1.cc#18
+example-1.cc#18
 ::::: spelling
 method3
 ::::: kind
@@ -745,7 +745,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -753,7 +753,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:37:15
+example-1.cc:37:15
 ::::: comment
 (none)
 ::::: specifier
@@ -780,7 +780,7 @@ void
 []
 ==================
 ::::: id
-test-input-1.cc#19
+example-1.cc#19
 ::::: spelling
 baz
 ::::: kind
@@ -790,7 +790,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:41:5
+example-1.cc:41:5
 ::::: comment
 (none)
 ::::: specifier
@@ -811,7 +811,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#20
+example-1.cc#20
 ::::: spelling
 templateFunc
 ::::: kind
@@ -821,13 +821,13 @@ function_template
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:45:5
+example-1.cc:45:5
 ::::: comment
 (none)
 ::::: specifier
 []
 ::::: args_list
-[{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
+[{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -841,10 +841,10 @@ int templateFunc(T* pt, U* pu, int n = N);
 ::::: return_type
 int
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': '1'}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': '1'}]
 ==================
 ::::: id
-test-input-1.cc#21
+example-1.cc#21
 ::::: spelling
 foo
 ::::: kind
@@ -854,13 +854,13 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:48:5
+example-1.cc:48:5
 ::::: comment
 comment for foo()
 ::::: specifier
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -875,7 +875,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#22
+example-1.cc#22
 ::::: spelling
 MyClass
 ::::: kind
@@ -885,7 +885,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:12:7", 
+    "location": "example-1.cc:12:7", 
     "spelling": "MyClass", 
     "transparent": false
   }
@@ -893,7 +893,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:51:10
+example-1.cc:51:10
 ::::: comment
 (none)
 ::::: specifier
@@ -905,7 +905,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -922,7 +922,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#23
+example-1.cc#23
 ::::: spelling
 NS2
 ::::: kind
@@ -932,12 +932,12 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:56:11
+example-1.cc:56:11
 ::::: comment
 (none)
 ==================
 ::::: id
-test-input-1.cc#24
+example-1.cc#24
 ::::: spelling
 templateClass
 ::::: kind
@@ -947,7 +947,7 @@ class_template
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:56:11", 
+    "location": "example-1.cc:56:11", 
     "spelling": "NS2", 
     "transparent": false
   }
@@ -955,7 +955,7 @@ class_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:59:7
+example-1.cc:59:7
 ::::: comment
 (none)
 ::::: specifier
@@ -974,10 +974,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:59:7', 'template_spelling': 'templateClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'C', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:59:7', 'template_spelling': 'templateClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'C', 'default_expr': None}]
 ==================
 ::::: id
-test-input-1.cc#25
+example-1.cc#25
 ::::: spelling
 t_
 ::::: kind
@@ -987,13 +987,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:56:11", 
+    "location": "example-1.cc:56:11", 
     "spelling": "NS2", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-1.cc:59:7", 
+    "location": "example-1.cc:59:7", 
     "spelling": "templateClass", 
     "transparent": false
   }
@@ -1001,7 +1001,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-1.cc:60:4
+example-1.cc:60:4
 ::::: comment
 (none)
 ::::: static_member
@@ -1018,7 +1018,7 @@ T
   "is_type_param": true, 
   "type_param_decl_location": {
     "param_index": 0, 
-    "template_location": "test-input-1.cc:59:7", 
+    "template_location": "example-1.cc:59:7", 
     "template_spelling": "templateClass"
   }, 
   "type_size": null
@@ -1029,7 +1029,7 @@ False
 None
 ==================
 ::::: id
-test-input-1.cc#26
+example-1.cc#26
 ::::: spelling
 c_
 ::::: kind
@@ -1039,13 +1039,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:56:11", 
+    "location": "example-1.cc:56:11", 
     "spelling": "NS2", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-1.cc:59:7", 
+    "location": "example-1.cc:59:7", 
     "spelling": "templateClass", 
     "transparent": false
   }
@@ -1053,7 +1053,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-1.cc:61:7
+example-1.cc:61:7
 ::::: comment
 (none)
 ::::: static_member
@@ -1075,7 +1075,7 @@ True
 1
 ==================
 ::::: id
-test-input-1.cc#27
+example-1.cc#27
 ::::: spelling
 E
 ::::: kind
@@ -1085,7 +1085,7 @@ enum_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:65:6
+example-1.cc:65:6
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -1094,7 +1094,7 @@ False
 {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ==================
 ::::: id
-test-input-1.cc#28
+example-1.cc#28
 ::::: spelling
 a
 ::::: kind
@@ -1104,7 +1104,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:65:6", 
+    "location": "example-1.cc:65:6", 
     "spelling": "E", 
     "transparent": true
   }
@@ -1112,7 +1112,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:66:2
+example-1.cc:66:2
 ::::: comment
 (none)
 ::::: enum_value
@@ -1134,7 +1134,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#29
+example-1.cc#29
 ::::: spelling
 b
 ::::: kind
@@ -1144,7 +1144,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:65:6", 
+    "location": "example-1.cc:65:6", 
     "spelling": "E", 
     "transparent": true
   }
@@ -1152,7 +1152,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:67:2
+example-1.cc:67:2
 ::::: comment
 (none)
 ::::: enum_value
@@ -1174,7 +1174,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#30
+example-1.cc#30
 ::::: spelling
 customNS
 ::::: kind
@@ -1184,12 +1184,12 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:71:11
+example-1.cc:71:11
 ::::: comment
 comment for namespace
 ==================
 ::::: id
-test-input-1.cc#31
+example-1.cc#31
 ::::: spelling
 foo
 ::::: kind
@@ -1199,7 +1199,7 @@ function_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1207,7 +1207,7 @@ function_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:72:6
+example-1.cc:72:6
 ::::: comment
 (none)
 ::::: specifier
@@ -1228,7 +1228,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#32
+example-1.cc#32
 ::::: spelling
 Class
 ::::: kind
@@ -1238,7 +1238,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1246,7 +1246,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:73:8
+example-1.cc:73:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1278,7 +1278,7 @@ False
 []
 ==================
 ::::: id
-test-input-1.cc#33
+example-1.cc#33
 ::::: spelling
 staticGlobal
 ::::: kind
@@ -1288,7 +1288,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:76:12
+example-1.cc:76:12
 ::::: comment
 (none)
 ::::: type
@@ -1306,7 +1306,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#34
+example-1.cc#34
 ::::: spelling
 Class
 ::::: kind
@@ -1316,7 +1316,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1324,7 +1324,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:78:17
+example-1.cc:78:17
 ::::: comment
 (none)
 ::::: specifier
@@ -1356,7 +1356,7 @@ False
 []
 ==================
 ::::: id
-test-input-1.cc#35
+example-1.cc#35
 ::::: spelling
 staticData
 ::::: kind
@@ -1366,13 +1366,13 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1380,7 +1380,7 @@ variable_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:79:13
+example-1.cc:79:13
 ::::: comment
 (none)
 ::::: static_member
@@ -1402,7 +1402,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#36
+example-1.cc#36
 ::::: spelling
 constData
 ::::: kind
@@ -1412,13 +1412,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1426,7 +1426,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:80:12
+example-1.cc:80:12
 ::::: comment
 (none)
 ::::: static_member
@@ -1448,7 +1448,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#37
+example-1.cc#37
 ::::: spelling
 staticConstData
 ::::: kind
@@ -1458,13 +1458,13 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1472,7 +1472,7 @@ variable_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:81:19
+example-1.cc:81:19
 ::::: comment
 (none)
 ::::: static_member
@@ -1494,7 +1494,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#38
+example-1.cc#38
 ::::: spelling
 b
 ::::: kind
@@ -1504,13 +1504,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1518,7 +1518,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:82:6
+example-1.cc:82:6
 ::::: comment
 (none)
 ::::: static_member
@@ -1540,7 +1540,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#39
+example-1.cc#39
 ::::: spelling
 fooFriend
 ::::: kind
@@ -1550,7 +1550,7 @@ function_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1558,7 +1558,7 @@ function_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-1.cc:84:12
+example-1.cc:84:12
 ::::: comment
 (none)
 ::::: specifier
@@ -1579,7 +1579,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#40
+example-1.cc#40
 ::::: spelling
 returnSizeT_int
 ::::: kind
@@ -1589,13 +1589,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1603,7 +1603,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:85:8
+example-1.cc:85:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1630,7 +1630,7 @@ size_t
 []
 ==================
 ::::: id
-test-input-1.cc#41
+example-1.cc#41
 ::::: spelling
 returnBool_string_myclass_anotherclass
 ::::: kind
@@ -1640,13 +1640,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1654,7 +1654,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:86:6
+example-1.cc:86:6
 ::::: comment
 (none)
 ::::: specifier
@@ -1664,7 +1664,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'std::string', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::__1::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char> >', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': {'spelling': 'std::basic_string<char, std::char_traits<char>, std::allocator<char>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 's', 'default_expr': None}, {'type': {'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': 'obj', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'obj2', 'default_expr': None}]
+[{'type': {'spelling': 'std::string', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::__1::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char> >', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': {'spelling': 'std::basic_string<char, std::char_traits<char>, std::allocator<char>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 's', 'default_expr': None}, {'type': {'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'obj', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'obj2', 'default_expr': None}]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1685,7 +1685,7 @@ bool
 []
 ==================
 ::::: id
-test-input-1.cc#42
+example-1.cc#42
 ::::: spelling
 returnVector_float_vector
 ::::: kind
@@ -1695,13 +1695,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "test-input-1.cc:71:11", 
+    "location": "example-1.cc:71:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:78:17", 
+    "location": "example-1.cc:78:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1709,7 +1709,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:87:19
+example-1.cc:87:19
 ::::: comment
 (none)
 ::::: specifier
@@ -1719,7 +1719,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'std::vector<int>', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': '', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1727,16 +1727,16 @@ not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
+int& returnVector_float_vector();
 ::::: declaration_pretty
-std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
+int& returnVector_float_vector();
 ::::: return_type
-std::vector<int>&
+int&
 ::::: template_args_list
 []
 ==================
 ::::: id
-test-input-1.cc#43
+example-1.cc#43
 ::::: spelling
 classFriend
 ::::: kind
@@ -1746,7 +1746,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:90:7
+example-1.cc:90:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1778,7 +1778,7 @@ False
 []
 ==================
 ::::: id
-test-input-1.cc#44
+example-1.cc#44
 ::::: spelling
 fooFriend
 ::::: kind
@@ -1788,7 +1788,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:91:5
+example-1.cc:91:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1809,7 +1809,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#45
+example-1.cc#45
 ::::: spelling
 a1
 ::::: kind
@@ -1819,7 +1819,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:93:5
+example-1.cc:93:5
 ::::: comment
 (none)
 ::::: type
@@ -1837,7 +1837,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#46
+example-1.cc#46
 ::::: spelling
 a2
 ::::: kind
@@ -1847,7 +1847,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:93:10
+example-1.cc:93:10
 ::::: comment
 (none)
 ::::: type
@@ -1876,7 +1876,7 @@ True
 8
 ==================
 ::::: id
-test-input-1.cc#47
+example-1.cc#47
 ::::: spelling
 m
 ::::: kind
@@ -1886,43 +1886,25 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:94:20
+example-1.cc:94:20
 ::::: comment
 (none)
 ::::: type
-std::map<int, int>
+int
 {
-  "canonical_type": {
-    "spelling": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
-    "type_info": {
-      "is_array": false, 
-      "is_pointer": false, 
-      "is_type_alias": false, 
-      "is_type_param": false, 
-      "type_size": 24
-    }
-  }, 
   "is_array": false, 
-  "is_function": false, 
   "is_pointer": false, 
-  "is_type_alias": true, 
+  "is_type_alias": false, 
   "is_type_param": false, 
-  "type_alias_chain": [
-    {
-      "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28", 
-      "spelling": "std::map<int, int>"
-    }
-  ], 
-  "type_alias_underlying_type": "", 
-  "type_size": 24
+  "type_size": 4
 }
 ::::: POD
-False
+True
 ::::: size
-24
+4
 ==================
 ::::: id
-test-input-1.cc#48
+example-1.cc#48
 ::::: spelling
 foo
 ::::: kind
@@ -1932,7 +1914,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:96:5
+example-1.cc:96:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1953,7 +1935,7 @@ int
 []
 ==================
 ::::: id
-test-input-1.cc#49
+example-1.cc#49
 ::::: spelling
 ano
 ::::: kind
@@ -1963,7 +1945,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:101:9
+example-1.cc:101:9
 ::::: comment
 (none)
 ::::: type
@@ -1981,7 +1963,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#50
+example-1.cc#50
 ::::: spelling
 EEClass
 ::::: kind
@@ -1991,7 +1973,7 @@ struct_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:102:8
+example-1.cc:102:8
 ::::: comment
 (none)
 ::::: specifier
@@ -2023,7 +2005,7 @@ False
 []
 ==================
 ::::: id
-test-input-1.cc#51
+example-1.cc#51
 ::::: spelling
 EE
 ::::: kind
@@ -2033,7 +2015,7 @@ enum_declaration
 [
   {
     "kind": "struct_declaration", 
-    "location": "test-input-1.cc:102:8", 
+    "location": "example-1.cc:102:8", 
     "spelling": "EEClass", 
     "transparent": false
   }
@@ -2041,7 +2023,7 @@ enum_declaration
 ::::: parent_kind
 struct_declaration
 ::::: location
-test-input-1.cc:103:13
+example-1.cc:103:13
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -2052,7 +2034,7 @@ True
 public
 ==================
 ::::: id
-test-input-1.cc#52
+example-1.cc#52
 ::::: spelling
 ee1
 ::::: kind
@@ -2062,13 +2044,13 @@ enum_constant_declaration
 [
   {
     "kind": "struct_declaration", 
-    "location": "test-input-1.cc:102:8", 
+    "location": "example-1.cc:102:8", 
     "spelling": "EEClass", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:103:13", 
+    "location": "example-1.cc:103:13", 
     "spelling": "EE", 
     "transparent": false
   }
@@ -2076,7 +2058,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:103:25
+example-1.cc:103:25
 ::::: comment
 (none)
 ::::: enum_value
@@ -2098,7 +2080,7 @@ True
 1
 ==================
 ::::: id
-test-input-1.cc#53
+example-1.cc#53
 ::::: spelling
 ee2
 ::::: kind
@@ -2108,13 +2090,13 @@ enum_constant_declaration
 [
   {
     "kind": "struct_declaration", 
-    "location": "test-input-1.cc:102:8", 
+    "location": "example-1.cc:102:8", 
     "spelling": "EEClass", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:103:13", 
+    "location": "example-1.cc:103:13", 
     "spelling": "EE", 
     "transparent": false
   }
@@ -2122,7 +2104,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:103:30
+example-1.cc:103:30
 ::::: comment
 (none)
 ::::: enum_value
@@ -2144,7 +2126,7 @@ True
 1
 ==================
 ::::: id
-test-input-1.cc#54
+example-1.cc#54
 ::::: spelling
 eee1
 ::::: kind
@@ -2154,7 +2136,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:105:9", 
+    "location": "example-1.cc:105:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2162,7 +2144,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:105:16
+example-1.cc:105:16
 ::::: comment
 (none)
 ::::: enum_value
@@ -2184,7 +2166,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#55
+example-1.cc#55
 ::::: spelling
 eee2
 ::::: kind
@@ -2194,7 +2176,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:105:9", 
+    "location": "example-1.cc:105:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2202,7 +2184,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:105:22
+example-1.cc:105:22
 ::::: comment
 (none)
 ::::: enum_value
@@ -2224,7 +2206,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#56
+example-1.cc#56
 ::::: spelling
 EnumTy
 ::::: kind
@@ -2234,18 +2216,18 @@ typedef_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:105:29
+example-1.cc:105:29
 ::::: comment
 (none)
 ::::: canonical_type
 EnumTy
 ::::: type_alias_chain:[
   {
-    "location": "test-input-1.cc:105:29", 
+    "location": "example-1.cc:105:29", 
     "spelling": "EnumTy"
   }, 
   {
-    "location": "test-input-1.cc:105:9", 
+    "location": "example-1.cc:105:9", 
     "spelling": "enum EnumTy"
   }
 ]
@@ -2253,7 +2235,7 @@ EnumTy
 enum EnumTy
 ==================
 ::::: id
-test-input-1.cc#57
+example-1.cc#57
 ::::: spelling
 eee1
 ::::: kind
@@ -2263,7 +2245,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:105:9", 
+    "location": "example-1.cc:105:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2271,7 +2253,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:105:16
+example-1.cc:105:16
 ::::: comment
 (none)
 ::::: enum_value
@@ -2293,7 +2275,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#58
+example-1.cc#58
 ::::: spelling
 eee2
 ::::: kind
@@ -2303,7 +2285,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:105:9", 
+    "location": "example-1.cc:105:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2311,7 +2293,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:105:22
+example-1.cc:105:22
 ::::: comment
 (none)
 ::::: enum_value
@@ -2333,25 +2315,25 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#59
+example-1.cc#59
 ::::: spelling
 aaaaa
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
-::((anonymous enum at test-input-1.cc:106:1))
+::((anonymous enum at example-1.cc:106:1))
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:106:1", 
-    "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+    "location": "example-1.cc:106:1", 
+    "spelling": "(anonymous enum at example-1.cc:106:1)", 
     "transparent": true
   }
 ]
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:106:8
+example-1.cc:106:8
 ::::: comment
 (none)
 ::::: enum_value
@@ -2359,7 +2341,7 @@ test-input-1.cc:106:8
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
-(anonymous enum at test-input-1.cc:106:1)
+(anonymous enum at example-1.cc:106:1)
 {
   "is_array": false, 
   "is_pointer": false, 
@@ -2373,25 +2355,25 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#60
+example-1.cc#60
 ::::: spelling
 bbbbb
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
-::((anonymous enum at test-input-1.cc:106:1))
+::((anonymous enum at example-1.cc:106:1))
 [
   {
     "kind": "enum_declaration", 
-    "location": "test-input-1.cc:106:1", 
-    "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+    "location": "example-1.cc:106:1", 
+    "spelling": "(anonymous enum at example-1.cc:106:1)", 
     "transparent": true
   }
 ]
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-1.cc:106:15
+example-1.cc:106:15
 ::::: comment
 (none)
 ::::: enum_value
@@ -2399,7 +2381,7 @@ test-input-1.cc:106:15
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
-(anonymous enum at test-input-1.cc:106:1)
+(anonymous enum at example-1.cc:106:1)
 {
   "is_array": false, 
   "is_pointer": false, 
@@ -2413,7 +2395,7 @@ True
 4
 ==================
 ::::: id
-test-input-1.cc#61
+example-1.cc#61
 ::::: spelling
 BaseClass
 ::::: kind
@@ -2423,7 +2405,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:108:7
+example-1.cc:108:7
 ::::: comment
 (none)
 ::::: specifier
@@ -2455,7 +2437,7 @@ False
 []
 ==================
 ::::: id
-test-input-1.cc#62
+example-1.cc#62
 ::::: spelling
 BaseClass2
 ::::: kind
@@ -2465,7 +2447,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:110:8
+example-1.cc:110:8
 ::::: comment
 (none)
 ::::: specifier
@@ -2484,10 +2466,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:110:8', 'template_spelling': 'BaseClass2', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:110:8', 'template_spelling': 'BaseClass2', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
-test-input-1.cc#63
+example-1.cc#63
 ::::: spelling
 ClassAgain
 ::::: kind
@@ -2497,7 +2479,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:112:7
+example-1.cc:112:7
 ::::: comment
 (none)
 ::::: specifier
@@ -2516,10 +2498,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:112:7', 'template_spelling': 'ClassAgain', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:112:7', 'template_spelling': 'ClassAgain', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
-test-input-1.cc#64
+example-1.cc#64
 ::::: spelling
 VClass
 ::::: kind
@@ -2529,13 +2511,13 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:114:7
+example-1.cc:114:7
 ::::: comment
 (none)
 ::::: specifier
 ['final']
 ::::: base_clause
-[{'access': 'private', 'base': 'BaseClass', 'virtual': False}, {'access': 'public', 'base': 'BaseClass2<ClassAgain<int>>', 'virtual': False}, {'access': 'public', 'base': 'EEClass', 'virtual': True}]
+[{'access': 'private', 'base': 'BaseClass', 'virtual': False}, {'access': 'public', 'base': 'EEClass', 'virtual': True}]
 ::::: POD
 False
 ::::: is_template
@@ -2545,7 +2527,7 @@ class VClass final;
 ::::: declaration_pretty
 class VClass final;
 ::::: size
-8
+1
 ::::: type
 VClass
 {
@@ -2553,7 +2535,7 @@ VClass
   "is_pointer": false, 
   "is_type_alias": false, 
   "is_type_param": false, 
-  "type_size": 8
+  "type_size": 1
 }
 ::::: is_abstract
 True
@@ -2561,7 +2543,7 @@ True
 []
 ==================
 ::::: id
-test-input-1.cc#65
+example-1.cc#65
 ::::: spelling
 VClass
 ::::: kind
@@ -2571,7 +2553,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:114:7", 
+    "location": "example-1.cc:114:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2579,7 +2561,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:117:5
+example-1.cc:117:5
 ::::: comment
 (none)
 ::::: specifier
@@ -2608,7 +2590,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#66
+example-1.cc#66
 ::::: spelling
 ~VClass
 ::::: kind
@@ -2618,7 +2600,7 @@ destructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:114:7", 
+    "location": "example-1.cc:114:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2626,7 +2608,7 @@ destructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:118:13
+example-1.cc:118:13
 ::::: comment
 (none)
 ::::: specifier
@@ -2655,7 +2637,7 @@ None
 []
 ==================
 ::::: id
-test-input-1.cc#67
+example-1.cc#67
 ::::: spelling
 foo
 ::::: kind
@@ -2665,7 +2647,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-1.cc:114:7", 
+    "location": "example-1.cc:114:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2673,7 +2655,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-1.cc:119:18
+example-1.cc:119:18
 ::::: comment
 (none)
 ::::: specifier
@@ -2700,7 +2682,7 @@ void
 []
 ==================
 ::::: id
-test-input-1.cc#68
+example-1.cc#68
 ::::: spelling
 arrIntPtr
 ::::: kind
@@ -2710,7 +2692,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:122:6
+example-1.cc:122:6
 ::::: comment
 (none)
 ::::: type
@@ -2751,7 +2733,7 @@ True
 40
 ==================
 ::::: id
-test-input-1.cc#69
+example-1.cc#69
 ::::: spelling
 arrChar
 ::::: kind
@@ -2761,7 +2743,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:123:6
+example-1.cc:123:6
 ::::: comment
 (none)
 ::::: type
@@ -2791,7 +2773,7 @@ True
 6
 ==================
 ::::: id
-test-input-1.cc#70
+example-1.cc#70
 ::::: spelling
 arrVar
 ::::: kind
@@ -2801,7 +2783,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:125:11
+example-1.cc:125:11
 ::::: comment
 (none)
 ::::: type
@@ -2831,7 +2813,7 @@ True
 None
 ==================
 ::::: id
-test-input-1.cc#71
+example-1.cc#71
 ::::: spelling
 returnVoid
 ::::: kind
@@ -2841,7 +2823,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:130:1
+example-1.cc:130:1
 ::::: comment
 (none)
 ::::: specifier
@@ -2862,7 +2844,7 @@ void
 []
 ==================
 ::::: id
-test-input-1.cc#72
+example-1.cc#72
 ::::: spelling
 returnVoid
 ::::: kind
@@ -2872,7 +2854,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-1.cc:130:1
+example-1.cc:130:1
 ::::: comment
 (none)
 ::::: specifier
@@ -2893,23 +2875,9 @@ void
 []
 ==================
 [Diagnostic #1]
-test-input-1.cc:22:10: error: return type 'MyClass' is an abstract class
-[Diagnostic #2]
-test-input-1.cc:51:10: error: redefinition of 'MyClass'
-[Diagnostic #3]
-test-input-1.cc:86:68: error: unknown type name 'Another'
-[Diagnostic #4]
-test-input-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
-[Diagnostic #5]
-test-input-1.cc:101:1: error: unknown type name 'Another'
-[Diagnostic #6]
-test-input-1.cc:114:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
-[Diagnostic #7]
-test-input-1.cc:125:11: error: definition of variable with array type needs an explicit size or an initializer
+example-1.cc:4:10: fatal error: 'test-input-2.h' file not found
 [includes]
-{'depth': 1, 'included_at': 'test-input-1.cc:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
-{'depth': 1, 'included_at': 'test-input-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
-{'depth': 1, 'included_at': 'test-input-1.cc:4:10', 'file': './test-input-2.h'}
-{'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time indexing] 0.02 sec
-[time traverse] 1.02 sec
+{'depth': 1, 'included_at': 'example-1.cc:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
+{'depth': 1, 'included_at': 'example-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
+[time indexing] 0.01 sec
+[time traverse] 0.88 sec

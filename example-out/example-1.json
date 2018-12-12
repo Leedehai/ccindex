@@ -1,33 +1,17 @@
 {
   "errors": [
-    "test-input-1.cc:22:10: error: return type 'MyClass' is an abstract class", 
-    "test-input-1.cc:51:10: error: redefinition of 'MyClass'", 
-    "test-input-1.cc:86:68: error: unknown type name 'Another'", 
-    "test-input-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members", 
-    "test-input-1.cc:101:1: error: unknown type name 'Another'", 
-    "test-input-1.cc:114:7: warning: abstract class is marked 'final' [-Wabstract-final-class]", 
-    "test-input-1.cc:125:11: error: definition of variable with array type needs an explicit size or an initializer"
+    "example-1.cc:4:10: fatal error: 'test-input-2.h' file not found"
   ], 
   "includes": [
     {
       "depth": 1, 
       "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector", 
-      "included_at": "test-input-1.cc:2:10"
+      "included_at": "example-1.cc:2:10"
     }, 
     {
       "depth": 1, 
       "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map", 
-      "included_at": "test-input-1.cc:3:10"
-    }, 
-    {
-      "depth": 1, 
-      "file": "./test-input-2.h", 
-      "included_at": "test-input-1.cc:4:10"
-    }, 
-    {
-      "depth": 2, 
-      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map", 
-      "included_at": "./test-input-2.h:2:10"
+      "included_at": "example-1.cc:3:10"
     }
   ], 
   "symbols": [
@@ -35,9 +19,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#1", 
+      "id": "example-1.cc#1", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:7:11", 
+      "location": "example-1.cc:7:11", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "independentVariable", 
@@ -59,10 +43,10 @@
       "declaration": "int independentFunction();", 
       "declaration_pretty": "int independentFunction();", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#2", 
+      "id": "example-1.cc#2", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:8:5", 
+      "location": "example-1.cc:8:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "int", 
@@ -75,14 +59,14 @@
       "canonical_type": "std::vector<int, std::allocator<int>>", 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#3", 
+      "id": "example-1.cc#3", 
       "kind": "typedef_declaration", 
-      "location": "test-input-1.cc:9:26", 
+      "location": "example-1.cc:9:26", 
       "parent_kind": "(global)", 
       "spelling": "Int", 
       "type_alias_chain": [
         {
-          "location": "test-input-1.cc:9:26", 
+          "location": "example-1.cc:9:26", 
           "spelling": "Int"
         }, 
         {
@@ -100,13 +84,13 @@
       "declaration": "class MyClass;", 
       "declaration_pretty": "class MyClass;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#4", 
+      "id": "example-1.cc#4", 
       "is_abstract": true, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:12:7", 
+      "location": "example-1.cc:12:7", 
       "parent_kind": "(global)", 
-      "size": 48, 
+      "size": 1, 
       "specifier": [], 
       "spelling": "MyClass", 
       "template_args_list": [], 
@@ -117,7 +101,7 @@
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "type_size": 48
+          "type_size": 1
         }
       }, 
       "usage": ""
@@ -129,14 +113,14 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#5", 
+      "id": "example-1.cc#5", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:13:6", 
+      "location": "example-1.cc:13:6", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "property1", 
@@ -162,16 +146,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#6", 
+      "id": "example-1.cc#6", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:14:14", 
+      "location": "example-1.cc:14:14", 
       "method_property": [
         "static"
       ], 
@@ -195,16 +179,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#7", 
+      "id": "example-1.cc#7", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-1.cc:17:2", 
+      "location": "example-1.cc:17:2", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -227,7 +211,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 48
+              "type_size": 1
             }
           }
         }
@@ -242,16 +226,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#8", 
+      "id": "example-1.cc#8", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-1.cc:18:2", 
+      "location": "example-1.cc:18:2", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -291,7 +275,7 @@
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
-                  "type_size": 24
+                  "type_size": null
                 }
               }, 
               "is_array": false, 
@@ -301,7 +285,7 @@
               "is_type_param": false, 
               "type_alias_chain": [
                 {
-                  "location": "test-input-1.cc:9:26", 
+                  "location": "example-1.cc:9:26", 
                   "spelling": "Int"
                 }, 
                 {
@@ -310,7 +294,7 @@
                 }
               ], 
               "type_alias_underlying_type": "std::vector<int>", 
-              "type_size": 24
+              "type_size": null
             }
           }
         }
@@ -322,16 +306,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#9", 
+      "id": "example-1.cc#9", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-1.cc:19:2", 
+      "location": "example-1.cc:19:2", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -350,16 +334,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#10", 
+      "id": "example-1.cc#10", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:20:6", 
+      "location": "example-1.cc:20:6", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -382,7 +366,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 48
+              "type_size": 1
             }
           }
         }
@@ -397,16 +381,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#11", 
+      "id": "example-1.cc#11", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-1.cc:21:2", 
+      "location": "example-1.cc:21:2", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -429,7 +413,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 48
+              "type_size": 1
             }
           }
         }
@@ -440,16 +424,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#12", 
+      "id": "example-1.cc#12", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:22:10", 
+      "location": "example-1.cc:22:10", 
       "method_property": [], 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "class_declaration", 
@@ -470,15 +454,15 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#13", 
+      "id": "example-1.cc#13", 
       "is_template": false, 
       "kind": "conversion_function", 
-      "location": "test-input-1.cc:23:2", 
+      "location": "example-1.cc:23:2", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": "int", 
@@ -494,16 +478,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#14", 
+      "id": "example-1.cc#14", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:26:6", 
+      "location": "example-1.cc:26:6", 
       "parent_kind": "class_declaration", 
-      "size": 24, 
+      "size": null, 
       "spelling": "property2", 
       "static_member": false, 
       "type": {
@@ -516,7 +500,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 24
+              "type_size": null
             }
           }, 
           "is_array": false, 
@@ -526,7 +510,7 @@
           "is_type_param": false, 
           "type_alias_chain": [
             {
-              "location": "test-input-1.cc:9:26", 
+              "location": "example-1.cc:9:26", 
               "spelling": "Int"
             }, 
             {
@@ -535,7 +519,7 @@
             }
           ], 
           "type_alias_underlying_type": "std::vector<int>", 
-          "type_size": 24
+          "type_size": null
         }
       }, 
       "usage": ""
@@ -547,14 +531,14 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#15", 
+      "id": "example-1.cc#15", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:31:14", 
+      "location": "example-1.cc:31:14", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "propertye3", 
@@ -581,16 +565,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#16", 
+      "id": "example-1.cc#16", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:33:8", 
+      "location": "example-1.cc:33:8", 
       "parent_kind": "class_declaration", 
       "size": 8, 
       "specifier": [], 
@@ -615,20 +599,20 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:33:8", 
+          "location": "example-1.cc:33:8", 
           "spelling": "InnerClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#17", 
+      "id": "example-1.cc#17", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:34:10", 
+      "location": "example-1.cc:34:10", 
       "parent_kind": "class_declaration", 
       "size": 8, 
       "spelling": "b", 
@@ -654,16 +638,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#18", 
+      "id": "example-1.cc#18", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:37:15", 
+      "location": "example-1.cc:37:15", 
       "method_property": [
         "const", 
         "virtual", 
@@ -685,10 +669,10 @@
       "declaration": "int baz();", 
       "declaration_pretty": "int baz();", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#19", 
+      "id": "example-1.cc#19", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:41:5", 
+      "location": "example-1.cc:41:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "int", 
@@ -720,7 +704,7 @@
                   "is_type_param": true, 
                   "type_param_decl_location": {
                     "param_index": 0, 
-                    "template_location": "test-input-1.cc:45:5", 
+                    "template_location": "example-1.cc:45:5", 
                     "template_spelling": "templateFunc"
                   }, 
                   "type_size": null
@@ -751,7 +735,7 @@
                   "is_type_param": true, 
                   "type_param_decl_location": {
                     "param_index": 1, 
-                    "template_location": "test-input-1.cc:45:5", 
+                    "template_location": "example-1.cc:45:5", 
                     "template_spelling": "templateFunc"
                   }, 
                   "type_size": null
@@ -780,10 +764,10 @@
       "declaration": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
       "declaration_pretty": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#20", 
+      "id": "example-1.cc#20", 
       "is_template": true, 
       "kind": "function_template", 
-      "location": "test-input-1.cc:45:5", 
+      "location": "example-1.cc:45:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "int", 
@@ -803,7 +787,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "test-input-1.cc:45:5", 
+                "template_location": "example-1.cc:45:5", 
                 "template_spelling": "templateFunc"
               }, 
               "type_size": null
@@ -823,7 +807,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 1, 
-                "template_location": "test-input-1.cc:45:5", 
+                "template_location": "example-1.cc:45:5", 
                 "template_spelling": "templateFunc"
               }, 
               "type_size": null
@@ -876,7 +860,7 @@
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
-                  "type_size": 24
+                  "type_size": null
                 }
               }, 
               "is_array": false, 
@@ -886,7 +870,7 @@
               "is_type_param": false, 
               "type_alias_chain": [
                 {
-                  "location": "test-input-1.cc:9:26", 
+                  "location": "example-1.cc:9:26", 
                   "spelling": "Int"
                 }, 
                 {
@@ -895,7 +879,7 @@
                 }
               ], 
               "type_alias_underlying_type": "std::vector<int>", 
-              "type_size": 24
+              "type_size": null
             }
           }
         }
@@ -904,10 +888,10 @@
       "declaration": "int foo(int a, Int b);", 
       "declaration_pretty": "int foo(int a, Int b);", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#21", 
+      "id": "example-1.cc#21", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:48:5", 
+      "location": "example-1.cc:48:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "int", 
@@ -946,7 +930,7 @@
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
-                  "type_size": 24
+                  "type_size": null
                 }
               }, 
               "is_array": false, 
@@ -956,7 +940,7 @@
               "is_type_param": false, 
               "type_alias_chain": [
                 {
-                  "location": "test-input-1.cc:9:26", 
+                  "location": "example-1.cc:9:26", 
                   "spelling": "Int"
                 }, 
                 {
@@ -965,7 +949,7 @@
                 }
               ], 
               "type_alias_underlying_type": "std::vector<int>", 
-              "type_size": 24
+              "type_size": null
             }
           }
         }
@@ -977,16 +961,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:12:7", 
+          "location": "example-1.cc:12:7", 
           "spelling": "MyClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#22", 
+      "id": "example-1.cc#22", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-1.cc:51:10", 
+      "location": "example-1.cc:51:10", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -999,9 +983,9 @@
     {
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#23", 
+      "id": "example-1.cc#23", 
       "kind": "namespace", 
-      "location": "test-input-1.cc:56:11", 
+      "location": "example-1.cc:56:11", 
       "parent_kind": "(global)", 
       "spelling": "NS2", 
       "usage": ""
@@ -1014,16 +998,16 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:56:11", 
+          "location": "example-1.cc:56:11", 
           "spelling": "NS2", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#24", 
+      "id": "example-1.cc#24", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "test-input-1.cc:59:7", 
+      "location": "example-1.cc:59:7", 
       "parent_kind": "namespace", 
       "size": null, 
       "specifier": [], 
@@ -1042,7 +1026,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "test-input-1.cc:59:7", 
+                "template_location": "example-1.cc:59:7", 
                 "template_spelling": "templateClass"
               }, 
               "type_size": null
@@ -1073,20 +1057,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:56:11", 
+          "location": "example-1.cc:56:11", 
           "spelling": "NS2", 
           "transparent": false
         }, 
         {
           "kind": "class_template", 
-          "location": "test-input-1.cc:59:7", 
+          "location": "example-1.cc:59:7", 
           "spelling": "templateClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#25", 
+      "id": "example-1.cc#25", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:60:4", 
+      "location": "example-1.cc:60:4", 
       "parent_kind": "class_template", 
       "size": null, 
       "spelling": "t_", 
@@ -1101,7 +1085,7 @@
           "is_type_param": true, 
           "type_param_decl_location": {
             "param_index": 0, 
-            "template_location": "test-input-1.cc:59:7", 
+            "template_location": "example-1.cc:59:7", 
             "template_spelling": "templateClass"
           }, 
           "type_size": null
@@ -1116,20 +1100,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:56:11", 
+          "location": "example-1.cc:56:11", 
           "spelling": "NS2", 
           "transparent": false
         }, 
         {
           "kind": "class_template", 
-          "location": "test-input-1.cc:59:7", 
+          "location": "example-1.cc:59:7", 
           "spelling": "templateClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#26", 
+      "id": "example-1.cc#26", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:61:7", 
+      "location": "example-1.cc:61:7", 
       "parent_kind": "class_template", 
       "size": 1, 
       "spelling": "c_", 
@@ -1159,9 +1143,9 @@
         }
       }, 
       "hierarchy": [], 
-      "id": "test-input-1.cc#27", 
+      "id": "example-1.cc#27", 
       "kind": "enum_declaration", 
-      "location": "test-input-1.cc:65:6", 
+      "location": "example-1.cc:65:6", 
       "parent_kind": "(global)", 
       "scoped_enum": false, 
       "spelling": "E", 
@@ -1184,14 +1168,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:65:6", 
+          "location": "example-1.cc:65:6", 
           "spelling": "E", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#28", 
+      "id": "example-1.cc#28", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:66:2", 
+      "location": "example-1.cc:66:2", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "a", 
@@ -1224,14 +1208,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:65:6", 
+          "location": "example-1.cc:65:6", 
           "spelling": "E", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#29", 
+      "id": "example-1.cc#29", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:67:2", 
+      "location": "example-1.cc:67:2", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "b", 
@@ -1250,9 +1234,9 @@
     {
       "comment": "comment for namespace", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#30", 
+      "id": "example-1.cc#30", 
       "kind": "namespace", 
-      "location": "test-input-1.cc:71:11", 
+      "location": "example-1.cc:71:11", 
       "parent_kind": "(global)", 
       "spelling": "customNS", 
       "usage": ""
@@ -1265,15 +1249,15 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#31", 
+      "id": "example-1.cc#31", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:72:6", 
+      "location": "example-1.cc:72:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
       "return_type": "int", 
@@ -1291,16 +1275,16 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#32", 
+      "id": "example-1.cc#32", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:73:8", 
+      "location": "example-1.cc:73:8", 
       "parent_kind": "namespace", 
       "size": 8, 
       "specifier": [], 
@@ -1322,9 +1306,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#33", 
+      "id": "example-1.cc#33", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:76:12", 
+      "location": "example-1.cc:76:12", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "staticGlobal", 
@@ -1349,16 +1333,16 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#34", 
+      "id": "example-1.cc#34", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:78:17", 
+      "location": "example-1.cc:78:17", 
       "parent_kind": "namespace", 
       "size": 8, 
       "specifier": [
@@ -1385,20 +1369,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#35", 
+      "id": "example-1.cc#35", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:79:13", 
+      "location": "example-1.cc:79:13", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "staticData", 
@@ -1422,20 +1406,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#36", 
+      "id": "example-1.cc#36", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:80:12", 
+      "location": "example-1.cc:80:12", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "constData", 
@@ -1459,20 +1443,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#37", 
+      "id": "example-1.cc#37", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:81:19", 
+      "location": "example-1.cc:81:19", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "staticConstData", 
@@ -1496,20 +1480,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#38", 
+      "id": "example-1.cc#38", 
       "kind": "field_declaration", 
-      "location": "test-input-1.cc:82:6", 
+      "location": "example-1.cc:82:6", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "b", 
@@ -1534,15 +1518,15 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#39", 
+      "id": "example-1.cc#39", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:84:12", 
+      "location": "example-1.cc:84:12", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
       "return_type": "int", 
@@ -1575,22 +1559,22 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#40", 
+      "id": "example-1.cc#40", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:85:8", 
+      "location": "example-1.cc:85:8", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -1649,7 +1633,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 48
+              "type_size": 1
             }
           }
         }, 
@@ -1674,22 +1658,22 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#41", 
+      "id": "example-1.cc#41", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:86:6", 
+      "location": "example-1.cc:86:6", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -1701,80 +1685,33 @@
     }, 
     {
       "access": "private", 
-      "args_list": [
-        {
-          "arg_spelling": "a", 
-          "default_expr": null, 
-          "type": {
-            "spelling": "float", 
-            "type_info": {
-              "is_array": false, 
-              "is_pointer": false, 
-              "is_type_alias": false, 
-              "is_type_param": false, 
-              "type_size": 4
-            }
-          }
-        }, 
-        {
-          "arg_spelling": "b", 
-          "default_expr": null, 
-          "type": {
-            "spelling": "std::vector<int>", 
-            "type_info": {
-              "canonical_type": {
-                "spelling": "std::vector<int, std::allocator<int>>", 
-                "type_info": {
-                  "is_array": false, 
-                  "is_pointer": false, 
-                  "is_type_alias": false, 
-                  "is_type_param": false, 
-                  "type_size": 24
-                }
-              }, 
-              "is_array": false, 
-              "is_function": false, 
-              "is_pointer": false, 
-              "is_type_alias": true, 
-              "is_type_param": false, 
-              "type_alias_chain": [
-                {
-                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
-                  "spelling": "std::vector<int>"
-                }
-              ], 
-              "type_alias_underlying_type": "", 
-              "type_size": 24
-            }
-          }
-        }
-      ], 
+      "args_list": [], 
       "comment": "", 
-      "declaration": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
-      "declaration_pretty": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
+      "declaration": "int& returnVector_float_vector();", 
+      "declaration_pretty": "int& returnVector_float_vector();", 
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "test-input-1.cc:71:11", 
+          "location": "example-1.cc:71:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:78:17", 
+          "location": "example-1.cc:78:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#42", 
+      "id": "example-1.cc#42", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:87:19", 
+      "location": "example-1.cc:87:19", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "std::vector<int>&", 
+      "return_type": "int&", 
       "specifier": [], 
       "spelling": "returnVector_float_vector", 
       "template_args_list": [], 
@@ -1787,11 +1724,11 @@
       "declaration": "class classFriend;", 
       "declaration_pretty": "class classFriend;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#43", 
+      "id": "example-1.cc#43", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:90:7", 
+      "location": "example-1.cc:90:7", 
       "parent_kind": "(global)", 
       "size": 1, 
       "specifier": [], 
@@ -1815,10 +1752,10 @@
       "declaration": "int fooFriend();", 
       "declaration_pretty": "int fooFriend();", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#44", 
+      "id": "example-1.cc#44", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:91:5", 
+      "location": "example-1.cc:91:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "int", 
@@ -1831,9 +1768,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#45", 
+      "id": "example-1.cc#45", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:93:5", 
+      "location": "example-1.cc:93:5", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "a1", 
@@ -1853,9 +1790,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#46", 
+      "id": "example-1.cc#46", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:93:10", 
+      "location": "example-1.cc:93:10", 
       "parent_kind": "(global)", 
       "size": 8, 
       "spelling": "a2", 
@@ -1883,41 +1820,23 @@
       "usage": ""
     }, 
     {
-      "POD": false, 
+      "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#47", 
+      "id": "example-1.cc#47", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:94:20", 
+      "location": "example-1.cc:94:20", 
       "parent_kind": "(global)", 
-      "size": 24, 
+      "size": 4, 
       "spelling": "m", 
       "type": {
-        "spelling": "std::map<int, int>", 
+        "spelling": "int", 
         "type_info": {
-          "canonical_type": {
-            "spelling": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
-            "type_info": {
-              "is_array": false, 
-              "is_pointer": false, 
-              "is_type_alias": false, 
-              "is_type_param": false, 
-              "type_size": 24
-            }
-          }, 
           "is_array": false, 
-          "is_function": false, 
           "is_pointer": false, 
-          "is_type_alias": true, 
+          "is_type_alias": false, 
           "is_type_param": false, 
-          "type_alias_chain": [
-            {
-              "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28", 
-              "spelling": "std::map<int, int>"
-            }
-          ], 
-          "type_alias_underlying_type": "", 
-          "type_size": 24
+          "type_size": 4
         }
       }, 
       "usage": ""
@@ -1928,10 +1847,10 @@
       "declaration": "int foo();", 
       "declaration_pretty": "int foo();", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#48", 
+      "id": "example-1.cc#48", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:96:5", 
+      "location": "example-1.cc:96:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "int", 
@@ -1944,9 +1863,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#49", 
+      "id": "example-1.cc#49", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:101:9", 
+      "location": "example-1.cc:101:9", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "ano", 
@@ -1969,11 +1888,11 @@
       "declaration": "class EEClass;", 
       "declaration_pretty": "class EEClass;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#50", 
+      "id": "example-1.cc#50", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "struct_declaration", 
-      "location": "test-input-1.cc:102:8", 
+      "location": "example-1.cc:102:8", 
       "parent_kind": "(global)", 
       "size": 1, 
       "specifier": [], 
@@ -2007,14 +1926,14 @@
       "hierarchy": [
         {
           "kind": "struct_declaration", 
-          "location": "test-input-1.cc:102:8", 
+          "location": "example-1.cc:102:8", 
           "spelling": "EEClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#51", 
+      "id": "example-1.cc#51", 
       "kind": "enum_declaration", 
-      "location": "test-input-1.cc:103:13", 
+      "location": "example-1.cc:103:13", 
       "parent_kind": "struct_declaration", 
       "scoped_enum": true, 
       "spelling": "EE", 
@@ -2037,20 +1956,20 @@
       "hierarchy": [
         {
           "kind": "struct_declaration", 
-          "location": "test-input-1.cc:102:8", 
+          "location": "example-1.cc:102:8", 
           "spelling": "EEClass", 
           "transparent": false
         }, 
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:103:13", 
+          "location": "example-1.cc:103:13", 
           "spelling": "EE", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#52", 
+      "id": "example-1.cc#52", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:103:25", 
+      "location": "example-1.cc:103:25", 
       "parent_kind": "enum_declaration", 
       "size": 1, 
       "spelling": "ee1", 
@@ -2083,20 +2002,20 @@
       "hierarchy": [
         {
           "kind": "struct_declaration", 
-          "location": "test-input-1.cc:102:8", 
+          "location": "example-1.cc:102:8", 
           "spelling": "EEClass", 
           "transparent": false
         }, 
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:103:13", 
+          "location": "example-1.cc:103:13", 
           "spelling": "EE", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#53", 
+      "id": "example-1.cc#53", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:103:30", 
+      "location": "example-1.cc:103:30", 
       "parent_kind": "enum_declaration", 
       "size": 1, 
       "spelling": "ee2", 
@@ -2129,14 +2048,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:105:9", 
+          "location": "example-1.cc:105:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#54", 
+      "id": "example-1.cc#54", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:105:16", 
+      "location": "example-1.cc:105:16", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee1", 
@@ -2169,14 +2088,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:105:9", 
+          "location": "example-1.cc:105:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#55", 
+      "id": "example-1.cc#55", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:105:22", 
+      "location": "example-1.cc:105:22", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee2", 
@@ -2196,18 +2115,18 @@
       "canonical_type": "EnumTy", 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#56", 
+      "id": "example-1.cc#56", 
       "kind": "typedef_declaration", 
-      "location": "test-input-1.cc:105:29", 
+      "location": "example-1.cc:105:29", 
       "parent_kind": "(global)", 
       "spelling": "EnumTy", 
       "type_alias_chain": [
         {
-          "location": "test-input-1.cc:105:29", 
+          "location": "example-1.cc:105:29", 
           "spelling": "EnumTy"
         }, 
         {
-          "location": "test-input-1.cc:105:9", 
+          "location": "example-1.cc:105:9", 
           "spelling": "enum EnumTy"
         }
       ], 
@@ -2231,14 +2150,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:105:9", 
+          "location": "example-1.cc:105:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#57", 
+      "id": "example-1.cc#57", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:105:16", 
+      "location": "example-1.cc:105:16", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee1", 
@@ -2271,14 +2190,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:105:9", 
+          "location": "example-1.cc:105:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#58", 
+      "id": "example-1.cc#58", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:105:22", 
+      "location": "example-1.cc:105:22", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee2", 
@@ -2311,19 +2230,19 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:106:1", 
-          "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+          "location": "example-1.cc:106:1", 
+          "spelling": "(anonymous enum at example-1.cc:106:1)", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#59", 
+      "id": "example-1.cc#59", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:106:8", 
+      "location": "example-1.cc:106:8", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "aaaaa", 
       "type": {
-        "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+        "spelling": "(anonymous enum at example-1.cc:106:1)", 
         "type_info": {
           "is_array": false, 
           "is_pointer": false, 
@@ -2351,19 +2270,19 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "test-input-1.cc:106:1", 
-          "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+          "location": "example-1.cc:106:1", 
+          "spelling": "(anonymous enum at example-1.cc:106:1)", 
           "transparent": true
         }
       ], 
-      "id": "test-input-1.cc#60", 
+      "id": "example-1.cc#60", 
       "kind": "enum_constant_declaration", 
-      "location": "test-input-1.cc:106:15", 
+      "location": "example-1.cc:106:15", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "bbbbb", 
       "type": {
-        "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+        "spelling": "(anonymous enum at example-1.cc:106:1)", 
         "type_info": {
           "is_array": false, 
           "is_pointer": false, 
@@ -2381,11 +2300,11 @@
       "declaration": "class BaseClass;", 
       "declaration_pretty": "class BaseClass;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#61", 
+      "id": "example-1.cc#61", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:108:7", 
+      "location": "example-1.cc:108:7", 
       "parent_kind": "(global)", 
       "size": 1, 
       "specifier": [], 
@@ -2409,11 +2328,11 @@
       "declaration": "template <typename T> class BaseClass2;", 
       "declaration_pretty": "template <typename T>\nclass BaseClass2;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#62", 
+      "id": "example-1.cc#62", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "test-input-1.cc:110:8", 
+      "location": "example-1.cc:110:8", 
       "parent_kind": "(global)", 
       "size": null, 
       "specifier": [], 
@@ -2432,7 +2351,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "test-input-1.cc:110:8", 
+                "template_location": "example-1.cc:110:8", 
                 "template_spelling": "BaseClass2"
               }, 
               "type_size": null
@@ -2448,11 +2367,11 @@
       "declaration": "template <typename T> class ClassAgain;", 
       "declaration_pretty": "template <typename T>\nclass ClassAgain;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#63", 
+      "id": "example-1.cc#63", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "test-input-1.cc:112:7", 
+      "location": "example-1.cc:112:7", 
       "parent_kind": "(global)", 
       "size": null, 
       "specifier": [], 
@@ -2471,7 +2390,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "test-input-1.cc:112:7", 
+                "template_location": "example-1.cc:112:7", 
                 "template_spelling": "ClassAgain"
               }, 
               "type_size": null
@@ -2491,11 +2410,6 @@
         }, 
         {
           "access": "public", 
-          "base": "BaseClass2<ClassAgain<int>>", 
-          "virtual": false
-        }, 
-        {
-          "access": "public", 
           "base": "EEClass", 
           "virtual": true
         }
@@ -2504,13 +2418,13 @@
       "declaration": "class VClass final;", 
       "declaration_pretty": "class VClass final;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#64", 
+      "id": "example-1.cc#64", 
       "is_abstract": true, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-1.cc:114:7", 
+      "location": "example-1.cc:114:7", 
       "parent_kind": "(global)", 
-      "size": 8, 
+      "size": 1, 
       "specifier": [
         "final"
       ], 
@@ -2523,7 +2437,7 @@
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "type_size": 8
+          "type_size": 1
         }
       }, 
       "usage": ""
@@ -2540,16 +2454,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:114:7", 
+          "location": "example-1.cc:114:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#65", 
+      "id": "example-1.cc#65", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-1.cc:117:5", 
+      "location": "example-1.cc:117:5", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -2572,16 +2486,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:114:7", 
+          "location": "example-1.cc:114:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#66", 
+      "id": "example-1.cc#66", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "destructor", 
-      "location": "test-input-1.cc:118:13", 
+      "location": "example-1.cc:118:13", 
       "method_property": [
         "virtual", 
         "pure_virtual"
@@ -2605,16 +2519,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-1.cc:114:7", 
+          "location": "example-1.cc:114:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "test-input-1.cc#67", 
+      "id": "example-1.cc#67", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "test-input-1.cc:119:18", 
+      "location": "example-1.cc:119:18", 
       "method_property": [
         "virtual", 
         "pure_virtual"
@@ -2633,9 +2547,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#68", 
+      "id": "example-1.cc#68", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:122:6", 
+      "location": "example-1.cc:122:6", 
       "parent_kind": "(global)", 
       "size": 40, 
       "spelling": "arrIntPtr", 
@@ -2678,9 +2592,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#69", 
+      "id": "example-1.cc#69", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:123:6", 
+      "location": "example-1.cc:123:6", 
       "parent_kind": "(global)", 
       "size": 6, 
       "spelling": "arrChar", 
@@ -2712,9 +2626,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#70", 
+      "id": "example-1.cc#70", 
       "kind": "variable_declaration", 
-      "location": "test-input-1.cc:125:11", 
+      "location": "example-1.cc:125:11", 
       "parent_kind": "(global)", 
       "size": null, 
       "spelling": "arrVar", 
@@ -2763,10 +2677,10 @@
       "declaration": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
       "declaration_pretty": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#71", 
+      "id": "example-1.cc#71", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:130:1", 
+      "location": "example-1.cc:130:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "void", 
@@ -2798,10 +2712,10 @@
       "declaration": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
       "declaration_pretty": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
       "hierarchy": [], 
-      "id": "test-input-1.cc#72", 
+      "id": "example-1.cc#72", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-1.cc:130:1", 
+      "location": "example-1.cc:130:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "void", 
@@ -2813,6 +2727,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.016275882720947266, 
-  "time_traversing": 1.1388349533081055
+  "time_indexing": 0.014900922775268555, 
+  "time_traversing": 0.8407871723175049
 }

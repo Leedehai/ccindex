@@ -1,6 +1,6 @@
-[TARGET FILE] test-input-2.h
+[TARGET FILE] example-2.h
 ::::: id
-test-input-2.h#1
+example-2.h#1
 ::::: spelling
 NS
 ::::: kind
@@ -10,12 +10,12 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-test-input-2.h:7:11
+example-2.h:7:11
 ::::: comment
 comment for NS
 ==================
 ::::: id
-test-input-2.h#2
+example-2.h#2
 ::::: spelling
 Complex
 ::::: kind
@@ -25,7 +25,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -33,7 +33,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:8:7
+example-2.h:8:7
 ::::: comment
 (none)
 ::::: specifier
@@ -65,7 +65,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#3
+example-2.h#3
 ::::: spelling
 re
 ::::: kind
@@ -75,13 +75,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -89,7 +89,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:10:12
+example-2.h:10:12
 ::::: comment
 (none)
 ::::: static_member
@@ -111,7 +111,7 @@ True
 8
 ==================
 ::::: id
-test-input-2.h#4
+example-2.h#4
 ::::: spelling
 im
 ::::: kind
@@ -121,13 +121,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -135,7 +135,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:11:12
+example-2.h:11:12
 ::::: comment
 (none)
 ::::: static_member
@@ -157,7 +157,7 @@ True
 8
 ==================
 ::::: id
-test-input-2.h#5
+example-2.h#5
 ::::: spelling
 Complex
 ::::: kind
@@ -167,13 +167,13 @@ constructor
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -181,7 +181,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:13:5
+example-2.h:13:5
 ::::: comment
 (none)
 ::::: specifier
@@ -210,7 +210,7 @@ None
 []
 ==================
 ::::: id
-test-input-2.h#6
+example-2.h#6
 ::::: spelling
 Complex
 ::::: kind
@@ -220,13 +220,13 @@ constructor
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -234,7 +234,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:14:5
+example-2.h:14:5
 ::::: comment
 (none)
 ::::: specifier
@@ -263,7 +263,7 @@ None
 []
 ==================
 ::::: id
-test-input-2.h#7
+example-2.h#7
 ::::: spelling
 Complex
 ::::: kind
@@ -273,13 +273,13 @@ constructor
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -287,7 +287,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:15:5
+example-2.h:15:5
 ::::: comment
 (none)
 ::::: specifier
@@ -316,7 +316,7 @@ None
 []
 ==================
 ::::: id
-test-input-2.h#8
+example-2.h#8
 ::::: spelling
 isReal
 ::::: kind
@@ -326,13 +326,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -340,7 +340,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:21:10
+example-2.h:21:10
 ::::: comment
 Usage: bool b = complex.isReal();
 -----------------
@@ -371,7 +371,7 @@ bool
 []
 ==================
 ::::: id
-test-input-2.h#9
+example-2.h#9
 ::::: spelling
 operator+=
 ::::: kind
@@ -381,13 +381,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:8:7", 
+    "location": "example-2.h:8:7", 
     "spelling": "Complex", 
     "transparent": false
   }
@@ -395,7 +395,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:24:14
+example-2.h:24:14
 ::::: comment
 (none)
 ::::: specifier
@@ -422,7 +422,7 @@ NS::Complex&
 []
 ==================
 ::::: id
-test-input-2.h#10
+example-2.h#10
 ::::: spelling
 independentFunction
 ::::: kind
@@ -432,7 +432,7 @@ function_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -440,7 +440,7 @@ function_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:27:22
+example-2.h:27:22
 ::::: comment
 (none)
 ::::: specifier
@@ -461,7 +461,7 @@ std::vector<Complex>
 []
 ==================
 ::::: id
-test-input-2.h#11
+example-2.h#11
 ::::: spelling
 E1
 ::::: kind
@@ -471,7 +471,7 @@ enum_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -479,7 +479,7 @@ enum_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:29:6
+example-2.h:29:6
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -488,7 +488,7 @@ False
 {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ==================
 ::::: id
-test-input-2.h#12
+example-2.h#12
 ::::: spelling
 e11
 ::::: kind
@@ -498,13 +498,13 @@ enum_constant_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-2.h:29:6", 
+    "location": "example-2.h:29:6", 
     "spelling": "E1", 
     "transparent": true
   }
@@ -512,7 +512,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:29:18
+example-2.h:29:18
 ::::: comment
 (none)
 ::::: enum_value
@@ -534,7 +534,7 @@ True
 1
 ==================
 ::::: id
-test-input-2.h#13
+example-2.h#13
 ::::: spelling
 e12
 ::::: kind
@@ -544,13 +544,13 @@ enum_constant_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-2.h:29:6", 
+    "location": "example-2.h:29:6", 
     "spelling": "E1", 
     "transparent": true
   }
@@ -558,7 +558,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:29:23
+example-2.h:29:23
 ::::: comment
 (none)
 ::::: enum_value
@@ -580,7 +580,7 @@ True
 1
 ==================
 ::::: id
-test-input-2.h#14
+example-2.h#14
 ::::: spelling
 E2
 ::::: kind
@@ -590,7 +590,7 @@ enum_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -598,7 +598,7 @@ enum_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:30:12
+example-2.h:30:12
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -607,7 +607,7 @@ True
 {'spelling': 'long', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}
 ==================
 ::::: id
-test-input-2.h#15
+example-2.h#15
 ::::: spelling
 e21
 ::::: kind
@@ -617,13 +617,13 @@ enum_constant_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-2.h:30:12", 
+    "location": "example-2.h:30:12", 
     "spelling": "E2", 
     "transparent": false
   }
@@ -631,7 +631,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:30:24
+example-2.h:30:24
 ::::: comment
 (none)
 ::::: enum_value
@@ -653,7 +653,7 @@ True
 8
 ==================
 ::::: id
-test-input-2.h#16
+example-2.h#16
 ::::: spelling
 e22
 ::::: kind
@@ -663,13 +663,13 @@ enum_constant_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-2.h:30:12", 
+    "location": "example-2.h:30:12", 
     "spelling": "E2", 
     "transparent": false
   }
@@ -677,7 +677,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:30:33
+example-2.h:30:33
 ::::: comment
 (none)
 ::::: enum_value
@@ -699,7 +699,7 @@ True
 8
 ==================
 ::::: id
-test-input-2.h#17
+example-2.h#17
 ::::: spelling
 Aother
 ::::: kind
@@ -709,7 +709,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -717,7 +717,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:32:7
+example-2.h:32:7
 ::::: comment
 (none)
 ::::: specifier
@@ -749,7 +749,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#18
+example-2.h#18
 ::::: spelling
 E
 ::::: kind
@@ -759,13 +759,13 @@ enum_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:32:7", 
+    "location": "example-2.h:32:7", 
     "spelling": "Aother", 
     "transparent": false
   }
@@ -773,7 +773,7 @@ enum_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:34:16
+example-2.h:34:16
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -784,7 +784,7 @@ True
 public
 ==================
 ::::: id
-test-input-2.h#19
+example-2.h#19
 ::::: spelling
 e1
 ::::: kind
@@ -794,19 +794,19 @@ enum_constant_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:32:7", 
+    "location": "example-2.h:32:7", 
     "spelling": "Aother", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-2.h:34:16", 
+    "location": "example-2.h:34:16", 
     "spelling": "E", 
     "transparent": false
   }
@@ -814,7 +814,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:34:20
+example-2.h:34:20
 ::::: comment
 (none)
 ::::: enum_value
@@ -836,7 +836,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#20
+example-2.h#20
 ::::: spelling
 e2
 ::::: kind
@@ -846,19 +846,19 @@ enum_constant_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:32:7", 
+    "location": "example-2.h:32:7", 
     "spelling": "Aother", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "test-input-2.h:34:16", 
+    "location": "example-2.h:34:16", 
     "spelling": "E", 
     "transparent": false
   }
@@ -866,7 +866,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-test-input-2.h:34:24
+example-2.h:34:24
 ::::: comment
 (none)
 ::::: enum_value
@@ -888,7 +888,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#21
+example-2.h#21
 ::::: spelling
 fooTemplated
 ::::: kind
@@ -898,7 +898,7 @@ function_template
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -906,7 +906,7 @@ function_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:38:6
+example-2.h:38:6
 ::::: comment
 (none)
 ::::: specifier
@@ -926,10 +926,10 @@ void fooTemplated(bool b, Complex& c);
 ::::: return_type
 void
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:38:6', 'template_spelling': 'fooTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:38:6', 'template_spelling': 'fooTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}]
 ==================
 ::::: id
-test-input-2.h#22
+example-2.h#22
 ::::: spelling
 BarTemplated
 ::::: kind
@@ -939,7 +939,7 @@ class_template
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -947,7 +947,7 @@ class_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:41:7
+example-2.h:41:7
 ::::: comment
 (none)
 ::::: specifier
@@ -966,10 +966,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:41:7', 'template_spelling': 'BarTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:41:7', 'template_spelling': 'BarTemplated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:41:7', 'template_spelling': 'BarTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:41:7', 'template_spelling': 'BarTemplated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': None}]
 ==================
 ::::: id
-test-input-2.h#23
+example-2.h#23
 ::::: spelling
 t_
 ::::: kind
@@ -979,13 +979,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:41:7", 
+    "location": "example-2.h:41:7", 
     "spelling": "BarTemplated", 
     "transparent": false
   }
@@ -993,7 +993,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:43:7
+example-2.h:43:7
 ::::: comment
 (none)
 ::::: static_member
@@ -1010,7 +1010,7 @@ T
   "is_type_param": true, 
   "type_param_decl_location": {
     "param_index": 0, 
-    "template_location": "test-input-2.h:41:7", 
+    "template_location": "example-2.h:41:7", 
     "template_spelling": "BarTemplated"
   }, 
   "type_size": null
@@ -1021,7 +1021,7 @@ False
 None
 ==================
 ::::: id
-test-input-2.h#24
+example-2.h#24
 ::::: spelling
 u_
 ::::: kind
@@ -1031,13 +1031,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:41:7", 
+    "location": "example-2.h:41:7", 
     "spelling": "BarTemplated", 
     "transparent": false
   }
@@ -1045,7 +1045,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:44:7
+example-2.h:44:7
 ::::: comment
 (none)
 ::::: static_member
@@ -1062,7 +1062,7 @@ U
   "is_type_param": true, 
   "type_param_decl_location": {
     "param_index": 1, 
-    "template_location": "test-input-2.h:41:7", 
+    "template_location": "example-2.h:41:7", 
     "template_spelling": "BarTemplated"
   }, 
   "type_size": null
@@ -1073,7 +1073,7 @@ False
 None
 ==================
 ::::: id
-test-input-2.h#25
+example-2.h#25
 ::::: spelling
 a
 ::::: kind
@@ -1083,13 +1083,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:41:7", 
+    "location": "example-2.h:41:7", 
     "spelling": "BarTemplated", 
     "transparent": false
   }
@@ -1097,7 +1097,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:45:9
+example-2.h:45:9
 ::::: comment
 (none)
 ::::: static_member
@@ -1119,7 +1119,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#26
+example-2.h#26
 ::::: spelling
 Class2
 ::::: kind
@@ -1129,7 +1129,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1137,7 +1137,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:48:7
+example-2.h:48:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1169,7 +1169,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#27
+example-2.h#27
 ::::: spelling
 Class2Int
 ::::: kind
@@ -1179,13 +1179,13 @@ typedef_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:48:7", 
+    "location": "example-2.h:48:7", 
     "spelling": "Class2", 
     "transparent": false
   }
@@ -1193,7 +1193,7 @@ typedef_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:50:17
+example-2.h:50:17
 ::::: comment
 (none)
 ::::: canonical_type
@@ -1202,7 +1202,7 @@ int
 public
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:50:17", 
+    "location": "example-2.h:50:17", 
     "spelling": "NS::Class2::Class2Int"
   }, 
   {
@@ -1214,7 +1214,7 @@ public
 int
 ==================
 ::::: id
-test-input-2.h#28
+example-2.h#28
 ::::: spelling
 Class3Templated
 ::::: kind
@@ -1224,7 +1224,7 @@ class_template
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1232,7 +1232,7 @@ class_template
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:55:7
+example-2.h:55:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1251,10 +1251,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T1', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:55:7', 'template_spelling': 'Class3Templated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T1', 'default_expr': None}, {'type': {'spelling': 'T2', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:55:7', 'template_spelling': 'Class3Templated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T2', 'default_expr': None}]
+[{'type': {'spelling': 'T1', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:55:7', 'template_spelling': 'Class3Templated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T1', 'default_expr': None}, {'type': {'spelling': 'T2', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:55:7', 'template_spelling': 'Class3Templated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T2', 'default_expr': None}]
 ==================
 ::::: id
-test-input-2.h#29
+example-2.h#29
 ::::: spelling
 TT
 ::::: kind
@@ -1264,13 +1264,13 @@ type_alias_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }
@@ -1278,7 +1278,7 @@ type_alias_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:56:11
+example-2.h:56:11
 ::::: comment
 (none)
 ::::: canonical_type
@@ -1287,7 +1287,7 @@ test-input-2.h:56:11
 private
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:56:11", 
+    "location": "example-2.h:56:11", 
     "spelling": "NS::Class3Templated::TT"
   }, 
   {
@@ -1299,7 +1299,7 @@ private
 T2
 ==================
 ::::: id
-test-input-2.h#30
+example-2.h#30
 ::::: spelling
 Class3Mid
 ::::: kind
@@ -1309,13 +1309,13 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }
@@ -1323,7 +1323,7 @@ class_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:57:11
+example-2.h:57:11
 ::::: comment
 (none)
 ::::: specifier
@@ -1357,7 +1357,7 @@ False
 []
 ==================
 ::::: id
-test-input-2.h#31
+example-2.h#31
 ::::: spelling
 Class3InnerTemplated
 ::::: kind
@@ -1367,19 +1367,19 @@ class_template
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:57:11", 
+    "location": "example-2.h:57:11", 
     "spelling": "Class3Mid", 
     "transparent": false
   }
@@ -1387,7 +1387,7 @@ class_template
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-2.h:59:15
+example-2.h:59:15
 ::::: comment
 (none)
 ::::: specifier
@@ -1408,10 +1408,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:59:15', 'template_spelling': 'Class3InnerTemplated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': None}]
+[{'type': {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:59:15', 'template_spelling': 'Class3InnerTemplated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': None}]
 ==================
 ::::: id
-test-input-2.h#32
+example-2.h#32
 ::::: spelling
 u1_
 ::::: kind
@@ -1421,25 +1421,25 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:57:11", 
+    "location": "example-2.h:57:11", 
     "spelling": "Class3Mid", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:59:15", 
+    "location": "example-2.h:59:15", 
     "spelling": "Class3InnerTemplated", 
     "transparent": false
   }
@@ -1447,7 +1447,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:60:15
+example-2.h:60:15
 ::::: comment
 (none)
 ::::: static_member
@@ -1464,7 +1464,7 @@ U
   "is_type_param": true, 
   "type_param_decl_location": {
     "param_index": 1, 
-    "template_location": "test-input-2.h:59:15", 
+    "template_location": "example-2.h:59:15", 
     "template_spelling": "Class3InnerTemplated"
   }, 
   "type_size": null
@@ -1475,7 +1475,7 @@ False
 None
 ==================
 ::::: id
-test-input-2.h#33
+example-2.h#33
 ::::: spelling
 UU
 ::::: kind
@@ -1485,25 +1485,25 @@ type_alias_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:57:11", 
+    "location": "example-2.h:57:11", 
     "spelling": "Class3Mid", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:59:15", 
+    "location": "example-2.h:59:15", 
     "spelling": "Class3InnerTemplated", 
     "transparent": false
   }
@@ -1511,7 +1511,7 @@ type_alias_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:61:19
+example-2.h:61:19
 ::::: comment
 (none)
 ::::: canonical_type
@@ -1520,7 +1520,7 @@ test-input-2.h:61:19
 private
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:61:19", 
+    "location": "example-2.h:61:19", 
     "spelling": "NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU"
   }, 
   {
@@ -1532,7 +1532,7 @@ private
 U
 ==================
 ::::: id
-test-input-2.h#34
+example-2.h#34
 ::::: spelling
 u2_
 ::::: kind
@@ -1542,25 +1542,25 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "test-input-2.h:57:11", 
+    "location": "example-2.h:57:11", 
     "spelling": "Class3Mid", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:59:15", 
+    "location": "example-2.h:59:15", 
     "spelling": "Class3InnerTemplated", 
     "transparent": false
   }
@@ -1568,7 +1568,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:62:16
+example-2.h:62:16
 ::::: comment
 (none)
 ::::: static_member
@@ -1596,7 +1596,7 @@ NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-2.h:61:19", 
+      "location": "example-2.h:61:19", 
       "spelling": "NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU"
     }, 
     {
@@ -1613,7 +1613,7 @@ False
 None
 ==================
 ::::: id
-test-input-2.h#35
+example-2.h#35
 ::::: spelling
 tt_
 ::::: kind
@@ -1623,13 +1623,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "test-input-2.h:55:7", 
+    "location": "example-2.h:55:7", 
     "spelling": "Class3Templated", 
     "transparent": false
   }
@@ -1637,7 +1637,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-test-input-2.h:65:8
+example-2.h:65:8
 ::::: comment
 (none)
 ::::: static_member
@@ -1665,7 +1665,7 @@ NS::Class3Templated::TT
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-2.h:56:11", 
+      "location": "example-2.h:56:11", 
       "spelling": "NS::Class3Templated::TT"
     }, 
     {
@@ -1682,7 +1682,7 @@ False
 None
 ==================
 ::::: id
-test-input-2.h#36
+example-2.h#36
 ::::: spelling
 Class2Ty
 ::::: kind
@@ -1692,7 +1692,7 @@ typedef_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1700,18 +1700,18 @@ typedef_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:68:16
+example-2.h:68:16
 ::::: comment
 (none)
 ::::: canonical_type
 NS::Class2
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:68:16", 
+    "location": "example-2.h:68:16", 
     "spelling": "NS::Class2Ty"
   }, 
   {
-    "location": "test-input-2.h:48:7", 
+    "location": "example-2.h:48:7", 
     "spelling": "NS::Class2"
   }
 ]
@@ -1719,7 +1719,7 @@ NS::Class2
 NS::Class2
 ==================
 ::::: id
-test-input-2.h#37
+example-2.h#37
 ::::: spelling
 Class2Ty2
 ::::: kind
@@ -1729,7 +1729,7 @@ type_alias_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1737,22 +1737,22 @@ type_alias_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:69:7
+example-2.h:69:7
 ::::: comment
 (none)
 ::::: canonical_type
 NS::Class2
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:69:7", 
+    "location": "example-2.h:69:7", 
     "spelling": "NS::Class2Ty2"
   }, 
   {
-    "location": "test-input-2.h:68:16", 
+    "location": "example-2.h:68:16", 
     "spelling": "NS::Class2Ty"
   }, 
   {
-    "location": "test-input-2.h:48:7", 
+    "location": "example-2.h:48:7", 
     "spelling": "NS::Class2"
   }
 ]
@@ -1760,7 +1760,7 @@ NS::Class2
 NS::Class2Ty
 ==================
 ::::: id
-test-input-2.h#38
+example-2.h#38
 ::::: spelling
 var1
 ::::: kind
@@ -1770,7 +1770,7 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1778,7 +1778,7 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:71:21
+example-2.h:71:21
 ::::: comment
 (none)
 ::::: type
@@ -1801,7 +1801,7 @@ Class2Ty::Class2Int
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-2.h:50:17", 
+      "location": "example-2.h:50:17", 
       "spelling": "Class2Ty::Class2Int"
     }, 
     {
@@ -1818,7 +1818,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#39
+example-2.h#39
 ::::: spelling
 var2
 ::::: kind
@@ -1828,7 +1828,7 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1836,7 +1836,7 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:72:22
+example-2.h:72:22
 ::::: comment
 (none)
 ::::: type
@@ -1859,7 +1859,7 @@ Class2Ty2::Class2Int
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-2.h:50:17", 
+      "location": "example-2.h:50:17", 
       "spelling": "Class2Ty2::Class2Int"
     }, 
     {
@@ -1876,7 +1876,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#40
+example-2.h#40
 ::::: spelling
 Float
 ::::: kind
@@ -1886,7 +1886,7 @@ type_alias_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1894,14 +1894,14 @@ type_alias_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:74:7
+example-2.h:74:7
 ::::: comment
 (none)
 ::::: canonical_type
 float
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:74:7", 
+    "location": "example-2.h:74:7", 
     "spelling": "NS::Float"
   }, 
   {
@@ -1913,7 +1913,7 @@ float
 float
 ==================
 ::::: id
-test-input-2.h#41
+example-2.h#41
 ::::: spelling
 var3
 ::::: kind
@@ -1923,7 +1923,7 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1931,7 +1931,7 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:75:7
+example-2.h:75:7
 ::::: comment
 (none)
 ::::: type
@@ -1954,7 +1954,7 @@ NS::Float
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-2.h:74:7", 
+      "location": "example-2.h:74:7", 
       "spelling": "NS::Float"
     }, 
     {
@@ -1971,7 +1971,7 @@ True
 4
 ==================
 ::::: id
-test-input-2.h#42
+example-2.h#42
 ::::: spelling
 Float2
 ::::: kind
@@ -1981,7 +1981,7 @@ type_alias_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -1989,18 +1989,18 @@ type_alias_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:77:7
+example-2.h:77:7
 ::::: comment
 (none)
 ::::: canonical_type
 float
 ::::: type_alias_chain:[
   {
-    "location": "test-input-2.h:77:7", 
+    "location": "example-2.h:77:7", 
     "spelling": "NS::Float2"
   }, 
   {
-    "location": "test-input-2.h:74:7", 
+    "location": "example-2.h:74:7", 
     "spelling": "NS::Float"
   }, 
   {
@@ -2012,7 +2012,7 @@ float
 NS::Float
 ==================
 ::::: id
-test-input-2.h#43
+example-2.h#43
 ::::: spelling
 var4
 ::::: kind
@@ -2022,7 +2022,7 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "test-input-2.h:7:11", 
+    "location": "example-2.h:7:11", 
     "spelling": "NS", 
     "transparent": false
   }
@@ -2030,7 +2030,7 @@ variable_declaration
 ::::: parent_kind
 namespace
 ::::: location
-test-input-2.h:78:8
+example-2.h:78:8
 ::::: comment
 (none)
 ::::: type
@@ -2053,11 +2053,11 @@ NS::Float2
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-2.h:77:7", 
+      "location": "example-2.h:77:7", 
       "spelling": "NS::Float2"
     }, 
     {
-      "location": "test-input-2.h:74:7", 
+      "location": "example-2.h:74:7", 
       "spelling": "NS::Float"
     }, 
     {
@@ -2074,7 +2074,7 @@ True
 4
 ==================
 [includes]
-{'depth': 1, 'included_at': 'test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
-{'depth': 1, 'included_at': 'test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
+{'depth': 1, 'included_at': 'example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
+{'depth': 1, 'included_at': 'example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 0.93 sec
+[time traverse] 0.90 sec

@@ -2,12 +2,14 @@
 
 Extract C++ symbols with libclang's Python bindings.
 
+- [ ] schema documentation
+
 #### Input<br>
 C++ file, user include paths (optional)
 
 #### Output
-- [x] write to stdout (e.g. [out-1.txt](out-1.txt), [out-2.txt](out-2.txt), [out-3.txt](out-3.txt))
-- [x] write to JSON file (e.g. [out-1.json](out-1.json), [out-2.json](out-2.json), [out-3.json](out-3.json))
+- [x] write to stdout (e.g. [example-1.txt](example-out/example-1.txt), [example-2.txt](example-out/example-2.txt), [example-3.txt](example-out/example-3.txt))
+- [x] write to JSON file (e.g. [example-1.json](example-out/example-1.json), [example-2.json](example-out/example-2.json), [example-3.json](example-out/example-3.json))
 - [x] as Python library: return dict (equivalent to the JSON file's content above)
 
 ## 1. Description
@@ -95,18 +97,18 @@ if -json is not given, then write result to stdout
 ```
 
 ## 6. Test: produce the example output files
-`test-input-1.cc` has grammar errors;<br>
-`test-input-2.h` and `test-input-3.cc` don't have grammar errors;<br>
+`example-1.cc` has grammar errors;<br>
+`example-2.h` and `example-3.cc` don't have grammar errors;<br>
 User include path is this directory, represented by `-i .`
 ```sh
 # test stdout
-./ccindex.py test-input-1.cc -i . > out-1.txt
-./ccindex.py test-input-2.h > out-2.txt
-./ccindex.py test-input-3.cc -i . > out-3.txt
+./ccindex.py example-1.cc -i . > example-out/example-1.txt
+./ccindex.py example-2.h > example-out/example-2.txt
+./ccindex.py example-3.cc -i . > example-out/example-3.txt
 # test JSON
-./ccindex.py test-input-1.cc -i . -json out-1.json
-./ccindex.py test-input-2.h -json out-2.json
-./ccindex.py test-input-3.cc -i . -json out-3.json
+./ccindex.py example-1.cc -i . -json example-out/example-1.json
+./ccindex.py example-2.h -json example-out/example-2.json
+./ccindex.py example-3.cc -i . -json example-out/example-3.json
 ```
 
 #### License

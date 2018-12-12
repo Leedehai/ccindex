@@ -1,6 +1,6 @@
-[TARGET FILE] test-input-3.cc
+[TARGET FILE] example-3.cc
 ::::: id
-test-input-3.cc#1
+example-3.cc#1
 ::::: spelling
 A
 ::::: kind
@@ -10,7 +10,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:3:7
+example-3.cc:3:7
 ::::: comment
 (none)
 ::::: specifier
@@ -42,7 +42,7 @@ False
 []
 ==================
 ::::: id
-test-input-3.cc#2
+example-3.cc#2
 ::::: spelling
 a
 ::::: kind
@@ -52,7 +52,7 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:3:7", 
+    "location": "example-3.cc:3:7", 
     "spelling": "A", 
     "transparent": false
   }
@@ -60,7 +60,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:4:9
+example-3.cc:4:9
 ::::: comment
 (none)
 ::::: static_member
@@ -82,7 +82,7 @@ True
 4
 ==================
 ::::: id
-test-input-3.cc#3
+example-3.cc#3
 ::::: spelling
 A
 ::::: kind
@@ -92,7 +92,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:3:7", 
+    "location": "example-3.cc:3:7", 
     "spelling": "A", 
     "transparent": false
   }
@@ -100,7 +100,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:6:5
+example-3.cc:6:5
 ::::: comment
 (none)
 ::::: specifier
@@ -129,7 +129,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#4
+example-3.cc#4
 ::::: spelling
 A
 ::::: kind
@@ -139,7 +139,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:3:7", 
+    "location": "example-3.cc:3:7", 
     "spelling": "A", 
     "transparent": false
   }
@@ -147,7 +147,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:7:5
+example-3.cc:7:5
 ::::: comment
 (none)
 ::::: specifier
@@ -176,7 +176,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#5
+example-3.cc#5
 ::::: spelling
 ~A
 ::::: kind
@@ -186,7 +186,7 @@ destructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:3:7", 
+    "location": "example-3.cc:3:7", 
     "spelling": "A", 
     "transparent": false
   }
@@ -194,7 +194,7 @@ destructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:8:5
+example-3.cc:8:5
 ::::: comment
 (none)
 ::::: specifier
@@ -223,7 +223,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#6
+example-3.cc#6
 ::::: spelling
 A
 ::::: kind
@@ -233,7 +233,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:3:7", 
+    "location": "example-3.cc:3:7", 
     "spelling": "A", 
     "transparent": false
   }
@@ -241,7 +241,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:9:5
+example-3.cc:9:5
 ::::: comment
 (none)
 ::::: specifier
@@ -270,7 +270,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#7
+example-3.cc#7
 ::::: spelling
 A
 ::::: kind
@@ -280,7 +280,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:3:7", 
+    "location": "example-3.cc:3:7", 
     "spelling": "A", 
     "transparent": false
   }
@@ -288,7 +288,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:10:5
+example-3.cc:10:5
 ::::: comment
 (none)
 ::::: specifier
@@ -317,7 +317,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#8
+example-3.cc#8
 ::::: spelling
 B
 ::::: kind
@@ -327,7 +327,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:13:7
+example-3.cc:13:7
 ::::: comment
 (none)
 ::::: specifier
@@ -359,7 +359,7 @@ False
 []
 ==================
 ::::: id
-test-input-3.cc#9
+example-3.cc#9
 ::::: spelling
 b
 ::::: kind
@@ -369,7 +369,7 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:13:7", 
+    "location": "example-3.cc:13:7", 
     "spelling": "B", 
     "transparent": false
   }
@@ -377,7 +377,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:14:9
+example-3.cc:14:9
 ::::: comment
 (none)
 ::::: static_member
@@ -399,7 +399,7 @@ True
 4
 ==================
 ::::: id
-test-input-3.cc#10
+example-3.cc#10
 ::::: spelling
 B
 ::::: kind
@@ -409,7 +409,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:13:7", 
+    "location": "example-3.cc:13:7", 
     "spelling": "B", 
     "transparent": false
   }
@@ -417,7 +417,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:16:5
+example-3.cc:16:5
 ::::: comment
 (none)
 ::::: specifier
@@ -446,7 +446,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#11
+example-3.cc#11
 ::::: spelling
 B
 ::::: kind
@@ -456,7 +456,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:13:7", 
+    "location": "example-3.cc:13:7", 
     "spelling": "B", 
     "transparent": false
   }
@@ -464,7 +464,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:17:5
+example-3.cc:17:5
 ::::: comment
 (none)
 ::::: specifier
@@ -493,7 +493,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#12
+example-3.cc#12
 ::::: spelling
 ~B
 ::::: kind
@@ -503,7 +503,7 @@ destructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:13:7", 
+    "location": "example-3.cc:13:7", 
     "spelling": "B", 
     "transparent": false
   }
@@ -511,7 +511,7 @@ destructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:18:5
+example-3.cc:18:5
 ::::: comment
 (none)
 ::::: specifier
@@ -540,7 +540,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#13
+example-3.cc#13
 ::::: spelling
 B
 ::::: kind
@@ -550,7 +550,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:13:7", 
+    "location": "example-3.cc:13:7", 
     "spelling": "B", 
     "transparent": false
   }
@@ -558,7 +558,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:19:5
+example-3.cc:19:5
 ::::: comment
 (none)
 ::::: specifier
@@ -587,7 +587,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#14
+example-3.cc#14
 ::::: spelling
 B
 ::::: kind
@@ -597,7 +597,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:13:7", 
+    "location": "example-3.cc:13:7", 
     "spelling": "B", 
     "transparent": false
   }
@@ -605,7 +605,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:20:5
+example-3.cc:20:5
 ::::: comment
 (none)
 ::::: specifier
@@ -634,7 +634,7 @@ None
 []
 ==================
 ::::: id
-test-input-3.cc#15
+example-3.cc#15
 ::::: spelling
 C
 ::::: kind
@@ -644,7 +644,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:23:7
+example-3.cc:23:7
 ::::: comment
 (none)
 ::::: specifier
@@ -676,7 +676,7 @@ False
 []
 ==================
 ::::: id
-test-input-3.cc#16
+example-3.cc#16
 ::::: spelling
 c
 ::::: kind
@@ -686,7 +686,7 @@ field_declaration
 [
   {
     "kind": "class_declaration", 
-    "location": "test-input-3.cc:23:7", 
+    "location": "example-3.cc:23:7", 
     "spelling": "C", 
     "transparent": false
   }
@@ -694,7 +694,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-test-input-3.cc:24:9
+example-3.cc:24:9
 ::::: comment
 (none)
 ::::: static_member
@@ -716,7 +716,7 @@ True
 4
 ==================
 ::::: id
-test-input-3.cc#17
+example-3.cc#17
 ::::: spelling
 func
 ::::: kind
@@ -726,7 +726,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:29:7
+example-3.cc:29:7
 ::::: comment
 (none)
 ::::: specifier
@@ -747,7 +747,7 @@ float
 []
 ==================
 ::::: id
-test-input-3.cc#18
+example-3.cc#18
 ::::: spelling
 returnChar_takeFunc1
 ::::: kind
@@ -757,7 +757,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:30:6
+example-3.cc:30:6
 ::::: comment
 (none)
 ::::: specifier
@@ -778,7 +778,7 @@ char
 []
 ==================
 ::::: id
-test-input-3.cc#19
+example-3.cc#19
 ::::: spelling
 FuncPtrTy
 ::::: kind
@@ -788,14 +788,14 @@ typedef_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:31:17
+example-3.cc:31:17
 ::::: comment
 (none)
 ::::: canonical_type
 float (*)(float, float*)
 ::::: type_alias_chain:[
   {
-    "location": "test-input-3.cc:31:17", 
+    "location": "example-3.cc:31:17", 
     "spelling": "FuncPtrTy"
   }, 
   {
@@ -807,7 +807,7 @@ float (*)(float, float*)
 float (*)(float, float*)
 ==================
 ::::: id
-test-input-3.cc#20
+example-3.cc#20
 ::::: spelling
 returnChar_takeFunc2
 ::::: kind
@@ -817,13 +817,13 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:32:6
+example-3.cc:32:6
 ::::: comment
 (none)
 ::::: specifier
 []
 ::::: args_list
-[{'type': {'spelling': 'FuncPtrTy', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'test-input-3.cc:31:17'}, {'spelling': 'float (*)(float, float *)', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}}}}}, 'arg_spelling': 'func', 'default_expr': None}]
+[{'type': {'spelling': 'FuncPtrTy', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'example-3.cc:31:17'}, {'spelling': 'float (*)(float, float *)', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}}}}}, 'arg_spelling': 'func', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -838,7 +838,7 @@ char
 []
 ==================
 ::::: id
-test-input-3.cc#21
+example-3.cc#21
 ::::: spelling
 funcPtr1
 ::::: kind
@@ -848,7 +848,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:34:9
+example-3.cc:34:9
 ::::: comment
 (none)
 ::::: type
@@ -878,7 +878,7 @@ True
 8
 ==================
 ::::: id
-test-input-3.cc#22
+example-3.cc#22
 ::::: spelling
 funcPtr2
 ::::: kind
@@ -888,7 +888,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-test-input-3.cc:35:11
+example-3.cc:35:11
 ::::: comment
 (none)
 ::::: type
@@ -922,7 +922,7 @@ FuncPtrTy
   "is_type_param": false, 
   "type_alias_chain": [
     {
-      "location": "test-input-3.cc:31:17", 
+      "location": "example-3.cc:31:17", 
       "spelling": "FuncPtrTy"
     }, 
     {
@@ -938,9 +938,9 @@ True
 ::::: size
 8
 ==================
+[Diagnostic #1]
+example-3.cc:1:10: fatal error: 'test-input-2.h' file not found
 [includes]
-{'depth': 1, 'included_at': 'test-input-3.cc:1:10', 'file': './test-input-2.h'}
-{'depth': 2, 'included_at': './test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
-{'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
+
 [time indexing] 0.01 sec
-[time traverse] 1.00 sec
+[time traverse] 0.01 sec

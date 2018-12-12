@@ -1,22 +1,8 @@
 {
-  "errors": [], 
-  "includes": [
-    {
-      "depth": 1, 
-      "file": "./test-input-2.h", 
-      "included_at": "test-input-3.cc:1:10"
-    }, 
-    {
-      "depth": 2, 
-      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector", 
-      "included_at": "./test-input-2.h:1:10"
-    }, 
-    {
-      "depth": 2, 
-      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map", 
-      "included_at": "./test-input-2.h:2:10"
-    }
+  "errors": [
+    "example-3.cc:1:10: fatal error: 'test-input-2.h' file not found"
   ], 
+  "includes": [], 
   "symbols": [
     {
       "POD": false, 
@@ -25,11 +11,11 @@
       "declaration": "class A;", 
       "declaration_pretty": "class A;", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#1", 
+      "id": "example-3.cc#1", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-3.cc:3:7", 
+      "location": "example-3.cc:3:7", 
       "parent_kind": "(global)", 
       "size": 4, 
       "specifier": [], 
@@ -54,14 +40,14 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:3:7", 
+          "location": "example-3.cc:3:7", 
           "spelling": "A", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#2", 
+      "id": "example-3.cc#2", 
       "kind": "field_declaration", 
-      "location": "test-input-3.cc:4:9", 
+      "location": "example-3.cc:4:9", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "a", 
@@ -90,16 +76,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:3:7", 
+          "location": "example-3.cc:3:7", 
           "spelling": "A", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#3", 
+      "id": "example-3.cc#3", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:6:5", 
+      "location": "example-3.cc:6:5", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -136,16 +122,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:3:7", 
+          "location": "example-3.cc:3:7", 
           "spelling": "A", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#4", 
+      "id": "example-3.cc#4", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:7:5", 
+      "location": "example-3.cc:7:5", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -165,16 +151,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:3:7", 
+          "location": "example-3.cc:3:7", 
           "spelling": "A", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#5", 
+      "id": "example-3.cc#5", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "destructor", 
-      "location": "test-input-3.cc:8:5", 
+      "location": "example-3.cc:8:5", 
       "method_property": [], 
       "no_throw_guarantee": "unevaluated", 
       "parent_kind": "class_declaration", 
@@ -213,16 +199,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:3:7", 
+          "location": "example-3.cc:3:7", 
           "spelling": "A", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#6", 
+      "id": "example-3.cc#6", 
       "is_deleted": true, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:9:5", 
+      "location": "example-3.cc:9:5", 
       "method_property": [
         "delete"
       ], 
@@ -263,16 +249,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:3:7", 
+          "location": "example-3.cc:3:7", 
           "spelling": "A", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#7", 
+      "id": "example-3.cc#7", 
       "is_deleted": true, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:10:5", 
+      "location": "example-3.cc:10:5", 
       "method_property": [
         "delete"
       ], 
@@ -291,11 +277,11 @@
       "declaration": "class B;", 
       "declaration_pretty": "class B;", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#8", 
+      "id": "example-3.cc#8", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-3.cc:13:7", 
+      "location": "example-3.cc:13:7", 
       "parent_kind": "(global)", 
       "size": 4, 
       "specifier": [], 
@@ -320,14 +306,14 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:13:7", 
+          "location": "example-3.cc:13:7", 
           "spelling": "B", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#9", 
+      "id": "example-3.cc#9", 
       "kind": "field_declaration", 
-      "location": "test-input-3.cc:14:9", 
+      "location": "example-3.cc:14:9", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "b", 
@@ -356,16 +342,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:13:7", 
+          "location": "example-3.cc:13:7", 
           "spelling": "B", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#10", 
+      "id": "example-3.cc#10", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:16:5", 
+      "location": "example-3.cc:16:5", 
       "method_property": [
         "default"
       ], 
@@ -404,16 +390,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:13:7", 
+          "location": "example-3.cc:13:7", 
           "spelling": "B", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#11", 
+      "id": "example-3.cc#11", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:17:5", 
+      "location": "example-3.cc:17:5", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -433,16 +419,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:13:7", 
+          "location": "example-3.cc:13:7", 
           "spelling": "B", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#12", 
+      "id": "example-3.cc#12", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "destructor", 
-      "location": "test-input-3.cc:18:5", 
+      "location": "example-3.cc:18:5", 
       "method_property": [], 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "class_declaration", 
@@ -482,16 +468,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:13:7", 
+          "location": "example-3.cc:13:7", 
           "spelling": "B", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#13", 
+      "id": "example-3.cc#13", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:19:5", 
+      "location": "example-3.cc:19:5", 
       "method_property": [
         "default"
       ], 
@@ -531,16 +517,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:13:7", 
+          "location": "example-3.cc:13:7", 
           "spelling": "B", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#14", 
+      "id": "example-3.cc#14", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "test-input-3.cc:20:5", 
+      "location": "example-3.cc:20:5", 
       "method_property": [
         "default"
       ], 
@@ -559,11 +545,11 @@
       "declaration": "class C;", 
       "declaration_pretty": "class C;", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#15", 
+      "id": "example-3.cc#15", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "test-input-3.cc:23:7", 
+      "location": "example-3.cc:23:7", 
       "parent_kind": "(global)", 
       "size": 4, 
       "specifier": [], 
@@ -588,14 +574,14 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "test-input-3.cc:23:7", 
+          "location": "example-3.cc:23:7", 
           "spelling": "C", 
           "transparent": false
         }
       ], 
-      "id": "test-input-3.cc#16", 
+      "id": "example-3.cc#16", 
       "kind": "field_declaration", 
-      "location": "test-input-3.cc:24:9", 
+      "location": "example-3.cc:24:9", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "c", 
@@ -684,10 +670,10 @@
       "declaration": "float func(float, float*, int arr[]);", 
       "declaration_pretty": "float func(float, float*, int arr[]);", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#17", 
+      "id": "example-3.cc#17", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-3.cc:29:7", 
+      "location": "example-3.cc:29:7", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "float", 
@@ -729,10 +715,10 @@
       "declaration": "char returnChar_takeFunc1(float (* func)(float, float*));", 
       "declaration_pretty": "char returnChar_takeFunc1(float (* func)(float, float*));", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#18", 
+      "id": "example-3.cc#18", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-3.cc:30:6", 
+      "location": "example-3.cc:30:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "char", 
@@ -745,14 +731,14 @@
       "canonical_type": "float (*)(float, float*)", 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#19", 
+      "id": "example-3.cc#19", 
       "kind": "typedef_declaration", 
-      "location": "test-input-3.cc:31:17", 
+      "location": "example-3.cc:31:17", 
       "parent_kind": "(global)", 
       "spelling": "FuncPtrTy", 
       "type_alias_chain": [
         {
-          "location": "test-input-3.cc:31:17", 
+          "location": "example-3.cc:31:17", 
           "spelling": "FuncPtrTy"
         }, 
         {
@@ -799,7 +785,7 @@
               "is_type_param": false, 
               "type_alias_chain": [
                 {
-                  "location": "test-input-3.cc:31:17", 
+                  "location": "example-3.cc:31:17", 
                   "spelling": "FuncPtrTy"
                 }, 
                 {
@@ -817,10 +803,10 @@
       "declaration": "char returnChar_takeFunc2(FuncPtrTy func);", 
       "declaration_pretty": "char returnChar_takeFunc2(FuncPtrTy func);", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#20", 
+      "id": "example-3.cc#20", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "test-input-3.cc:32:6", 
+      "location": "example-3.cc:32:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "char", 
@@ -833,9 +819,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#21", 
+      "id": "example-3.cc#21", 
       "kind": "variable_declaration", 
-      "location": "test-input-3.cc:34:9", 
+      "location": "example-3.cc:34:9", 
       "parent_kind": "(global)", 
       "size": 8, 
       "spelling": "funcPtr1", 
@@ -867,9 +853,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "test-input-3.cc#22", 
+      "id": "example-3.cc#22", 
       "kind": "variable_declaration", 
-      "location": "test-input-3.cc:35:11", 
+      "location": "example-3.cc:35:11", 
       "parent_kind": "(global)", 
       "size": 8, 
       "spelling": "funcPtr2", 
@@ -904,7 +890,7 @@
           "is_type_param": false, 
           "type_alias_chain": [
             {
-              "location": "test-input-3.cc:31:17", 
+              "location": "example-3.cc:31:17", 
               "spelling": "FuncPtrTy"
             }, 
             {
@@ -919,6 +905,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.014920949935913086, 
-  "time_traversing": 0.8819200992584229
+  "time_indexing": 0.014693975448608398, 
+  "time_traversing": 0.008572101593017578
 }
