@@ -26,7 +26,7 @@ class C {
 };
 
 // func decl
-float func(float, float *);
+float func(float, float *, int arr[]);
 char returnChar_takeFunc1(float (*func)(float, float *));
 typedef float (*FuncPtrTy)(float, float *);
 char returnChar_takeFunc2(FuncPtrTy func);

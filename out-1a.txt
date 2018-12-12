@@ -292,7 +292,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': ('const MyClass&', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}), 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -339,7 +339,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'a', 'default_expr': None}, {'type': ('Int', {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': ('std::vector<int, std::allocator<int>>', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24})}), 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -431,7 +431,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': ('MyClass&&', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}), 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -476,7 +476,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': ('const MyClass&', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}), 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -562,16 +562,16 @@ private
 ::::: type
 Int
 {
-  "canonical_type": {
-    "spelling": "std::vector<int, std::allocator<int>>", 
-    "type_info": {
+  "canonical_type": [
+    "std::vector<int, std::allocator<int>>", 
+    {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 24
     }
-  }, 
+  ], 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -827,7 +827,7 @@ test-input-1.cc:45:5
 ::::: specifier
 []
 ::::: args_list
-[{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
+[{'type': ('T*', {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': ('T', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 45, column 5>, 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None})}), 'arg_spelling': 'pt', 'default_expr': None}, {'type': ('U*', {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': ('U', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 45, column 5>, 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None})}), 'arg_spelling': 'pu', 'default_expr': None}, {'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'n', 'default_expr': 'N'}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -841,7 +841,7 @@ int templateFunc(T* pt, U* pu, int n = N);
 ::::: return_type
 int
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': '1'}]
+[{'type': ('T', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 45, column 5>, 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}), 'arg_spelling': 'T', 'default_expr': None}, {'type': ('U', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 45, column 5>, 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}), 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'N', 'default_expr': '1'}]
 ==================
 ::::: id
 test-input-1.cc#21
@@ -860,7 +860,7 @@ comment for foo()
 ::::: specifier
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'a', 'default_expr': None}, {'type': ('Int', {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': ('std::vector<int, std::allocator<int>>', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24})}), 'arg_spelling': 'b', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -905,7 +905,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'a', 'default_expr': None}, {'type': ('Int', {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'test-input-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': ('std::vector<int, std::allocator<int>>', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24})}), 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -968,13 +968,13 @@ True
 template <typename T, char C> class templateClass;
 ::::: declaration_pretty
 template <typename T, char C>
-class templateClass;
+template <typename T, char C> class templateClass;
 ::::: size
 None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:59:7', 'template_spelling': 'templateClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'C', 'default_expr': None}]
+[{'type': ('T', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 59, column 7>, 'template_spelling': 'templateClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}), 'arg_spelling': 'T', 'default_expr': None}, {'type': ('char', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}), 'arg_spelling': 'C', 'default_expr': None}]
 ==================
 ::::: id
 test-input-1.cc#25
@@ -1091,7 +1091,7 @@ test-input-1.cc:65:6
 ::::: scoped_enum
 False
 ::::: enum_underlying_type
-{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ==================
 ::::: id
 test-input-1.cc#28
@@ -1118,7 +1118,7 @@ test-input-1.cc:66:2
 ::::: enum_value
 1
 ::::: enum_underlying_type
-{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 E
 {
@@ -1158,7 +1158,7 @@ test-input-1.cc:67:2
 ::::: enum_value
 2
 ::::: enum_underlying_type
-{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 E
 {
@@ -1613,7 +1613,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}]
+[{'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'a', 'default_expr': None}]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1664,7 +1664,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'std::string', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::__1::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char> >', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': {'spelling': 'std::basic_string<char, std::char_traits<char>, std::allocator<char>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 's', 'default_expr': None}, {'type': {'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': 'obj', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'obj2', 'default_expr': None}]
+[{'type': ('std::string', {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::__1::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char> >', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': ('std::basic_string<char, std::char_traits<char>, std::allocator<char>>', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None})}), 'arg_spelling': 's', 'default_expr': None}, {'type': ('MyClass', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}), 'arg_spelling': 'obj', 'default_expr': None}, {'type': ('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'obj2', 'default_expr': None}]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1719,7 +1719,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'std::vector<int>', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': '', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': ('float', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}), 'arg_spelling': 'a', 'default_expr': None}, {'type': ('std::vector<int>', {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': '', 'canonical_type': ('std::vector<int, std::allocator<int>>', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24})}), 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1858,16 +1858,16 @@ int*
   "is_pointer": true, 
   "is_type_alias": false, 
   "is_type_param": false, 
-  "pointee_type": {
-    "spelling": "int", 
-    "type_info": {
+  "pointee_type": [
+    "int", 
+    {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 4
     }
-  }, 
+  ], 
   "type_size": 8
 }
 ::::: POD
@@ -1892,16 +1892,16 @@ test-input-1.cc:94:20
 ::::: type
 std::map<int, int>
 {
-  "canonical_type": {
-    "spelling": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
-    "type_info": {
+  "canonical_type": [
+    "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
+    {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 24
     }
-  }, 
+  ], 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -2047,7 +2047,7 @@ test-input-1.cc:103:13
 ::::: scoped_enum
 True
 ::::: enum_underlying_type
-{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
+('char', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1})
 ::::: access
 public
 ==================
@@ -2082,7 +2082,7 @@ test-input-1.cc:103:25
 ::::: enum_value
 0
 ::::: enum_underlying_type
-{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
+('char', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1})
 ::::: type
 EEClass::EE
 {
@@ -2128,7 +2128,7 @@ test-input-1.cc:103:30
 ::::: enum_value
 1
 ::::: enum_underlying_type
-{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
+('char', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1})
 ::::: type
 EEClass::EE
 {
@@ -2168,7 +2168,7 @@ test-input-1.cc:105:16
 ::::: enum_value
 0
 ::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('unsigned int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 EnumTy
 {
@@ -2208,7 +2208,7 @@ test-input-1.cc:105:22
 ::::: enum_value
 1
 ::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('unsigned int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 EnumTy
 {
@@ -2277,7 +2277,7 @@ test-input-1.cc:105:16
 ::::: enum_value
 0
 ::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('unsigned int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 EnumTy
 {
@@ -2317,7 +2317,7 @@ test-input-1.cc:105:22
 ::::: enum_value
 1
 ::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('unsigned int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 EnumTy
 {
@@ -2357,7 +2357,7 @@ test-input-1.cc:106:8
 ::::: enum_value
 0
 ::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('unsigned int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 (anonymous enum at test-input-1.cc:106:1)
 {
@@ -2397,7 +2397,7 @@ test-input-1.cc:106:15
 ::::: enum_value
 1
 ::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+('unsigned int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
 ::::: type
 (anonymous enum at test-input-1.cc:106:1)
 {
@@ -2478,13 +2478,13 @@ True
 template <typename T> class BaseClass2;
 ::::: declaration_pretty
 template <typename T>
-class BaseClass2;
+template <typename T> class BaseClass2;
 ::::: size
 None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:110:8', 'template_spelling': 'BaseClass2', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': ('T', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 110, column 8>, 'template_spelling': 'BaseClass2', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}), 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
 test-input-1.cc#63
@@ -2510,13 +2510,13 @@ True
 template <typename T> class ClassAgain;
 ::::: declaration_pretty
 template <typename T>
-class ClassAgain;
+template <typename T> class ClassAgain;
 ::::: size
 None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-1.cc:112:7', 'template_spelling': 'ClassAgain', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': ('T', {'type_param_decl_location': {'template_location': <SourceLocation file 'test-input-1.cc', line 112, column 7>, 'template_spelling': 'ClassAgain', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}), 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
 test-input-1.cc#64
@@ -2716,27 +2716,27 @@ test-input-1.cc:122:6
 ::::: type
 int*[5]
 {
-  "array_element_type": {
-    "spelling": "int*", 
-    "type_info": {
+  "array_element_type": [
+    "int*", 
+    {
       "is_array": false, 
       "is_function": false, 
       "is_pointer": true, 
       "is_type_alias": false, 
       "is_type_param": false, 
-      "pointee_type": {
-        "spelling": "int", 
-        "type_info": {
+      "pointee_type": [
+        "int", 
+        {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      }, 
+      ], 
       "type_size": 8
     }
-  }, 
+  ], 
   "array_size": 5, 
   "is_array": true, 
   "is_function": false, 
@@ -2767,16 +2767,16 @@ test-input-1.cc:123:6
 ::::: type
 char[6]
 {
-  "array_element_type": {
-    "spelling": "char", 
-    "type_info": {
+  "array_element_type": [
+    "char", 
+    {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 1
     }
-  }, 
+  ], 
   "array_size": 6, 
   "is_array": true, 
   "is_function": false, 
@@ -2807,16 +2807,16 @@ test-input-1.cc:125:11
 ::::: type
 BaseClass[]
 {
-  "array_element_type": {
-    "spelling": "BaseClass", 
-    "type_info": {
+  "array_element_type": [
+    "BaseClass", 
+    {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 1
     }
-  }, 
+  ], 
   "array_size": null, 
   "is_array": true, 
   "is_function": false, 
@@ -2847,7 +2847,7 @@ test-input-1.cc:130:1
 ::::: specifier
 ['noexcept']
 ::::: args_list
-[{'type': {'spelling': 'char*&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'in', 'default_expr': None}]
+[{'type': ('char*&', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}), 'arg_spelling': 'in', 'default_expr': None}]
 ::::: no_throw_guarantee
 guaranteed
 ::::: is_template
@@ -2878,7 +2878,7 @@ test-input-1.cc:130:1
 ::::: specifier
 ['noexcept']
 ::::: args_list
-[{'type': {'spelling': 'char*&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'in', 'default_expr': None}]
+[{'type': ('char*&&', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}), 'arg_spelling': 'in', 'default_expr': None}]
 ::::: no_throw_guarantee
 guaranteed
 ::::: is_template
@@ -2912,4 +2912,4 @@ test-input-1.cc:125:11: error: definition of variable with array type needs an e
 {'depth': 1, 'included_at': 'test-input-1.cc:4:10', 'file': './test-input-2.h'}
 {'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.02 sec
+[time traverse] 1.06 sec

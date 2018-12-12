@@ -15,7 +15,7 @@ This is a script that extracts symbols defined in C++, along with each symbol's 
 - syntax kind (e.g. function, class, template, enum),
 - type (aware of array, type parameters, and type aliases),
 - type alias chain,
-- function argument list and template parameter list,
+- function arguments and template parameters, their types, and default expressions,
 - class inheritance,
 - class member storage class (`static`),
 - function/method properties (static, const, (pure) virtual, delete, copy, move, etc.),

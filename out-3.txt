@@ -159,7 +159,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[('int', 'a')]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -253,7 +253,7 @@ True
 ::::: method_property
 ['delete']
 ::::: args_list
-[('const A&', '')]
+[{'type': {'spelling': 'const A&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -300,7 +300,7 @@ True
 ::::: method_property
 ['delete']
 ::::: args_list
-[('A&&', '')]
+[{'type': {'spelling': 'A&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -476,7 +476,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[('int', 'b')]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -570,7 +570,7 @@ False
 ::::: method_property
 ['default']
 ::::: args_list
-[('const B&', '')]
+[{'type': {'spelling': 'const B&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -617,7 +617,7 @@ False
 ::::: method_property
 ['default']
 ::::: args_list
-[('B&&', '')]
+[{'type': {'spelling': 'B&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -732,15 +732,15 @@ test-input-3.cc:29:7
 ::::: specifier
 []
 ::::: args_list
-[('float', ''), ('float*', '')]
+[{'type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}, {'type': {'spelling': 'float*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}}}, 'arg_spelling': '', 'default_expr': None}, {'type': {'spelling': 'int[]', 'type_info': {'is_type_param': False, 'array_element_type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'is_pointer': False, 'array_size': None, 'is_function': False, 'is_array': True, 'is_type_alias': False, 'type_size': None}}, 'arg_spelling': 'arr', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-float func(float, float*);
+float func(float, float*, int arr[]);
 ::::: declaration_pretty
-float func(float, float*);
+float func(float, float*, int arr[]);
 ::::: return_type
 float
 ::::: template_args_list
@@ -763,15 +763,15 @@ test-input-3.cc:30:6
 ::::: specifier
 []
 ::::: args_list
-[('float (*)(float, float*)', 'func')]
+[{'type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_function': True, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'func', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-char returnChar_takeFunc1(float (*)(float, float*) func);
+char returnChar_takeFunc1(float (* func)(float, float*));
 ::::: declaration_pretty
-char returnChar_takeFunc1(float (*)(float, float*) func);
+char returnChar_takeFunc1(float (* func)(float, float*));
 ::::: return_type
 char
 ::::: template_args_list
@@ -823,7 +823,7 @@ test-input-3.cc:32:6
 ::::: specifier
 []
 ::::: args_list
-[('FuncPtrTy', 'func')]
+[{'type': {'spelling': 'FuncPtrTy', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'test-input-3.cc:31:17'}, {'spelling': 'float (*)(float, float *)', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}}}}}, 'arg_spelling': 'func', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -859,9 +859,9 @@ float (*)(float, float*)
   "is_pointer": true, 
   "is_type_alias": false, 
   "is_type_param": false, 
-  "pointee_type": [
-    "float (float, float*)", 
-    {
+  "pointee_type": {
+    "spelling": "float (float, float*)", 
+    "type_info": {
       "is_array": false, 
       "is_function": true, 
       "is_pointer": false, 
@@ -869,7 +869,7 @@ float (*)(float, float*)
       "is_type_param": false, 
       "type_size": null
     }
-  ], 
+  }, 
   "type_size": 8
 }
 ::::: POD
@@ -894,27 +894,27 @@ test-input-3.cc:35:11
 ::::: type
 FuncPtrTy
 {
-  "canonical_type": [
-    "float (*)(float, float*)", 
-    {
+  "canonical_type": {
+    "spelling": "float (*)(float, float*)", 
+    "type_info": {
       "is_array": false, 
       "is_function": false, 
       "is_pointer": true, 
       "is_type_alias": false, 
       "is_type_param": false, 
-      "pointee_type": [
-        "float (float, float*)", 
-        {
+      "pointee_type": {
+        "spelling": "float (float, float*)", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "type_size": 8
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -942,5 +942,5 @@ True
 {'depth': 1, 'included_at': 'test-input-3.cc:1:10', 'file': './test-input-2.h'}
 {'depth': 2, 'included_at': './test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 2, 'included_at': './test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time indexing] 0.02 sec
-[time traverse] 1.33 sec
+[time indexing] 0.01 sec
+[time traverse] 1.00 sec

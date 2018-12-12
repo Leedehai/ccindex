@@ -41,16 +41,16 @@
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "independentVariable", 
-      "type": [
-        "const int", 
-        {
+      "type": {
+        "spelling": "const int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -110,16 +110,16 @@
       "specifier": [], 
       "spelling": "MyClass", 
       "template_args_list": [], 
-      "type": [
-        "MyClass", 
-        {
+      "type": {
+        "spelling": "MyClass", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 48
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -141,16 +141,16 @@
       "size": 4, 
       "spelling": "property1", 
       "static_member": false, 
-      "type": [
-        "int", 
-        {
+      "type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -217,10 +217,20 @@
     {
       "access": "public", 
       "args_list": [
-        [
-          "const MyClass&", 
-          ""
-        ]
+        {
+          "arg_spelling": "", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "const MyClass&", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 48
+            }
+          }
+        }
       ], 
       "comment": "", 
       "constructor_property": [
@@ -254,14 +264,56 @@
     {
       "access": "public", 
       "args_list": [
-        [
-          "int", 
-          "a"
-        ], 
-        [
-          "Int", 
-          "b"
-        ]
+        {
+          "arg_spelling": "a", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "b", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "Int", 
+            "type_info": {
+              "canonical_type": {
+                "spelling": "std::vector<int, std::allocator<int>>", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 24
+                }
+              }, 
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": true, 
+              "is_type_param": false, 
+              "type_alias_chain": [
+                {
+                  "location": "test-input-1.cc:9:26", 
+                  "spelling": "Int"
+                }, 
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+                  "spelling": "std::vector<int>"
+                }
+              ], 
+              "type_alias_underlying_type": "std::vector<int>", 
+              "type_size": 24
+            }
+          }
+        }
       ], 
       "comment": "", 
       "constructor_property": [], 
@@ -320,10 +372,20 @@
     {
       "access": "public", 
       "args_list": [
-        [
-          "MyClass&&", 
-          ""
-        ]
+        {
+          "arg_spelling": "", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "MyClass&&", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 48
+            }
+          }
+        }
       ], 
       "comment": "", 
       "constructor_property": [
@@ -357,10 +419,20 @@
     {
       "access": "public", 
       "args_list": [
-        [
-          "const MyClass&", 
-          ""
-        ]
+        {
+          "arg_spelling": "", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "const MyClass&", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 48
+            }
+          }
+        }
       ], 
       "comment": "", 
       "declaration": "MyClass operator+(const MyClass&) noexcept;", 
@@ -434,19 +506,19 @@
       "size": 24, 
       "spelling": "property2", 
       "static_member": false, 
-      "type": [
-        "Int", 
-        {
-          "canonical_type": [
-            "std::vector<int, std::allocator<int>>", 
-            {
+      "type": {
+        "spelling": "Int", 
+        "type_info": {
+          "canonical_type": {
+            "spelling": "std::vector<int, std::allocator<int>>", 
+            "type_info": {
               "is_array": false, 
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
               "type_size": 24
             }
-          ], 
+          }, 
           "is_array": false, 
           "is_function": false, 
           "is_pointer": false, 
@@ -465,7 +537,7 @@
           "type_alias_underlying_type": "std::vector<int>", 
           "type_size": 24
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -487,16 +559,16 @@
       "size": 4, 
       "spelling": "propertye3", 
       "static_member": false, 
-      "type": [
-        "const float", 
-        {
+      "type": {
+        "spelling": "const float", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -524,16 +596,16 @@
       "specifier": [], 
       "spelling": "InnerClass", 
       "template_args_list": [], 
-      "type": [
-        "MyClass::InnerClass", 
-        {
+      "type": {
+        "spelling": "MyClass::InnerClass", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -561,16 +633,16 @@
       "size": 8, 
       "spelling": "b", 
       "static_member": false, 
-      "type": [
-        "double", 
-        {
+      "type": {
+        "spelling": "double", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -627,22 +699,86 @@
     }, 
     {
       "args_list": [
-        [
-          "T*", 
-          "pt"
-        ], 
-        [
-          "U*", 
-          "pu"
-        ], 
-        [
-          "int", 
-          "n"
-        ]
+        {
+          "arg_spelling": "pt", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T*", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": true, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "pointee_type": {
+                "spelling": "T", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_function": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": true, 
+                  "type_param_decl_location": {
+                    "param_index": 0, 
+                    "template_location": "test-input-1.cc:45:5", 
+                    "template_spelling": "templateFunc"
+                  }, 
+                  "type_size": null
+                }
+              }, 
+              "type_size": null
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "pu", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "U*", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": true, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "pointee_type": {
+                "spelling": "U", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_function": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": true, 
+                  "type_param_decl_location": {
+                    "param_index": 1, 
+                    "template_location": "test-input-1.cc:45:5", 
+                    "template_spelling": "templateFunc"
+                  }, 
+                  "type_size": null
+                }
+              }, 
+              "type_size": null
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "n", 
+          "default_expr": "N", 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }
       ], 
       "comment": "", 
-      "declaration": "template <typename T, typename U, int N>\nint templateFunc(T* pt, U* pu, int n);", 
-      "declaration_pretty": "template <typename T, typename U, int N>\nint templateFunc(T* pt, U* pu, int n);", 
+      "declaration": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
+      "declaration_pretty": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
       "hierarchy": [], 
       "id": "test-input-1.cc#20", 
       "is_template": true, 
@@ -654,31 +790,115 @@
       "specifier": [], 
       "spelling": "templateFunc", 
       "template_args_list": [
-        [
-          "typename", 
-          "T"
-        ], 
-        [
-          "typename", 
-          "U"
-        ], 
-        [
-          "int", 
-          "N"
-        ]
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "test-input-1.cc:45:5", 
+                "template_spelling": "templateFunc"
+              }, 
+              "type_size": null
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "U", 
+          "default_expr": "Int", 
+          "type": {
+            "spelling": "U", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 1, 
+                "template_location": "test-input-1.cc:45:5", 
+                "template_spelling": "templateFunc"
+              }, 
+              "type_size": null
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "N", 
+          "default_expr": "1", 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }
       ], 
       "usage": ""
     }, 
     {
       "args_list": [
-        [
-          "int", 
-          "a"
-        ], 
-        [
-          "Int", 
-          "b"
-        ]
+        {
+          "arg_spelling": "a", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "b", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "Int", 
+            "type_info": {
+              "canonical_type": {
+                "spelling": "std::vector<int, std::allocator<int>>", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 24
+                }
+              }, 
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": true, 
+              "is_type_param": false, 
+              "type_alias_chain": [
+                {
+                  "location": "test-input-1.cc:9:26", 
+                  "spelling": "Int"
+                }, 
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+                  "spelling": "std::vector<int>"
+                }
+              ], 
+              "type_alias_underlying_type": "std::vector<int>", 
+              "type_size": 24
+            }
+          }
+        }
       ], 
       "comment": "comment for foo()", 
       "declaration": "int foo(int a, Int b);", 
@@ -699,14 +919,56 @@
     {
       "access": "public", 
       "args_list": [
-        [
-          "int", 
-          "a"
-        ], 
-        [
-          "Int", 
-          "b"
-        ]
+        {
+          "arg_spelling": "a", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "b", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "Int", 
+            "type_info": {
+              "canonical_type": {
+                "spelling": "std::vector<int, std::allocator<int>>", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 24
+                }
+              }, 
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": true, 
+              "is_type_param": false, 
+              "type_alias_chain": [
+                {
+                  "location": "test-input-1.cc:9:26", 
+                  "spelling": "Int"
+                }, 
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+                  "spelling": "std::vector<int>"
+                }
+              ], 
+              "type_alias_underlying_type": "std::vector<int>", 
+              "type_size": 24
+            }
+          }
+        }
       ], 
       "comment": "", 
       "constructor_property": [], 
@@ -748,7 +1010,7 @@
       "base_clause": [], 
       "comment": "", 
       "declaration": "template <typename T, char C> class templateClass;", 
-      "declaration_pretty": "template <typename T, char C>\ntemplate <typename T, char C> class templateClass;", 
+      "declaration_pretty": "template <typename T, char C>\nclass templateClass;", 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -767,14 +1029,40 @@
       "specifier": [], 
       "spelling": "templateClass", 
       "template_args_list": [
-        [
-          "typename", 
-          "T"
-        ], 
-        [
-          "char", 
-          "C"
-        ]
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "test-input-1.cc:59:7", 
+                "template_spelling": "templateClass"
+              }, 
+              "type_size": null
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "C", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "char", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 1
+            }
+          }
+        }
       ], 
       "usage": ""
     }, 
@@ -803,22 +1091,22 @@
       "size": null, 
       "spelling": "t_", 
       "static_member": false, 
-      "type": [
-        "T", 
-        {
+      "type": {
+        "spelling": "T", 
+        "type_info": {
           "is_array": false, 
           "is_function": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": true, 
           "type_param_decl_location": {
-            "index": -1, 
-            "location": "", 
-            "spelling": ""
+            "param_index": 0, 
+            "template_location": "test-input-1.cc:59:7", 
+            "template_spelling": "templateClass"
           }, 
           "type_size": null
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -846,30 +1134,30 @@
       "size": 1, 
       "spelling": "c_", 
       "static_member": false, 
-      "type": [
-        "char", 
-        {
+      "type": {
+        "spelling": "char", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "comment": "", 
-      "enum_underlying_type": [
-        "int", 
-        {
+      "enum_underlying_type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "hierarchy": [], 
       "id": "test-input-1.cc#27", 
       "kind": "enum_declaration", 
@@ -882,7 +1170,16 @@
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "int", 
+      "enum_underlying_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 1, 
       "hierarchy": [
         {
@@ -898,22 +1195,31 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "a", 
-      "type": [
-        "E", 
-        {
+      "type": {
+        "spelling": "E", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "int", 
+      "enum_underlying_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 2, 
       "hierarchy": [
         {
@@ -929,16 +1235,16 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "b", 
-      "type": [
-        "E", 
-        {
+      "type": {
+        "spelling": "E", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1000,16 +1306,16 @@
       "specifier": [], 
       "spelling": "Class", 
       "template_args_list": [], 
-      "type": [
-        "customNS::Class", 
-        {
+      "type": {
+        "spelling": "customNS::Class", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1022,16 +1328,16 @@
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "staticGlobal", 
-      "type": [
-        "int", 
-        {
+      "type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1060,16 +1366,16 @@
       ], 
       "spelling": "Class", 
       "template_args_list": [], 
-      "type": [
-        "customNS::Class", 
-        {
+      "type": {
+        "spelling": "customNS::Class", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1097,16 +1403,16 @@
       "size": 4, 
       "spelling": "staticData", 
       "static_member": true, 
-      "type": [
-        "int", 
-        {
+      "type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1134,16 +1440,16 @@
       "size": 4, 
       "spelling": "constData", 
       "static_member": false, 
-      "type": [
-        "const int", 
-        {
+      "type": {
+        "spelling": "const int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1171,16 +1477,16 @@
       "size": 4, 
       "spelling": "staticConstData", 
       "static_member": true, 
-      "type": [
-        "const int", 
-        {
+      "type": {
+        "spelling": "const int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1208,16 +1514,16 @@
       "size": 4, 
       "spelling": "b", 
       "static_member": false, 
-      "type": [
-        "int", 
-        {
+      "type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1248,10 +1554,20 @@
     {
       "access": "private", 
       "args_list": [
-        [
-          "int", 
-          "a"
-        ]
+        {
+          "arg_spelling": "a", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }
       ], 
       "comment": "", 
       "declaration": "size_t returnSizeT_int(int a);", 
@@ -1287,22 +1603,74 @@
     {
       "access": "private", 
       "args_list": [
-        [
-          "std::string", 
-          "s"
-        ], 
-        [
-          "MyClass", 
-          "obj"
-        ], 
-        [
-          "int", 
-          "obj2"
-        ]
+        {
+          "arg_spelling": "s", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "std::string", 
+            "type_info": {
+              "canonical_type": {
+                "spelling": "std::basic_string<char, std::char_traits<char>, std::allocator<char>>", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": null
+                }
+              }, 
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": true, 
+              "is_type_param": false, 
+              "type_alias_chain": [
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65", 
+                  "spelling": "std::__1::string"
+                }, 
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32", 
+                  "spelling": "basic_string<char, char_traits<char>, allocator<char> >"
+                }
+              ], 
+              "type_alias_underlying_type": "basic_string<char, char_traits<char>, allocator<char>>", 
+              "type_size": null
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "obj", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "MyClass", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 48
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "obj2", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "int", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }
       ], 
       "comment": "", 
-      "declaration": "bool returnBool_string_myclass_anotherclass(std::string s, MyClass obj, int obj2);", 
-      "declaration_pretty": "bool returnBool_string_myclass_anotherclass(\n\tstd::string s,\n\tMyClass obj,\n\tint obj2\n);", 
+      "declaration": "bool returnBool_string_myclass_anotherclass(string s, MyClass obj, Another obj2);", 
+      "declaration_pretty": "bool returnBool_string_myclass_anotherclass(\n\tstring s,\n\tMyClass obj,\n\tAnother obj2\n);", 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1334,14 +1702,52 @@
     {
       "access": "private", 
       "args_list": [
-        [
-          "float", 
-          "a"
-        ], 
-        [
-          "std::vector<int>", 
-          "b"
-        ]
+        {
+          "arg_spelling": "a", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "float", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "b", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "std::vector<int>", 
+            "type_info": {
+              "canonical_type": {
+                "spelling": "std::vector<int, std::allocator<int>>", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 24
+                }
+              }, 
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": true, 
+              "is_type_param": false, 
+              "type_alias_chain": [
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+                  "spelling": "std::vector<int>"
+                }
+              ], 
+              "type_alias_underlying_type": "", 
+              "type_size": 24
+            }
+          }
+        }
       ], 
       "comment": "", 
       "declaration": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
@@ -1391,16 +1797,16 @@
       "specifier": [], 
       "spelling": "classFriend", 
       "template_args_list": [], 
-      "type": [
-        "classFriend", 
-        {
+      "type": {
+        "spelling": "classFriend", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1431,16 +1837,16 @@
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "a1", 
-      "type": [
-        "int", 
-        {
+      "type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1453,27 +1859,27 @@
       "parent_kind": "(global)", 
       "size": 8, 
       "spelling": "a2", 
-      "type": [
-        "int*", 
-        {
+      "type": {
+        "spelling": "int*", 
+        "type_info": {
           "is_array": false, 
           "is_function": false, 
           "is_pointer": true, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "pointee_type": [
-            "int", 
-            {
+          "pointee_type": {
+            "spelling": "int", 
+            "type_info": {
               "is_array": false, 
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
               "type_size": 4
             }
-          ], 
+          }, 
           "type_size": 8
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1486,19 +1892,19 @@
       "parent_kind": "(global)", 
       "size": 24, 
       "spelling": "m", 
-      "type": [
-        "std::map<int, int>", 
-        {
-          "canonical_type": [
-            "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>> >", 
-            {
+      "type": {
+        "spelling": "std::map<int, int>", 
+        "type_info": {
+          "canonical_type": {
+            "spelling": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
+            "type_info": {
               "is_array": false, 
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
               "type_size": 24
             }
-          ], 
+          }, 
           "is_array": false, 
           "is_function": false, 
           "is_pointer": false, 
@@ -1513,7 +1919,7 @@
           "type_alias_underlying_type": "", 
           "type_size": 24
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1544,16 +1950,16 @@
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "ano", 
-      "type": [
-        "int", 
-        {
+      "type": {
+        "spelling": "int", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1573,31 +1979,31 @@
       "specifier": [], 
       "spelling": "EEClass", 
       "template_args_list": [], 
-      "type": [
-        "EEClass", 
-        {
+      "type": {
+        "spelling": "EEClass", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "access": "public", 
       "comment": "", 
-      "enum_underlying_type": [
-        "char", 
-        {
+      "enum_underlying_type": {
+        "spelling": "char", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "hierarchy": [
         {
           "kind": "struct_declaration", 
@@ -1617,7 +2023,16 @@
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "char", 
+      "enum_underlying_type": {
+        "spelling": "char", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      }, 
       "enum_value": 0, 
       "hierarchy": [
         {
@@ -1639,22 +2054,31 @@
       "parent_kind": "enum_declaration", 
       "size": 1, 
       "spelling": "ee1", 
-      "type": [
-        "EEClass::EE", 
-        {
+      "type": {
+        "spelling": "EEClass::EE", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "char", 
+      "enum_underlying_type": {
+        "spelling": "char", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      }, 
       "enum_value": 1, 
       "hierarchy": [
         {
@@ -1676,22 +2100,31 @@
       "parent_kind": "enum_declaration", 
       "size": 1, 
       "spelling": "ee2", 
-      "type": [
-        "EEClass::EE", 
-        {
+      "type": {
+        "spelling": "EEClass::EE", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "unsigned int", 
+      "enum_underlying_type": {
+        "spelling": "unsigned int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 0, 
       "hierarchy": [
         {
@@ -1707,22 +2140,31 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee1", 
-      "type": [
-        "EnumTy", 
-        {
+      "type": {
+        "spelling": "EnumTy", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "unsigned int", 
+      "enum_underlying_type": {
+        "spelling": "unsigned int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 1, 
       "hierarchy": [
         {
@@ -1738,16 +2180,16 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee2", 
-      "type": [
-        "EnumTy", 
-        {
+      "type": {
+        "spelling": "EnumTy", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1775,7 +2217,16 @@
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "unsigned int", 
+      "enum_underlying_type": {
+        "spelling": "unsigned int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 0, 
       "hierarchy": [
         {
@@ -1791,22 +2242,31 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee1", 
-      "type": [
-        "EnumTy", 
-        {
+      "type": {
+        "spelling": "EnumTy", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "unsigned int", 
+      "enum_underlying_type": {
+        "spelling": "unsigned int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 1, 
       "hierarchy": [
         {
@@ -1822,22 +2282,31 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee2", 
-      "type": [
-        "EnumTy", 
-        {
+      "type": {
+        "spelling": "EnumTy", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "unsigned int", 
+      "enum_underlying_type": {
+        "spelling": "unsigned int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 0, 
       "hierarchy": [
         {
@@ -1853,22 +2322,31 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "aaaaa", 
-      "type": [
-        "(anonymous enum at test-input-1.cc:106:1)", 
-        {
+      "type": {
+        "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "POD": true, 
       "comment": "", 
-      "enum_underlying_type": "unsigned int", 
+      "enum_underlying_type": {
+        "spelling": "unsigned int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "enum_value": 1, 
       "hierarchy": [
         {
@@ -1884,16 +2362,16 @@
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "bbbbb", 
-      "type": [
-        "(anonymous enum at test-input-1.cc:106:1)", 
-        {
+      "type": {
+        "spelling": "(anonymous enum at test-input-1.cc:106:1)", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 4
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -1913,23 +2391,23 @@
       "specifier": [], 
       "spelling": "BaseClass", 
       "template_args_list": [], 
-      "type": [
-        "BaseClass", 
-        {
+      "type": {
+        "spelling": "BaseClass", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 1
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "base_clause": [], 
       "comment": "", 
       "declaration": "template <typename T> class BaseClass2;", 
-      "declaration_pretty": "template <typename T>\ntemplate <typename T> class BaseClass2;", 
+      "declaration_pretty": "template <typename T>\nclass BaseClass2;", 
       "hierarchy": [], 
       "id": "test-input-1.cc#62", 
       "is_abstract": false, 
@@ -1941,10 +2419,26 @@
       "specifier": [], 
       "spelling": "BaseClass2", 
       "template_args_list": [
-        [
-          "typename", 
-          "T"
-        ]
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "test-input-1.cc:110:8", 
+                "template_spelling": "BaseClass2"
+              }, 
+              "type_size": null
+            }
+          }
+        }
       ], 
       "usage": ""
     }, 
@@ -1952,7 +2446,7 @@
       "base_clause": [], 
       "comment": "", 
       "declaration": "template <typename T> class ClassAgain;", 
-      "declaration_pretty": "template <typename T>\ntemplate <typename T> class ClassAgain;", 
+      "declaration_pretty": "template <typename T>\nclass ClassAgain;", 
       "hierarchy": [], 
       "id": "test-input-1.cc#63", 
       "is_abstract": false, 
@@ -1964,10 +2458,26 @@
       "specifier": [], 
       "spelling": "ClassAgain", 
       "template_args_list": [
-        [
-          "typename", 
-          "T"
-        ]
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "test-input-1.cc:112:7", 
+                "template_spelling": "ClassAgain"
+              }, 
+              "type_size": null
+            }
+          }
+        }
       ], 
       "usage": ""
     }, 
@@ -2006,16 +2516,16 @@
       ], 
       "spelling": "VClass", 
       "template_args_list": [], 
-      "type": [
-        "VClass", 
-        {
+      "type": {
+        "spelling": "VClass", 
+        "type_info": {
           "is_array": false, 
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
           "type_size": 8
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -2129,30 +2639,30 @@
       "parent_kind": "(global)", 
       "size": 40, 
       "spelling": "arrIntPtr", 
-      "type": [
-        "int*[5]", 
-        {
-          "array_element_type": [
-            "int*", 
-            {
+      "type": {
+        "spelling": "int*[5]", 
+        "type_info": {
+          "array_element_type": {
+            "spelling": "int*", 
+            "type_info": {
               "is_array": false, 
               "is_function": false, 
               "is_pointer": true, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "pointee_type": [
-                "int", 
-                {
+              "pointee_type": {
+                "spelling": "int", 
+                "type_info": {
                   "is_array": false, 
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
                   "type_size": 4
                 }
-              ], 
+              }, 
               "type_size": 8
             }
-          ], 
+          }, 
           "array_size": 5, 
           "is_array": true, 
           "is_function": false, 
@@ -2161,7 +2671,7 @@
           "is_type_param": false, 
           "type_size": 40
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -2174,19 +2684,19 @@
       "parent_kind": "(global)", 
       "size": 6, 
       "spelling": "arrChar", 
-      "type": [
-        "char[6]", 
-        {
-          "array_element_type": [
-            "char", 
-            {
+      "type": {
+        "spelling": "char[6]", 
+        "type_info": {
+          "array_element_type": {
+            "spelling": "char", 
+            "type_info": {
               "is_array": false, 
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
               "type_size": 1
             }
-          ], 
+          }, 
           "array_size": 6, 
           "is_array": true, 
           "is_function": false, 
@@ -2195,7 +2705,7 @@
           "is_type_param": false, 
           "type_size": 6
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
@@ -2208,19 +2718,19 @@
       "parent_kind": "(global)", 
       "size": null, 
       "spelling": "arrVar", 
-      "type": [
-        "BaseClass[]", 
-        {
-          "array_element_type": [
-            "BaseClass", 
-            {
+      "type": {
+        "spelling": "BaseClass[]", 
+        "type_info": {
+          "array_element_type": {
+            "spelling": "BaseClass", 
+            "type_info": {
               "is_array": false, 
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
               "type_size": 1
             }
-          ], 
+          }, 
           "array_size": null, 
           "is_array": true, 
           "is_function": false, 
@@ -2229,19 +2739,29 @@
           "is_type_param": false, 
           "type_size": null
         }
-      ], 
+      }, 
       "usage": ""
     }, 
     {
       "args_list": [
-        [
-          "char*&", 
-          "in"
-        ]
+        {
+          "arg_spelling": "in", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "char*&", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 8
+            }
+          }
+        }
       ], 
       "comment": "", 
-      "declaration": "void returnVoid(char*& in) noexcept;", 
-      "declaration_pretty": "void returnVoid(char*& in) noexcept;", 
+      "declaration": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
+      "declaration_pretty": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
       "hierarchy": [], 
       "id": "test-input-1.cc#71", 
       "is_template": false, 
@@ -2259,14 +2779,24 @@
     }, 
     {
       "args_list": [
-        [
-          "char*&&", 
-          "in"
-        ]
+        {
+          "arg_spelling": "in", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "char*&&", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 8
+            }
+          }
+        }
       ], 
       "comment": "", 
-      "declaration": "void returnVoid(char*&& in) noexcept;", 
-      "declaration_pretty": "void returnVoid(char*&& in) noexcept;", 
+      "declaration": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
+      "declaration_pretty": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
       "hierarchy": [], 
       "id": "test-input-1.cc#72", 
       "is_template": false, 
@@ -2283,6 +2813,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.017477989196777344, 
-  "time_traversing": 1.4410731792449951
+  "time_indexing": 0.016275882720947266, 
+  "time_traversing": 1.1388349533081055
 }

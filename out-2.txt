@@ -246,7 +246,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[('double', 're'), ('double', 'im')]
+[{'type': {'spelling': 'double', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 're', 'default_expr': None}, {'type': {'spelling': 'double', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'im', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -299,7 +299,7 @@ True
 ::::: method_property
 ['delete']
 ::::: args_list
-[('NS::Complex&&', '')]
+[{'type': {'spelling': 'NS::Complex&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 16}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -307,9 +307,9 @@ not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-Complex(NS::Complex&&);
+Complex(Complex&&);
 ::::: declaration_pretty
-Complex(NS::Complex&&);
+Complex(Complex&&);
 ::::: return_type
 None
 ::::: template_args_list
@@ -405,7 +405,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[('NS::Complex&&', '')]
+[{'type': {'spelling': 'NS::Complex&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 16}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -413,9 +413,9 @@ not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-NS::Complex& operator+=(NS::Complex&&);
+NS::Complex& operator+=(Complex&&);
 ::::: declaration_pretty
-NS::Complex& operator+=(NS::Complex&&);
+NS::Complex& operator+=(Complex&&);
 ::::: return_type
 NS::Complex&
 ::::: template_args_list
@@ -446,7 +446,7 @@ test-input-2.h:27:22
 ::::: specifier
 []
 ::::: args_list
-[('std::vector<Complex>&', 'v1'), ('double', '')]
+[{'type': {'spelling': 'std::vector<Complex>&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'v1', 'default_expr': None}, {'type': {'spelling': 'double', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -485,7 +485,7 @@ test-input-2.h:29:6
 ::::: scoped_enum
 False
 ::::: enum_underlying_type
-('char', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1})
+{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ==================
 ::::: id
 test-input-2.h#12
@@ -518,7 +518,7 @@ test-input-2.h:29:18
 ::::: enum_value
 0
 ::::: enum_underlying_type
-char
+{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: type
 NS::E1
 {
@@ -564,7 +564,7 @@ test-input-2.h:29:23
 ::::: enum_value
 1
 ::::: enum_underlying_type
-char
+{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: type
 NS::E1
 {
@@ -604,7 +604,7 @@ test-input-2.h:30:12
 ::::: scoped_enum
 True
 ::::: enum_underlying_type
-('long', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8})
+{'spelling': 'long', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}
 ==================
 ::::: id
 test-input-2.h#15
@@ -637,7 +637,7 @@ test-input-2.h:30:24
 ::::: enum_value
 2
 ::::: enum_underlying_type
-long
+{'spelling': 'long', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}
 ::::: type
 NS::E2
 {
@@ -683,7 +683,7 @@ test-input-2.h:30:33
 ::::: enum_value
 3
 ::::: enum_underlying_type
-long
+{'spelling': 'long', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}
 ::::: type
 NS::E2
 {
@@ -779,7 +779,7 @@ test-input-2.h:34:16
 ::::: scoped_enum
 True
 ::::: enum_underlying_type
-('int', {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4})
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: access
 public
 ==================
@@ -820,7 +820,7 @@ test-input-2.h:34:20
 ::::: enum_value
 0
 ::::: enum_underlying_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
 NS::Aother::E
 {
@@ -872,7 +872,7 @@ test-input-2.h:34:24
 ::::: enum_value
 1
 ::::: enum_underlying_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
 NS::Aother::E
 {
@@ -912,21 +912,21 @@ test-input-2.h:38:6
 ::::: specifier
 []
 ::::: args_list
-[('bool', 'b'), ('NS::Complex&', 'c')]
+[{'type': {'spelling': 'bool', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'b', 'default_expr': None}, {'type': {'spelling': 'NS::Complex&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 16}}, 'arg_spelling': 'c', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
 True
 ::::: declaration
 template <typename T, int N>
-void fooTemplated(bool b, NS::Complex& c);
+void fooTemplated(bool b, Complex& c);
 ::::: declaration_pretty
 template <typename T, int N>
-void fooTemplated(bool b, NS::Complex& c);
+void fooTemplated(bool b, Complex& c);
 ::::: return_type
 void
 ::::: template_args_list
-[('typename', 'T'), ('int', 'N')]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:38:6', 'template_spelling': 'fooTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}]
 ==================
 ::::: id
 test-input-2.h#22
@@ -960,13 +960,13 @@ True
 template <typename T, typename U> class BarTemplated;
 ::::: declaration_pretty
 template <typename T, typename U>
-template <typename T, typename U> class BarTemplated;
+class BarTemplated;
 ::::: size
 None
 ::::: is_abstract
 False
 ::::: template_args_list
-[('typename', 'T'), ('typename', 'U')]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:41:7', 'template_spelling': 'BarTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:41:7', 'template_spelling': 'BarTemplated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': None}]
 ==================
 ::::: id
 test-input-2.h#23
@@ -1009,9 +1009,9 @@ T
   "is_type_alias": false, 
   "is_type_param": true, 
   "type_param_decl_location": {
-    "index": -1, 
-    "location": "", 
-    "spelling": ""
+    "param_index": 0, 
+    "template_location": "test-input-2.h:41:7", 
+    "template_spelling": "BarTemplated"
   }, 
   "type_size": null
 }
@@ -1061,9 +1061,9 @@ U
   "is_type_alias": false, 
   "is_type_param": true, 
   "type_param_decl_location": {
-    "index": -1, 
-    "location": "", 
-    "spelling": ""
+    "param_index": 1, 
+    "template_location": "test-input-2.h:41:7", 
+    "template_spelling": "BarTemplated"
   }, 
   "type_size": null
 }
@@ -1245,13 +1245,13 @@ True
 template <typename T1, typename T2> class Class3Templated;
 ::::: declaration_pretty
 template <typename T1, typename T2>
-template <typename T1, typename T2> class Class3Templated;
+class Class3Templated;
 ::::: size
 None
 ::::: is_abstract
 False
 ::::: template_args_list
-[('typename', 'T1'), ('typename', 'T2')]
+[{'type': {'spelling': 'T1', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:55:7', 'template_spelling': 'Class3Templated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T1', 'default_expr': None}, {'type': {'spelling': 'T2', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:55:7', 'template_spelling': 'Class3Templated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T2', 'default_expr': None}]
 ==================
 ::::: id
 test-input-2.h#29
@@ -1399,16 +1399,16 @@ private
 ::::: is_template
 True
 ::::: declaration
-template <unsigned int N, typename U> class Class3InnerTemplated;
+template <unsigned N, typename U> class Class3InnerTemplated;
 ::::: declaration_pretty
-template <unsigned int N, typename U>
-template <unsigned int N, typename U> class Class3InnerTemplated;
+template <unsigned N, typename U>
+class Class3InnerTemplated;
 ::::: size
 None
 ::::: is_abstract
 False
 ::::: template_args_list
-[('unsigned int', 'N'), ('typename', 'U')]
+[{'type': {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'test-input-2.h:59:15', 'template_spelling': 'Class3InnerTemplated', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': None}]
 ==================
 ::::: id
 test-input-2.h#32
@@ -1463,9 +1463,9 @@ U
   "is_type_alias": false, 
   "is_type_param": true, 
   "type_param_decl_location": {
-    "index": -1, 
-    "location": "", 
-    "spelling": ""
+    "param_index": 1, 
+    "template_location": "test-input-2.h:59:15", 
+    "template_spelling": "Class3InnerTemplated"
   }, 
   "type_size": null
 }
@@ -1578,9 +1578,9 @@ private
 ::::: type
 NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU
 {
-  "canonical_type": [
-    "(type_parameter)", 
-    {
+  "canonical_type": {
+    "spelling": "(type_parameter)", 
+    "type_info": {
       "is_array": false, 
       "is_function": true, 
       "is_pointer": false, 
@@ -1588,7 +1588,7 @@ NS::Class3Templated::Class3Mid::Class3InnerTemplated::UU
       "is_type_param": false, 
       "type_size": null
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -1647,9 +1647,9 @@ private
 ::::: type
 NS::Class3Templated::TT
 {
-  "canonical_type": [
-    "(type_parameter)", 
-    {
+  "canonical_type": {
+    "spelling": "(type_parameter)", 
+    "type_info": {
       "is_array": false, 
       "is_function": true, 
       "is_pointer": false, 
@@ -1657,7 +1657,7 @@ NS::Class3Templated::TT
       "is_type_param": false, 
       "type_size": null
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -1784,16 +1784,16 @@ test-input-2.h:71:21
 ::::: type
 Class2Ty::Class2Int
 {
-  "canonical_type": [
-    "int", 
-    {
+  "canonical_type": {
+    "spelling": "int", 
+    "type_info": {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 4
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -1842,16 +1842,16 @@ test-input-2.h:72:22
 ::::: type
 Class2Ty2::Class2Int
 {
-  "canonical_type": [
-    "int", 
-    {
+  "canonical_type": {
+    "spelling": "int", 
+    "type_info": {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 4
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -1937,16 +1937,16 @@ test-input-2.h:75:7
 ::::: type
 NS::Float
 {
-  "canonical_type": [
-    "float", 
-    {
+  "canonical_type": {
+    "spelling": "float", 
+    "type_info": {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 4
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -2036,16 +2036,16 @@ test-input-2.h:78:8
 ::::: type
 NS::Float2
 {
-  "canonical_type": [
-    "float", 
-    {
+  "canonical_type": {
+    "spelling": "float", 
+    "type_info": {
       "is_array": false, 
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
       "type_size": 4
     }
-  ], 
+  }, 
   "is_array": false, 
   "is_function": false, 
   "is_pointer": false, 
@@ -2077,4 +2077,4 @@ True
 {'depth': 1, 'included_at': 'test-input-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'test-input-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 1.32 sec
+[time traverse] 0.93 sec
