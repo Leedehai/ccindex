@@ -73,6 +73,7 @@
       ], 
       "declaration": "A();", 
       "declaration_pretty": "A();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -119,6 +120,7 @@
       ], 
       "declaration": "A(int a);", 
       "declaration_pretty": "A(int a);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -148,6 +150,7 @@
       "declaration": "~A();", 
       "declaration_pretty": "~A();", 
       "destructor_property": [], 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -196,6 +199,7 @@
       ], 
       "declaration": "A(const A&);", 
       "declaration_pretty": "A(const A&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -246,6 +250,7 @@
       ], 
       "declaration": "A(A&&);", 
       "declaration_pretty": "A(A&&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -339,6 +344,7 @@
       ], 
       "declaration": "B();", 
       "declaration_pretty": "B();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -387,6 +393,7 @@
       ], 
       "declaration": "B(int b);", 
       "declaration_pretty": "B(int b);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -416,6 +423,7 @@
       "declaration": "~B() noexcept;", 
       "declaration_pretty": "~B() noexcept;", 
       "destructor_property": [], 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -465,6 +473,7 @@
       ], 
       "declaration": "B(const B&);", 
       "declaration_pretty": "B(const B&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -514,6 +523,7 @@
       ], 
       "declaration": "B(B&&);", 
       "declaration_pretty": "B(B&&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -669,6 +679,7 @@
       "comment": "", 
       "declaration": "float func(float, float*, int arr[]);", 
       "declaration_pretty": "float func(float, float*, int arr[]);", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-3.cc#17", 
       "is_template": false, 
@@ -714,6 +725,7 @@
       "comment": "", 
       "declaration": "char returnChar_takeFunc1(float (* func)(float, float*));", 
       "declaration_pretty": "char returnChar_takeFunc1(float (* func)(float, float*));", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-3.cc#18", 
       "is_template": false, 
@@ -802,6 +814,7 @@
       "comment": "", 
       "declaration": "char returnChar_takeFunc2(FuncPtrTy func);", 
       "declaration_pretty": "char returnChar_takeFunc2(FuncPtrTy func);", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-3.cc#20", 
       "is_template": false, 
@@ -905,6 +918,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.014693975448608398, 
-  "time_traversing": 0.008572101593017578
+  "time_indexing": 0.014761209487915039, 
+  "time_traversing": 0.01540517807006836
 }

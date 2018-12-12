@@ -42,6 +42,7 @@
       "comment": "", 
       "declaration": "int independentFunction();", 
       "declaration_pretty": "int independentFunction();", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-1.cc#2", 
       "is_template": false, 
@@ -143,6 +144,7 @@
       "comment": "", 
       "declaration": "void method1();", 
       "declaration_pretty": "void method1();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -176,6 +178,7 @@
       ], 
       "declaration": "MyClass();", 
       "declaration_pretty": "MyClass();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -223,6 +226,7 @@
       ], 
       "declaration": "MyClass(const MyClass&);", 
       "declaration_pretty": "MyClass(const MyClass&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -303,6 +307,7 @@
       "constructor_property": [], 
       "declaration": "MyClass(int a, Int b);", 
       "declaration_pretty": "MyClass(int a, Int b);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -331,6 +336,7 @@
       "comment": "", 
       "declaration": "Int method2();", 
       "declaration_pretty": "Int method2();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -378,6 +384,7 @@
       ], 
       "declaration": "MyClass(MyClass&&);", 
       "declaration_pretty": "MyClass(MyClass&&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -421,6 +428,7 @@
       "comment": "", 
       "declaration": "MyClass operator+(const MyClass&) noexcept;", 
       "declaration_pretty": "MyClass operator+(const MyClass&) noexcept;", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -451,6 +459,7 @@
       "comment": "", 
       "declaration": "operator int();", 
       "declaration_pretty": "operator int();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -635,6 +644,7 @@
       "comment": "", 
       "declaration": "virtual void method3() const =0;", 
       "declaration_pretty": "virtual void method3() const =0;", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -668,6 +678,7 @@
       "comment": "", 
       "declaration": "int baz();", 
       "declaration_pretty": "int baz();", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-1.cc#19", 
       "is_template": false, 
@@ -763,6 +774,7 @@
       "comment": "", 
       "declaration": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
       "declaration_pretty": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-1.cc#20", 
       "is_template": true, 
@@ -887,6 +899,7 @@
       "comment": "comment for foo()", 
       "declaration": "int foo(int a, Int b);", 
       "declaration_pretty": "int foo(int a, Int b);", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-1.cc#21", 
       "is_template": false, 
@@ -958,6 +971,7 @@
       "constructor_property": [], 
       "declaration": "MyClass(int a, Int b);", 
       "declaration_pretty": "MyClass(int a, Int b);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -1246,6 +1260,7 @@
       "comment": "", 
       "declaration": "int foo();", 
       "declaration_pretty": "int foo();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1515,6 +1530,7 @@
       "comment": "", 
       "declaration": "int fooFriend();", 
       "declaration_pretty": "int fooFriend();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1556,6 +1572,7 @@
       "comment": "", 
       "declaration": "size_t returnSizeT_int(int a);", 
       "declaration_pretty": "size_t returnSizeT_int(int a);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1655,6 +1672,7 @@
       "comment": "", 
       "declaration": "bool returnBool_string_myclass_anotherclass(string s, MyClass obj, Another obj2);", 
       "declaration_pretty": "bool returnBool_string_myclass_anotherclass(\n\tstring s,\n\tMyClass obj,\n\tAnother obj2\n);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1689,6 +1707,7 @@
       "comment": "", 
       "declaration": "int& returnVector_float_vector();", 
       "declaration_pretty": "int& returnVector_float_vector();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1751,6 +1770,7 @@
       "comment": "", 
       "declaration": "int fooFriend();", 
       "declaration_pretty": "int fooFriend();", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-1.cc#44", 
       "is_template": false, 
@@ -1846,6 +1866,7 @@
       "comment": "", 
       "declaration": "int foo();", 
       "declaration_pretty": "int foo();", 
+      "from_macro": null, 
       "hierarchy": [], 
       "id": "example-1.cc#48", 
       "is_template": false, 
@@ -2451,6 +2472,7 @@
       ], 
       "declaration": "VClass();", 
       "declaration_pretty": "VClass();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -2483,6 +2505,7 @@
         "virtual", 
         "pure_virtual"
       ], 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -2516,6 +2539,7 @@
       "comment": "", 
       "declaration": "virtual void foo() =0;", 
       "declaration_pretty": "virtual void foo() =0;", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "class_declaration", 
@@ -2674,8 +2698,9 @@
         }
       ], 
       "comment": "", 
-      "declaration": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
-      "declaration_pretty": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
+      "declaration": "FUNCS(returnVoid, char *)", 
+      "declaration_pretty": "FUNCS(returnVoid, char *)", 
+      "from_macro": "FUNCS", 
       "hierarchy": [], 
       "id": "example-1.cc#71", 
       "is_template": false, 
@@ -2709,8 +2734,9 @@
         }
       ], 
       "comment": "", 
-      "declaration": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
-      "declaration_pretty": "void returnVoid(FUNCS(returnVoid, char*)) noexcept;", 
+      "declaration": "FUNCS(returnVoid, char *)", 
+      "declaration_pretty": "FUNCS(returnVoid, char *)", 
+      "from_macro": "FUNCS", 
       "hierarchy": [], 
       "id": "example-1.cc#72", 
       "is_template": false, 
@@ -2727,6 +2753,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.014900922775268555, 
-  "time_traversing": 0.8407871723175049
+  "time_indexing": 0.015636920928955078, 
+  "time_traversing": 1.2557730674743652
 }

@@ -186,6 +186,8 @@ example-2.h:13:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -239,6 +241,8 @@ example-2.h:14:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -292,6 +296,8 @@ example-2.h:15:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 True
 ::::: constructor_property
@@ -349,6 +355,8 @@ comment for isReal()
 bool b = complex.isReal();
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -400,6 +408,8 @@ example-2.h:24:14
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -445,6 +455,8 @@ example-2.h:27:22
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 [{'type': {'spelling': 'std::vector<Complex>&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'v1', 'default_expr': None}, {'type': {'spelling': 'double', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -911,6 +923,8 @@ example-2.h:38:6
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 [{'type': {'spelling': 'bool', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'b', 'default_expr': None}, {'type': {'spelling': 'NS::Complex&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 16}}, 'arg_spelling': 'c', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -2077,4 +2091,4 @@ True
 {'depth': 1, 'included_at': 'example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time indexing] 0.02 sec
-[time traverse] 0.90 sec
+[time traverse] 1.35 sec

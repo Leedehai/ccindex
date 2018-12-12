@@ -604,7 +604,8 @@ def _collect_type_info(c_type, scope_hierarchy=[], c=None): # return a tuple (sp
         ) # tuple of (str, dict)
     return { "spelling": res[0], "type_info": res[1] } # dict { spelling, type_info }
 
-def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbol dict
+# visit an AST node (pointed by cursor), returning a symbol dict
+def _visit_cursor(c, macro_instant_locs_name_map):
     symbol = {} # dict for this symbol
     # part 1. mandated fields
     symbol["spelling"] = "%s" % c.spelling # str
@@ -620,8 +621,13 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     # part 2. optional fields
     if c.kind in func_like_CursorKind:
         func_proto_tuple = _format_func_proto(c, symbol["hierarchy"])
-        symbol["declaration"] = "%s;" % func_proto_tuple[0][0] # str
-        symbol["declaration_pretty"] = "%s;" % func_proto_tuple[0][1] # str
+        # check if this function declaration is instantiated by a macro
+        symbol["from_macro"] = macro_instant_locs_name_map.get(symbol["location"]) # str, if not found, then None
+        if symbol["from_macro"]:
+            symbol["declaration_pretty"] = symbol["declaration"] = _get_text_range(c.extent) # str
+        else:
+            symbol["declaration"] = "%s;" % func_proto_tuple[0][0] # str
+            symbol["declaration_pretty"] = "%s;" % func_proto_tuple[0][1] # str
         symbol["is_template"] = True if func_proto_tuple[1] else False # bool
         # list of dict { type, arg name, default expr }
         symbol["template_args_list"] = func_proto_tuple[1]
@@ -735,9 +741,15 @@ def _visit_cursor(c): # visit an AST node (pointed by cursor), returning a symbo
     return symbol
 
 def _traverse_ast(root_node, target_filename, print_out):
+    macro_instant_locs_name_map = {} # set, key: location str, value: macro name
     symbols = [] # list of symbol dicts
     count = 0
     for c in root_node.walk_preorder(): # walk the AST (c: the cursor to an AST node)
+        if c.kind == cindex.CursorKind.MACRO_INSTANTIATION:
+            # defect in clang.cindex: we cannot fetch the macro definition for this
+            # macro; also note that macro definitions at different places could have
+            # the same name
+            macro_instant_locs_name_map[_format_location(c.location)] = c.spelling
         if str(c.location.file) != target_filename:
             continue # skip header files
         if c.kind not in interested_CursorKinds:
@@ -745,7 +757,7 @@ def _traverse_ast(root_node, target_filename, print_out):
         if not c.spelling:
             continue # skip anonymous node, e.g. anonymous struct declaration
         # visit this node entity, get a dict
-        symbol = _visit_cursor(c)
+        symbol = _visit_cursor(c, macro_instant_locs_name_map)
         count += 1
         symbol["id"] = "%s#%d" % (target_filename, count)
         # collect to symbols list
@@ -802,7 +814,8 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
     clang_args += [ "-I" + path for path in include_paths ]
 
     tu = index.parse(target_filename, args=clang_args,
-                     options=cindex.TranslationUnit.PARSE_SKIP_FUNCTION_BODIES)
+                     options=(cindex.TranslationUnit.PARSE_SKIP_FUNCTION_BODIES
+                              | cindex.TranslationUnit.PARSE_DETAILED_PROCESSING_RECORD))
     if print_out:
         print("[TARGET FILE] %s" % tu.spelling)
     start_time = time.time()

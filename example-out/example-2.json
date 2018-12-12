@@ -142,6 +142,7 @@
       ], 
       "declaration": "Complex();", 
       "declaration_pretty": "Complex();", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -206,6 +207,7 @@
       "constructor_property": [], 
       "declaration": "Complex(double re, double im);", 
       "declaration_pretty": "Complex(double re, double im);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -260,6 +262,7 @@
       ], 
       "declaration": "Complex(Complex&&);", 
       "declaration_pretty": "Complex(Complex&&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -296,6 +299,7 @@
       "comment": "Usage: bool b = complex.isReal();\n-----------------\ncomment for isReal()", 
       "declaration": "bool isReal() const;", 
       "declaration_pretty": "bool isReal() const;", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -347,6 +351,7 @@
       "comment": "", 
       "declaration": "NS::Complex& operator+=(Complex&&);", 
       "declaration_pretty": "NS::Complex& operator+=(Complex&&);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -409,6 +414,7 @@
       "comment": "", 
       "declaration": "std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);", 
       "declaration_pretty": "std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -878,6 +884,7 @@
       "comment": "", 
       "declaration": "template <typename T, int N>\nvoid fooTemplated(bool b, Complex& c);", 
       "declaration_pretty": "template <typename T, int N>\nvoid fooTemplated(bool b, Complex& c);", 
+      "from_macro": null, 
       "hierarchy": [
         {
           "kind": "namespace", 
@@ -1980,6 +1987,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.014720916748046875, 
-  "time_traversing": 0.907202959060669
+  "time_indexing": 0.01578688621520996, 
+  "time_traversing": 1.3678460121154785
 }

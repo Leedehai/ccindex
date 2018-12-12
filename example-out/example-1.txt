@@ -43,6 +43,8 @@ example-1.cc:8:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -193,6 +195,8 @@ example-1.cc:14:14
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -238,6 +242,8 @@ example-1.cc:17:2
 comment for MyClass()
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -285,6 +291,8 @@ example-1.cc:18:2
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -332,6 +340,8 @@ example-1.cc:19:2
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -379,6 +389,8 @@ example-1.cc:20:6
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -424,6 +436,8 @@ example-1.cc:21:2
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -471,6 +485,8 @@ example-1.cc:22:10
 (none)
 ::::: specifier
 ['noexcept']
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -516,6 +532,8 @@ example-1.cc:23:2
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: access
@@ -758,6 +776,8 @@ example-1.cc:37:15
 (none)
 ::::: specifier
 ['=0']
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -795,6 +815,8 @@ example-1.cc:41:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -826,6 +848,8 @@ example-1.cc:45:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 [{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
 ::::: no_throw_guarantee
@@ -859,6 +883,8 @@ example-1.cc:48:5
 comment for foo()
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 [{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -898,6 +924,8 @@ example-1.cc:51:10
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -1212,6 +1240,8 @@ example-1.cc:72:6
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -1563,6 +1593,8 @@ example-1.cc:84:12
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -1608,6 +1640,8 @@ example-1.cc:85:8
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -1659,6 +1693,8 @@ example-1.cc:86:6
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -1714,6 +1750,8 @@ example-1.cc:87:19
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -1793,6 +1831,8 @@ example-1.cc:91:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -1919,6 +1959,8 @@ example-1.cc:96:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -2566,6 +2608,8 @@ example-1.cc:117:5
 (none)
 ::::: specifier
 []
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: constructor_property
@@ -2613,8 +2657,8 @@ example-1.cc:118:13
 (none)
 ::::: specifier
 ['=0']
-::::: destructor_property
-['virtual', 'pure_virtual']
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -2627,6 +2671,8 @@ public
 unevaluated
 ::::: is_template
 False
+::::: destructor_property
+['virtual', 'pure_virtual']
 ::::: declaration
 virtual ~VClass() =0;
 ::::: declaration_pretty
@@ -2660,6 +2706,8 @@ example-1.cc:119:18
 (none)
 ::::: specifier
 ['=0']
+::::: from_macro
+None
 ::::: is_deleted
 False
 ::::: method_property
@@ -2828,6 +2876,8 @@ example-1.cc:130:1
 (none)
 ::::: specifier
 ['noexcept']
+::::: from_macro
+FUNCS
 ::::: args_list
 [{'type': {'spelling': 'char*&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'in', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -2835,9 +2885,9 @@ guaranteed
 ::::: is_template
 False
 ::::: declaration
-void returnVoid(FUNCS(returnVoid, char*)) noexcept;
+FUNCS(returnVoid, char *)
 ::::: declaration_pretty
-void returnVoid(FUNCS(returnVoid, char*)) noexcept;
+FUNCS(returnVoid, char *)
 ::::: return_type
 void
 ::::: template_args_list
@@ -2859,6 +2909,8 @@ example-1.cc:130:1
 (none)
 ::::: specifier
 ['noexcept']
+::::: from_macro
+FUNCS
 ::::: args_list
 [{'type': {'spelling': 'char*&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'in', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -2866,9 +2918,9 @@ guaranteed
 ::::: is_template
 False
 ::::: declaration
-void returnVoid(FUNCS(returnVoid, char*)) noexcept;
+FUNCS(returnVoid, char *)
 ::::: declaration_pretty
-void returnVoid(FUNCS(returnVoid, char*)) noexcept;
+FUNCS(returnVoid, char *)
 ::::: return_type
 void
 ::::: template_args_list
@@ -2879,5 +2931,5 @@ example-1.cc:4:10: fatal error: 'test-input-2.h' file not found
 [includes]
 {'depth': 1, 'included_at': 'example-1.cc:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'example-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
-[time indexing] 0.01 sec
-[time traverse] 0.88 sec
+[time indexing] 0.03 sec
+[time traverse] 1.26 sec
