@@ -148,8 +148,8 @@ def _collect_hierarchy(cursor):
     if cursor.semantic_parent.kind == cindex.CursorKind.TRANSLATION_UNIT:
         return [], "(global)"
     # return tuple element #0
-    # first: top-level, last: immediate parent
-    spelling_list = []     # each level's spelling
+    # first: the highest level, last: immediate parent (the namespace/class/enum/..)
+    spelling_list = []     # each level's type spelling
     transparency_list = [] # each level's transparency (e.g. non-scoped enum is transparent)
     syntax_kind_list = []  # each level's syntax kind (e.g. namespace, class, enum)
     location_list = []     # each level's source location string
@@ -158,10 +158,10 @@ def _collect_hierarchy(cursor):
         temp_cursor = temp_cursor.semantic_parent
         if temp_cursor.kind == cindex.CursorKind.TRANSLATION_UNIT:
             break
-        temp_cursor_spelling = temp_cursor.spelling
+        temp_cursor_spelling = _format_type_spelling(temp_cursor.spelling)
         if not temp_cursor_spelling:
             # anonymous, e.g. "typedef struct { ... } MyType_t;", then we use the type alias "MyType_t"
-            temp_cursor_spelling = temp_cursor.type.spelling.split("::")[-1]
+            temp_cursor_spelling = _format_type_spelling(temp_cursor.type.spelling).split("::")[-1]
         # insert to front, because we are going buttom-up
         spelling_list.insert(0, temp_cursor_spelling)
         transparency_list.insert(0, True if _is_transparent_decl(temp_cursor) else False)
@@ -171,10 +171,10 @@ def _collect_hierarchy(cursor):
     parent_kind_str = syntax_kind_list[-1] # the immediate parent
     # build return list
     hierarchy_dict_list = [ {
-        "spelling": spelling_list[i],
-        "transparent": transparency_list[i],
-        "kind": syntax_kind_list[i],
-        "location": location_list[i]
+        "spelling": spelling_list[i], # str
+        "transparent": transparency_list[i], # bool
+        "kind": syntax_kind_list[i],  # str
+        "location": location_list[i]  # str
     } for i in range(len(spelling_list)) ]
     return hierarchy_dict_list, parent_kind_str
 
@@ -188,7 +188,7 @@ def _find_hierarchy_item_for_owning_template(hierarchy, template_level):
     if template_level >= len(template_hierarchy_list):
         return None
     return template_hierarchy_list[template_level] # dict
-def _format_type_param_decl_location(type_obj, hierarchy, c):
+def _format_type_param_decl_location(type_obj, context_hierarchy, c):
     # the canonical type of a template type param is "type-parameter-X-Y",
     # where X is the level of nested template (the outmost is 0), and Y
     # is the position of this param (starts with 0) in that level's template
@@ -206,7 +206,7 @@ def _format_type_param_decl_location(type_obj, hierarchy, c):
         raise ValueError("not a type parameter: '%s', please file a bug" % type_obj.spelling)
     assert canonical_spelling.startswith("type-parameter-")
     owning_template_level, template_param_pos = tuple(int(n) for n in canonical_spelling.split("-")[-2:])
-    owning_template = _find_hierarchy_item_for_owning_template(hierarchy, owning_template_level)
+    owning_template = _find_hierarchy_item_for_owning_template(context_hierarchy, owning_template_level)
     if not owning_template:
         # it means the type param itself is on the header of a template decl's template,
         # which is not inside the hierarchy list, because the hierarchy list is from the
@@ -214,7 +214,7 @@ def _format_type_param_decl_location(type_obj, hierarchy, c):
         # itself. Therefore, owning_template should be the semantic parent of this type
         # param, i.e. the template decl this template header belongs to
         owning_template = {
-            "spelling": c.semantic_parent.spelling,
+            "spelling": _format_type_spelling(c.semantic_parent.spelling),
             "location": _format_location(c.semantic_parent.location),
         }
     return {
@@ -226,8 +226,12 @@ def _format_type_param_decl_location(type_obj, hierarchy, c):
         "param_index": template_param_pos,
     }
 
-def _format_arg_spelling(arg_str): # "int &n" => "int& n", "C<int *> &&v" => "C<int*>&& v", "int a []" => "int a[]"
-    arg_str = _format_type_spelling(arg_str)
+# "int &n" => "int& n", "C<int *> &&v" => "C<int*>&& v", "int a []" => "int a[]"
+# "arg tuple" loosely refers to the (type, name) combination of a arg param
+def _format_arg_tuple_str_spelling(arg_str):
+    if not arg_str: # None or ""
+        raise ValueError("None or '' is passed, please file a bug")
+    arg_str = _format_type_spelling(arg_str) # format the type part first
     # above: "int &n" => "int&n", "C<int *> &&v" => "C<int*>&&v", "int a []" => "int a[]"
     arg_str = re.sub(r"\*(?=[A-Za-z_])", "* ", arg_str) # "int&n" => "int& n"
     arg_str = re.sub(r"\&(?=[A-Za-z_])", "& ", arg_str) # "vector<int*>&&v" => "vector<int*>&& v"
@@ -235,10 +239,12 @@ def _format_arg_spelling(arg_str): # "int &n" => "int& n", "C<int *> &&v" => "C<
     return arg_str.strip()
 
 def _format_type_spelling(type_str):
+    if not type_str: # None or ""
+        return type_str
     type_str = type_str.replace("std::__1::", "std::")
-    type_str = re.sub(r" *\*", "*", type_str)     # e.g. "int *" => "int*"
-    type_str = re.sub(r" *&", "&", type_str)      # e.g. "int &" => "int&", "int &&" => "int&&"
-    type_str = re.sub(r"\> *(?=\>)", ">", type_str)  # e.g. "C1<C2<C3<int> > >" => "C1<C2<C3<int>>>"
+    type_str = re.sub(r" +\*", "*", type_str)     # e.g. "int *" => "int*"
+    type_str = re.sub(r" +&", "&", type_str)      # e.g. "int &" => "int&", "int &&" => "int&&"
+    type_str = re.sub(r"\> +(?=\>)", ">", type_str)  # e.g. "C1<C2<C3<int> > >" => "C1<C2<C3<int>>>"
     type_str = type_str.replace(" [", "[")        # e.g. "int [5]" => "int[5]"
     return type_str.strip()
 
@@ -263,7 +269,7 @@ def _get_type_alias_chain(type_obj):
 def _format_type_alias_chain(type_obj):
     chain = _get_type_alias_chain(type_obj)
     return [ {
-        "spelling": item.spelling, # str
+        "spelling": _format_type_spelling(item.spelling), # str
         "location": _format_location(item.get_declaration().location), # str
     } for item in chain ]
 
@@ -278,7 +284,7 @@ noexcept_ExceptionSpecificationKind = [
     cindex.ExceptionSpecificationKind.DYNAMIC_NONE,   # throw(), not recommended since C++11
     cindex.ExceptionSpecificationKind.BASIC_NOEXCEPT, # noexcept
 ]
-def _format_func_proto(cursor, scope_hierarchy=[]): # ordinary function/method templated function/method
+def _format_func_proto(cursor, context_hierarchy=[]): # ordinary function/method templated function/method
     # go through child elements, collecting ordinary args and possibly template params
     template_params_list = [] # list of tuple, e.g. [('typename', 'T', ''), ('void (*)()', 'F', ''), ('int', 'N', '0')]
     template_params_repr_list = [] # list of str, e.g. ['typename T', 'void (*F)()', 'int N = 0']
@@ -291,27 +297,27 @@ def _format_func_proto(cursor, scope_hierarchy=[]): # ordinary function/method t
     is_no_throw_bool_or_None = False # True, False, None (for reason, see below)
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
-            template_param_text = _format_arg_spelling(_get_text_range(c.extent).replace("class ", "typename "))
+            template_param_text = _format_arg_tuple_str_spelling(_get_text_range(c.extent).replace("class ", "typename "))
             template_params_repr_list.append(template_param_text)
             template_params_list.append({
-                "type": _collect_type_info(c.type, scope_hierarchy, c), # tuple
+                "type": _collect_type_info(c.type, context_hierarchy, c), # tuple
                 "arg_spelling": c.spelling, # str
                 "default_expr": _get_default_expr(template_param_text) # str or NoneType
             })
         elif c.kind == cindex.CursorKind.TEMPLATE_NON_TYPE_PARAMETER:
-            template_param_text = _format_arg_spelling(_get_text_range(c.extent))
+            template_param_text = _format_arg_tuple_str_spelling(_get_text_range(c.extent))
             template_params_repr_list.append(template_param_text)
             template_params_list.append({
-                "type": _collect_type_info(c.type, scope_hierarchy, c), # tuple
+                "type": _collect_type_info(c.type, context_hierarchy, c), # tuple
                 "arg_spelling": c.spelling, # str
                 "default_expr": _get_default_expr(template_param_text) # str or NoneType
             })
         elif c.kind == cindex.CursorKind.PARM_DECL: # the args in the parenthesis
             # if the prototype doesn't name the argument, then c.spelling is ""
-            args_text = _format_arg_spelling(_get_text_range(c.extent))
+            args_text = _format_arg_tuple_str_spelling(_get_text_range(c.extent))
             args_repr_list.append(args_text)
             args_list.append({
-                "type": _collect_type_info(c.type, scope_hierarchy, c), # tuple
+                "type": _collect_type_info(c.type, context_hierarchy, c), # tuple
                 "arg_spelling": c.spelling, # str
                 "default_expr": _get_default_expr(args_text) # str or NoneType
             })
@@ -381,33 +387,34 @@ def _format_func_proto(cursor, scope_hierarchy=[]): # ordinary function/method t
         (is_final, is_override, is_pure_virtual, is_no_throw_bool_or_None)
     )
 
-inheritance_access_specifiers = ["public", "protected", "private"]
-def _format_class_proto(cursor, scope_hierarchy=[]):
+inheritance_access_specifiers = [ "public", "protected", "private" ]
+def _format_class_proto(cursor, context_hierarchy=[]):
     template_params_list = [] # list of tuple, e.g. [('int', 'N', ''), ('void (*)()', 'F', ''), ('typename', 'T', 'int')]
     template_params_repr_list = [] # list of str, e.g. ['int N', 'void (*F)()', 'typename T = int']
     base_list = []
     is_final = False
     for c in cursor.get_children():
         if c.kind == cindex.CursorKind.TEMPLATE_TYPE_PARAMETER:
-            template_param_text = _format_arg_spelling(_get_text_range(c.extent).replace("class ", "typename "))
+            template_param_text = _format_arg_tuple_str_spelling(_get_text_range(c.extent).replace("class ", "typename "))
             template_params_repr_list.append(template_param_text)
             template_params_list.append({
-                "type": _collect_type_info(c.type, scope_hierarchy, c), # tuple
+                "type": _collect_type_info(c.type, context_hierarchy, c), # tuple
                 "arg_spelling": c.spelling, # str
                 "default_expr": _get_default_expr(template_param_text) # str or NoneType
             })
         elif c.kind == cindex.CursorKind.TEMPLATE_NON_TYPE_PARAMETER:
-            template_param_text = _format_arg_spelling(_get_text_range(c.extent))
+            template_param_text = _format_arg_tuple_str_spelling(_get_text_range(c.extent))
             template_params_repr_list.append(template_param_text)
             template_params_list.append({
-                "type": _collect_type_info(c.type, scope_hierarchy, c), # tuple
+                "type": _collect_type_info(c.type, context_hierarchy, c), # tuple
                 "arg_spelling": c.spelling, # str
                 "default_expr": _get_default_expr(template_param_text) # str or NoneType
             })
         elif c.kind == cindex.CursorKind.CXX_FINAL_ATTR:
             is_final = True
         elif c.kind == cindex.CursorKind.CXX_BASE_SPECIFIER:
-            base_spelling = str(c.spelling).replace("class ", "").replace("struct ", "")
+            # if the base is a class template instatiation, base_spelling includes the "<..>" part
+            base_spelling = _format_type_spelling(c.spelling).replace("class ", "").replace("struct ", "")
             base_spelling = _format_type_spelling(base_spelling)
             inheritance_access_specifier = "public" # the default
             is_virtual_inheritance = False # the default
@@ -420,15 +427,19 @@ def _format_class_proto(cursor, scope_hierarchy=[]):
                         inheritance_access_specifier = t.spelling
                     if t.spelling == "virtual":
                         is_virtual_inheritance = True
+            base_def = c.get_definition() # cindex.Cursor object to the base class/template definition
             base_list.append({
-                "access": inheritance_access_specifier,
-                "virtual": is_virtual_inheritance,
-                "base":  base_spelling
+                "access": inheritance_access_specifier,        # str
+                "virtual_inheritance": is_virtual_inheritance, # bool
+                # str, has the "<..>" part for template instantiation
+                "spelling":  base_spelling,
+                # str, where the base class/template is defined
+                "definition_location": _format_location(base_def.location)
             })
     template_header = ""
     if template_params_list:
         template_header = "template <%s>" % ", ".join(template_params_repr_list)
-    class_name_str_raw = "class %s" % cursor.spelling
+    class_name_str_raw = "class %s" % _format_type_spelling(cursor.spelling)
     class_name_str_raw = class_name_str_raw if not is_final else ("%s final" % class_name_str_raw)
     class_name_str = class_name_str_raw if not template_header else "%s %s" % (
         template_header, class_name_str_raw)
@@ -503,7 +514,7 @@ pointer_TypeKind = [
 
 # C++ has a very complicated type system
 # this function is potentially called recursively
-def _collect_type_info(c_type, scope_hierarchy=[], c=None): # return a tuple (spelling str, dict)
+def _collect_type_info(c_type, context_hierarchy=[], c=None): # return a tuple (spelling str, dict)
     type_kind = c_type.kind
     type_spelling = _format_type(c_type)
     sizeof_type = _format_sizeof_type(c_type) # int or NoneType (e.g. type param)
@@ -531,7 +542,7 @@ def _collect_type_info(c_type, scope_hierarchy=[], c=None): # return a tuple (sp
                 "type_alias_chain": _format_type_alias_chain(c_type), # str or NoneType
                 # real type under all the layers of typedef
                 "canonical_type": _collect_type_info(
-                    canonical_type, scope_hierarchy, c), # tuple of (str, dict)
+                    canonical_type, context_hierarchy, c), # tuple of (str, dict)
             }
         ) # tuple of (str, dict)
     elif type_kind == cindex.TypeKind.UNEXPOSED:
@@ -558,7 +569,7 @@ def _collect_type_info(c_type, scope_hierarchy=[], c=None): # return a tuple (sp
                     "is_pointer": False,    # bool
                     "is_function": False,   # bool
                     "type_param_decl_location": _format_type_param_decl_location(
-                        c_type, scope_hierarchy, c), # dict
+                        c_type, context_hierarchy, c), # dict
                 }
             ) # tuple of (str, dict)
     elif type_kind in array_TypeKind:
@@ -575,7 +586,7 @@ def _collect_type_info(c_type, scope_hierarchy=[], c=None): # return a tuple (sp
                 "array_size": array_size if array_size > 0 else None,
                 # tuple of (str, dict)
                 "array_element_type": _collect_type_info(
-                    c_type.get_array_element_type(), scope_hierarchy, c),
+                    c_type.get_array_element_type(), context_hierarchy, c),
             }
         ) # tuple of (str, dict)
     elif type_kind in pointer_TypeKind:
@@ -588,7 +599,7 @@ def _collect_type_info(c_type, scope_hierarchy=[], c=None): # return a tuple (sp
                 "is_pointer": True,     # bool
                 "is_function": False,   # bool
                 # tuple of (str, dict)
-                "pointee_type": _collect_type_info(c_type.get_pointee(), scope_hierarchy, c),
+                "pointee_type": _collect_type_info(c_type.get_pointee(), context_hierarchy, c),
             }
         ) # tuple of (str, dict)
     else:
@@ -740,17 +751,25 @@ def _visit_cursor(c, macro_instant_locs_name_map):
         symbol["enum_value"] = c.enum_value
     return symbol
 
-def _traverse_ast(root_node, target_filename, print_out):
-    macro_instant_locs_name_map = {} # set, key: location str, value: macro name
+"""
+AST traversing
+"""
+
+def _traverse_ast(root_node, target_filename, user_include_paths, print_out):
+    macro_instant_locs_name_map = {} # dict, key: location str, value: macro name
     symbols = [] # list of symbol dicts
     count = 0
     for c in root_node.walk_preorder(): # walk the AST (c: the cursor to an AST node)
-        if c.kind == cindex.CursorKind.MACRO_INSTANTIATION:
+        c_filename = str(c.location.file)
+        is_in_target_file = (c_filename == target_filename)
+        if (c.kind == cindex.CursorKind.MACRO_INSTANTIATION
+            and (is_in_target_file or _is_in_paths(c_filename, user_include_paths))):
+            # collect macro instantiation information in the target file or in user include files
             # defect in clang.cindex: we cannot fetch the macro definition for this
             # macro; also note that macro definitions at different places could have
             # the same name
             macro_instant_locs_name_map[_format_location(c.location)] = c.spelling
-        if str(c.location.file) != target_filename:
+        if c_filename != target_filename:
             continue # skip header files
         if c.kind not in interested_CursorKinds:
             continue # skip uninterested node
@@ -783,7 +802,7 @@ def _verify_include_paths(include_paths, user_include_paths):
         return False
     return True
 
-def _is_in_paths(filename, path_list):
+def _is_in_paths(filename, path_list): # check if file is (recursively) in one of the paths
     filename = os.path.abspath(filename)
     for path_item in path_list:
         path_item = os.path.abspath(path_item)
@@ -805,22 +824,22 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
     print_out = (not as_library) and (not to_json)
 
     # build index of source
-    start_time = time.time()
-    index = cindex.Index.create()
-    indexing_time = time.time() - start_time
-
     clang_args = "-x c++ --std=c++14".split()
     clang_args += ("-isysroot %s" % SYSROOT_PATH).split()
     clang_args += [ "-I" + path for path in include_paths ]
+    index = cindex.Index.create()
 
+    start_time = time.time()
     tu = index.parse(target_filename, args=clang_args,
                      options=(cindex.TranslationUnit.PARSE_SKIP_FUNCTION_BODIES
                               | cindex.TranslationUnit.PARSE_DETAILED_PROCESSING_RECORD))
+    parsing_time = time.time() - start_time
+
     if print_out:
         print("[TARGET FILE] %s" % tu.spelling)
     start_time = time.time()
     # symbols: [ symbol_dict_1, symbol_dict_2 ]
-    symbols = _traverse_ast(tu.cursor, target_filename, print_out)
+    symbols = _traverse_ast(tu.cursor, target_filename, user_include_paths, print_out)
     traversing_time = time.time() - start_time
 
     # for any error, it is programmer's responsibility to inspect tu.diagnostics
@@ -849,14 +868,14 @@ def _get_symbols(target_filename, user_include_paths_str, as_library, to_json):
             })
     if print_out:
         print "[includes]\n%s" % '\n'.join([ str(item) for item in include_list ])
-        print("[time indexing] %.2f sec" % indexing_time)
+        print("[time parsing] %.2f sec" % parsing_time)
         print("[time traverse] %.2f sec" % traversing_time)
     # build result
     result = {
         "symbols": symbols,       # list of symbol dicts
         "includes": include_list, # list of dict
         "errors": errors,         # list of error strings
-        "time_indexing": indexing_time,    # float, in seconds
+        "time_parsing": parsing_time,    # float, in seconds
         "time_traversing": traversing_time # float, in seconds
     }
     if to_json:
@@ -921,7 +940,7 @@ def get(target_filename, user_include_path_list=[]):
 Commandline utility interface
 """
 
-def get_arg_parser():
+def _get_arg_parser():
     arg_parser = argparse.ArgumentParser(description="Generate summary of symbols in a C++ source file",
                                          epilog="if -json is not given, then write result to stdout")
     arg_parser.add_argument("filename", nargs=1, type=str, default="",
@@ -933,7 +952,7 @@ def get_arg_parser():
     return arg_parser
 
 if __name__ == "__main__":
-    args = get_arg_parser().parse_args()
+    args = _get_arg_parser().parse_args()
 
     if len(args.filename) == 0:
         print("[Error] source file not given")

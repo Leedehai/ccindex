@@ -1,7 +1,7 @@
 // this is a test input with grammar errors
 #include <vector>
 #include <map>
-#include "test-input-2.h"
+#include "example-2.h"
 using namespace std;
 
 const int independentVariable = 1;
@@ -110,14 +110,21 @@ template <typename T>
 struct BaseClass2 {};
 template <typename T>
 class ClassAgain {};
+template <typename T>
+class BaseClassWithAVeryUglyName_i_am_really_long_too {};
+
+typedef BaseClassWithAVeryUglyName_i_am_really_long_too<char> TypeDefTemplateBase;
 
 class VClass final
-: private BaseClass, BaseClass2<ClassAgain<int>>, public virtual EEClass {
+: private BaseClass, BaseClass2<ClassAgain<int>>, public virtual EEClass, protected TypeDefTemplateBase {
 public:
     VClass();
     virtual ~VClass() = 0;
     virtual void foo() = 0;
 };
+
+template <typename T>
+class TemplateInheritanceChild : BaseClass2<T> {};
 
 int *arrIntPtr[5];
 char arrChar[] = { 'h', 'e', 'l', 'l', 'o', '\n' };

@@ -1,4 +1,4 @@
-#include "test-input-2.h"
+#include "example-2.h"
 
 class A {
     int a;

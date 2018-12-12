@@ -2090,5 +2090,5 @@ True
 [includes]
 {'depth': 1, 'included_at': 'example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time indexing] 0.02 sec
-[time traverse] 1.35 sec
+[time parsing] 0.24 sec
+[time traverse] 1.85 sec

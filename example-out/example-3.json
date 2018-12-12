@@ -1,8 +1,22 @@
 {
-  "errors": [
-    "example-3.cc:1:10: fatal error: 'test-input-2.h' file not found"
+  "errors": [], 
+  "includes": [
+    {
+      "depth": 1, 
+      "file": "./example-2.h", 
+      "included_at": "example-3.cc:1:10"
+    }, 
+    {
+      "depth": 2, 
+      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector", 
+      "included_at": "./example-2.h:1:10"
+    }, 
+    {
+      "depth": 2, 
+      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map", 
+      "included_at": "./example-2.h:2:10"
+    }
   ], 
-  "includes": [], 
   "symbols": [
     {
       "POD": false, 
@@ -755,7 +769,7 @@
         }, 
         {
           "location": "", 
-          "spelling": "float (*)(float, float *)"
+          "spelling": "float (*)(float, float*)"
         }
       ], 
       "type_alias_underlying_type": "float (*)(float, float*)", 
@@ -802,7 +816,7 @@
                 }, 
                 {
                   "location": "", 
-                  "spelling": "float (*)(float, float *)"
+                  "spelling": "float (*)(float, float*)"
                 }
               ], 
               "type_alias_underlying_type": "float (*)(float, float*)", 
@@ -908,7 +922,7 @@
             }, 
             {
               "location": "", 
-              "spelling": "float (*)(float, float *)"
+              "spelling": "float (*)(float, float*)"
             }
           ], 
           "type_alias_underlying_type": "float (*)(float, float*)", 
@@ -918,6 +932,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.014761209487915039, 
-  "time_traversing": 0.01540517807006836
+  "time_parsing": 0.24490618705749512, 
+  "time_traversing": 2.135812997817993
 }

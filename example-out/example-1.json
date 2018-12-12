@@ -1,6 +1,12 @@
 {
   "errors": [
-    "example-1.cc:4:10: fatal error: 'test-input-2.h' file not found"
+    "example-1.cc:22:10: error: return type 'MyClass' is an abstract class", 
+    "example-1.cc:51:10: error: redefinition of 'MyClass'", 
+    "example-1.cc:86:68: error: unknown type name 'Another'", 
+    "example-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members", 
+    "example-1.cc:101:1: error: unknown type name 'Another'", 
+    "example-1.cc:118:7: warning: abstract class is marked 'final' [-Wabstract-final-class]", 
+    "example-1.cc:132:11: error: definition of variable with array type needs an explicit size or an initializer"
   ], 
   "includes": [
     {
@@ -12,6 +18,16 @@
       "depth": 1, 
       "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map", 
       "included_at": "example-1.cc:3:10"
+    }, 
+    {
+      "depth": 1, 
+      "file": "./example-2.h", 
+      "included_at": "example-1.cc:4:10"
+    }, 
+    {
+      "depth": 2, 
+      "file": "/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map", 
+      "included_at": "./example-2.h:2:10"
     }
   ], 
   "symbols": [
@@ -91,7 +107,7 @@
       "kind": "class_declaration", 
       "location": "example-1.cc:12:7", 
       "parent_kind": "(global)", 
-      "size": 1, 
+      "size": 48, 
       "specifier": [], 
       "spelling": "MyClass", 
       "template_args_list": [], 
@@ -102,7 +118,7 @@
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "type_size": 1
+          "type_size": 48
         }
       }, 
       "usage": ""
@@ -214,7 +230,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 1
+              "type_size": 48
             }
           }
         }
@@ -279,7 +295,7 @@
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
-                  "type_size": null
+                  "type_size": 24
                 }
               }, 
               "is_array": false, 
@@ -298,7 +314,7 @@
                 }
               ], 
               "type_alias_underlying_type": "std::vector<int>", 
-              "type_size": null
+              "type_size": 24
             }
           }
         }
@@ -372,7 +388,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 1
+              "type_size": 48
             }
           }
         }
@@ -420,7 +436,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 1
+              "type_size": 48
             }
           }
         }
@@ -496,7 +512,7 @@
       "kind": "field_declaration", 
       "location": "example-1.cc:26:6", 
       "parent_kind": "class_declaration", 
-      "size": null, 
+      "size": 24, 
       "spelling": "property2", 
       "static_member": false, 
       "type": {
@@ -509,7 +525,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": null
+              "type_size": 24
             }
           }, 
           "is_array": false, 
@@ -528,7 +544,7 @@
             }
           ], 
           "type_alias_underlying_type": "std::vector<int>", 
-          "type_size": null
+          "type_size": 24
         }
       }, 
       "usage": ""
@@ -872,7 +888,7 @@
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
-                  "type_size": null
+                  "type_size": 24
                 }
               }, 
               "is_array": false, 
@@ -891,7 +907,7 @@
                 }
               ], 
               "type_alias_underlying_type": "std::vector<int>", 
-              "type_size": null
+              "type_size": 24
             }
           }
         }
@@ -943,7 +959,7 @@
                   "is_pointer": false, 
                   "is_type_alias": false, 
                   "is_type_param": false, 
-                  "type_size": null
+                  "type_size": 24
                 }
               }, 
               "is_array": false, 
@@ -962,7 +978,7 @@
                 }
               ], 
               "type_alias_underlying_type": "std::vector<int>", 
-              "type_size": null
+              "type_size": 24
             }
           }
         }
@@ -1628,11 +1644,11 @@
               "type_alias_chain": [
                 {
                   "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65", 
-                  "spelling": "std::__1::string"
+                  "spelling": "std::string"
                 }, 
                 {
                   "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32", 
-                  "spelling": "basic_string<char, char_traits<char>, allocator<char> >"
+                  "spelling": "basic_string<char, char_traits<char>, allocator<char>>"
                 }
               ], 
               "type_alias_underlying_type": "basic_string<char, char_traits<char>, allocator<char>>", 
@@ -1650,7 +1666,7 @@
               "is_pointer": false, 
               "is_type_alias": false, 
               "is_type_param": false, 
-              "type_size": 1
+              "type_size": 48
             }
           }
         }, 
@@ -1703,10 +1719,57 @@
     }, 
     {
       "access": "private", 
-      "args_list": [], 
+      "args_list": [
+        {
+          "arg_spelling": "a", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "float", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 4
+            }
+          }
+        }, 
+        {
+          "arg_spelling": "b", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "std::vector<int>", 
+            "type_info": {
+              "canonical_type": {
+                "spelling": "std::vector<int, std::allocator<int>>", 
+                "type_info": {
+                  "is_array": false, 
+                  "is_pointer": false, 
+                  "is_type_alias": false, 
+                  "is_type_param": false, 
+                  "type_size": 24
+                }
+              }, 
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": true, 
+              "is_type_param": false, 
+              "type_alias_chain": [
+                {
+                  "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+                  "spelling": "std::vector<int>"
+                }
+              ], 
+              "type_alias_underlying_type": "", 
+              "type_size": 24
+            }
+          }
+        }
+      ], 
       "comment": "", 
-      "declaration": "int& returnVector_float_vector();", 
-      "declaration_pretty": "int& returnVector_float_vector();", 
+      "declaration": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
+      "declaration_pretty": "std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);", 
       "from_macro": null, 
       "hierarchy": [
         {
@@ -1730,7 +1793,7 @@
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "int&", 
+      "return_type": "std::vector<int>&", 
       "specifier": [], 
       "spelling": "returnVector_float_vector", 
       "template_args_list": [], 
@@ -1840,23 +1903,41 @@
       "usage": ""
     }, 
     {
-      "POD": true, 
+      "POD": false, 
       "comment": "", 
       "hierarchy": [], 
       "id": "example-1.cc#47", 
       "kind": "variable_declaration", 
       "location": "example-1.cc:94:20", 
       "parent_kind": "(global)", 
-      "size": 4, 
+      "size": 24, 
       "spelling": "m", 
       "type": {
-        "spelling": "int", 
+        "spelling": "std::map<int, int>", 
         "type_info": {
+          "canonical_type": {
+            "spelling": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 24
+            }
+          }, 
           "is_array": false, 
+          "is_function": false, 
           "is_pointer": false, 
-          "is_type_alias": false, 
+          "is_type_alias": true, 
           "is_type_param": false, 
-          "type_size": 4
+          "type_alias_chain": [
+            {
+              "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28", 
+              "spelling": "std::map<int, int>"
+            }
+          ], 
+          "type_alias_underlying_type": "", 
+          "type_size": 24
         }
       }, 
       "usage": ""
@@ -2422,30 +2503,105 @@
       "usage": ""
     }, 
     {
+      "base_clause": [], 
+      "comment": "", 
+      "declaration": "template <typename T> class BaseClassWithAVeryUglyName_i_am_really_long_too;", 
+      "declaration_pretty": "template <typename T>\nclass BaseClassWithAVeryUglyName_i_am_really_long_too;", 
+      "hierarchy": [], 
+      "id": "example-1.cc#64", 
+      "is_abstract": false, 
+      "is_template": true, 
+      "kind": "class_template", 
+      "location": "example-1.cc:114:7", 
+      "parent_kind": "(global)", 
+      "size": null, 
+      "specifier": [], 
+      "spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too", 
+      "template_args_list": [
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "example-1.cc:114:7", 
+                "template_spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too"
+              }, 
+              "type_size": null
+            }
+          }
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
+      "canonical_type": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>", 
+      "comment": "", 
+      "hierarchy": [], 
+      "id": "example-1.cc#65", 
+      "kind": "typedef_declaration", 
+      "location": "example-1.cc:116:63", 
+      "parent_kind": "(global)", 
+      "spelling": "TypeDefTemplateBase", 
+      "type_alias_chain": [
+        {
+          "location": "example-1.cc:116:63", 
+          "spelling": "TypeDefTemplateBase"
+        }, 
+        {
+          "location": "example-1.cc:114:7", 
+          "spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>"
+        }
+      ], 
+      "type_alias_underlying_type": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>", 
+      "usage": ""
+    }, 
+    {
       "POD": false, 
       "base_clause": [
         {
           "access": "private", 
-          "base": "BaseClass", 
-          "virtual": false
+          "definition_location": "example-1.cc:108:7", 
+          "spelling": "BaseClass", 
+          "virtual_inheritance": false
         }, 
         {
           "access": "public", 
-          "base": "EEClass", 
-          "virtual": true
+          "definition_location": "example-1.cc:110:8", 
+          "spelling": "BaseClass2<ClassAgain<int>>", 
+          "virtual_inheritance": false
+        }, 
+        {
+          "access": "public", 
+          "definition_location": "example-1.cc:102:8", 
+          "spelling": "EEClass", 
+          "virtual_inheritance": true
+        }, 
+        {
+          "access": "protected", 
+          "definition_location": "example-1.cc:116:63", 
+          "spelling": "TypeDefTemplateBase", 
+          "virtual_inheritance": false
         }
       ], 
       "comment": "", 
       "declaration": "class VClass final;", 
       "declaration_pretty": "class VClass final;", 
       "hierarchy": [], 
-      "id": "example-1.cc#64", 
+      "id": "example-1.cc#66", 
       "is_abstract": true, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "example-1.cc:114:7", 
+      "location": "example-1.cc:118:7", 
       "parent_kind": "(global)", 
-      "size": 1, 
+      "size": 8, 
       "specifier": [
         "final"
       ], 
@@ -2458,7 +2614,7 @@
           "is_pointer": false, 
           "is_type_alias": false, 
           "is_type_param": false, 
-          "type_size": 1
+          "type_size": 8
         }
       }, 
       "usage": ""
@@ -2476,16 +2632,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:114:7", 
+          "location": "example-1.cc:118:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#65", 
+      "id": "example-1.cc#67", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "example-1.cc:117:5", 
+      "location": "example-1.cc:121:5", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -2509,16 +2665,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:114:7", 
+          "location": "example-1.cc:118:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#66", 
+      "id": "example-1.cc#68", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "destructor", 
-      "location": "example-1.cc:118:13", 
+      "location": "example-1.cc:122:13", 
       "method_property": [
         "virtual", 
         "pure_virtual"
@@ -2543,16 +2699,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:114:7", 
+          "location": "example-1.cc:118:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#67", 
+      "id": "example-1.cc#69", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "example-1.cc:119:18", 
+      "location": "example-1.cc:123:18", 
       "method_property": [
         "virtual", 
         "pure_virtual"
@@ -2568,12 +2724,58 @@
       "usage": ""
     }, 
     {
+      "base_clause": [
+        {
+          "access": "public", 
+          "definition_location": "example-1.cc:110:8", 
+          "spelling": "BaseClass2<T>", 
+          "virtual_inheritance": false
+        }
+      ], 
+      "comment": "", 
+      "declaration": "template <typename T> class TemplateInheritanceChild;", 
+      "declaration_pretty": "template <typename T>\nclass TemplateInheritanceChild;", 
+      "hierarchy": [], 
+      "id": "example-1.cc#70", 
+      "is_abstract": false, 
+      "is_template": true, 
+      "kind": "class_template", 
+      "location": "example-1.cc:127:7", 
+      "parent_kind": "(global)", 
+      "size": null, 
+      "specifier": [], 
+      "spelling": "TemplateInheritanceChild", 
+      "template_args_list": [
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "example-1.cc:127:7", 
+                "template_spelling": "TemplateInheritanceChild"
+              }, 
+              "type_size": null
+            }
+          }
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#68", 
+      "id": "example-1.cc#71", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:122:6", 
+      "location": "example-1.cc:129:6", 
       "parent_kind": "(global)", 
       "size": 40, 
       "spelling": "arrIntPtr", 
@@ -2616,9 +2818,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#69", 
+      "id": "example-1.cc#72", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:123:6", 
+      "location": "example-1.cc:130:6", 
       "parent_kind": "(global)", 
       "size": 6, 
       "spelling": "arrChar", 
@@ -2650,9 +2852,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#70", 
+      "id": "example-1.cc#73", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:125:11", 
+      "location": "example-1.cc:132:11", 
       "parent_kind": "(global)", 
       "size": null, 
       "spelling": "arrVar", 
@@ -2702,10 +2904,10 @@
       "declaration_pretty": "FUNCS(returnVoid, char *)", 
       "from_macro": "FUNCS", 
       "hierarchy": [], 
-      "id": "example-1.cc#71", 
+      "id": "example-1.cc#74", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:130:1", 
+      "location": "example-1.cc:137:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "void", 
@@ -2738,10 +2940,10 @@
       "declaration_pretty": "FUNCS(returnVoid, char *)", 
       "from_macro": "FUNCS", 
       "hierarchy": [], 
-      "id": "example-1.cc#72", 
+      "id": "example-1.cc#75", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:130:1", 
+      "location": "example-1.cc:137:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
       "return_type": "void", 
@@ -2753,6 +2955,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.015636920928955078, 
-  "time_traversing": 1.2557730674743652
+  "time_parsing": 0.2778301239013672, 
+  "time_traversing": 2.3451170921325684
 }

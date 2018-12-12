@@ -116,7 +116,7 @@ class MyClass;
 ::::: declaration_pretty
 class MyClass;
 ::::: size
-1
+48
 ::::: type
 MyClass
 {
@@ -124,7 +124,7 @@ MyClass
   "is_pointer": false, 
   "is_type_alias": false, 
   "is_type_param": false, 
-  "type_size": 1
+  "type_size": 48
 }
 ::::: is_abstract
 True
@@ -300,7 +300,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -349,7 +349,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -445,7 +445,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -492,7 +492,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': '', 'default_expr': None}]
+[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -587,7 +587,7 @@ Int
       "is_pointer": false, 
       "is_type_alias": false, 
       "is_type_param": false, 
-      "type_size": null
+      "type_size": 24
     }
   }, 
   "is_array": false, 
@@ -606,12 +606,12 @@ Int
     }
   ], 
   "type_alias_underlying_type": "std::vector<int>", 
-  "type_size": null
+  "type_size": 24
 }
 ::::: POD
 False
 ::::: size
-None
+24
 ==================
 ::::: id
 example-1.cc#15
@@ -886,7 +886,7 @@ comment for foo()
 ::::: from_macro
 None
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -933,7 +933,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 public
 ::::: no_throw_guarantee
@@ -1700,7 +1700,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[{'type': {'spelling': 'std::string', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::__1::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char> >', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': {'spelling': 'std::basic_string<char, std::char_traits<char>, std::allocator<char>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 's', 'default_expr': None}, {'type': {'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'obj', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'obj2', 'default_expr': None}]
+[{'type': {'spelling': 'std::string', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char>>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': {'spelling': 'std::basic_string<char, std::char_traits<char>, std::allocator<char>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 's', 'default_expr': None}, {'type': {'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': 'obj', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'obj2', 'default_expr': None}]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1757,7 +1757,7 @@ False
 ::::: method_property
 []
 ::::: args_list
-[]
+[{'type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'std::vector<int>', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': '', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
 private
 ::::: no_throw_guarantee
@@ -1765,11 +1765,11 @@ not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-int& returnVector_float_vector();
+std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
 ::::: declaration_pretty
-int& returnVector_float_vector();
+std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
 ::::: return_type
-int&
+std::vector<int>&
 ::::: template_args_list
 []
 ==================
@@ -1930,18 +1930,36 @@ example-1.cc:94:20
 ::::: comment
 (none)
 ::::: type
-int
+std::map<int, int>
 {
+  "canonical_type": {
+    "spelling": "std::map<int, int, std::less<int>, std::allocator<std::pair<const int, int>>>", 
+    "type_info": {
+      "is_array": false, 
+      "is_pointer": false, 
+      "is_type_alias": false, 
+      "is_type_param": false, 
+      "type_size": 24
+    }
+  }, 
   "is_array": false, 
+  "is_function": false, 
   "is_pointer": false, 
-  "is_type_alias": false, 
+  "is_type_alias": true, 
   "is_type_param": false, 
-  "type_size": 4
+  "type_alias_chain": [
+    {
+      "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/map:805:28", 
+      "spelling": "std::map<int, int>"
+    }
+  ], 
+  "type_alias_underlying_type": "", 
+  "type_size": 24
 }
 ::::: POD
-True
+False
 ::::: size
-4
+24
 ==================
 ::::: id
 example-1.cc#48
@@ -2545,9 +2563,9 @@ False
 ::::: id
 example-1.cc#64
 ::::: spelling
-VClass
+BaseClassWithAVeryUglyName_i_am_really_long_too
 ::::: kind
-class_declaration
+class_template
 ::::: hierarchy
 (none)
 ::::: parent_kind
@@ -2557,9 +2575,70 @@ example-1.cc:114:7
 ::::: comment
 (none)
 ::::: specifier
+[]
+::::: base_clause
+[]
+::::: is_template
+True
+::::: declaration
+template <typename T> class BaseClassWithAVeryUglyName_i_am_really_long_too;
+::::: declaration_pretty
+template <typename T>
+class BaseClassWithAVeryUglyName_i_am_really_long_too;
+::::: size
+None
+::::: is_abstract
+False
+::::: template_args_list
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:114:7', 'template_spelling': 'BaseClassWithAVeryUglyName_i_am_really_long_too', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+==================
+::::: id
+example-1.cc#65
+::::: spelling
+TypeDefTemplateBase
+::::: kind
+typedef_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+example-1.cc:116:63
+::::: comment
+(none)
+::::: canonical_type
+BaseClassWithAVeryUglyName_i_am_really_long_too<char>
+::::: type_alias_chain:[
+  {
+    "location": "example-1.cc:116:63", 
+    "spelling": "TypeDefTemplateBase"
+  }, 
+  {
+    "location": "example-1.cc:114:7", 
+    "spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>"
+  }
+]
+::::: type_alias_underlying_type
+BaseClassWithAVeryUglyName_i_am_really_long_too<char>
+==================
+::::: id
+example-1.cc#66
+::::: spelling
+VClass
+::::: kind
+class_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+example-1.cc:118:7
+::::: comment
+(none)
+::::: specifier
 ['final']
 ::::: base_clause
-[{'access': 'private', 'base': 'BaseClass', 'virtual': False}, {'access': 'public', 'base': 'EEClass', 'virtual': True}]
+[{'access': 'private', 'definition_location': 'example-1.cc:108:7', 'spelling': 'BaseClass', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:110:8', 'spelling': 'BaseClass2<ClassAgain<int>>', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:102:8', 'spelling': 'EEClass', 'virtual_inheritance': True}, {'access': 'protected', 'definition_location': 'example-1.cc:116:63', 'spelling': 'TypeDefTemplateBase', 'virtual_inheritance': False}]
 ::::: POD
 False
 ::::: is_template
@@ -2569,7 +2648,7 @@ class VClass final;
 ::::: declaration_pretty
 class VClass final;
 ::::: size
-1
+8
 ::::: type
 VClass
 {
@@ -2577,7 +2656,7 @@ VClass
   "is_pointer": false, 
   "is_type_alias": false, 
   "is_type_param": false, 
-  "type_size": 1
+  "type_size": 8
 }
 ::::: is_abstract
 True
@@ -2585,7 +2664,7 @@ True
 []
 ==================
 ::::: id
-example-1.cc#65
+example-1.cc#67
 ::::: spelling
 VClass
 ::::: kind
@@ -2595,7 +2674,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:114:7", 
+    "location": "example-1.cc:118:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2603,7 +2682,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:117:5
+example-1.cc:121:5
 ::::: comment
 (none)
 ::::: specifier
@@ -2634,7 +2713,7 @@ None
 []
 ==================
 ::::: id
-example-1.cc#66
+example-1.cc#68
 ::::: spelling
 ~VClass
 ::::: kind
@@ -2644,7 +2723,7 @@ destructor
 [
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:114:7", 
+    "location": "example-1.cc:118:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2652,7 +2731,7 @@ destructor
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:118:13
+example-1.cc:122:13
 ::::: comment
 (none)
 ::::: specifier
@@ -2683,7 +2762,7 @@ None
 []
 ==================
 ::::: id
-example-1.cc#67
+example-1.cc#69
 ::::: spelling
 foo
 ::::: kind
@@ -2693,7 +2772,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:114:7", 
+    "location": "example-1.cc:118:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2701,7 +2780,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:119:18
+example-1.cc:123:18
 ::::: comment
 (none)
 ::::: specifier
@@ -2730,7 +2809,39 @@ void
 []
 ==================
 ::::: id
-example-1.cc#68
+example-1.cc#70
+::::: spelling
+TemplateInheritanceChild
+::::: kind
+class_template
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+example-1.cc:127:7
+::::: comment
+(none)
+::::: specifier
+[]
+::::: base_clause
+[{'access': 'public', 'definition_location': 'example-1.cc:110:8', 'spelling': 'BaseClass2<T>', 'virtual_inheritance': False}]
+::::: is_template
+True
+::::: declaration
+template <typename T> class TemplateInheritanceChild;
+::::: declaration_pretty
+template <typename T>
+class TemplateInheritanceChild;
+::::: size
+None
+::::: is_abstract
+False
+::::: template_args_list
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:127:7', 'template_spelling': 'TemplateInheritanceChild', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+==================
+::::: id
+example-1.cc#71
 ::::: spelling
 arrIntPtr
 ::::: kind
@@ -2740,7 +2851,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:122:6
+example-1.cc:129:6
 ::::: comment
 (none)
 ::::: type
@@ -2781,7 +2892,7 @@ True
 40
 ==================
 ::::: id
-example-1.cc#69
+example-1.cc#72
 ::::: spelling
 arrChar
 ::::: kind
@@ -2791,7 +2902,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:123:6
+example-1.cc:130:6
 ::::: comment
 (none)
 ::::: type
@@ -2821,7 +2932,7 @@ True
 6
 ==================
 ::::: id
-example-1.cc#70
+example-1.cc#73
 ::::: spelling
 arrVar
 ::::: kind
@@ -2831,7 +2942,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:125:11
+example-1.cc:132:11
 ::::: comment
 (none)
 ::::: type
@@ -2861,7 +2972,7 @@ True
 None
 ==================
 ::::: id
-example-1.cc#71
+example-1.cc#74
 ::::: spelling
 returnVoid
 ::::: kind
@@ -2871,7 +2982,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:130:1
+example-1.cc:137:1
 ::::: comment
 (none)
 ::::: specifier
@@ -2894,7 +3005,7 @@ void
 []
 ==================
 ::::: id
-example-1.cc#72
+example-1.cc#75
 ::::: spelling
 returnVoid
 ::::: kind
@@ -2904,7 +3015,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:130:1
+example-1.cc:137:1
 ::::: comment
 (none)
 ::::: specifier
@@ -2927,9 +3038,23 @@ void
 []
 ==================
 [Diagnostic #1]
-example-1.cc:4:10: fatal error: 'test-input-2.h' file not found
+example-1.cc:22:10: error: return type 'MyClass' is an abstract class
+[Diagnostic #2]
+example-1.cc:51:10: error: redefinition of 'MyClass'
+[Diagnostic #3]
+example-1.cc:86:68: error: unknown type name 'Another'
+[Diagnostic #4]
+example-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
+[Diagnostic #5]
+example-1.cc:101:1: error: unknown type name 'Another'
+[Diagnostic #6]
+example-1.cc:118:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+[Diagnostic #7]
+example-1.cc:132:11: error: definition of variable with array type needs an explicit size or an initializer
 [includes]
 {'depth': 1, 'included_at': 'example-1.cc:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'example-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
-[time indexing] 0.03 sec
-[time traverse] 1.26 sec
+{'depth': 1, 'included_at': 'example-1.cc:4:10', 'file': './example-2.h'}
+{'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
+[time parsing] 0.28 sec
+[time traverse] 2.33 sec

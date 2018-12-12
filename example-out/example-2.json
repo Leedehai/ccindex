@@ -1987,6 +1987,6 @@
       "usage": ""
     }
   ], 
-  "time_indexing": 0.01578688621520996, 
-  "time_traversing": 1.3678460121154785
+  "time_parsing": 0.2472379207611084, 
+  "time_traversing": 1.817939043045044
 }

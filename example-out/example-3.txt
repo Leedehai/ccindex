@@ -824,7 +824,7 @@ float (*)(float, float*)
   }, 
   {
     "location": "", 
-    "spelling": "float (*)(float, float *)"
+    "spelling": "float (*)(float, float*)"
   }
 ]
 ::::: type_alias_underlying_type
@@ -849,7 +849,7 @@ example-3.cc:32:6
 ::::: from_macro
 None
 ::::: args_list
-[{'type': {'spelling': 'FuncPtrTy', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'example-3.cc:31:17'}, {'spelling': 'float (*)(float, float *)', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}}}}}, 'arg_spelling': 'func', 'default_expr': None}]
+[{'type': {'spelling': 'FuncPtrTy', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'example-3.cc:31:17'}, {'spelling': 'float (*)(float, float*)', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}}}}}, 'arg_spelling': 'func', 'default_expr': None}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -953,7 +953,7 @@ FuncPtrTy
     }, 
     {
       "location": "", 
-      "spelling": "float (*)(float, float *)"
+      "spelling": "float (*)(float, float*)"
     }
   ], 
   "type_alias_underlying_type": "float (*)(float, float*)", 
@@ -964,9 +964,9 @@ True
 ::::: size
 8
 ==================
-[Diagnostic #1]
-example-3.cc:1:10: fatal error: 'test-input-2.h' file not found
 [includes]
-
-[time indexing] 0.02 sec
-[time traverse] 0.02 sec
+{'depth': 1, 'included_at': 'example-3.cc:1:10', 'file': './example-2.h'}
+{'depth': 2, 'included_at': './example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
+{'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
+[time parsing] 0.25 sec
+[time traverse] 2.14 sec
