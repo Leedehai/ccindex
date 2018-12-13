@@ -47,37 +47,29 @@ Each target source file outputs a JSON ([README](README.md)'s usage section). Th
 |`includes`        | array of `Header` objects |
 |`symbols`         | array of `Symbol` objects |
 
-### 1.1 `errors`
+### 1.1 errors
 
-| type  | element type |
-|:-----:|:------------:|
-| array | string       |
+Type: array of strings
 
 An array of error strings. In the current compiler's implementation, the format of an error string is `SourceLocation: Severity: Explanation`, where `Severity` is one of `fatal`, `error`, `warning`. Example: `example-1.cc:101:1: error: unknown type name 'Another'`.
 
 The errors are produced by the compiler, not by this tool.
 
-### 1.2 `time_parsing`
+### 1.2 time_parsing
 
-| type  |
-|:-----:|
-| number (floating point) |
+Type: number (floating point)
 
 Time taken, in seconds, for the compiler to parse the translation unit and build an AST.
 
 ### 1.3 `time_parsing`
 
-| type  |
-|:-----:|
-| number (floating point) |
+Type: number (floating point)
 
 Time taken, in seconds, for this tool to traverse the AST structure and produce results.
 
 ### 1.4 `includes`
 
-| type  | element type |
-|:-----:|:------------:|
-| array | `Header` object |
+Type: array of `Header` objects
 
 An array of `Header` objects. A `Header` object includes:
 
@@ -89,15 +81,13 @@ An array of `Header` objects. A `Header` object includes:
 
 The include stack structure is produced by the compiler, not by this tool.
 
-If a header file is included by a system header, some internal C++ standard library header included by a user-facing C++ standard library header, then this header is deliberately omitted in the array, because it is often of no interest to our purpose.
+If a header file is included by a system header, e.g. some internal C++ standard library header included by a user-facing C++ standard library header, then this header is deliberately omitted in the array, because it is often of no interest to our purpose.
 
 If a header is directly included by the target file, then its `depth` field has value 1.
 
 ### 1.5 `symbols`
 
-| type  | element type |
-|:-----:|:------------:|
-| array | <a href="#symbol">Symbol</a> object |
+Type: array of <a href="#symbol">Symbol</a> objects
 
 An array of `Symbol` objects, produced in the course of AST traversing. The following fields are present in every `Symbol` object: `id`, `spelling`, `kind`, `hierarchy`, `parent_kind`, `location`, `comment`, and `usage`; other fields are dependent on the `kind` field.
 
@@ -116,13 +106,14 @@ These fields are present in every `Symbol` object.
 | field        | type                         | meaning |
 |:-------------|:-----------------------------|:--------|
 |`id`          | <a href="#symbol_id">symbol ID</a> | uniquely identifies the symbol |
-|`spelling`    | number (integer)             | the symbol's literal spelling |
+|`spelling`    | string                       | the symbol's literal spelling |
 |`kind`        | string                       | the syntax kind of this symbol, e.g. `class_declaration`, `constructor` |
 |`parent_kind` | string                       | the syntax kind of the immediate parent context, or `(global)` if the symbol is in global context |
 |`location`    | <a href="#source_location">source location</a> | the location of the symbol in source |
 |`comment`     | string                       | <a href="#documentary_comment">documentary comment</a> for that symbol |
 |`usage`       | string                       | the <a href="#usage_block">usage_block</a> inside the documentary comment |
 |`hierarchy`   | array of <a href="#context">Context</a> objects | the contexts that semantically contains this symbol; order: top-down to the immediate parent |
+|<a href="#optional_fields">others..</a> |    | depending on `kind` |
 
 ##### ● id: string
 A <a href="#documentary_comment">symbol ID</a> string that uniquely identifies the symbol. It consists of the file path and a serial number starting from 1.
@@ -150,7 +141,7 @@ variable_declaration
 ```
 
 ##### ● parent_kind: string
-The syntax kind of the symbol's semantic immediate parent. For example, if a symbol is a class constructor, then the value is `class_declaration`; if a symbol is a enumeration constant, then the value is `enum_declaration`. If a symbol is in the global scope, then the value is `(global)`.
+The syntax kind of the symbol's semantic immediate parent. For example, if a symbol is a class constructor, then the value is `class_declaration`; if a symbol is an enumeration constant, then the value is `enum_declaration`. If a symbol is in the global scope, then the value is `(global)`.
 
 In addition to `(global)`, the set of other possible values is a subset of the possible values of the `kind` field above.
 
@@ -177,7 +168,7 @@ A `Context` object:
 |`spelling`    | string  | the context's symbol spelling |
 |`transparent` | boolean | whether the context is <a href="#context_transparency">transparent</a> |
 
-For example, in the hierarchy array of symbol `foo`, there are 2 `Context` objects: the first is for class declaration of `A`, and the second is for enum declaration of `E`. Likewise, the hierarchy array of symbol `E` has one object (the `Context` object for class `A`), and the hierarchy array for symbol `A` is empty.
+For example, in the hierarchy array of symbol `foo`, there are two `Context` objects: the first is for class declaration `A`, and the second is for enum declaration `E`. One can also reason that the hierarchy array of symbol `E` has one object (for class `A`), and the hierarchy array for symbol `A` is empty.
 ```C++
 // example.cc
 class A {
@@ -185,12 +176,14 @@ class A {
 };
 ```
 
+<a name="optional_fields"></a>
+
 ### 2.2 Optional fields
 
 The following fields' presence are dependent on the `kind` field. For which kinds have which fields, see <a href="#which_kinds_have_what">this section</a>.
 
-##### ● (optional) from_macro: boolean
-If the symbol is created from a macro instantiation, then `from_macro` is `true`, otherwise `false`. For example, in the silly example below, the `from_macro` field of `foo` and `bar` are `True`, but that of `baz` is not.
+##### ● (optional) from_macro: string or null
+If the symbol is created from a macro instantiation, then `from_macro` is that macro's name spelling, otherwise `null`. For example, in the silly example below, the `from_macro` field of `foo` and `bar` are `CREATE_FUNC`, but that of `baz` is `null`.
 ```C++
 #define CREATE_FUNC(func, op) int func(int a, int b) { return a op b; }
 CREATE_FUNC(foo, +)

@@ -673,7 +673,7 @@ def _visit_cursor(c, macro_instant_locs_name_map):
         # list of dict { type, arg name, default expr }
         symbol["template_args_list"] = class_proto_tuple[1]
         symbol["specifier"] = ["final"] if class_proto_tuple[2] else [] # "final" specifier
-        symbol["base_clause"] = class_proto_tuple[3] # list of str
+        symbol["base_clause"] = class_proto_tuple[3] # list of dict
         symbol["is_abstract"] = c.is_abstract_record() # bool
         # int or NoneType (e.g. type param) # int or NoneType (e.g. type param)
         symbol["size"] = _format_sizeof_type(c_type)
@@ -930,7 +930,7 @@ Library interface
 
 # exposed as library interface, returning a dict
 def get(target_filename, user_include_path_list=[]):
-    result = _get_symbols(target_filename=args.filename,
+    result = _get_symbols(target_filename=target_filename,
                           user_include_paths_str=','.join(user_include_path_list),
                           as_library=True, to_json=None)
     return result
