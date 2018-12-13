@@ -1,8 +1,8 @@
 # ccindex
 
-Extract C++ symbols with libclang's Python bindings.
+Extract C++ symbols from AST with libclang's Python bindings.
 
-- [ ] schema documentation
+- [x] [schema documentation](schema.md)
 
 #### Input<br>
 C++ file, user include paths (optional)
@@ -33,8 +33,8 @@ The extracted information could be used to generate API documentations.
 > For functions/methods and their templates, the implementation bodies are skipped.
 
 ## 2. Required
-- [libclang](http://www.llvm.org/devmtg/2010-11/Gregor-libclang.pdf), normally came with a [Clang](http://clang.llvm.org) installation
-- Python module 'clang', install: `pip install clang` or just copy-paste the [source](https://github.com/llvm-mirror/clang/tree/master/bindings/python/clang)
+- [libclang](http://www.llvm.org/devmtg/2010-11/Gregor-libclang.pdf), normally came with a [Clang](http://clang.llvm.org) installation (on macOS, use command `mdfind -name libclang.dylib` to search its path), or you can choose to [build the Clang project](http://clang.llvm.org/get_started.html).
+- Python module 'clang', install: `pip install clang` or just copy-paste the [source](https://github.com/llvm-mirror/clang/tree/master/bindings/python/clang).
 
 ## 3. Limitation
 
@@ -61,6 +61,7 @@ import ccindex
 result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 # the return is a dict:
 #     "symbols":         list of symbol dicts (see below)
+#     "includes":        list of header info
 #     "errors":          list of error strings
 #     "indexing_time":   float, in seconds, time taken to index the file
 #     "traversing_time": float, in seconds, time taken to traverse the AST
@@ -69,6 +70,7 @@ result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 #            "id", "spelling", "kind", "hierarchy",
 #            "parent_kind", "location", "comment", "usage"
 #     other fields are optional depending on the kind of each symbol
+# For more info on the schema, see schema.md
 ```
 
 **NOTE** if the source file includes headers, header directories must be specified with the `-i` option, otherwise some symbols won't be recognized.
