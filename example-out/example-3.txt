@@ -764,7 +764,7 @@ float func(float, float*, int arr[]);
 ::::: declaration_pretty
 float func(float, float*, int arr[]);
 ::::: return_type
-float
+{'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -797,7 +797,7 @@ char returnChar_takeFunc1(float (* func)(float, float*));
 ::::: declaration_pretty
 char returnChar_takeFunc1(float (* func)(float, float*));
 ::::: return_type
-char
+{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: template_args_list
 []
 ==================
@@ -859,7 +859,7 @@ char returnChar_takeFunc2(FuncPtrTy func);
 ::::: declaration_pretty
 char returnChar_takeFunc2(FuncPtrTy func);
 ::::: return_type
-char
+{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: template_args_list
 []
 ==================
@@ -968,5 +968,5 @@ True
 {'depth': 1, 'included_at': 'example-3.cc:1:10', 'file': './example-2.h'}
 {'depth': 2, 'included_at': './example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time parsing] 0.25 sec
-[time traverse] 2.14 sec
+[time parsing] 0.24 sec
+[time traverse] 2.15 sec

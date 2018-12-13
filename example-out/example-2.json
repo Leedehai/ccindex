@@ -324,7 +324,16 @@
       ], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "bool", 
+      "return_type": {
+        "spelling": "bool", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      }, 
       "specifier": [], 
       "spelling": "isReal", 
       "template_args_list": [], 
@@ -374,7 +383,16 @@
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "NS::Complex&", 
+      "return_type": {
+        "spelling": "NS::Complex&", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 16
+        }
+      }, 
       "specifier": [], 
       "spelling": "operator+=", 
       "template_args_list": [], 
@@ -429,7 +447,34 @@
       "location": "example-2.h:27:22", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
-      "return_type": "std::vector<Complex>", 
+      "return_type": {
+        "spelling": "std::vector<Complex>", 
+        "type_info": {
+          "canonical_type": {
+            "spelling": "std::vector<NS::Complex, std::allocator<NS::Complex>>", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": null
+            }
+          }, 
+          "is_array": false, 
+          "is_function": false, 
+          "is_pointer": false, 
+          "is_type_alias": true, 
+          "is_type_param": false, 
+          "type_alias_chain": [
+            {
+              "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+              "spelling": "std::vector<Complex>"
+            }
+          ], 
+          "type_alias_underlying_type": "", 
+          "type_size": null
+        }
+      }, 
       "specifier": [], 
       "spelling": "independentFunction", 
       "template_args_list": [], 
@@ -899,7 +944,16 @@
       "location": "example-2.h:38:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
-      "return_type": "void", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
       "specifier": [], 
       "spelling": "fooTemplated", 
       "template_args_list": [
@@ -1987,6 +2041,6 @@
       "usage": ""
     }
   ], 
-  "time_parsing": 0.2472379207611084, 
-  "time_traversing": 1.817939043045044
+  "time_parsing": 0.24845600128173828, 
+  "time_traversing": 1.8047089576721191
 }

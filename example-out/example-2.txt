@@ -374,7 +374,7 @@ bool isReal() const;
 ::::: declaration_pretty
 bool isReal() const;
 ::::: return_type
-bool
+{'spelling': 'bool', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: template_args_list
 []
 ==================
@@ -427,7 +427,7 @@ NS::Complex& operator+=(Complex&&);
 ::::: declaration_pretty
 NS::Complex& operator+=(Complex&&);
 ::::: return_type
-NS::Complex&
+{'spelling': 'NS::Complex&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 16}}
 ::::: template_args_list
 []
 ==================
@@ -468,7 +468,7 @@ std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);
 ::::: declaration_pretty
 std::vector<Complex> independentFunction(std::vector<Complex>& v1, double);
 ::::: return_type
-std::vector<Complex>
+{'spelling': 'std::vector<Complex>', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::vector<Complex>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': '', 'canonical_type': {'spelling': 'std::vector<NS::Complex, std::allocator<NS::Complex>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}
 ::::: template_args_list
 []
 ==================
@@ -938,7 +938,7 @@ void fooTemplated(bool b, Complex& c);
 template <typename T, int N>
 void fooTemplated(bool b, Complex& c);
 ::::: return_type
-void
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
 ::::: template_args_list
 [{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-2.h:38:6', 'template_spelling': 'fooTemplated', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': None}]
 ==================
@@ -2090,5 +2090,5 @@ True
 [includes]
 {'depth': 1, 'included_at': 'example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time parsing] 0.24 sec
-[time traverse] 1.85 sec
+[time parsing] 0.25 sec
+[time traverse] 1.82 sec

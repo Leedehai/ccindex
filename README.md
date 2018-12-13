@@ -70,10 +70,11 @@ result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 #            "id", "spelling", "kind", "hierarchy",
 #            "parent_kind", "location", "comment", "usage"
 #     other fields are optional depending on the kind of each symbol
-# For more info on the schema, see schema.md
+# For more info on the schema or Python example, see schema.md
 ```
 
-**NOTE** if the source file includes headers, header directories must be specified with the `-i` option, otherwise some symbols won't be recognized.
+**NOTE** if the target source file includes user headers, user header directories must be specified with the `-i` option, otherwise some symbols won't be recognized. If there are multiple user header directories, separate them with comma `,` without whitespace.
+> user headers: headers that are not in compiler's system header search paths. C++ standard library's headers and the operating system's API headers are system headers.
 
 **NOTE** tested on Python2, but should work with Python3
 

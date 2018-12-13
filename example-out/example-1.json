@@ -66,7 +66,16 @@
       "location": "example-1.cc:8:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "independentFunction", 
       "template_args_list": [], 
@@ -179,7 +188,16 @@
       ], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "void", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
       "specifier": [], 
       "spelling": "method1", 
       "template_args_list": [], 
@@ -369,7 +387,38 @@
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "Int", 
+      "return_type": {
+        "spelling": "Int", 
+        "type_info": {
+          "canonical_type": {
+            "spelling": "std::vector<int, std::allocator<int>>", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 24
+            }
+          }, 
+          "is_array": false, 
+          "is_function": false, 
+          "is_pointer": false, 
+          "is_type_alias": true, 
+          "is_type_param": false, 
+          "type_alias_chain": [
+            {
+              "location": "example-1.cc:9:26", 
+              "spelling": "Int"
+            }, 
+            {
+              "location": "/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28", 
+              "spelling": "std::vector<int>"
+            }
+          ], 
+          "type_alias_underlying_type": "std::vector<int>", 
+          "type_size": 24
+        }
+      }, 
       "specifier": [], 
       "spelling": "method2", 
       "template_args_list": [], 
@@ -461,7 +510,16 @@
       "method_property": [], 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "MyClass", 
+      "return_type": {
+        "spelling": "MyClass", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 48
+        }
+      }, 
       "specifier": [
         "noexcept"
       ], 
@@ -490,7 +548,16 @@
       "location": "example-1.cc:23:2", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "operator int", 
       "template_args_list": [], 
@@ -658,8 +725,8 @@
       "access": "private", 
       "args_list": [], 
       "comment": "", 
-      "declaration": "virtual void method3() const =0;", 
-      "declaration_pretty": "virtual void method3() const =0;", 
+      "declaration": "virtual void method3() const = 0;", 
+      "declaration_pretty": "virtual void method3() const = 0;", 
       "from_macro": null, 
       "hierarchy": [
         {
@@ -681,9 +748,18 @@
       ], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "void", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
       "specifier": [
-        "=0"
+        "= 0"
       ], 
       "spelling": "method3", 
       "template_args_list": [], 
@@ -702,7 +778,16 @@
       "location": "example-1.cc:41:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "baz", 
       "template_args_list": [], 
@@ -798,7 +883,16 @@
       "location": "example-1.cc:45:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "templateFunc", 
       "template_args_list": [
@@ -923,7 +1017,16 @@
       "location": "example-1.cc:48:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "foo", 
       "template_args_list": [], 
@@ -1291,7 +1394,16 @@
       "location": "example-1.cc:72:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "foo", 
       "template_args_list": [], 
@@ -1561,7 +1673,16 @@
       "location": "example-1.cc:84:12", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "fooFriend", 
       "template_args_list": [], 
@@ -1611,7 +1732,42 @@
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "size_t", 
+      "return_type": {
+        "spelling": "size_t", 
+        "type_info": {
+          "canonical_type": {
+            "spelling": "unsigned long", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": 8
+            }
+          }, 
+          "is_array": false, 
+          "is_function": false, 
+          "is_pointer": false, 
+          "is_type_alias": true, 
+          "is_type_param": false, 
+          "type_alias_chain": [
+            {
+              "location": "/usr/include/sys/_types/_size_t.h:31:32", 
+              "spelling": "size_t"
+            }, 
+            {
+              "location": "/usr/include/i386/_types.h:92:24", 
+              "spelling": "__darwin_size_t"
+            }, 
+            {
+              "location": "", 
+              "spelling": "unsigned long"
+            }
+          ], 
+          "type_alias_underlying_type": "__darwin_size_t", 
+          "type_size": 8
+        }
+      }, 
       "specifier": [], 
       "spelling": "returnSizeT_int", 
       "template_args_list": [], 
@@ -1711,7 +1867,16 @@
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "bool", 
+      "return_type": {
+        "spelling": "bool", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      }, 
       "specifier": [], 
       "spelling": "returnBool_string_myclass_anotherclass", 
       "template_args_list": [], 
@@ -1793,7 +1958,16 @@
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "std::vector<int>&", 
+      "return_type": {
+        "spelling": "std::vector<int>&", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 24
+        }
+      }, 
       "specifier": [], 
       "spelling": "returnVector_float_vector", 
       "template_args_list": [], 
@@ -1841,7 +2015,16 @@
       "location": "example-1.cc:91:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "fooFriend", 
       "template_args_list": [], 
@@ -1955,7 +2138,16 @@
       "location": "example-1.cc:96:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "int", 
+      "return_type": {
+        "spelling": "int", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "foo", 
       "template_args_list": [], 
@@ -2655,8 +2847,8 @@
       "access": "public", 
       "args_list": [], 
       "comment": "", 
-      "declaration": "virtual ~VClass() =0;", 
-      "declaration_pretty": "virtual ~VClass() =0;", 
+      "declaration": "virtual ~VClass() = 0;", 
+      "declaration_pretty": "virtual ~VClass() = 0;", 
       "destructor_property": [
         "virtual", 
         "pure_virtual"
@@ -2683,7 +2875,7 @@
       "parent_kind": "class_declaration", 
       "return_type": null, 
       "specifier": [
-        "=0"
+        "= 0"
       ], 
       "spelling": "~VClass", 
       "template_args_list": [], 
@@ -2693,8 +2885,8 @@
       "access": "public", 
       "args_list": [], 
       "comment": "", 
-      "declaration": "virtual void foo() =0;", 
-      "declaration_pretty": "virtual void foo() =0;", 
+      "declaration": "virtual void foo() = 0;", 
+      "declaration_pretty": "virtual void foo() = 0;", 
       "from_macro": null, 
       "hierarchy": [
         {
@@ -2715,9 +2907,18 @@
       ], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
-      "return_type": "void", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
       "specifier": [
-        "=0"
+        "= 0"
       ], 
       "spelling": "foo", 
       "template_args_list": [], 
@@ -2910,7 +3111,16 @@
       "location": "example-1.cc:137:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "void", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
       "specifier": [
         "noexcept"
       ], 
@@ -2946,7 +3156,16 @@
       "location": "example-1.cc:137:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "void", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
       "specifier": [
         "noexcept"
       ], 
@@ -2955,6 +3174,6 @@
       "usage": ""
     }
   ], 
-  "time_parsing": 0.2778301239013672, 
-  "time_traversing": 2.3451170921325684
+  "time_parsing": 0.28641510009765625, 
+  "time_traversing": 2.410475969314575
 }

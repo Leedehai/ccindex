@@ -334,10 +334,10 @@ def _format_func_proto(cursor, context_hierarchy=[]): # ordinary function/method
     if cursor.kind in no_return_funcs_CursorKindCursorKind:
         return_type = None
     else:
-        return_type = _format_type(cursor.result_type)
+        return_type = _collect_type_info(cursor.result_type) # dict { spelling: str, type_info: dict }
     # 3. function name
     func_name = str(cursor.displayname).split('(')[0]
-    # 4. for methods: cv-qualifier, "=0", "final", "override"
+    # 4. for methods: cv-qualifier, "= 0", "final", "override"
     postfix_str_list = []
     if cursor.is_const_method():
         postfix_str_list.append("const")
@@ -349,7 +349,7 @@ def _format_func_proto(cursor, context_hierarchy=[]): # ordinary function/method
         postfix_str_list.append("override")
     if cursor.is_pure_virtual_method():
         is_pure_virtual = True
-        postfix_str_list.append("=0")
+        postfix_str_list.append("= 0")
     exception_spec = cursor.exception_specification_kind
     if exception_spec in noexcept_ExceptionSpecificationKind:
         is_no_throw_bool_or_None = True
@@ -362,7 +362,7 @@ def _format_func_proto(cursor, context_hierarchy=[]): # ordinary function/method
     postfix_str = ' '.join(postfix_str_list)
     # build prototype string, without template header
     if return_type and cursor.kind != cindex.CursorKind.CONVERSION_FUNCTION:
-        accumulate_proto_str = "%s %s" % (return_type, func_name)
+        accumulate_proto_str = "%s %s" % (return_type["spelling"], func_name)
     else:
         accumulate_proto_str = func_name
     if cursor.is_virtual_method():
@@ -644,15 +644,15 @@ def _visit_cursor(c, macro_instant_locs_name_map):
         symbol["template_args_list"] = func_proto_tuple[1]
         # list of dict { type, arg name, default expr }
         symbol["args_list"] = func_proto_tuple[2]
-        # str or NoneType (e.g. constructor's return type is None)
+        # dict or NoneType (e.g. constructor's return type is None)
         symbol["return_type"] = func_proto_tuple[3]
         specifier_list = []
         if func_proto_tuple[4][0]: # "final" specifier
             specifier_list.append("final")
         if func_proto_tuple[4][1]: # "override" specifier
             specifier_list.append("override")
-        if func_proto_tuple[4][2]: # "=0", pure specifier
-            specifier_list.append("=0")
+        if func_proto_tuple[4][2]: # "= 0", pure specifier
+            specifier_list.append("= 0")
         if func_proto_tuple[4][3] == True: # "noexcept" or "throw()" (deprecated since C++11)
             specifier_list.append("noexcept")
         symbol["specifier"] = specifier_list

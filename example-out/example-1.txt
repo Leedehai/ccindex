@@ -56,7 +56,7 @@ int independentFunction();
 ::::: declaration_pretty
 int independentFunction();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -214,7 +214,7 @@ void method1();
 ::::: declaration_pretty
 void method1();
 ::::: return_type
-void
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
 ::::: template_args_list
 []
 ==================
@@ -408,7 +408,7 @@ Int method2();
 ::::: declaration_pretty
 Int method2();
 ::::: return_type
-Int
+{'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}
 ::::: template_args_list
 []
 ==================
@@ -504,7 +504,7 @@ MyClass operator+(const MyClass&) noexcept;
 ::::: declaration_pretty
 MyClass operator+(const MyClass&) noexcept;
 ::::: return_type
-MyClass
+{'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}
 ::::: template_args_list
 []
 ==================
@@ -547,7 +547,7 @@ operator int();
 ::::: declaration_pretty
 operator int();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -775,7 +775,7 @@ example-1.cc:37:15
 ::::: comment
 (none)
 ::::: specifier
-['=0']
+['= 0']
 ::::: from_macro
 None
 ::::: is_deleted
@@ -791,11 +791,11 @@ not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-virtual void method3() const =0;
+virtual void method3() const = 0;
 ::::: declaration_pretty
-virtual void method3() const =0;
+virtual void method3() const = 0;
 ::::: return_type
-void
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
 ::::: template_args_list
 []
 ==================
@@ -828,7 +828,7 @@ int baz();
 ::::: declaration_pretty
 int baz();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -863,7 +863,7 @@ int templateFunc(T* pt, U* pu, int n = N);
 template <typename T, typename U = Int, int N = 1>
 int templateFunc(T* pt, U* pu, int n = N);
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 [{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': '1'}]
 ==================
@@ -896,7 +896,7 @@ int foo(int a, Int b);
 ::::: declaration_pretty
 int foo(int a, Int b);
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -1253,7 +1253,7 @@ int foo();
 ::::: declaration_pretty
 int foo();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -1606,7 +1606,7 @@ int fooFriend();
 ::::: declaration_pretty
 int fooFriend();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -1659,7 +1659,7 @@ size_t returnSizeT_int(int a);
 ::::: declaration_pretty
 size_t returnSizeT_int(int a);
 ::::: return_type
-size_t
+{'spelling': 'size_t', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'size_t', 'location': '/usr/include/sys/_types/_size_t.h:31:32'}, {'spelling': '__darwin_size_t', 'location': '/usr/include/i386/_types.h:92:24'}, {'spelling': 'unsigned long', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': '__darwin_size_t', 'canonical_type': {'spelling': 'unsigned long', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}}}
 ::::: template_args_list
 []
 ==================
@@ -1716,7 +1716,7 @@ bool returnBool_string_myclass_anotherclass(
 	Another obj2
 );
 ::::: return_type
-bool
+{'spelling': 'bool', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: template_args_list
 []
 ==================
@@ -1769,7 +1769,7 @@ std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
 ::::: declaration_pretty
 std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
 ::::: return_type
-std::vector<int>&
+{'spelling': 'std::vector<int>&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}
 ::::: template_args_list
 []
 ==================
@@ -1844,7 +1844,7 @@ int fooFriend();
 ::::: declaration_pretty
 int fooFriend();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -1990,7 +1990,7 @@ int foo();
 ::::: declaration_pretty
 int foo();
 ::::: return_type
-int
+{'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
 []
 ==================
@@ -2735,7 +2735,7 @@ example-1.cc:122:13
 ::::: comment
 (none)
 ::::: specifier
-['=0']
+['= 0']
 ::::: from_macro
 None
 ::::: is_deleted
@@ -2753,9 +2753,9 @@ False
 ::::: destructor_property
 ['virtual', 'pure_virtual']
 ::::: declaration
-virtual ~VClass() =0;
+virtual ~VClass() = 0;
 ::::: declaration_pretty
-virtual ~VClass() =0;
+virtual ~VClass() = 0;
 ::::: return_type
 None
 ::::: template_args_list
@@ -2784,7 +2784,7 @@ example-1.cc:123:18
 ::::: comment
 (none)
 ::::: specifier
-['=0']
+['= 0']
 ::::: from_macro
 None
 ::::: is_deleted
@@ -2800,11 +2800,11 @@ not_guaranteed
 ::::: is_template
 False
 ::::: declaration
-virtual void foo() =0;
+virtual void foo() = 0;
 ::::: declaration_pretty
-virtual void foo() =0;
+virtual void foo() = 0;
 ::::: return_type
-void
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
 ::::: template_args_list
 []
 ==================
@@ -3000,7 +3000,7 @@ FUNCS(returnVoid, char *)
 ::::: declaration_pretty
 FUNCS(returnVoid, char *)
 ::::: return_type
-void
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
 ::::: template_args_list
 []
 ==================
@@ -3033,7 +3033,7 @@ FUNCS(returnVoid, char *)
 ::::: declaration_pretty
 FUNCS(returnVoid, char *)
 ::::: return_type
-void
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
 ::::: template_args_list
 []
 ==================
@@ -3057,4 +3057,4 @@ example-1.cc:132:11: error: definition of variable with array type needs an expl
 {'depth': 1, 'included_at': 'example-1.cc:4:10', 'file': './example-2.h'}
 {'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
 [time parsing] 0.28 sec
-[time traverse] 2.33 sec
+[time traverse] 2.36 sec

@@ -701,7 +701,16 @@
       "location": "example-3.cc:29:7", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "float", 
+      "return_type": {
+        "spelling": "float", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 4
+        }
+      }, 
       "specifier": [], 
       "spelling": "func", 
       "template_args_list": [], 
@@ -747,7 +756,16 @@
       "location": "example-3.cc:30:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "char", 
+      "return_type": {
+        "spelling": "char", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      }, 
       "specifier": [], 
       "spelling": "returnChar_takeFunc1", 
       "template_args_list": [], 
@@ -836,7 +854,16 @@
       "location": "example-3.cc:32:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
-      "return_type": "char", 
+      "return_type": {
+        "spelling": "char", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": 1
+        }
+      }, 
       "specifier": [], 
       "spelling": "returnChar_takeFunc2", 
       "template_args_list": [], 
@@ -932,6 +959,6 @@
       "usage": ""
     }
   ], 
-  "time_parsing": 0.24490618705749512, 
-  "time_traversing": 2.135812997817993
+  "time_parsing": 0.24478483200073242, 
+  "time_traversing": 2.1366608142852783
 }

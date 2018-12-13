@@ -5,7 +5,7 @@ This file helps you to navigate through and make use of the **JSON** output. In 
 <a name="python_code"></a>
 
 ```python
-# a simple example
+# a simple Python example
 import ccindex
 res = ccindex.get("example-1.cc", ["."]) # the target file, the user include path list
 for symbol in res["symbols"]:
@@ -43,7 +43,7 @@ Each target source file outputs a JSON ([README](README.md)'s usage section). Th
 |:-----------------|:-------------|
 |`errors`          | array of strings |
 |`time_parsing`    | number (floating point) |
-|`time_traversing` | number (floating point) |
+|`time_traversing`   | number (floating point) |
 |`includes`        | array of `Header` objects |
 |`symbols`         | array of `Symbol` objects |
 
@@ -61,13 +61,13 @@ Type: number (floating point)
 
 Time taken, in seconds, for the compiler to parse the translation unit and build an AST.
 
-### 1.3 `time_parsing`
+### 1.3 time_traversing
 
 Type: number (floating point)
 
 Time taken, in seconds, for this tool to traverse the AST structure and produce results.
 
-### 1.4 `includes`
+### 1.4 includes
 
 Type: array of `Header` objects
 
@@ -85,7 +85,7 @@ If a header file is included by a system header, e.g. some internal C++ standard
 
 If a header is directly included by the target file, then its `depth` field has value 1.
 
-### 1.5 `symbols`
+### 1.5 symbols
 
 Type: array of <a href="#symbol">Symbol</a> objects
 
