@@ -30,6 +30,8 @@ A string, either an absolute path, or a relative path with respect to your CWD -
 ###### Source location
 A string that indicates the location of the first character of an entity, in the format of `FilePath:Line:Column` e.g. `~/dev/whatever.cc:1:5`.
 
+For a non-user-defined entity, e.g. primitive type `float` and pointer type `int (*)(int, int)`, their source location strings are empty `""`.
+
 <a name="symbol_id"></a>
 
 ###### Symbol ID
@@ -43,7 +45,7 @@ Each target source file outputs a JSON ([README](README.md)'s usage section). Th
 |:-----------------|:-------------|
 |`errors`          | array of strings |
 |`time_parsing`    | number (floating point) |
-|`time_traversing`   | number (floating point) |
+|`time_traversing` | number (floating point) |
 |`includes`        | array of `Header` objects |
 |`symbols`         | array of `Symbol` objects |
 
@@ -73,13 +75,15 @@ Type: array of `Header` objects
 
 An array of `Header` objects. A `Header` object includes:
 
-| field        | type             | meaning |
+| Header field | type             | meaning |
 |:-------------|:-----------------|:--------|
 |`file`        | <a href="#file_path">file path</a> | the path of the file being included |
 |`depth`       | number (integer) | its depth on the include stack |
 |`included_at` | <a href="#source_location">source location</a> | the location of the responsible `#include` directive |
 
 The include stack structure is produced by the compiler, not by this tool.
+
+If a header is not found, the error will be added to the `errors` array above. The root cause is normally (1) the file or its directory does not exist, or (2) it is a user header but the user didn't provide any user include paths when invoking this tool, or the header is not in the provided paths.
 
 If a header file is included by a system header, e.g. some internal C++ standard library header included by a user-facing C++ standard library header, then this header is deliberately omitted in the array, because it is often of no interest to our purpose.
 
@@ -103,7 +107,7 @@ A `Symbol` object stores the meta information of a symbol on the AST.
 
 These fields are present in every `Symbol` object.
 
-| field        | type                         | meaning |
+| Symbol field | type                         | meaning |
 |:-------------|:-----------------------------|:--------|
 |`id`          | <a href="#symbol_id">symbol ID</a> | uniquely identifies the symbol |
 |`spelling`    | string                       | the symbol's literal spelling |
@@ -113,7 +117,7 @@ These fields are present in every `Symbol` object.
 |`comment`     | string                       | <a href="#documentary_comment">documentary comment</a> for that symbol |
 |`usage`       | string                       | the <a href="#usage_block">usage_block</a> inside the documentary comment |
 |`hierarchy`   | array of <a href="#context">Context</a> objects | the contexts that semantically contains this symbol; order: top-down to the immediate parent |
-|<a href="#optional_fields">others..</a> |    | depending on `kind` |
+|<a href="#optional_fields">others..</a> |    | depending on the `kind` field |
 
 ##### ● id: string
 A <a href="#documentary_comment">symbol ID</a> string that uniquely identifies the symbol. It consists of the file path and a serial number starting from 1.
@@ -154,19 +158,19 @@ See <a href="#documentary_comment">footnote 1</a>.
 ##### ● usage: string
 See <a href="#usage_block">footnote 2</a>.
 
-##### ● hierarchy: array of <a href="#context">Context</a> object
+##### ● hierarchy: array of <a href="#context">Context</a> objects
 An array of `Context` objects, which represented declaration contexts that semantically includes this symbol, in the order of top-down to the immediate parent. If the symbol is in the global scope, then the array is empty.
 
 <a name="context"></a>
 
 A `Context` object:
 
-| field        | type    | meaning |
-|:-------------|:--------|:--------|
-|`kind`        | string  | <a href="#kind_value">syntax kind</a> of this context |
-|`location`    | <a href="#source_location">source location</a> | where the context symbol is declared |
-|`spelling`    | string  | the context's symbol spelling |
-|`transparent` | boolean | whether the context is <a href="#context_transparency">transparent</a> |
+| Context field | type    | meaning |
+|:--------------|:--------|:--------|
+|`kind`         | string  | <a href="#kind_value">syntax kind</a> of this context |
+|`location`     | <a href="#source_location">source location</a> | where the context symbol is declared |
+|`spelling`     | string  | the context's symbol spelling |
+|`transparent`  | boolean | whether the context is <a href="#context_transparency">transparent</a> |
 
 For example, in the hierarchy array of symbol `foo`, there are two `Context` objects: the first is for class declaration `A`, and the second is for enum declaration `E`. One can also reason that the hierarchy array of symbol `E` has one object (for class `A`), and the hierarchy array for symbol `A` is empty.
 ```C++
@@ -191,25 +195,283 @@ CREATE_FUNC(bar, -)
 int baz(int a, int b) { return a * b; }
 ```
 
-TODO
+##### ● (optional) declaration: string
+If the symbol is `from_macro` is `null`, then this field is the declaration text of the symbol. Otherwise, this is the macro instantiation text.
+
+##### ● (optional) declaration_pretty: string
+Same as above, but is formatted in a way that long line is broken into multiple lines.
+
+##### ● (optional) is_template: boolean
+If the symbol is a class template or function template, then this field is `true`, otherwise `false`.
+
+##### ● (optional) template_args_list: array of `TemplateArg` objects
+An array of `TemplateArg` objects, representing the template argument list in order. If the symbol is not a template (`is_template` is `false`), then this is an empty array.
+
+A `TemplateArg` object:
+
+| TemplateArg field | type    | meaning |
+|:------------------|:--------|:--------|
+|`arg_spelling`     | string  | the literal spelling of the template argument |
+|`default_expr`     | string or `null` | the default argument expression, `null` if not given |
+|`type`             | <a href="#type_object">Type</a> object | the type of this template argument |
+
+##### ● (optional) args_list: array of `Arg` objects
+An array of `Arg` objects, representing the argument list - the formal arguments inside the parenthesis - in order. A symbol might have an empty formal argument list.
+
+An `Arg` object:
+
+| TemplateArg field | type    | meaning |
+|:------------------|:--------|:--------|
+|`arg_spelling`     | string  | the literal spelling of the argument |
+|`default_expr`     | string or `null` | the default argument expression, `null` if not given |
+|`type`             | <a href="#type_object">Type</a> object | the type of this argument |
+
+##### ● (optional) return_type: <a href="#type_object">Type</a> object or `null`
+The return type of the <a href="#function_like">function-like</a> symbol. However, if this symbol is function-like but does not have a return type, i.e. a constructor or destructor, then this field is `null` (note "no return type" is different from "has `void` return type").
+
+##### ● (optional) specifier: array of strings
+An array of specifiers added to the <a href="#function_like">function-like</a> or <a href="#class_like">class-like</a> symbol. If no specifiers are present, it is an empty array. The possible values are
+```
+final | override | = 0 | noexcept
+```
+
+According to C++, for a <a href="#class_like">class-like</a>, it is either an array of one element `final` or empty.
+
+Note that `throw()` basically has the same meaning as `noexcept`, and is strongly discouraged [since C++17](https://en.cppreference.com/w/cpp/language/except_spec). Therefore, when listing specifiers, this tool replaces all `throw()` with `noexcept`.
+
+##### ● (optional) no_throw_guarantee: string
+A string indicating if no-throw guarantee is provided to a <a href="#function_like">function-like</a>. The possible values are:
+```
+guaranteed | not_guaranteed | unevaluated
+```
+
+A <a href="#function_like">function-like</a> is either guaranteed to not throw any exception, or is not provided with such guarantee. Generally speaking, this guarantee is provided only if `noexcept` or `throw()` exists; however, some complicated [special rules](https://en.cppreference.com/w/cpp/language/noexcept_spec) stipulates that the guarantee is also provided to some that does not one of these two specifiers. If the compiler deems the special rules potentially valid, it will report the `unevaluated` value.
+
+##### ● (optional) access: string
+This field is present if the symbol belongs to a <a href="#class_like">class-like</a> context, in other words, its `parent_kind` field holds value `class_declaration` or `class_template`. It represents the access specifier of that symbol. The possible values are:
+```
+public | protected | private
+```
+
+##### ● (optional) is_deleted: bool
+If the symbol represents a method, including constructor and destructor, then this field is present. This field is `true` if the symbol is marked with `= delete` in the source; otherwise it is `false`.
+
+##### ● (optional) method_property: array of strings
+If the symbol represents a method, constructor or destructor, then this field is present, representing some interesting properties. The possible array elements are:
+```
+static | const | default | delete | virtual | pure_virtual
+```
+
+If it is pure virtual, then both `virtual` and `pure_virtual` are present in the array. If `delete` is present, the symbol's `is_deleted` field is set `true`, otherwise `false`. The array can be empty.
+
+##### ● (optional) constructor_property: array of strings
+If the symbol represents a constructor, then this field is present, representing some interesting properties. The possible array elements are:
+```
+default | delete | copy | move | converting
+```
+
+The array can be empty. `default` is present only for constructors explicitly marked by `= default`, not for every zero-argument constructor. If `delete` is present, the symbol's `is_deleted` field is set `true`, otherwise `false`. `converting` is present for constructors that can be called with exactly one actual argument - note it could have more than one formal arguments given the others have default expressions.
+
+##### ● (optional) destructor_property: array of strings
+If the symbol represents a destructor, then this field is present, representing some interesting properties. The possible array elements are:
+```
+default | delete | virtual | pure_virtual
+```
+The array can be empty. `default` is present only for destructors explicitly marked by `= default`. If `delete` is present, the symbol's `is_deleted` field is set `true`, otherwise `false`.
+
+##### ● (optional) base_clause: array of `Base` objects
+An array of `Base` objects, each element representing the base class a <a href="#class_like">class-like</a> inherits, in order.
+
+A `Base` object includes:
+
+| Base field | type    | meaning |
+|:-----------|:--------|:--------|
+|`spelling`  | string  | the literal spelling of the base class |
+|`access`    | string  | the access specifier for the inheritance |
+|`virtual_inheritance` | boolean | whether the inheritance is virtual |
+|`definition_location` | <a href="#source_location">source location</a> | where the base is defined |
+
+If the base is a class template, then the `spelling` will contain the [parameter pack](https://en.cppreference.com/w/cpp/language/parameter_pack), e.g. `TemplateName<int>` (instead of only `TemplateName`). `definition_location` is the location where the base class or base class template is defined.
+
+##### ● (optional) is_abstract: boolean
+The field is `true` if the <a href="#class_like">class-like</a> is abstract, i.e. has at least one pure virtual method. Otherwise it is `false`.
+
+Note that a <a href="#class_like">class-like</a> does not need to have a method explicitly marked with `virtual` and `= 0` - if the class-like inherits from an abstract class-like and does not implements all of the inherited pure virtual methods, then this class-like is abstract, too.
+
+##### ● (optional) size: number (integer) or null
+The size, in number of bytes, of the <a href="#class_like">class-like</a> or <a href="#variable_like">variable-like</a>.
+
+If the symbol is for a class template that has a least one type parameter, then this field is `null` as its size is undefined. If the symbol's type is a reference, then this field is the size of the referenced type. If the symbol's type is an array, then this field is the number of bytes in the array, *not* the size of each element *nor* number of elements.
+
+##### ● (optional) POD: boolean
+Indicates if the <a href="#class_like">class-like</a> or <a href="#variable_like">variable-like</a> is [plain old data](https://en.cppreference.com/w/cpp/named_req/PODType). Note: this concept is to be deprecated by C++.
+
+##### ● (optional) type: <a href="#type_object">Type</a> object
+A <a href="#type_object">Type</a> object, indicating the type of a <a href="#class_like">class-like</a> or <a href="#variable_like">variable-like</a> symbol.
+
+##### ● (optional) type_alias_underlying_type: string
+The immediate underlying type's literal spelling for a <a href="#type_alias_like">type-alias-like</a>.
+
+This field is the spelling of the underlying type *one-step* resolved. For example, in this example this field of symbol `MyInt` is `Int`, not `int`.
+```
+typedef int Int;
+typedef Int MyInt;
+```
+
+##### ● (optional) canonical_type: string
+The completely-resolved unerderlying type's literal spelling for a <a href="#type_alias_like">type-alias-like</a>.
+
+Any type-alias chain is resolved. For example, in this example this field of symbol `MyInt` is `int`, not `Int`.
+```
+typedef int Int;
+typedef Int MyInt;
+```
+
+If the completely-resolved unerderlying type is a type parameter, this field is `(type_parameter)`. In this case, to retrieve the type parameter's name, one needs to inspect the `type_alias_chain` field's last element.
+
+##### ● (optional) type_alias_chain: array of `TypeAlias` objects
+An array of <a href="#type_alias_object">TypeAlias</a> objects, representing the type-alias chain from the type itself, then the one-step resolved type, all the way to the completely-resolved canonical type, in order.
+
+##### ● (optional) static_member: boolean
+This field is present (1) if the symbol belongs to a <a href="#class_like">class-like</a> context, in other words, its `parent_kind` field holds value `class_declaration` or `class_template`, and (2) its `kind` field holds value `varaible_declaration` or `field_declaration`. In the conditions above:
+- if `kind` is `varaible_declaration`, then this field is `true`, meaning this symbol represents a static member;
+- if `kind` is `field_declaration`, then this field is `false`, meaning this symbol represents a non-static member.
+
+##### ● (optional) scoped_enum: boolean
+This field is present if `kind` is `enum_declaration` and indicates if this enum is a [scoped enum](https://en.cppreference.com/w/cpp/language/enum).
+
+##### ● (optional) enum_underlying_type: <a href="#type_object">Type</a> object
+This field is present if `kind` is `enum_declaration` or `enum_constant_declaration`:
+- if `kind` is `enum_declaration`, it indicates the underlying integer type used by the enumeration constants in this enum;
+- if `kind` is `enum_constant_declaration`, it indicates the integer type of this enumeration constant.
+
+##### ● (optional) enum_value: number (integer)
+The integer value of an enumeration constant.
+
+<a name="type_object"></a>
+
+### 2.3 the `Type` object
+C++ has a fairly complex type system, so it deserves to have a fairly complex representation, instead of merely the type name string.
+
+At the top level, a `Type` object includes:
+
+| Type field | type              | meaning |
+|:-----------|:------------------|:------------------------------------------|
+|`spelling`  | string            | the literal spelling of the type name     |
+|`type_info` | `TypeInfo` object | miscellaneous information about this type |
+
+Members of the `TypeInfo` object in the `type_info` field may recursively contain `Type` objects, e.g. a pointer type's `type_info` will contain the type of the pointee.
+
+<a name="type_always_present_fields"></a>
+
+#### 2.3.1 `Type`'s always-present fields
+In a `TypeInfo` object, the following fields are always present:
+
+| TypeInfo field | type    | meaning |
+|:---------------|:-----------------|:--------|
+|`type_size`     | number (integer) | type size, in number of bytes |
+|`is_type_alias` | boolean | whether this is a <a href="#type_alias_like">type-alias-like</a> |
+|`is_type_param` | boolean | whether this is a type parameter |
+|`is_array`      | boolean | whether this is an array |
+|`is_pointer`    | boolean | whether this is a pointer |
+|`is_function`   | boolean | whether this is a function type |
+| <a href="#type_optional_fields">others..</a> | | depends on `is_*` fields |
+
+Those `is_*` fields are mutually exclusive - at most one of them is `true`.
+
+<a name="type_optional_fields"></a>
+
+#### 2.3.2 `Type`'s optional fields
+Depending on which one of them is `true`, there are these additional fields:
+
+- if `is_type_alias` is `true`:
+
+| TypeInfo field | type    | meaning |
+|:---------------|:-----------------|:--------|
+| <a href="#type_always_present_fields">always-present fields..</a> | |  |
+|`type_alias_underlying_type` | string | one-step unerderlying type's literal spelling |
+|`canonical_type` | string | completely-resolved unerderlying type's literal spelling |
+|`type_alias_chain` | array of `TypeAlias` objects | An array of <a href="#type_alias_object">TypeAlias</a> objects, representing the type-alias chain from the type itself, then the one-step resolved type, all the way to the completely-resolved canonical type, in order. |
+
+If the completely-resolved unerderlying type is a type parameter, `canonical_type` is `(type_parameter)`. In this case, to retrieve the type parameter's name, one needs to inspect the `type_alias_chain` field's last element.
+
+- if `is_type_param` is `true`:
+
+| TypeInfo field | type    | meaning |
+|:---------------|:-----------------|:--------|
+| <a href="#type_always_present_fields">always-present fields..</a> | |  |
+|`type_param_decl_location` | `TypeParamDeclLoc` object | location information on this type parameter |
+
+A `TypeParamDeclLoc` object includes:
+
+| TypeParamDeclLoc field | type             | meaning |
+|:-----------------------|:-----------------|:--------|
+| <a href="#type_always_present_fields">always-present fields..</a> | |  |
+|`template_spelling`     | string           | the literal spelling of the template declaration |
+|`template_location`     | <a href="#source_location">source location</a> | source location of the template declaration |
+|`param_index`           | number (integer) | the type parameter's position in the declaration's template parameter list (starts from 0) |
+
+- if `is_array` is `true`:
+
+| TypeInfo field | type             | meaning |
+|:---------------|:-----------------|:--------|
+| <a href="#type_always_present_fields">always-present fields..</a> | |  |
+|`array_size`    | number (integer) | number of elements in the array |
+|`array_element_type` | <a href="#type_object">Type</a> object | the type of array element |
+
+- if `is_pointer` is `true`:
+
+| TypeInfo field | type             | meaning |
+|:---------------|:-----------------|:--------|
+| <a href="#type_always_present_fields">always-present fields..</a> | |  |
+|`pointee_type`  | <a href="#type_object">Type</a> object | the type the pointer points to |
+
+- if `is_function` is `true`:
+
+No additional fields. Only the <a href="#type_always_present_fields">always-present fields</a>.
+
+<a name="type_alias_object"></a>
+
+#### 2.3.3: `TypeAlias` object
+
+A `TypeAlias` object includes:
+
+| TypeAlias field | type | meaning |
+|:-----------|:----------|:--------|
+|`spelling`  | string    | the literal spelling of the type at the current level |
+|`location`  | <a href="#source_location">source location</a> | definition of this type at the current level |
+
+ARTIFACT (FIXEME):
+At a level, if the type is a type parameter of some template, the `location` field is an empty string.
 
 <a name="which_kinds_have_what"></a>
 
-### 2.3 Which kinds have what fields
+### 2.4 Which kinds have what fields: a reference
 
 For a `Symbol` object, *in addition* to the always-present fields, depending on the `kind` field's value, it has the following fields as well. For what those fields are, see the <a href="#symbol">field description</a> above.
+
 TODO
+
+<a name="function_like"></a>
+
 #### function-like
+
+<a name="class_like"></a>
 
 #### class-like
 
-#### typedef-declaration-like
+<a name="variable_like"></a>
 
-#### value-like
+#### variable-like
+
+<a name="type_alias_like"></a>
+
+#### type-alias-like
+
 
 ##### Footnotes
 
-0. In Python, you can use its standard library 'json' to convert between a JSON file and a Python structure. The `get()` method also provides you with the same Python structure, as if it was converted from the JSON output (<a href="#python_code">script example</a>).
+0. In Python, you can use its standard library 'json' to convert between a JSON file and a Python structure. The `get()` method also provides you with the same Python structure, <a href="#python_code">as if</a> it was converted from the JSON file.
 
 <a name="documentary_comment"></a>
 

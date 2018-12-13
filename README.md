@@ -48,10 +48,10 @@ Can be used as a commandline tool or a Python library.
 # help
 ./ccindex.py -h
 # print to stdout:
-./ccindex.py path/file.[h|cc]
+./ccindex.py path/file.[h|cc] # without user include paths
 ./ccindex.py path/file.[h|cc] -i UserIncludeDir1/SubDir,UserIncludeDir2
 # store as a JSON file:
-./ccindex.py path/file.[h|cc]
+./ccindex.py path/file.[h|cc] # without user include paths
 ./ccindex.py path/file.[h|cc] -i UserIncludeDir1/SubDir,UserIncludeDir2 -json out.json
 ```
 
@@ -74,7 +74,7 @@ result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 ```
 
 **NOTE** if the target source file includes user headers, user header directories must be specified with the `-i` option, otherwise some symbols won't be recognized. If there are multiple user header directories, separate them with comma `,` without whitespace.
-> user headers: headers that are not in compiler's system header search paths. C++ standard library's headers and the operating system's API headers are system headers.
+> user headers: headers that are not in compiler's system header search paths. Normally speaking, user headers are included by `#include ".."`, while system headers are included by `#include <..>`, e.g. standard library and system API.
 
 **NOTE** tested on Python2, but should work with Python3
 
