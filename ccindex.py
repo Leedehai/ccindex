@@ -681,6 +681,9 @@ def _visit_cursor(c, macro_instant_locs_name_map):
         symbol["size"] = _format_sizeof_type(c_type)
     if c.semantic_parent.kind in class_like_CursorKind:
         symbol["access"] = str(c.access_specifier).split('.')[-1].lower() # str
+        symbol["is_member"] = True # boolean
+    else:
+        symbol["is_member"] = False # boolean
     if c.kind in val_like_CursorKind + [ cindex.CursorKind.CLASS_DECL, cindex.CursorKind.STRUCT_DECL ]:
         symbol["POD"] = c_type.is_pod() # bool (POD: Plain Old Data)
         # C++ has a very complicated type system

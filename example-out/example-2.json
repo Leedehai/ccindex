@@ -17,6 +17,7 @@
       "comment": "comment for NS", 
       "hierarchy": [], 
       "id": "example-2.h#1", 
+      "is_member": false, 
       "kind": "namespace", 
       "location": "example-2.h:7:11", 
       "parent_kind": "(global)", 
@@ -39,6 +40,7 @@
       ], 
       "id": "example-2.h#2", 
       "is_abstract": false, 
+      "is_member": false, 
       "is_template": false, 
       "kind": "class_declaration", 
       "location": "example-2.h:8:7", 
@@ -78,6 +80,7 @@
         }
       ], 
       "id": "example-2.h#3", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:10:12", 
       "parent_kind": "class_declaration", 
@@ -115,6 +118,7 @@
         }
       ], 
       "id": "example-2.h#4", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:11:12", 
       "parent_kind": "class_declaration", 
@@ -159,6 +163,7 @@
       ], 
       "id": "example-2.h#5", 
       "is_deleted": false, 
+      "is_member": true, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "example-2.h:13:5", 
@@ -224,6 +229,7 @@
       ], 
       "id": "example-2.h#6", 
       "is_deleted": false, 
+      "is_member": true, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "example-2.h:14:5", 
@@ -279,6 +285,7 @@
       ], 
       "id": "example-2.h#7", 
       "is_deleted": true, 
+      "is_member": true, 
       "is_template": false, 
       "kind": "constructor", 
       "location": "example-2.h:15:5", 
@@ -316,6 +323,7 @@
       ], 
       "id": "example-2.h#8", 
       "is_deleted": false, 
+      "is_member": true, 
       "is_template": false, 
       "kind": "method", 
       "location": "example-2.h:21:10", 
@@ -377,6 +385,7 @@
       ], 
       "id": "example-2.h#9", 
       "is_deleted": false, 
+      "is_member": true, 
       "is_template": false, 
       "kind": "method", 
       "location": "example-2.h:24:14", 
@@ -442,6 +451,7 @@
         }
       ], 
       "id": "example-2.h#10", 
+      "is_member": false, 
       "is_template": false, 
       "kind": "function_declaration", 
       "location": "example-2.h:27:22", 
@@ -501,6 +511,7 @@
         }
       ], 
       "id": "example-2.h#11", 
+      "is_member": false, 
       "kind": "enum_declaration", 
       "location": "example-2.h:29:6", 
       "parent_kind": "namespace", 
@@ -537,6 +548,7 @@
         }
       ], 
       "id": "example-2.h#12", 
+      "is_member": false, 
       "kind": "enum_constant_declaration", 
       "location": "example-2.h:29:18", 
       "parent_kind": "enum_declaration", 
@@ -583,6 +595,7 @@
         }
       ], 
       "id": "example-2.h#13", 
+      "is_member": false, 
       "kind": "enum_constant_declaration", 
       "location": "example-2.h:29:23", 
       "parent_kind": "enum_declaration", 
@@ -621,6 +634,7 @@
         }
       ], 
       "id": "example-2.h#14", 
+      "is_member": false, 
       "kind": "enum_declaration", 
       "location": "example-2.h:30:12", 
       "parent_kind": "namespace", 
@@ -657,6 +671,7 @@
         }
       ], 
       "id": "example-2.h#15", 
+      "is_member": false, 
       "kind": "enum_constant_declaration", 
       "location": "example-2.h:30:24", 
       "parent_kind": "enum_declaration", 
@@ -703,6 +718,7 @@
         }
       ], 
       "id": "example-2.h#16", 
+      "is_member": false, 
       "kind": "enum_constant_declaration", 
       "location": "example-2.h:30:33", 
       "parent_kind": "enum_declaration", 
@@ -736,6 +752,7 @@
       ], 
       "id": "example-2.h#17", 
       "is_abstract": false, 
+      "is_member": false, 
       "is_template": false, 
       "kind": "class_declaration", 
       "location": "example-2.h:32:7", 
@@ -784,6 +801,7 @@
         }
       ], 
       "id": "example-2.h#18", 
+      "is_member": true, 
       "kind": "enum_declaration", 
       "location": "example-2.h:34:16", 
       "parent_kind": "class_declaration", 
@@ -826,6 +844,7 @@
         }
       ], 
       "id": "example-2.h#19", 
+      "is_member": false, 
       "kind": "enum_constant_declaration", 
       "location": "example-2.h:34:20", 
       "parent_kind": "enum_declaration", 
@@ -878,6 +897,7 @@
         }
       ], 
       "id": "example-2.h#20", 
+      "is_member": false, 
       "kind": "enum_constant_declaration", 
       "location": "example-2.h:34:24", 
       "parent_kind": "enum_declaration", 
@@ -939,6 +959,7 @@
         }
       ], 
       "id": "example-2.h#21", 
+      "is_member": false, 
       "is_template": true, 
       "kind": "function_template", 
       "location": "example-2.h:38:6", 
@@ -1009,6 +1030,7 @@
       ], 
       "id": "example-2.h#22", 
       "is_abstract": false, 
+      "is_member": false, 
       "is_template": true, 
       "kind": "class_template", 
       "location": "example-2.h:41:7", 
@@ -1079,6 +1101,7 @@
         }
       ], 
       "id": "example-2.h#23", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:43:7", 
       "parent_kind": "class_template", 
@@ -1122,6 +1145,7 @@
         }
       ], 
       "id": "example-2.h#24", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:44:7", 
       "parent_kind": "class_template", 
@@ -1165,6 +1189,7 @@
         }
       ], 
       "id": "example-2.h#25", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:45:9", 
       "parent_kind": "class_template", 
@@ -1199,6 +1224,7 @@
       ], 
       "id": "example-2.h#26", 
       "is_abstract": false, 
+      "is_member": false, 
       "is_template": false, 
       "kind": "class_declaration", 
       "location": "example-2.h:48:7", 
@@ -1238,6 +1264,7 @@
         }
       ], 
       "id": "example-2.h#27", 
+      "is_member": true, 
       "kind": "typedef_declaration", 
       "location": "example-2.h:50:17", 
       "parent_kind": "class_declaration", 
@@ -1270,6 +1297,7 @@
       ], 
       "id": "example-2.h#28", 
       "is_abstract": false, 
+      "is_member": false, 
       "is_template": true, 
       "kind": "class_template", 
       "location": "example-2.h:55:7", 
@@ -1340,6 +1368,7 @@
         }
       ], 
       "id": "example-2.h#29", 
+      "is_member": true, 
       "kind": "type_alias_declaration", 
       "location": "example-2.h:56:11", 
       "parent_kind": "class_template", 
@@ -1380,6 +1409,7 @@
       ], 
       "id": "example-2.h#30", 
       "is_abstract": false, 
+      "is_member": true, 
       "is_template": false, 
       "kind": "class_declaration", 
       "location": "example-2.h:57:11", 
@@ -1428,6 +1458,7 @@
       ], 
       "id": "example-2.h#31", 
       "is_abstract": false, 
+      "is_member": true, 
       "is_template": true, 
       "kind": "class_template", 
       "location": "example-2.h:59:15", 
@@ -1504,6 +1535,7 @@
         }
       ], 
       "id": "example-2.h#32", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:60:15", 
       "parent_kind": "class_template", 
@@ -1559,6 +1591,7 @@
         }
       ], 
       "id": "example-2.h#33", 
+      "is_member": true, 
       "kind": "type_alias_declaration", 
       "location": "example-2.h:61:19", 
       "parent_kind": "class_template", 
@@ -1607,6 +1640,7 @@
         }
       ], 
       "id": "example-2.h#34", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:62:16", 
       "parent_kind": "class_template", 
@@ -1667,6 +1701,7 @@
         }
       ], 
       "id": "example-2.h#35", 
+      "is_member": true, 
       "kind": "field_declaration", 
       "location": "example-2.h:65:8", 
       "parent_kind": "class_template", 
@@ -1720,6 +1755,7 @@
         }
       ], 
       "id": "example-2.h#36", 
+      "is_member": false, 
       "kind": "typedef_declaration", 
       "location": "example-2.h:68:16", 
       "parent_kind": "namespace", 
@@ -1749,6 +1785,7 @@
         }
       ], 
       "id": "example-2.h#37", 
+      "is_member": false, 
       "kind": "type_alias_declaration", 
       "location": "example-2.h:69:7", 
       "parent_kind": "namespace", 
@@ -1782,6 +1819,7 @@
         }
       ], 
       "id": "example-2.h#38", 
+      "is_member": false, 
       "kind": "variable_declaration", 
       "location": "example-2.h:71:21", 
       "parent_kind": "namespace", 
@@ -1833,6 +1871,7 @@
         }
       ], 
       "id": "example-2.h#39", 
+      "is_member": false, 
       "kind": "variable_declaration", 
       "location": "example-2.h:72:22", 
       "parent_kind": "namespace", 
@@ -1884,6 +1923,7 @@
         }
       ], 
       "id": "example-2.h#40", 
+      "is_member": false, 
       "kind": "type_alias_declaration", 
       "location": "example-2.h:74:7", 
       "parent_kind": "namespace", 
@@ -1913,6 +1953,7 @@
         }
       ], 
       "id": "example-2.h#41", 
+      "is_member": false, 
       "kind": "variable_declaration", 
       "location": "example-2.h:75:7", 
       "parent_kind": "namespace", 
@@ -1964,6 +2005,7 @@
         }
       ], 
       "id": "example-2.h#42", 
+      "is_member": false, 
       "kind": "type_alias_declaration", 
       "location": "example-2.h:77:7", 
       "parent_kind": "namespace", 
@@ -1997,6 +2039,7 @@
         }
       ], 
       "id": "example-2.h#43", 
+      "is_member": false, 
       "kind": "variable_declaration", 
       "location": "example-2.h:78:8", 
       "parent_kind": "namespace", 
@@ -2041,6 +2084,6 @@
       "usage": ""
     }
   ], 
-  "time_parsing": 0.14608407020568848, 
-  "time_traversing": 1.31233811378479
+  "time_parsing": 0.14826488494873047, 
+  "time_traversing": 1.2824370861053467
 }

@@ -13,6 +13,8 @@ variable_declaration
 example-1.cc:7:11
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 const int
 {
@@ -45,6 +47,8 @@ example-1.cc:8:5
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -76,6 +80,8 @@ example-1.cc:9:26
 (none)
 ::::: canonical_type
 std::vector<int, std::allocator<int>>
+::::: is_member
+False
 ::::: type_alias_chain:[
   {
     "location": "example-1.cc:9:26", 
@@ -108,6 +114,8 @@ comment for MyClass
 ::::: base_clause
 []
 ::::: POD
+False
+::::: is_member
 False
 ::::: is_template
 False
@@ -157,6 +165,8 @@ example-1.cc:13:6
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 int
 {
@@ -201,6 +211,8 @@ None
 False
 ::::: method_property
 ['static']
+::::: is_member
+True
 ::::: args_list
 []
 ::::: access
@@ -242,30 +254,32 @@ example-1.cc:17:2
 comment for MyClass()
 ::::: specifier
 []
+::::: declaration_pretty
+MyClass();
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+MyClass();
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['default']
-::::: method_property
-[]
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-MyClass();
-::::: declaration_pretty
-MyClass();
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['default']
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#8
@@ -291,30 +305,32 @@ example-1.cc:18:2
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+MyClass(const MyClass&);
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+MyClass(const MyClass&);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['copy', 'converting']
-::::: method_property
-[]
-::::: args_list
-[{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-MyClass(const MyClass&);
-::::: declaration_pretty
-MyClass(const MyClass&);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['copy', 'converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#9
@@ -340,30 +356,32 @@ example-1.cc:19:2
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+MyClass(int a, Int b);
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+MyClass(int a, Int b);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-[]
-::::: method_property
-[]
-::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-MyClass(int a, Int b);
-::::: declaration_pretty
-MyClass(int a, Int b);
 ::::: return_type
 None
-::::: template_args_list
+::::: constructor_property
 []
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#10
@@ -395,6 +413,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 []
 ::::: access
@@ -436,30 +456,32 @@ example-1.cc:21:2
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+MyClass(MyClass&&);
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+MyClass(MyClass&&);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['move', 'converting']
-::::: method_property
-[]
-::::: args_list
-[{'type': {'spelling': 'MyClass&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-MyClass(MyClass&&);
-::::: declaration_pretty
-MyClass(MyClass&&);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['move', 'converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#12
@@ -491,6 +513,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 [{'type': {'spelling': 'const MyClass&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': '', 'default_expr': None}]
 ::::: access
@@ -538,6 +562,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 []
 ::::: access
@@ -581,6 +607,8 @@ comment for property2
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 Int
 {
@@ -644,6 +672,8 @@ still comment for property 3
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 const float
 {
@@ -688,6 +718,8 @@ example-1.cc:33:8
 True
 ::::: access
 private
+::::: is_member
+True
 ::::: is_template
 False
 ::::: declaration
@@ -742,6 +774,8 @@ example-1.cc:34:10
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 double
 {
@@ -786,6 +820,8 @@ None
 False
 ::::: method_property
 ['const', 'virtual', 'pure_virtual']
+::::: is_member
+True
 ::::: args_list
 []
 ::::: access
@@ -833,6 +869,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 [{'type': {'spelling': 'T&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'in', 'default_expr': None}]
 ::::: access
@@ -870,6 +908,8 @@ example-1.cc:43:5
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -903,6 +943,8 @@ example-1.cc:47:5
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:47:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:47:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
 ::::: no_throw_guarantee
@@ -938,6 +980,8 @@ comment for foo()
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -977,30 +1021,32 @@ example-1.cc:53:10
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+MyClass(int a, Int b);
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+MyClass(int a, Int b);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-[]
-::::: method_property
-[]
-::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'Int', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'Int', 'location': 'example-1.cc:9:26'}, {'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': 'std::vector<int>', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-MyClass(int a, Int b);
-::::: declaration_pretty
-MyClass(int a, Int b);
 ::::: return_type
 None
-::::: template_args_list
+::::: constructor_property
 []
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#24
@@ -1016,6 +1062,8 @@ namespace
 example-1.cc:58:11
 ::::: comment
 (none)
+::::: is_member
+False
 ==================
 ::::: id
 example-1.cc#25
@@ -1043,6 +1091,8 @@ example-1.cc:61:7
 []
 ::::: base_clause
 []
+::::: is_member
+False
 ::::: is_template
 True
 ::::: declaration
@@ -1089,6 +1139,8 @@ example-1.cc:62:4
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 T
 {
@@ -1141,6 +1193,8 @@ example-1.cc:63:7
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 char
 {
@@ -1173,6 +1227,8 @@ example-1.cc:67:6
 False
 ::::: enum_underlying_type
 {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ==================
 ::::: id
 example-1.cc#29
@@ -1200,6 +1256,8 @@ example-1.cc:68:2
 1
 ::::: enum_underlying_type
 {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 E
 {
@@ -1240,6 +1298,8 @@ example-1.cc:69:2
 2
 ::::: enum_underlying_type
 {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 E
 {
@@ -1268,6 +1328,8 @@ namespace
 example-1.cc:73:11
 ::::: comment
 comment for namespace
+::::: is_member
+False
 ==================
 ::::: id
 example-1.cc#32
@@ -1295,6 +1357,8 @@ example-1.cc:74:6
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -1338,6 +1402,8 @@ example-1.cc:75:8
 []
 ::::: POD
 True
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1374,6 +1440,8 @@ variable_declaration
 example-1.cc:78:12
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 int
 {
@@ -1416,6 +1484,8 @@ example-1.cc:80:17
 []
 ::::: POD
 True
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1470,6 +1540,8 @@ example-1.cc:81:13
 True
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 int
 {
@@ -1516,6 +1588,8 @@ example-1.cc:82:12
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 const int
 {
@@ -1562,6 +1636,8 @@ example-1.cc:83:19
 True
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 const int
 {
@@ -1608,6 +1684,8 @@ example-1.cc:84:6
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 int
 {
@@ -1648,6 +1726,8 @@ example-1.cc:86:12
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -1699,6 +1779,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 [{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}]
 ::::: access
@@ -1752,6 +1834,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 [{'type': {'spelling': 'std::string', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::string', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:194:65'}, {'spelling': 'basic_string<char, char_traits<char>, allocator<char>>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/iosfwd:193:32'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': None, 'type_alias_underlying_type': 'basic_string<char, char_traits<char>, allocator<char>>', 'canonical_type': {'spelling': 'std::basic_string<char, std::char_traits<char>, std::allocator<char>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 's', 'default_expr': None}, {'type': {'spelling': 'MyClass', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 48}}, 'arg_spelling': 'obj', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'obj2', 'default_expr': None}]
 ::::: access
@@ -1809,6 +1893,8 @@ None
 False
 ::::: method_property
 []
+::::: is_member
+True
 ::::: args_list
 [{'type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}, {'type': {'spelling': 'std::vector<int>', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'std::vector<int>', 'location': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector:447:28'}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 24, 'type_alias_underlying_type': '', 'canonical_type': {'spelling': 'std::vector<int, std::allocator<int>>', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 24}}}}, 'arg_spelling': 'b', 'default_expr': None}]
 ::::: access
@@ -1846,6 +1932,8 @@ example-1.cc:92:7
 []
 ::::: POD
 True
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -1886,6 +1974,8 @@ example-1.cc:93:5
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -1915,6 +2005,8 @@ variable_declaration
 example-1.cc:95:5
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 int
 {
@@ -1943,6 +2035,8 @@ variable_declaration
 example-1.cc:95:10
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 int*
 {
@@ -1982,6 +2076,8 @@ variable_declaration
 example-1.cc:96:20
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 std::map<int, int>
 {
@@ -2032,6 +2128,8 @@ example-1.cc:98:5
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 []
 ::::: no_throw_guarantee
@@ -2061,6 +2159,8 @@ variable_declaration
 example-1.cc:103:9
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 int
 {
@@ -2095,6 +2195,8 @@ example-1.cc:104:8
 []
 ::::: POD
 True
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -2145,6 +2247,8 @@ True
 {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: access
 public
+::::: is_member
+True
 ==================
 ::::: id
 example-1.cc#53
@@ -2178,6 +2282,8 @@ example-1.cc:105:25
 0
 ::::: enum_underlying_type
 {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
+::::: is_member
+False
 ::::: type
 EEClass::EE
 {
@@ -2224,6 +2330,8 @@ example-1.cc:105:30
 1
 ::::: enum_underlying_type
 {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
+::::: is_member
+False
 ::::: type
 EEClass::EE
 {
@@ -2264,6 +2372,8 @@ example-1.cc:107:16
 0
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 EnumTy
 {
@@ -2304,6 +2414,8 @@ example-1.cc:107:22
 1
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 EnumTy
 {
@@ -2334,6 +2446,8 @@ example-1.cc:107:29
 (none)
 ::::: canonical_type
 EnumTy
+::::: is_member
+False
 ::::: type_alias_chain:[
   {
     "location": "example-1.cc:107:29", 
@@ -2373,6 +2487,8 @@ example-1.cc:107:16
 0
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 EnumTy
 {
@@ -2413,6 +2529,8 @@ example-1.cc:107:22
 1
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 EnumTy
 {
@@ -2453,6 +2571,8 @@ example-1.cc:108:8
 0
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 (anonymous enum at example-1.cc:108:1)
 {
@@ -2493,6 +2613,8 @@ example-1.cc:108:15
 1
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: is_member
+False
 ::::: type
 (anonymous enum at example-1.cc:108:1)
 {
@@ -2527,6 +2649,8 @@ example-1.cc:110:7
 []
 ::::: POD
 True
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -2567,6 +2691,8 @@ example-1.cc:112:8
 []
 ::::: base_clause
 []
+::::: is_member
+False
 ::::: is_template
 True
 ::::: declaration
@@ -2599,6 +2725,8 @@ example-1.cc:114:7
 []
 ::::: base_clause
 []
+::::: is_member
+False
 ::::: is_template
 True
 ::::: declaration
@@ -2631,6 +2759,8 @@ example-1.cc:116:7
 []
 ::::: base_clause
 []
+::::: is_member
+False
 ::::: is_template
 True
 ::::: declaration
@@ -2661,6 +2791,8 @@ example-1.cc:118:63
 (none)
 ::::: canonical_type
 BaseClassWithAVeryUglyName_i_am_really_long_too<char>
+::::: is_member
+False
 ::::: type_alias_chain:[
   {
     "location": "example-1.cc:118:63", 
@@ -2693,6 +2825,8 @@ example-1.cc:120:7
 ::::: base_clause
 [{'access': 'private', 'definition_location': 'example-1.cc:110:7', 'spelling': 'BaseClass', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:112:8', 'spelling': 'BaseClass2<ClassAgain<int>>', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:104:8', 'spelling': 'EEClass', 'virtual_inheritance': True}, {'access': 'protected', 'definition_location': 'example-1.cc:118:63', 'spelling': 'TypeDefTemplateBase', 'virtual_inheritance': False}]
 ::::: POD
+False
+::::: is_member
 False
 ::::: is_template
 False
@@ -2740,30 +2874,32 @@ example-1.cc:123:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+VClass();
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+VClass();
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['default']
-::::: method_property
-[]
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-VClass();
-::::: declaration_pretty
-VClass();
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['default']
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#69
@@ -2789,30 +2925,32 @@ example-1.cc:124:13
 (none)
 ::::: specifier
 ['= 0']
+::::: declaration_pretty
+virtual ~VClass() = 0;
+::::: destructor_property
+['virtual', 'pure_virtual']
+::::: method_property
+['virtual', 'pure_virtual']
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+unevaluated
+::::: declaration
+virtual ~VClass() = 0;
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: method_property
-['virtual', 'pure_virtual']
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-unevaluated
-::::: is_template
-False
-::::: destructor_property
-['virtual', 'pure_virtual']
-::::: declaration
-virtual ~VClass() = 0;
-::::: declaration_pretty
-virtual ~VClass() = 0;
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: is_template
+False
 ==================
 ::::: id
 example-1.cc#70
@@ -2844,6 +2982,8 @@ None
 False
 ::::: method_property
 ['virtual', 'pure_virtual']
+::::: is_member
+True
 ::::: args_list
 []
 ::::: access
@@ -2879,6 +3019,8 @@ example-1.cc:129:7
 []
 ::::: base_clause
 [{'access': 'public', 'definition_location': 'example-1.cc:112:8', 'spelling': 'BaseClass2<T>', 'virtual_inheritance': False}]
+::::: is_member
+False
 ::::: is_template
 True
 ::::: declaration
@@ -2907,6 +3049,8 @@ variable_declaration
 example-1.cc:131:6
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 int*[5]
 {
@@ -2958,6 +3102,8 @@ variable_declaration
 example-1.cc:132:6
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 char[6]
 {
@@ -2998,6 +3144,8 @@ variable_declaration
 example-1.cc:134:11
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 BaseClass[]
 {
@@ -3042,6 +3190,8 @@ example-1.cc:139:1
 ['noexcept']
 ::::: from_macro
 FUNCS
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'char*&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'in', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -3075,6 +3225,8 @@ example-1.cc:139:1
 ['noexcept']
 ::::: from_macro
 FUNCS
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'char*&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 8}}, 'arg_spelling': 'in', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -3109,5 +3261,5 @@ example-1.cc:134:11: error: definition of variable with array type needs an expl
 {'depth': 1, 'included_at': 'example-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
 {'depth': 1, 'included_at': 'example-1.cc:4:10', 'file': './example-2.h'}
 {'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time parsing] 0.18 sec
-[time traverse] 1.71 sec
+[time parsing] 0.17 sec
+[time traverse] 1.70 sec

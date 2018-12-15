@@ -19,6 +19,8 @@ example-3.cc:3:7
 []
 ::::: POD
 False
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -67,6 +69,8 @@ example-3.cc:4:9
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 int
 {
@@ -105,30 +109,32 @@ example-3.cc:6:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+A();
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+A();
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['default']
-::::: method_property
-[]
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-A();
-::::: declaration_pretty
-A();
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['default']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#4
@@ -154,30 +160,32 @@ example-3.cc:7:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+A(int a);
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+A(int a);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['converting']
-::::: method_property
-[]
-::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'a', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-A(int a);
-::::: declaration_pretty
-A(int a);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#5
@@ -203,30 +211,32 @@ example-3.cc:8:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+~A();
+::::: destructor_property
+[]
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+unevaluated
+::::: declaration
+~A();
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: method_property
-[]
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-unevaluated
-::::: is_template
-False
-::::: destructor_property
-[]
-::::: declaration
-~A();
-::::: declaration_pretty
-~A();
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#6
@@ -252,30 +262,32 @@ example-3.cc:9:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+A(const A&);
+::::: method_property
+['delete']
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'const A&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+A(const A&);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 True
-::::: constructor_property
-['delete', 'copy', 'converting']
-::::: method_property
-['delete']
-::::: args_list
-[{'type': {'spelling': 'const A&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-A(const A&);
-::::: declaration_pretty
-A(const A&);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['delete', 'copy', 'converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#7
@@ -301,30 +313,32 @@ example-3.cc:10:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+A(A&&);
+::::: method_property
+['delete']
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'A&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+A(A&&);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 True
-::::: constructor_property
-['delete', 'move', 'converting']
-::::: method_property
-['delete']
-::::: args_list
-[{'type': {'spelling': 'A&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-A(A&&);
-::::: declaration_pretty
-A(A&&);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['delete', 'move', 'converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#8
@@ -345,6 +359,8 @@ example-3.cc:13:7
 ::::: base_clause
 []
 ::::: POD
+False
+::::: is_member
 False
 ::::: is_template
 False
@@ -394,6 +410,8 @@ example-3.cc:14:9
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 int
 {
@@ -432,30 +450,32 @@ example-3.cc:16:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+B();
+::::: method_property
+['default']
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+unevaluated
+::::: declaration
+B();
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['default']
-::::: method_property
-['default']
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-unevaluated
-::::: is_template
-False
-::::: declaration
-B();
-::::: declaration_pretty
-B();
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['default']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#11
@@ -481,30 +501,32 @@ example-3.cc:17:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+B(int b);
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'b', 'default_expr': None}]
+::::: no_throw_guarantee
+not_guaranteed
+::::: declaration
+B(int b);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['converting']
-::::: method_property
-[]
-::::: args_list
-[{'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'b', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-not_guaranteed
-::::: is_template
-False
-::::: declaration
-B(int b);
-::::: declaration_pretty
-B(int b);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#12
@@ -530,30 +552,32 @@ example-3.cc:18:5
 (none)
 ::::: specifier
 ['noexcept']
+::::: declaration_pretty
+~B() noexcept;
+::::: destructor_property
+[]
+::::: method_property
+[]
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[]
+::::: no_throw_guarantee
+guaranteed
+::::: declaration
+~B() noexcept;
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: method_property
-[]
-::::: args_list
-[]
-::::: access
-public
-::::: no_throw_guarantee
-guaranteed
-::::: is_template
-False
-::::: destructor_property
-[]
-::::: declaration
-~B() noexcept;
-::::: declaration_pretty
-~B() noexcept;
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#13
@@ -579,30 +603,32 @@ example-3.cc:19:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+B(const B&);
+::::: method_property
+['default']
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'const B&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
+::::: no_throw_guarantee
+unevaluated
+::::: declaration
+B(const B&);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['copy', 'converting']
-::::: method_property
-['default']
-::::: args_list
-[{'type': {'spelling': 'const B&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-unevaluated
-::::: is_template
-False
-::::: declaration
-B(const B&);
-::::: declaration_pretty
-B(const B&);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['copy', 'converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#14
@@ -628,30 +654,32 @@ example-3.cc:20:5
 (none)
 ::::: specifier
 []
+::::: declaration_pretty
+B(B&&);
+::::: method_property
+['default']
+::::: access
+public
+::::: is_member
+True
+::::: args_list
+[{'type': {'spelling': 'B&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
+::::: no_throw_guarantee
+unevaluated
+::::: declaration
+B(B&&);
+::::: template_args_list
+[]
 ::::: from_macro
 None
 ::::: is_deleted
 False
-::::: constructor_property
-['move', 'converting']
-::::: method_property
-['default']
-::::: args_list
-[{'type': {'spelling': 'B&&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}]
-::::: access
-public
-::::: no_throw_guarantee
-unevaluated
-::::: is_template
-False
-::::: declaration
-B(B&&);
-::::: declaration_pretty
-B(B&&);
 ::::: return_type
 None
-::::: template_args_list
-[]
+::::: constructor_property
+['move', 'converting']
+::::: is_template
+False
 ==================
 ::::: id
 example-3.cc#15
@@ -673,6 +701,8 @@ example-3.cc:23:7
 []
 ::::: POD
 True
+::::: is_member
+False
 ::::: is_template
 False
 ::::: declaration
@@ -721,6 +751,8 @@ example-3.cc:24:9
 False
 ::::: access
 private
+::::: is_member
+True
 ::::: type
 int
 {
@@ -753,6 +785,8 @@ example-3.cc:29:7
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': '', 'default_expr': None}, {'type': {'spelling': 'float*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}}}, 'arg_spelling': '', 'default_expr': None}, {'type': {'spelling': 'int[]', 'type_info': {'is_type_param': False, 'array_element_type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'is_pointer': False, 'array_size': None, 'is_function': False, 'is_array': True, 'is_type_alias': False, 'type_size': None}}, 'arg_spelling': 'arr', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -786,6 +820,8 @@ example-3.cc:30:6
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_function': True, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'func', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -817,6 +853,8 @@ example-3.cc:31:17
 (none)
 ::::: canonical_type
 float (*)(float, float*)
+::::: is_member
+False
 ::::: type_alias_chain:[
   {
     "location": "example-3.cc:31:17", 
@@ -848,6 +886,8 @@ example-3.cc:32:6
 []
 ::::: from_macro
 None
+::::: is_member
+False
 ::::: args_list
 [{'type': {'spelling': 'FuncPtrTy', 'type_info': {'is_type_param': False, 'type_alias_chain': [{'spelling': 'FuncPtrTy', 'location': 'example-3.cc:31:17'}, {'spelling': 'float (*)(float, float*)', 'location': ''}], 'is_pointer': False, 'is_function': False, 'is_array': False, 'is_type_alias': True, 'type_size': 8, 'type_alias_underlying_type': 'float (*)(float, float*)', 'canonical_type': {'spelling': 'float (*)(float, float*)', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': 8, 'pointee_type': {'spelling': 'float (float, float*)', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}}}}}, 'arg_spelling': 'func', 'default_expr': None}]
 ::::: no_throw_guarantee
@@ -877,6 +917,8 @@ variable_declaration
 example-3.cc:34:9
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 float (*)(float, float*)
 {
@@ -917,6 +959,8 @@ variable_declaration
 example-3.cc:35:11
 ::::: comment
 (none)
+::::: is_member
+False
 ::::: type
 FuncPtrTy
 {
@@ -968,5 +1012,5 @@ True
 {'depth': 1, 'included_at': 'example-3.cc:1:10', 'file': './example-2.h'}
 {'depth': 2, 'included_at': './example-2.h:1:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time parsing] 0.17 sec
-[time traverse] 1.71 sec
+[time parsing] 0.14 sec
+[time traverse] 1.53 sec
