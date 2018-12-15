@@ -103,6 +103,8 @@ Only the symbols inside the target file are stored in the array.
 
 A `Symbol` object stores the meta information of a symbol on the AST.
 
+<a name="always_present_fields"></a>
+
 ### 2.1 Always-present fields
 
 These fields are present in every `Symbol` object.
@@ -144,6 +146,16 @@ struct_declaration    | type_alias_declaration  | typedef_declaration
 variable_declaration
 ```
 
+For a function template, its `kind` is `function_template`, regardless of it is an independent template or a member template of some <a href="#class_like">class-like</a>. There is no such value `method_template`.
+
+For a static member data, its `kind` is `variable_declaration`; for a non-static member data, its `kind` is `field_declaration`.
+
+`type_alias_declaration` and `typedef_declaration` are different:
+```C++
+using Int = int;     // type_alias_declaration
+typedef float Float; // typedef_declaration
+```
+
 ##### ● parent_kind: string
 The syntax kind of the symbol's semantic immediate parent. For example, if a symbol is a class constructor, then the value is `class_declaration`; if a symbol is an enumeration constant, then the value is `enum_declaration`. If a symbol is in the global scope, then the value is `(global)`.
 
@@ -172,7 +184,7 @@ A `Context` object:
 |`spelling`     | string  | the context's symbol spelling |
 |`transparent`  | boolean | whether the context is <a href="#context_transparency">transparent</a> |
 
-For example, in the hierarchy array of symbol `foo`, there are two `Context` objects: the first is for class declaration `A`, and the second is for enum declaration `E`. One can also reason that the hierarchy array of symbol `E` has one object (for class `A`), and the hierarchy array for symbol `A` is empty.
+For example, in the hierarchy array of symbol `foo` (same case for `bar`), there are two `Context` objects: the first is for class declaration `A`, and the second is for enum declaration `E`. One can also reason that the hierarchy array of symbol `E` has one object (for class `A`), and the hierarchy array for symbol `A` is empty.
 ```C++
 // example.cc
 class A {
@@ -248,7 +260,7 @@ guaranteed | not_guaranteed | unevaluated
 A <a href="#function_like">function-like</a> is either guaranteed to not throw any exception, or is not provided with such guarantee. Generally speaking, this guarantee is provided only if `noexcept` or `throw()` exists; however, some complicated [special rules](https://en.cppreference.com/w/cpp/language/noexcept_spec) stipulates that the guarantee is also provided to some that does not one of these two specifiers. If the compiler deems the special rules potentially valid, it will report the `unevaluated` value.
 
 ##### ● (optional) access: string
-This field is present if the symbol belongs to a <a href="#class_like">class-like</a> context, in other words, its `parent_kind` field holds value `class_declaration` or `class_template`. It represents the access specifier of that symbol. The possible values are:
+This field is present if the symbol immediately belongs to a <a href="#class_like">class-like</a> context, in other words, its `parent_kind` field holds value `class_declaration` or `class_template`. It represents that symbol's access specifier. The possible values are:
 ```
 public | protected | private
 ```
@@ -299,15 +311,15 @@ The field is `true` if the <a href="#class_like">class-like</a> is abstract, i.e
 Note that a <a href="#class_like">class-like</a> does not need to have a method explicitly marked with `virtual` and `= 0` - if the class-like inherits from an abstract class-like and does not implements all of the inherited pure virtual methods, then this class-like is abstract, too.
 
 ##### ● (optional) size: number (integer) or null
-The size, in number of bytes, of the <a href="#class_like">class-like</a> or <a href="#variable_like">variable-like</a>.
+The size, in number of bytes, of the <a href="#class_like">class-like</a> or <a href="#value_like">value-like</a>.
 
 If the symbol is for a class template that has a least one type parameter, then this field is `null` as its size is undefined. If the symbol's type is a reference, then this field is the size of the referenced type. If the symbol's type is an array, then this field is the number of bytes in the array, *not* the size of each element *nor* number of elements.
 
 ##### ● (optional) POD: boolean
-Indicates if the <a href="#class_like">class-like</a> or <a href="#variable_like">variable-like</a> is [plain old data](https://en.cppreference.com/w/cpp/named_req/PODType). Note: this concept is to be deprecated by C++.
+Indicates if the <a href="#class_like">class-like</a> or <a href="#value_like">value-like</a> is [plain old data](https://en.cppreference.com/w/cpp/named_req/PODType). Note: this concept is to be deprecated by C++.
 
 ##### ● (optional) type: <a href="#type_object">Type</a> object
-A <a href="#type_object">Type</a> object, indicating the type of a <a href="#class_like">class-like</a> or <a href="#variable_like">variable-like</a> symbol.
+A <a href="#type_object">Type</a> object, indicating the type of a <a href="#class_like">class-like</a> or <a href="#value_like">value-like</a> symbol.
 
 ##### ● (optional) type_alias_underlying_type: string
 The immediate underlying type's literal spelling for a <a href="#type_alias_like">type-alias-like</a>.
@@ -450,24 +462,137 @@ At a level, if the type is a type parameter of some template, the `location` fie
 
 For a `Symbol` object, *in addition* to the always-present fields, depending on the `kind` field's value, it has the following fields as well. For what those fields are, see the <a href="#symbol">field description</a> above.
 
-TODO
-
 <a name="function_like"></a>
 
 #### function-like
+
+`kind`:
+```
+function_declaration | constructor | destructor | conversion_function | method
+function_template
+```
+
+For a function template, its `kind` is `function_template`, regardless of it is an independent template or a member template of some <a href="#class_like">class-like</a>. There is no such value `method_template`. To check if a function template is a member, one needs to go through the `hierarchy` field or check if the `access` field exists.
+
+In addition to those <a href="#always_present_fields">always-present fields</a>..
+
+| Symbol fields | (non-class) function or template | constructor | destructor | conversion function | (ordinary) method or template |
+|:---------------------------------|:-------------:|:-----------:|:----------:|:-----:|:--------:|
+|`from_macro`                      |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`declaration` and `declaration_pretty` |  ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`is_template`                     |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`template_args_list`              |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`args_list`                       |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`return_type`                     |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`specifier`                       |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`no_throw_guarantee`              |       ✓       |  ✓          |  ✓         |   ✓   |   ✓      |
+|`is_deleted`                      |               |  ✓          |  ✓         |   ✓   |   ✓      |
+|`method_property`                 |               |  ✓          |  ✓         |   ✓   |   ✓      |
+|`constructor_property`            |               |  ✓          |            |       |          |
+|`destructor_property`             |               |             |  ✓         |       |          |
+|`access`                          |               |  ✓          |  ✓         |   ✓   |   ✓      |
 
 <a name="class_like"></a>
 
 #### class-like
 
-<a name="variable_like"></a>
+`kind`:
+```
+class_declaration | struct_declaration | class_template
+```
 
-#### variable-like
+In addition to those <a href="#always_present_fields">always-present fields</a>..
+
+| Symbol fields                          | class or struct | template |
+|:---------------------------------------|:---------------:|:--------:|
+| `declaration` and `declaration_pretty` |      ✓          |    ✓     |
+|`is_template`                           |      ✓          |    ✓     |
+|`template_args_list`                    |      ✓          |    ✓     |
+|`specifier`                             |      ✓          |    ✓     |
+|`base_clause`                           |      ✓          |    ✓     |
+|`is_abstract`                           |      ✓          |    ✓     |
+|`size`                                  |      ✓          |          |
+|`POD`                                   |      ✓          |          |
+|`type`                                  |      ✓          |          |
+|`access`                                |  conditional    |conditional|
+
+`access`: this field is present if `parent_kind` holds value of <a href="#class_like">class-like</a>.
+
+<a name="value_like"></a>
+
+#### value-like
+
+`kind`:
+```
+variable_declaration | field_declaration | enum_constant_declaration
+```
+
+| Symbol fields                          | variable | field | enum constant |
+|:---------------------------------------|:--------:|:-----:|:-------------:|
+|`size`                                  |    ✓     |   ✓   |      ✓        |
+|`POD`                                   |    ✓     |   ✓   |      ✓        |
+|`type`                                  |    ✓     |   ✓   |      ✓        |
+|`static_member`                         |conditional|   ✓  |               |
+|`enum_underlying_type`                  |          |       |      ✓        |
+|`enum_value`                            |          |       |      ✓        |
+|`access`                                |conditional|conditional|conditional|
+
+`static_member`: this field is present if `parent_kind` holds value of <a href="#class_like">class-like</a>. If this happens, this symbol represents a static member, and its kind is `variable_declaration` instead of `field_declaration`.
+> Non-static member's `kind` is `field_declaration`.
+
+`access`: this field is present if `parent_kind` holds value of <a href="#class_like">class-like</a>.
+
+In addition to those <a href="#always_present_fields">always-present fields</a>..
+
+#### enum
+
+`kind`:
+```
+enum_declaration
+```
+
+Note `enum_declaration` is different from `enum_constant_declaration`:
+```C++
+enum E { // E: enum_declaration
+    e1,  // e1: enum_constant_declaration, whose parent context is E
+    e2   // e2: enum_constant_declaration, whose parent context is E
+};
+```
+
+In addition to those <a href="#always_present_fields">always-present fields</a>..
+
+| Symbol fields         | enum |
+|:----------------------|:----:|
+|`scoped_enum`          |    ✓ |
+|`enum_underlying_type` |    ✓ |
+|`access`               |conditional|
+
+`access`: this field is present if `parent_kind` holds value of <a href="#class_like">class-like</a>.
 
 <a name="type_alias_like"></a>
 
 #### type-alias-like
 
+`kind`:
+```
+typedef_declaration | type_alias_declaration
+```
+
+```C++
+typedef float Float; // typedef_declaration
+using Int = int;     // type_alias_declaration
+```
+
+In addition to those <a href="#always_present_fields">always-present fields</a>..
+
+| Symbol fields               | typedef | type alias |
+|:----------------------------|:-------:|:--------:|
+|`type_alias_underlying_type` |      ✓  |    ✓     |
+|`type_alias_chain`           |      ✓  |    ✓     |
+|`canonical_type`             |      ✓  |    ✓     |
+|`access`                     |conditional|conditional|
+
+`access`: this field is present if `parent_kind` holds value of <a href="#class_like">class-like</a>.
 
 ##### Footnotes
 
