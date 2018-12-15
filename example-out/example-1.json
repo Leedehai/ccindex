@@ -1,12 +1,12 @@
 {
   "errors": [
     "example-1.cc:22:10: error: return type 'MyClass' is an abstract class", 
-    "example-1.cc:51:10: error: redefinition of 'MyClass'", 
-    "example-1.cc:86:68: error: unknown type name 'Another'", 
-    "example-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members", 
-    "example-1.cc:101:1: error: unknown type name 'Another'", 
-    "example-1.cc:118:7: warning: abstract class is marked 'final' [-Wabstract-final-class]", 
-    "example-1.cc:132:11: error: definition of variable with array type needs an explicit size or an initializer"
+    "example-1.cc:53:10: error: redefinition of 'MyClass'", 
+    "example-1.cc:88:68: error: unknown type name 'Another'", 
+    "example-1.cc:80:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members", 
+    "example-1.cc:103:1: error: unknown type name 'Another'", 
+    "example-1.cc:120:7: warning: abstract class is marked 'final' [-Wabstract-final-class]", 
+    "example-1.cc:134:11: error: definition of variable with array type needs an explicit size or an initializer"
   ], 
   "includes": [
     {
@@ -543,9 +543,11 @@
         }
       ], 
       "id": "example-1.cc#13", 
+      "is_deleted": false, 
       "is_template": false, 
       "kind": "conversion_function", 
       "location": "example-1.cc:23:2", 
+      "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
       "return_type": {
@@ -766,16 +768,90 @@
       "usage": ""
     }, 
     {
+      "access": "private", 
+      "args_list": [
+        {
+          "arg_spelling": "in", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T&", 
+            "type_info": {
+              "is_array": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": false, 
+              "type_size": null
+            }
+          }
+        }
+      ], 
+      "comment": "", 
+      "declaration": "template <typename T>\nvoid fooInClass(T& in);", 
+      "declaration_pretty": "template <typename T>\nvoid fooInClass(T& in);", 
+      "from_macro": null, 
+      "hierarchy": [
+        {
+          "kind": "class_declaration", 
+          "location": "example-1.cc:12:7", 
+          "spelling": "MyClass", 
+          "transparent": false
+        }
+      ], 
+      "id": "example-1.cc#19", 
+      "is_deleted": false, 
+      "is_template": true, 
+      "kind": "function_template", 
+      "location": "example-1.cc:39:10", 
+      "method_property": [], 
+      "no_throw_guarantee": "not_guaranteed", 
+      "parent_kind": "class_declaration", 
+      "return_type": {
+        "spelling": "void", 
+        "type_info": {
+          "is_array": false, 
+          "is_pointer": false, 
+          "is_type_alias": false, 
+          "is_type_param": false, 
+          "type_size": null
+        }
+      }, 
+      "specifier": [], 
+      "spelling": "fooInClass", 
+      "template_args_list": [
+        {
+          "arg_spelling": "T", 
+          "default_expr": null, 
+          "type": {
+            "spelling": "T", 
+            "type_info": {
+              "is_array": false, 
+              "is_function": false, 
+              "is_pointer": false, 
+              "is_type_alias": false, 
+              "is_type_param": true, 
+              "type_param_decl_location": {
+                "param_index": 0, 
+                "template_location": "example-1.cc:39:10", 
+                "template_spelling": "fooInClass"
+              }, 
+              "type_size": null
+            }
+          }
+        }
+      ], 
+      "usage": ""
+    }, 
+    {
       "args_list": [], 
       "comment": "", 
       "declaration": "int baz();", 
       "declaration_pretty": "int baz();", 
       "from_macro": null, 
       "hierarchy": [], 
-      "id": "example-1.cc#19", 
+      "id": "example-1.cc#20", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:41:5", 
+      "location": "example-1.cc:43:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -816,7 +892,7 @@
                   "is_type_param": true, 
                   "type_param_decl_location": {
                     "param_index": 0, 
-                    "template_location": "example-1.cc:45:5", 
+                    "template_location": "example-1.cc:47:5", 
                     "template_spelling": "templateFunc"
                   }, 
                   "type_size": null
@@ -847,7 +923,7 @@
                   "is_type_param": true, 
                   "type_param_decl_location": {
                     "param_index": 1, 
-                    "template_location": "example-1.cc:45:5", 
+                    "template_location": "example-1.cc:47:5", 
                     "template_spelling": "templateFunc"
                   }, 
                   "type_size": null
@@ -877,10 +953,10 @@
       "declaration_pretty": "template <typename T, typename U = Int, int N = 1>\nint templateFunc(T* pt, U* pu, int n = N);", 
       "from_macro": null, 
       "hierarchy": [], 
-      "id": "example-1.cc#20", 
+      "id": "example-1.cc#21", 
       "is_template": true, 
       "kind": "function_template", 
-      "location": "example-1.cc:45:5", 
+      "location": "example-1.cc:47:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -909,7 +985,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "example-1.cc:45:5", 
+                "template_location": "example-1.cc:47:5", 
                 "template_spelling": "templateFunc"
               }, 
               "type_size": null
@@ -929,7 +1005,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 1, 
-                "template_location": "example-1.cc:45:5", 
+                "template_location": "example-1.cc:47:5", 
                 "template_spelling": "templateFunc"
               }, 
               "type_size": null
@@ -1011,10 +1087,10 @@
       "declaration_pretty": "int foo(int a, Int b);", 
       "from_macro": null, 
       "hierarchy": [], 
-      "id": "example-1.cc#21", 
+      "id": "example-1.cc#22", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:48:5", 
+      "location": "example-1.cc:50:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -1099,11 +1175,11 @@
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#22", 
+      "id": "example-1.cc#23", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "example-1.cc:51:10", 
+      "location": "example-1.cc:53:10", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -1116,9 +1192,9 @@
     {
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#23", 
+      "id": "example-1.cc#24", 
       "kind": "namespace", 
-      "location": "example-1.cc:56:11", 
+      "location": "example-1.cc:58:11", 
       "parent_kind": "(global)", 
       "spelling": "NS2", 
       "usage": ""
@@ -1131,16 +1207,16 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:56:11", 
+          "location": "example-1.cc:58:11", 
           "spelling": "NS2", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#24", 
+      "id": "example-1.cc#25", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "example-1.cc:59:7", 
+      "location": "example-1.cc:61:7", 
       "parent_kind": "namespace", 
       "size": null, 
       "specifier": [], 
@@ -1159,7 +1235,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "example-1.cc:59:7", 
+                "template_location": "example-1.cc:61:7", 
                 "template_spelling": "templateClass"
               }, 
               "type_size": null
@@ -1190,20 +1266,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:56:11", 
+          "location": "example-1.cc:58:11", 
           "spelling": "NS2", 
           "transparent": false
         }, 
         {
           "kind": "class_template", 
-          "location": "example-1.cc:59:7", 
+          "location": "example-1.cc:61:7", 
           "spelling": "templateClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#25", 
+      "id": "example-1.cc#26", 
       "kind": "field_declaration", 
-      "location": "example-1.cc:60:4", 
+      "location": "example-1.cc:62:4", 
       "parent_kind": "class_template", 
       "size": null, 
       "spelling": "t_", 
@@ -1218,7 +1294,7 @@
           "is_type_param": true, 
           "type_param_decl_location": {
             "param_index": 0, 
-            "template_location": "example-1.cc:59:7", 
+            "template_location": "example-1.cc:61:7", 
             "template_spelling": "templateClass"
           }, 
           "type_size": null
@@ -1233,20 +1309,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:56:11", 
+          "location": "example-1.cc:58:11", 
           "spelling": "NS2", 
           "transparent": false
         }, 
         {
           "kind": "class_template", 
-          "location": "example-1.cc:59:7", 
+          "location": "example-1.cc:61:7", 
           "spelling": "templateClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#26", 
+      "id": "example-1.cc#27", 
       "kind": "field_declaration", 
-      "location": "example-1.cc:61:7", 
+      "location": "example-1.cc:63:7", 
       "parent_kind": "class_template", 
       "size": 1, 
       "spelling": "c_", 
@@ -1276,9 +1352,9 @@
         }
       }, 
       "hierarchy": [], 
-      "id": "example-1.cc#27", 
+      "id": "example-1.cc#28", 
       "kind": "enum_declaration", 
-      "location": "example-1.cc:65:6", 
+      "location": "example-1.cc:67:6", 
       "parent_kind": "(global)", 
       "scoped_enum": false, 
       "spelling": "E", 
@@ -1301,14 +1377,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:65:6", 
+          "location": "example-1.cc:67:6", 
           "spelling": "E", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#28", 
+      "id": "example-1.cc#29", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:66:2", 
+      "location": "example-1.cc:68:2", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "a", 
@@ -1341,14 +1417,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:65:6", 
+          "location": "example-1.cc:67:6", 
           "spelling": "E", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#29", 
+      "id": "example-1.cc#30", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:67:2", 
+      "location": "example-1.cc:69:2", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "b", 
@@ -1367,9 +1443,9 @@
     {
       "comment": "comment for namespace", 
       "hierarchy": [], 
-      "id": "example-1.cc#30", 
+      "id": "example-1.cc#31", 
       "kind": "namespace", 
-      "location": "example-1.cc:71:11", 
+      "location": "example-1.cc:73:11", 
       "parent_kind": "(global)", 
       "spelling": "customNS", 
       "usage": ""
@@ -1383,15 +1459,15 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#31", 
+      "id": "example-1.cc#32", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:72:6", 
+      "location": "example-1.cc:74:6", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
       "return_type": {
@@ -1418,16 +1494,16 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#32", 
+      "id": "example-1.cc#33", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "example-1.cc:73:8", 
+      "location": "example-1.cc:75:8", 
       "parent_kind": "namespace", 
       "size": 8, 
       "specifier": [], 
@@ -1449,9 +1525,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#33", 
+      "id": "example-1.cc#34", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:76:12", 
+      "location": "example-1.cc:78:12", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "staticGlobal", 
@@ -1476,16 +1552,16 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#34", 
+      "id": "example-1.cc#35", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "example-1.cc:78:17", 
+      "location": "example-1.cc:80:17", 
       "parent_kind": "namespace", 
       "size": 8, 
       "specifier": [
@@ -1512,20 +1588,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#35", 
+      "id": "example-1.cc#36", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:79:13", 
+      "location": "example-1.cc:81:13", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "staticData", 
@@ -1549,20 +1625,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#36", 
+      "id": "example-1.cc#37", 
       "kind": "field_declaration", 
-      "location": "example-1.cc:80:12", 
+      "location": "example-1.cc:82:12", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "constData", 
@@ -1586,20 +1662,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#37", 
+      "id": "example-1.cc#38", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:81:19", 
+      "location": "example-1.cc:83:19", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "staticConstData", 
@@ -1623,20 +1699,20 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#38", 
+      "id": "example-1.cc#39", 
       "kind": "field_declaration", 
-      "location": "example-1.cc:82:6", 
+      "location": "example-1.cc:84:6", 
       "parent_kind": "class_declaration", 
       "size": 4, 
       "spelling": "b", 
@@ -1662,15 +1738,15 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#39", 
+      "id": "example-1.cc#40", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:84:12", 
+      "location": "example-1.cc:86:12", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "namespace", 
       "return_type": {
@@ -1713,22 +1789,22 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#40", 
+      "id": "example-1.cc#41", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "example-1.cc:85:8", 
+      "location": "example-1.cc:87:8", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -1848,22 +1924,22 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#41", 
+      "id": "example-1.cc#42", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "example-1.cc:86:6", 
+      "location": "example-1.cc:88:6", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -1939,22 +2015,22 @@
       "hierarchy": [
         {
           "kind": "namespace", 
-          "location": "example-1.cc:71:11", 
+          "location": "example-1.cc:73:11", 
           "spelling": "customNS", 
           "transparent": false
         }, 
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:78:17", 
+          "location": "example-1.cc:80:17", 
           "spelling": "Class", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#42", 
+      "id": "example-1.cc#43", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "example-1.cc:87:19", 
+      "location": "example-1.cc:89:19", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -1980,11 +2056,11 @@
       "declaration": "class classFriend;", 
       "declaration_pretty": "class classFriend;", 
       "hierarchy": [], 
-      "id": "example-1.cc#43", 
+      "id": "example-1.cc#44", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "example-1.cc:90:7", 
+      "location": "example-1.cc:92:7", 
       "parent_kind": "(global)", 
       "size": 1, 
       "specifier": [], 
@@ -2009,10 +2085,10 @@
       "declaration_pretty": "int fooFriend();", 
       "from_macro": null, 
       "hierarchy": [], 
-      "id": "example-1.cc#44", 
+      "id": "example-1.cc#45", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:91:5", 
+      "location": "example-1.cc:93:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -2034,9 +2110,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#45", 
+      "id": "example-1.cc#46", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:93:5", 
+      "location": "example-1.cc:95:5", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "a1", 
@@ -2056,9 +2132,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#46", 
+      "id": "example-1.cc#47", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:93:10", 
+      "location": "example-1.cc:95:10", 
       "parent_kind": "(global)", 
       "size": 8, 
       "spelling": "a2", 
@@ -2089,9 +2165,9 @@
       "POD": false, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#47", 
+      "id": "example-1.cc#48", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:94:20", 
+      "location": "example-1.cc:96:20", 
       "parent_kind": "(global)", 
       "size": 24, 
       "spelling": "m", 
@@ -2132,10 +2208,10 @@
       "declaration_pretty": "int foo();", 
       "from_macro": null, 
       "hierarchy": [], 
-      "id": "example-1.cc#48", 
+      "id": "example-1.cc#49", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:96:5", 
+      "location": "example-1.cc:98:5", 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -2157,9 +2233,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#49", 
+      "id": "example-1.cc#50", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:101:9", 
+      "location": "example-1.cc:103:9", 
       "parent_kind": "(global)", 
       "size": 4, 
       "spelling": "ano", 
@@ -2182,11 +2258,11 @@
       "declaration": "class EEClass;", 
       "declaration_pretty": "class EEClass;", 
       "hierarchy": [], 
-      "id": "example-1.cc#50", 
+      "id": "example-1.cc#51", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "struct_declaration", 
-      "location": "example-1.cc:102:8", 
+      "location": "example-1.cc:104:8", 
       "parent_kind": "(global)", 
       "size": 1, 
       "specifier": [], 
@@ -2220,14 +2296,14 @@
       "hierarchy": [
         {
           "kind": "struct_declaration", 
-          "location": "example-1.cc:102:8", 
+          "location": "example-1.cc:104:8", 
           "spelling": "EEClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#51", 
+      "id": "example-1.cc#52", 
       "kind": "enum_declaration", 
-      "location": "example-1.cc:103:13", 
+      "location": "example-1.cc:105:13", 
       "parent_kind": "struct_declaration", 
       "scoped_enum": true, 
       "spelling": "EE", 
@@ -2250,20 +2326,20 @@
       "hierarchy": [
         {
           "kind": "struct_declaration", 
-          "location": "example-1.cc:102:8", 
+          "location": "example-1.cc:104:8", 
           "spelling": "EEClass", 
           "transparent": false
         }, 
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:103:13", 
+          "location": "example-1.cc:105:13", 
           "spelling": "EE", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#52", 
+      "id": "example-1.cc#53", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:103:25", 
+      "location": "example-1.cc:105:25", 
       "parent_kind": "enum_declaration", 
       "size": 1, 
       "spelling": "ee1", 
@@ -2296,20 +2372,20 @@
       "hierarchy": [
         {
           "kind": "struct_declaration", 
-          "location": "example-1.cc:102:8", 
+          "location": "example-1.cc:104:8", 
           "spelling": "EEClass", 
           "transparent": false
         }, 
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:103:13", 
+          "location": "example-1.cc:105:13", 
           "spelling": "EE", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#53", 
+      "id": "example-1.cc#54", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:103:30", 
+      "location": "example-1.cc:105:30", 
       "parent_kind": "enum_declaration", 
       "size": 1, 
       "spelling": "ee2", 
@@ -2342,14 +2418,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:105:9", 
+          "location": "example-1.cc:107:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#54", 
+      "id": "example-1.cc#55", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:105:16", 
+      "location": "example-1.cc:107:16", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee1", 
@@ -2382,14 +2458,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:105:9", 
+          "location": "example-1.cc:107:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#55", 
+      "id": "example-1.cc#56", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:105:22", 
+      "location": "example-1.cc:107:22", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee2", 
@@ -2409,18 +2485,18 @@
       "canonical_type": "EnumTy", 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#56", 
+      "id": "example-1.cc#57", 
       "kind": "typedef_declaration", 
-      "location": "example-1.cc:105:29", 
+      "location": "example-1.cc:107:29", 
       "parent_kind": "(global)", 
       "spelling": "EnumTy", 
       "type_alias_chain": [
         {
-          "location": "example-1.cc:105:29", 
+          "location": "example-1.cc:107:29", 
           "spelling": "EnumTy"
         }, 
         {
-          "location": "example-1.cc:105:9", 
+          "location": "example-1.cc:107:9", 
           "spelling": "enum EnumTy"
         }
       ], 
@@ -2444,14 +2520,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:105:9", 
+          "location": "example-1.cc:107:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#57", 
+      "id": "example-1.cc#58", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:105:16", 
+      "location": "example-1.cc:107:16", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee1", 
@@ -2484,14 +2560,14 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:105:9", 
+          "location": "example-1.cc:107:9", 
           "spelling": "EnumTy", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#58", 
+      "id": "example-1.cc#59", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:105:22", 
+      "location": "example-1.cc:107:22", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "eee2", 
@@ -2524,19 +2600,19 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:106:1", 
-          "spelling": "(anonymous enum at example-1.cc:106:1)", 
+          "location": "example-1.cc:108:1", 
+          "spelling": "(anonymous enum at example-1.cc:108:1)", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#59", 
+      "id": "example-1.cc#60", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:106:8", 
+      "location": "example-1.cc:108:8", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "aaaaa", 
       "type": {
-        "spelling": "(anonymous enum at example-1.cc:106:1)", 
+        "spelling": "(anonymous enum at example-1.cc:108:1)", 
         "type_info": {
           "is_array": false, 
           "is_pointer": false, 
@@ -2564,19 +2640,19 @@
       "hierarchy": [
         {
           "kind": "enum_declaration", 
-          "location": "example-1.cc:106:1", 
-          "spelling": "(anonymous enum at example-1.cc:106:1)", 
+          "location": "example-1.cc:108:1", 
+          "spelling": "(anonymous enum at example-1.cc:108:1)", 
           "transparent": true
         }
       ], 
-      "id": "example-1.cc#60", 
+      "id": "example-1.cc#61", 
       "kind": "enum_constant_declaration", 
-      "location": "example-1.cc:106:15", 
+      "location": "example-1.cc:108:15", 
       "parent_kind": "enum_declaration", 
       "size": 4, 
       "spelling": "bbbbb", 
       "type": {
-        "spelling": "(anonymous enum at example-1.cc:106:1)", 
+        "spelling": "(anonymous enum at example-1.cc:108:1)", 
         "type_info": {
           "is_array": false, 
           "is_pointer": false, 
@@ -2594,11 +2670,11 @@
       "declaration": "class BaseClass;", 
       "declaration_pretty": "class BaseClass;", 
       "hierarchy": [], 
-      "id": "example-1.cc#61", 
+      "id": "example-1.cc#62", 
       "is_abstract": false, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "example-1.cc:108:7", 
+      "location": "example-1.cc:110:7", 
       "parent_kind": "(global)", 
       "size": 1, 
       "specifier": [], 
@@ -2622,11 +2698,11 @@
       "declaration": "template <typename T> class BaseClass2;", 
       "declaration_pretty": "template <typename T>\nclass BaseClass2;", 
       "hierarchy": [], 
-      "id": "example-1.cc#62", 
+      "id": "example-1.cc#63", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "example-1.cc:110:8", 
+      "location": "example-1.cc:112:8", 
       "parent_kind": "(global)", 
       "size": null, 
       "specifier": [], 
@@ -2645,7 +2721,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "example-1.cc:110:8", 
+                "template_location": "example-1.cc:112:8", 
                 "template_spelling": "BaseClass2"
               }, 
               "type_size": null
@@ -2661,11 +2737,11 @@
       "declaration": "template <typename T> class ClassAgain;", 
       "declaration_pretty": "template <typename T>\nclass ClassAgain;", 
       "hierarchy": [], 
-      "id": "example-1.cc#63", 
+      "id": "example-1.cc#64", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "example-1.cc:112:7", 
+      "location": "example-1.cc:114:7", 
       "parent_kind": "(global)", 
       "size": null, 
       "specifier": [], 
@@ -2684,7 +2760,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "example-1.cc:112:7", 
+                "template_location": "example-1.cc:114:7", 
                 "template_spelling": "ClassAgain"
               }, 
               "type_size": null
@@ -2700,11 +2776,11 @@
       "declaration": "template <typename T> class BaseClassWithAVeryUglyName_i_am_really_long_too;", 
       "declaration_pretty": "template <typename T>\nclass BaseClassWithAVeryUglyName_i_am_really_long_too;", 
       "hierarchy": [], 
-      "id": "example-1.cc#64", 
+      "id": "example-1.cc#65", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "example-1.cc:114:7", 
+      "location": "example-1.cc:116:7", 
       "parent_kind": "(global)", 
       "size": null, 
       "specifier": [], 
@@ -2723,7 +2799,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "example-1.cc:114:7", 
+                "template_location": "example-1.cc:116:7", 
                 "template_spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too"
               }, 
               "type_size": null
@@ -2737,18 +2813,18 @@
       "canonical_type": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>", 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#65", 
+      "id": "example-1.cc#66", 
       "kind": "typedef_declaration", 
-      "location": "example-1.cc:116:63", 
+      "location": "example-1.cc:118:63", 
       "parent_kind": "(global)", 
       "spelling": "TypeDefTemplateBase", 
       "type_alias_chain": [
         {
-          "location": "example-1.cc:116:63", 
+          "location": "example-1.cc:118:63", 
           "spelling": "TypeDefTemplateBase"
         }, 
         {
-          "location": "example-1.cc:114:7", 
+          "location": "example-1.cc:116:7", 
           "spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>"
         }
       ], 
@@ -2760,25 +2836,25 @@
       "base_clause": [
         {
           "access": "private", 
-          "definition_location": "example-1.cc:108:7", 
+          "definition_location": "example-1.cc:110:7", 
           "spelling": "BaseClass", 
           "virtual_inheritance": false
         }, 
         {
           "access": "public", 
-          "definition_location": "example-1.cc:110:8", 
+          "definition_location": "example-1.cc:112:8", 
           "spelling": "BaseClass2<ClassAgain<int>>", 
           "virtual_inheritance": false
         }, 
         {
           "access": "public", 
-          "definition_location": "example-1.cc:102:8", 
+          "definition_location": "example-1.cc:104:8", 
           "spelling": "EEClass", 
           "virtual_inheritance": true
         }, 
         {
           "access": "protected", 
-          "definition_location": "example-1.cc:116:63", 
+          "definition_location": "example-1.cc:118:63", 
           "spelling": "TypeDefTemplateBase", 
           "virtual_inheritance": false
         }
@@ -2787,11 +2863,11 @@
       "declaration": "class VClass final;", 
       "declaration_pretty": "class VClass final;", 
       "hierarchy": [], 
-      "id": "example-1.cc#66", 
+      "id": "example-1.cc#67", 
       "is_abstract": true, 
       "is_template": false, 
       "kind": "class_declaration", 
-      "location": "example-1.cc:118:7", 
+      "location": "example-1.cc:120:7", 
       "parent_kind": "(global)", 
       "size": 8, 
       "specifier": [
@@ -2824,16 +2900,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:118:7", 
+          "location": "example-1.cc:120:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#67", 
+      "id": "example-1.cc#68", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "constructor", 
-      "location": "example-1.cc:121:5", 
+      "location": "example-1.cc:123:5", 
       "method_property": [], 
       "no_throw_guarantee": "not_guaranteed", 
       "parent_kind": "class_declaration", 
@@ -2857,16 +2933,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:118:7", 
+          "location": "example-1.cc:120:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#68", 
+      "id": "example-1.cc#69", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "destructor", 
-      "location": "example-1.cc:122:13", 
+      "location": "example-1.cc:124:13", 
       "method_property": [
         "virtual", 
         "pure_virtual"
@@ -2891,16 +2967,16 @@
       "hierarchy": [
         {
           "kind": "class_declaration", 
-          "location": "example-1.cc:118:7", 
+          "location": "example-1.cc:120:7", 
           "spelling": "VClass", 
           "transparent": false
         }
       ], 
-      "id": "example-1.cc#69", 
+      "id": "example-1.cc#70", 
       "is_deleted": false, 
       "is_template": false, 
       "kind": "method", 
-      "location": "example-1.cc:123:18", 
+      "location": "example-1.cc:125:18", 
       "method_property": [
         "virtual", 
         "pure_virtual"
@@ -2928,7 +3004,7 @@
       "base_clause": [
         {
           "access": "public", 
-          "definition_location": "example-1.cc:110:8", 
+          "definition_location": "example-1.cc:112:8", 
           "spelling": "BaseClass2<T>", 
           "virtual_inheritance": false
         }
@@ -2937,11 +3013,11 @@
       "declaration": "template <typename T> class TemplateInheritanceChild;", 
       "declaration_pretty": "template <typename T>\nclass TemplateInheritanceChild;", 
       "hierarchy": [], 
-      "id": "example-1.cc#70", 
+      "id": "example-1.cc#71", 
       "is_abstract": false, 
       "is_template": true, 
       "kind": "class_template", 
-      "location": "example-1.cc:127:7", 
+      "location": "example-1.cc:129:7", 
       "parent_kind": "(global)", 
       "size": null, 
       "specifier": [], 
@@ -2960,7 +3036,7 @@
               "is_type_param": true, 
               "type_param_decl_location": {
                 "param_index": 0, 
-                "template_location": "example-1.cc:127:7", 
+                "template_location": "example-1.cc:129:7", 
                 "template_spelling": "TemplateInheritanceChild"
               }, 
               "type_size": null
@@ -2974,9 +3050,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#71", 
+      "id": "example-1.cc#72", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:129:6", 
+      "location": "example-1.cc:131:6", 
       "parent_kind": "(global)", 
       "size": 40, 
       "spelling": "arrIntPtr", 
@@ -3019,9 +3095,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#72", 
+      "id": "example-1.cc#73", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:130:6", 
+      "location": "example-1.cc:132:6", 
       "parent_kind": "(global)", 
       "size": 6, 
       "spelling": "arrChar", 
@@ -3053,9 +3129,9 @@
       "POD": true, 
       "comment": "", 
       "hierarchy": [], 
-      "id": "example-1.cc#73", 
+      "id": "example-1.cc#74", 
       "kind": "variable_declaration", 
-      "location": "example-1.cc:132:11", 
+      "location": "example-1.cc:134:11", 
       "parent_kind": "(global)", 
       "size": null, 
       "spelling": "arrVar", 
@@ -3105,10 +3181,10 @@
       "declaration_pretty": "FUNCS(returnVoid, char *)", 
       "from_macro": "FUNCS", 
       "hierarchy": [], 
-      "id": "example-1.cc#74", 
+      "id": "example-1.cc#75", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:137:1", 
+      "location": "example-1.cc:139:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -3150,10 +3226,10 @@
       "declaration_pretty": "FUNCS(returnVoid, char *)", 
       "from_macro": "FUNCS", 
       "hierarchy": [], 
-      "id": "example-1.cc#75", 
+      "id": "example-1.cc#76", 
       "is_template": false, 
       "kind": "function_declaration", 
-      "location": "example-1.cc:137:1", 
+      "location": "example-1.cc:139:1", 
       "no_throw_guarantee": "guaranteed", 
       "parent_kind": "(global)", 
       "return_type": {
@@ -3174,6 +3250,6 @@
       "usage": ""
     }
   ], 
-  "time_parsing": 0.28641510009765625, 
-  "time_traversing": 2.410475969314575
+  "time_parsing": 0.1838819980621338, 
+  "time_traversing": 1.729659080505371
 }

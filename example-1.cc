@@ -35,6 +35,8 @@ private:
 	};
 
 	virtual void method3() const = 0;
+    template <typename T>
+    void fooInClass(T &in);
 };
 
 // non-doc comment

@@ -479,9 +479,11 @@ func_like_CursorKind = [ # function-like
 ]
 
 method_like_CursorKind = [ # method-like
+    cindex.CursorKind.CXX_METHOD,
+    cindex.CursorKind.CONVERSION_FUNCTION, # only valid for class, e.g. MyClass::operator int();
     cindex.CursorKind.CONSTRUCTOR,
     cindex.CursorKind.DESTRUCTOR,
-    cindex.CursorKind.CXX_METHOD,
+    # FUNCTION_TEMPLATE -- needs to check semantic_parent
 ]
 
 class_like_CursorKind = [ # class-like
@@ -694,7 +696,8 @@ def _visit_cursor(c, macro_instant_locs_name_map):
         symbol["type_alias_chain"] = _format_type_alias_chain(c_type)
         # str, completely resoluted
         symbol["canonical_type"] = _format_type(c_type.get_canonical())
-    if c.kind in method_like_CursorKind:
+    if (c.kind in method_like_CursorKind
+        or (c.kind == cindex.CursorKind.FUNCTION_TEMPLATE and c.semantic_parent.kind in class_like_CursorKind)):
         symbol["is_deleted"] = is_deleted_method(c) # bool
         method_property = []
         if c.is_static_method():

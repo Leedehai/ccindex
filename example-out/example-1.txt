@@ -534,6 +534,10 @@ example-1.cc:23:2
 []
 ::::: from_macro
 None
+::::: is_deleted
+False
+::::: method_property
+[]
 ::::: args_list
 []
 ::::: access
@@ -802,6 +806,55 @@ virtual void method3() const = 0;
 ::::: id
 example-1.cc#19
 ::::: spelling
+fooInClass
+::::: kind
+function_template
+::::: hierarchy
+::MyClass
+[
+  {
+    "kind": "class_declaration", 
+    "location": "example-1.cc:12:7", 
+    "spelling": "MyClass", 
+    "transparent": false
+  }
+]
+::::: parent_kind
+class_declaration
+::::: location
+example-1.cc:39:10
+::::: comment
+(none)
+::::: specifier
+[]
+::::: from_macro
+None
+::::: is_deleted
+False
+::::: method_property
+[]
+::::: args_list
+[{'type': {'spelling': 'T&', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'in', 'default_expr': None}]
+::::: access
+private
+::::: no_throw_guarantee
+not_guaranteed
+::::: is_template
+True
+::::: declaration
+template <typename T>
+void fooInClass(T& in);
+::::: declaration_pretty
+template <typename T>
+void fooInClass(T& in);
+::::: return_type
+{'spelling': 'void', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': None}}
+::::: template_args_list
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:39:10', 'template_spelling': 'fooInClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+==================
+::::: id
+example-1.cc#20
+::::: spelling
 baz
 ::::: kind
 function_declaration
@@ -810,7 +863,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:41:5
+example-1.cc:43:5
 ::::: comment
 (none)
 ::::: specifier
@@ -833,7 +886,7 @@ int baz();
 []
 ==================
 ::::: id
-example-1.cc#20
+example-1.cc#21
 ::::: spelling
 templateFunc
 ::::: kind
@@ -843,7 +896,7 @@ function_template
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:45:5
+example-1.cc:47:5
 ::::: comment
 (none)
 ::::: specifier
@@ -851,7 +904,7 @@ example-1.cc:45:5
 ::::: from_macro
 None
 ::::: args_list
-[{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
+[{'type': {'spelling': 'T*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:47:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pt', 'default_expr': None}, {'type': {'spelling': 'U*', 'type_info': {'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': False, 'is_pointer': True, 'type_size': None, 'pointee_type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:47:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}}}, 'arg_spelling': 'pu', 'default_expr': None}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'n', 'default_expr': 'N'}]
 ::::: no_throw_guarantee
 not_guaranteed
 ::::: is_template
@@ -865,10 +918,10 @@ int templateFunc(T* pt, U* pu, int n = N);
 ::::: return_type
 {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:45:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': '1'}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:47:5', 'template_spelling': 'templateFunc', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'U', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:47:5', 'template_spelling': 'templateFunc', 'param_index': 1}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'U', 'default_expr': 'Int'}, {'type': {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}, 'arg_spelling': 'N', 'default_expr': '1'}]
 ==================
 ::::: id
-example-1.cc#21
+example-1.cc#22
 ::::: spelling
 foo
 ::::: kind
@@ -878,7 +931,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:48:5
+example-1.cc:50:5
 ::::: comment
 comment for foo()
 ::::: specifier
@@ -901,7 +954,7 @@ int foo(int a, Int b);
 []
 ==================
 ::::: id
-example-1.cc#22
+example-1.cc#23
 ::::: spelling
 MyClass
 ::::: kind
@@ -919,7 +972,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:51:10
+example-1.cc:53:10
 ::::: comment
 (none)
 ::::: specifier
@@ -950,7 +1003,7 @@ None
 []
 ==================
 ::::: id
-example-1.cc#23
+example-1.cc#24
 ::::: spelling
 NS2
 ::::: kind
@@ -960,12 +1013,12 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:56:11
+example-1.cc:58:11
 ::::: comment
 (none)
 ==================
 ::::: id
-example-1.cc#24
+example-1.cc#25
 ::::: spelling
 templateClass
 ::::: kind
@@ -975,7 +1028,7 @@ class_template
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:56:11", 
+    "location": "example-1.cc:58:11", 
     "spelling": "NS2", 
     "transparent": false
   }
@@ -983,7 +1036,7 @@ class_template
 ::::: parent_kind
 namespace
 ::::: location
-example-1.cc:59:7
+example-1.cc:61:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1002,10 +1055,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:59:7', 'template_spelling': 'templateClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'C', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:61:7', 'template_spelling': 'templateClass', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}, {'type': {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}, 'arg_spelling': 'C', 'default_expr': None}]
 ==================
 ::::: id
-example-1.cc#25
+example-1.cc#26
 ::::: spelling
 t_
 ::::: kind
@@ -1015,13 +1068,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:56:11", 
+    "location": "example-1.cc:58:11", 
     "spelling": "NS2", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "example-1.cc:59:7", 
+    "location": "example-1.cc:61:7", 
     "spelling": "templateClass", 
     "transparent": false
   }
@@ -1029,7 +1082,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-example-1.cc:60:4
+example-1.cc:62:4
 ::::: comment
 (none)
 ::::: static_member
@@ -1046,7 +1099,7 @@ T
   "is_type_param": true, 
   "type_param_decl_location": {
     "param_index": 0, 
-    "template_location": "example-1.cc:59:7", 
+    "template_location": "example-1.cc:61:7", 
     "template_spelling": "templateClass"
   }, 
   "type_size": null
@@ -1057,7 +1110,7 @@ False
 None
 ==================
 ::::: id
-example-1.cc#26
+example-1.cc#27
 ::::: spelling
 c_
 ::::: kind
@@ -1067,13 +1120,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:56:11", 
+    "location": "example-1.cc:58:11", 
     "spelling": "NS2", 
     "transparent": false
   }, 
   {
     "kind": "class_template", 
-    "location": "example-1.cc:59:7", 
+    "location": "example-1.cc:61:7", 
     "spelling": "templateClass", 
     "transparent": false
   }
@@ -1081,7 +1134,7 @@ field_declaration
 ::::: parent_kind
 class_template
 ::::: location
-example-1.cc:61:7
+example-1.cc:63:7
 ::::: comment
 (none)
 ::::: static_member
@@ -1103,7 +1156,7 @@ True
 1
 ==================
 ::::: id
-example-1.cc#27
+example-1.cc#28
 ::::: spelling
 E
 ::::: kind
@@ -1113,7 +1166,7 @@ enum_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:65:6
+example-1.cc:67:6
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -1122,7 +1175,7 @@ False
 {'spelling': 'int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ==================
 ::::: id
-example-1.cc#28
+example-1.cc#29
 ::::: spelling
 a
 ::::: kind
@@ -1132,7 +1185,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:65:6", 
+    "location": "example-1.cc:67:6", 
     "spelling": "E", 
     "transparent": true
   }
@@ -1140,7 +1193,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:66:2
+example-1.cc:68:2
 ::::: comment
 (none)
 ::::: enum_value
@@ -1162,7 +1215,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#29
+example-1.cc#30
 ::::: spelling
 b
 ::::: kind
@@ -1172,7 +1225,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:65:6", 
+    "location": "example-1.cc:67:6", 
     "spelling": "E", 
     "transparent": true
   }
@@ -1180,7 +1233,7 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:67:2
+example-1.cc:69:2
 ::::: comment
 (none)
 ::::: enum_value
@@ -1202,7 +1255,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#30
+example-1.cc#31
 ::::: spelling
 customNS
 ::::: kind
@@ -1212,12 +1265,12 @@ namespace
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:71:11
+example-1.cc:73:11
 ::::: comment
 comment for namespace
 ==================
 ::::: id
-example-1.cc#31
+example-1.cc#32
 ::::: spelling
 foo
 ::::: kind
@@ -1227,7 +1280,7 @@ function_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1235,7 +1288,7 @@ function_declaration
 ::::: parent_kind
 namespace
 ::::: location
-example-1.cc:72:6
+example-1.cc:74:6
 ::::: comment
 (none)
 ::::: specifier
@@ -1258,7 +1311,7 @@ int foo();
 []
 ==================
 ::::: id
-example-1.cc#32
+example-1.cc#33
 ::::: spelling
 Class
 ::::: kind
@@ -1268,7 +1321,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1276,7 +1329,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-example-1.cc:73:8
+example-1.cc:75:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1308,7 +1361,7 @@ False
 []
 ==================
 ::::: id
-example-1.cc#33
+example-1.cc#34
 ::::: spelling
 staticGlobal
 ::::: kind
@@ -1318,7 +1371,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:76:12
+example-1.cc:78:12
 ::::: comment
 (none)
 ::::: type
@@ -1336,7 +1389,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#34
+example-1.cc#35
 ::::: spelling
 Class
 ::::: kind
@@ -1346,7 +1399,7 @@ class_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1354,7 +1407,7 @@ class_declaration
 ::::: parent_kind
 namespace
 ::::: location
-example-1.cc:78:17
+example-1.cc:80:17
 ::::: comment
 (none)
 ::::: specifier
@@ -1386,7 +1439,7 @@ False
 []
 ==================
 ::::: id
-example-1.cc#35
+example-1.cc#36
 ::::: spelling
 staticData
 ::::: kind
@@ -1396,13 +1449,13 @@ variable_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
+    "location": "example-1.cc:80:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1410,7 +1463,7 @@ variable_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:79:13
+example-1.cc:81:13
 ::::: comment
 (none)
 ::::: static_member
@@ -1432,7 +1485,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#36
+example-1.cc#37
 ::::: spelling
 constData
 ::::: kind
@@ -1442,13 +1495,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
+    "location": "example-1.cc:80:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1456,57 +1509,11 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:80:12
+example-1.cc:82:12
 ::::: comment
 (none)
 ::::: static_member
 False
-::::: access
-private
-::::: type
-const int
-{
-  "is_array": false, 
-  "is_pointer": false, 
-  "is_type_alias": false, 
-  "is_type_param": false, 
-  "type_size": 4
-}
-::::: POD
-True
-::::: size
-4
-==================
-::::: id
-example-1.cc#37
-::::: spelling
-staticConstData
-::::: kind
-variable_declaration
-::::: hierarchy
-::customNS::Class
-[
-  {
-    "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
-    "spelling": "customNS", 
-    "transparent": false
-  }, 
-  {
-    "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
-    "spelling": "Class", 
-    "transparent": false
-  }
-]
-::::: parent_kind
-class_declaration
-::::: location
-example-1.cc:81:19
-::::: comment
-(none)
-::::: static_member
-True
 ::::: access
 private
 ::::: type
@@ -1526,6 +1533,52 @@ True
 ::::: id
 example-1.cc#38
 ::::: spelling
+staticConstData
+::::: kind
+variable_declaration
+::::: hierarchy
+::customNS::Class
+[
+  {
+    "kind": "namespace", 
+    "location": "example-1.cc:73:11", 
+    "spelling": "customNS", 
+    "transparent": false
+  }, 
+  {
+    "kind": "class_declaration", 
+    "location": "example-1.cc:80:17", 
+    "spelling": "Class", 
+    "transparent": false
+  }
+]
+::::: parent_kind
+class_declaration
+::::: location
+example-1.cc:83:19
+::::: comment
+(none)
+::::: static_member
+True
+::::: access
+private
+::::: type
+const int
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
+::::: POD
+True
+::::: size
+4
+==================
+::::: id
+example-1.cc#39
+::::: spelling
 b
 ::::: kind
 field_declaration
@@ -1534,13 +1587,13 @@ field_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
+    "location": "example-1.cc:80:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1548,7 +1601,7 @@ field_declaration
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:82:6
+example-1.cc:84:6
 ::::: comment
 (none)
 ::::: static_member
@@ -1570,7 +1623,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#39
+example-1.cc#40
 ::::: spelling
 fooFriend
 ::::: kind
@@ -1580,7 +1633,7 @@ function_declaration
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }
@@ -1588,7 +1641,7 @@ function_declaration
 ::::: parent_kind
 namespace
 ::::: location
-example-1.cc:84:12
+example-1.cc:86:12
 ::::: comment
 (none)
 ::::: specifier
@@ -1611,7 +1664,7 @@ int fooFriend();
 []
 ==================
 ::::: id
-example-1.cc#40
+example-1.cc#41
 ::::: spelling
 returnSizeT_int
 ::::: kind
@@ -1621,13 +1674,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
+    "location": "example-1.cc:80:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1635,7 +1688,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:85:8
+example-1.cc:87:8
 ::::: comment
 (none)
 ::::: specifier
@@ -1664,7 +1717,7 @@ size_t returnSizeT_int(int a);
 []
 ==================
 ::::: id
-example-1.cc#41
+example-1.cc#42
 ::::: spelling
 returnBool_string_myclass_anotherclass
 ::::: kind
@@ -1674,13 +1727,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
+    "location": "example-1.cc:80:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1688,7 +1741,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:86:6
+example-1.cc:88:6
 ::::: comment
 (none)
 ::::: specifier
@@ -1721,7 +1774,7 @@ bool returnBool_string_myclass_anotherclass(
 []
 ==================
 ::::: id
-example-1.cc#42
+example-1.cc#43
 ::::: spelling
 returnVector_float_vector
 ::::: kind
@@ -1731,13 +1784,13 @@ method
 [
   {
     "kind": "namespace", 
-    "location": "example-1.cc:71:11", 
+    "location": "example-1.cc:73:11", 
     "spelling": "customNS", 
     "transparent": false
   }, 
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:78:17", 
+    "location": "example-1.cc:80:17", 
     "spelling": "Class", 
     "transparent": false
   }
@@ -1745,7 +1798,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:87:19
+example-1.cc:89:19
 ::::: comment
 (none)
 ::::: specifier
@@ -1774,7 +1827,7 @@ std::vector<int>& returnVector_float_vector(float a, std::vector<int> b);
 []
 ==================
 ::::: id
-example-1.cc#43
+example-1.cc#44
 ::::: spelling
 classFriend
 ::::: kind
@@ -1784,7 +1837,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:90:7
+example-1.cc:92:7
 ::::: comment
 (none)
 ::::: specifier
@@ -1816,7 +1869,7 @@ False
 []
 ==================
 ::::: id
-example-1.cc#44
+example-1.cc#45
 ::::: spelling
 fooFriend
 ::::: kind
@@ -1826,7 +1879,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:91:5
+example-1.cc:93:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1849,7 +1902,7 @@ int fooFriend();
 []
 ==================
 ::::: id
-example-1.cc#45
+example-1.cc#46
 ::::: spelling
 a1
 ::::: kind
@@ -1859,7 +1912,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:93:5
+example-1.cc:95:5
 ::::: comment
 (none)
 ::::: type
@@ -1877,7 +1930,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#46
+example-1.cc#47
 ::::: spelling
 a2
 ::::: kind
@@ -1887,7 +1940,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:93:10
+example-1.cc:95:10
 ::::: comment
 (none)
 ::::: type
@@ -1916,7 +1969,7 @@ True
 8
 ==================
 ::::: id
-example-1.cc#47
+example-1.cc#48
 ::::: spelling
 m
 ::::: kind
@@ -1926,7 +1979,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:94:20
+example-1.cc:96:20
 ::::: comment
 (none)
 ::::: type
@@ -1962,7 +2015,7 @@ False
 24
 ==================
 ::::: id
-example-1.cc#48
+example-1.cc#49
 ::::: spelling
 foo
 ::::: kind
@@ -1972,7 +2025,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:96:5
+example-1.cc:98:5
 ::::: comment
 (none)
 ::::: specifier
@@ -1995,7 +2048,7 @@ int foo();
 []
 ==================
 ::::: id
-example-1.cc#49
+example-1.cc#50
 ::::: spelling
 ano
 ::::: kind
@@ -2005,7 +2058,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:101:9
+example-1.cc:103:9
 ::::: comment
 (none)
 ::::: type
@@ -2023,7 +2076,7 @@ True
 4
 ==================
 ::::: id
-example-1.cc#50
+example-1.cc#51
 ::::: spelling
 EEClass
 ::::: kind
@@ -2033,7 +2086,7 @@ struct_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:102:8
+example-1.cc:104:8
 ::::: comment
 (none)
 ::::: specifier
@@ -2065,7 +2118,7 @@ False
 []
 ==================
 ::::: id
-example-1.cc#51
+example-1.cc#52
 ::::: spelling
 EE
 ::::: kind
@@ -2075,7 +2128,7 @@ enum_declaration
 [
   {
     "kind": "struct_declaration", 
-    "location": "example-1.cc:102:8", 
+    "location": "example-1.cc:104:8", 
     "spelling": "EEClass", 
     "transparent": false
   }
@@ -2083,7 +2136,7 @@ enum_declaration
 ::::: parent_kind
 struct_declaration
 ::::: location
-example-1.cc:103:13
+example-1.cc:105:13
 ::::: comment
 (none)
 ::::: scoped_enum
@@ -2094,7 +2147,7 @@ True
 public
 ==================
 ::::: id
-example-1.cc#52
+example-1.cc#53
 ::::: spelling
 ee1
 ::::: kind
@@ -2104,13 +2157,13 @@ enum_constant_declaration
 [
   {
     "kind": "struct_declaration", 
-    "location": "example-1.cc:102:8", 
+    "location": "example-1.cc:104:8", 
     "spelling": "EEClass", 
     "transparent": false
   }, 
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:103:13", 
+    "location": "example-1.cc:105:13", 
     "spelling": "EE", 
     "transparent": false
   }
@@ -2118,57 +2171,11 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:103:25
+example-1.cc:105:25
 ::::: comment
 (none)
 ::::: enum_value
 0
-::::: enum_underlying_type
-{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
-::::: type
-EEClass::EE
-{
-  "is_array": false, 
-  "is_pointer": false, 
-  "is_type_alias": false, 
-  "is_type_param": false, 
-  "type_size": 1
-}
-::::: POD
-True
-::::: size
-1
-==================
-::::: id
-example-1.cc#53
-::::: spelling
-ee2
-::::: kind
-enum_constant_declaration
-::::: hierarchy
-::EEClass::EE
-[
-  {
-    "kind": "struct_declaration", 
-    "location": "example-1.cc:102:8", 
-    "spelling": "EEClass", 
-    "transparent": false
-  }, 
-  {
-    "kind": "enum_declaration", 
-    "location": "example-1.cc:103:13", 
-    "spelling": "EE", 
-    "transparent": false
-  }
-]
-::::: parent_kind
-enum_declaration
-::::: location
-example-1.cc:103:30
-::::: comment
-(none)
-::::: enum_value
-1
 ::::: enum_underlying_type
 {'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
 ::::: type
@@ -2188,6 +2195,52 @@ True
 ::::: id
 example-1.cc#54
 ::::: spelling
+ee2
+::::: kind
+enum_constant_declaration
+::::: hierarchy
+::EEClass::EE
+[
+  {
+    "kind": "struct_declaration", 
+    "location": "example-1.cc:104:8", 
+    "spelling": "EEClass", 
+    "transparent": false
+  }, 
+  {
+    "kind": "enum_declaration", 
+    "location": "example-1.cc:105:13", 
+    "spelling": "EE", 
+    "transparent": false
+  }
+]
+::::: parent_kind
+enum_declaration
+::::: location
+example-1.cc:105:30
+::::: comment
+(none)
+::::: enum_value
+1
+::::: enum_underlying_type
+{'spelling': 'char', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 1}}
+::::: type
+EEClass::EE
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 1
+}
+::::: POD
+True
+::::: size
+1
+==================
+::::: id
+example-1.cc#55
+::::: spelling
 eee1
 ::::: kind
 enum_constant_declaration
@@ -2196,7 +2249,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:105:9", 
+    "location": "example-1.cc:107:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2204,51 +2257,11 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:105:16
+example-1.cc:107:16
 ::::: comment
 (none)
 ::::: enum_value
 0
-::::: enum_underlying_type
-{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
-::::: type
-EnumTy
-{
-  "is_array": false, 
-  "is_pointer": false, 
-  "is_type_alias": false, 
-  "is_type_param": false, 
-  "type_size": 4
-}
-::::: POD
-True
-::::: size
-4
-==================
-::::: id
-example-1.cc#55
-::::: spelling
-eee2
-::::: kind
-enum_constant_declaration
-::::: hierarchy
-::(EnumTy)
-[
-  {
-    "kind": "enum_declaration", 
-    "location": "example-1.cc:105:9", 
-    "spelling": "EnumTy", 
-    "transparent": true
-  }
-]
-::::: parent_kind
-enum_declaration
-::::: location
-example-1.cc:105:22
-::::: comment
-(none)
-::::: enum_value
-1
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
@@ -2268,36 +2281,7 @@ True
 ::::: id
 example-1.cc#56
 ::::: spelling
-EnumTy
-::::: kind
-typedef_declaration
-::::: hierarchy
-(none)
-::::: parent_kind
-(global)
-::::: location
-example-1.cc:105:29
-::::: comment
-(none)
-::::: canonical_type
-EnumTy
-::::: type_alias_chain:[
-  {
-    "location": "example-1.cc:105:29", 
-    "spelling": "EnumTy"
-  }, 
-  {
-    "location": "example-1.cc:105:9", 
-    "spelling": "enum EnumTy"
-  }
-]
-::::: type_alias_underlying_type
-enum EnumTy
-==================
-::::: id
-example-1.cc#57
-::::: spelling
-eee1
+eee2
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
@@ -2305,7 +2289,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:105:9", 
+    "location": "example-1.cc:107:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2313,11 +2297,11 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:105:16
+example-1.cc:107:22
 ::::: comment
 (none)
 ::::: enum_value
-0
+1
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
@@ -2335,9 +2319,38 @@ True
 4
 ==================
 ::::: id
+example-1.cc#57
+::::: spelling
+EnumTy
+::::: kind
+typedef_declaration
+::::: hierarchy
+(none)
+::::: parent_kind
+(global)
+::::: location
+example-1.cc:107:29
+::::: comment
+(none)
+::::: canonical_type
+EnumTy
+::::: type_alias_chain:[
+  {
+    "location": "example-1.cc:107:29", 
+    "spelling": "EnumTy"
+  }, 
+  {
+    "location": "example-1.cc:107:9", 
+    "spelling": "enum EnumTy"
+  }
+]
+::::: type_alias_underlying_type
+enum EnumTy
+==================
+::::: id
 example-1.cc#58
 ::::: spelling
-eee2
+eee1
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
@@ -2345,7 +2358,7 @@ enum_constant_declaration
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:105:9", 
+    "location": "example-1.cc:107:9", 
     "spelling": "EnumTy", 
     "transparent": true
   }
@@ -2353,11 +2366,11 @@ enum_constant_declaration
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:105:22
+example-1.cc:107:16
 ::::: comment
 (none)
 ::::: enum_value
-1
+0
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
@@ -2377,31 +2390,31 @@ True
 ::::: id
 example-1.cc#59
 ::::: spelling
-aaaaa
+eee2
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
-::((anonymous enum at example-1.cc:106:1))
+::(EnumTy)
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:106:1", 
-    "spelling": "(anonymous enum at example-1.cc:106:1)", 
+    "location": "example-1.cc:107:9", 
+    "spelling": "EnumTy", 
     "transparent": true
   }
 ]
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:106:8
+example-1.cc:107:22
 ::::: comment
 (none)
 ::::: enum_value
-0
+1
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
-(anonymous enum at example-1.cc:106:1)
+EnumTy
 {
   "is_array": false, 
   "is_pointer": false, 
@@ -2417,31 +2430,31 @@ True
 ::::: id
 example-1.cc#60
 ::::: spelling
-bbbbb
+aaaaa
 ::::: kind
 enum_constant_declaration
 ::::: hierarchy
-::((anonymous enum at example-1.cc:106:1))
+::((anonymous enum at example-1.cc:108:1))
 [
   {
     "kind": "enum_declaration", 
-    "location": "example-1.cc:106:1", 
-    "spelling": "(anonymous enum at example-1.cc:106:1)", 
+    "location": "example-1.cc:108:1", 
+    "spelling": "(anonymous enum at example-1.cc:108:1)", 
     "transparent": true
   }
 ]
 ::::: parent_kind
 enum_declaration
 ::::: location
-example-1.cc:106:15
+example-1.cc:108:8
 ::::: comment
 (none)
 ::::: enum_value
-1
+0
 ::::: enum_underlying_type
 {'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
 ::::: type
-(anonymous enum at example-1.cc:106:1)
+(anonymous enum at example-1.cc:108:1)
 {
   "is_array": false, 
   "is_pointer": false, 
@@ -2457,6 +2470,46 @@ True
 ::::: id
 example-1.cc#61
 ::::: spelling
+bbbbb
+::::: kind
+enum_constant_declaration
+::::: hierarchy
+::((anonymous enum at example-1.cc:108:1))
+[
+  {
+    "kind": "enum_declaration", 
+    "location": "example-1.cc:108:1", 
+    "spelling": "(anonymous enum at example-1.cc:108:1)", 
+    "transparent": true
+  }
+]
+::::: parent_kind
+enum_declaration
+::::: location
+example-1.cc:108:15
+::::: comment
+(none)
+::::: enum_value
+1
+::::: enum_underlying_type
+{'spelling': 'unsigned int', 'type_info': {'is_type_param': False, 'is_array': False, 'is_type_alias': False, 'is_pointer': False, 'type_size': 4}}
+::::: type
+(anonymous enum at example-1.cc:108:1)
+{
+  "is_array": false, 
+  "is_pointer": false, 
+  "is_type_alias": false, 
+  "is_type_param": false, 
+  "type_size": 4
+}
+::::: POD
+True
+::::: size
+4
+==================
+::::: id
+example-1.cc#62
+::::: spelling
 BaseClass
 ::::: kind
 class_declaration
@@ -2465,7 +2518,7 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:108:7
+example-1.cc:110:7
 ::::: comment
 (none)
 ::::: specifier
@@ -2497,7 +2550,7 @@ False
 []
 ==================
 ::::: id
-example-1.cc#62
+example-1.cc#63
 ::::: spelling
 BaseClass2
 ::::: kind
@@ -2507,7 +2560,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:110:8
+example-1.cc:112:8
 ::::: comment
 (none)
 ::::: specifier
@@ -2526,10 +2579,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:110:8', 'template_spelling': 'BaseClass2', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:112:8', 'template_spelling': 'BaseClass2', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
-example-1.cc#63
+example-1.cc#64
 ::::: spelling
 ClassAgain
 ::::: kind
@@ -2539,7 +2592,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:112:7
+example-1.cc:114:7
 ::::: comment
 (none)
 ::::: specifier
@@ -2558,10 +2611,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:112:7', 'template_spelling': 'ClassAgain', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:114:7', 'template_spelling': 'ClassAgain', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
-example-1.cc#64
+example-1.cc#65
 ::::: spelling
 BaseClassWithAVeryUglyName_i_am_really_long_too
 ::::: kind
@@ -2571,7 +2624,7 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:114:7
+example-1.cc:116:7
 ::::: comment
 (none)
 ::::: specifier
@@ -2590,10 +2643,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:114:7', 'template_spelling': 'BaseClassWithAVeryUglyName_i_am_really_long_too', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:116:7', 'template_spelling': 'BaseClassWithAVeryUglyName_i_am_really_long_too', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
-example-1.cc#65
+example-1.cc#66
 ::::: spelling
 TypeDefTemplateBase
 ::::: kind
@@ -2603,18 +2656,18 @@ typedef_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:116:63
+example-1.cc:118:63
 ::::: comment
 (none)
 ::::: canonical_type
 BaseClassWithAVeryUglyName_i_am_really_long_too<char>
 ::::: type_alias_chain:[
   {
-    "location": "example-1.cc:116:63", 
+    "location": "example-1.cc:118:63", 
     "spelling": "TypeDefTemplateBase"
   }, 
   {
-    "location": "example-1.cc:114:7", 
+    "location": "example-1.cc:116:7", 
     "spelling": "BaseClassWithAVeryUglyName_i_am_really_long_too<char>"
   }
 ]
@@ -2622,7 +2675,7 @@ BaseClassWithAVeryUglyName_i_am_really_long_too<char>
 BaseClassWithAVeryUglyName_i_am_really_long_too<char>
 ==================
 ::::: id
-example-1.cc#66
+example-1.cc#67
 ::::: spelling
 VClass
 ::::: kind
@@ -2632,13 +2685,13 @@ class_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:118:7
+example-1.cc:120:7
 ::::: comment
 (none)
 ::::: specifier
 ['final']
 ::::: base_clause
-[{'access': 'private', 'definition_location': 'example-1.cc:108:7', 'spelling': 'BaseClass', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:110:8', 'spelling': 'BaseClass2<ClassAgain<int>>', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:102:8', 'spelling': 'EEClass', 'virtual_inheritance': True}, {'access': 'protected', 'definition_location': 'example-1.cc:116:63', 'spelling': 'TypeDefTemplateBase', 'virtual_inheritance': False}]
+[{'access': 'private', 'definition_location': 'example-1.cc:110:7', 'spelling': 'BaseClass', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:112:8', 'spelling': 'BaseClass2<ClassAgain<int>>', 'virtual_inheritance': False}, {'access': 'public', 'definition_location': 'example-1.cc:104:8', 'spelling': 'EEClass', 'virtual_inheritance': True}, {'access': 'protected', 'definition_location': 'example-1.cc:118:63', 'spelling': 'TypeDefTemplateBase', 'virtual_inheritance': False}]
 ::::: POD
 False
 ::::: is_template
@@ -2664,7 +2717,7 @@ True
 []
 ==================
 ::::: id
-example-1.cc#67
+example-1.cc#68
 ::::: spelling
 VClass
 ::::: kind
@@ -2674,7 +2727,7 @@ constructor
 [
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:118:7", 
+    "location": "example-1.cc:120:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2682,7 +2735,7 @@ constructor
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:121:5
+example-1.cc:123:5
 ::::: comment
 (none)
 ::::: specifier
@@ -2713,7 +2766,7 @@ None
 []
 ==================
 ::::: id
-example-1.cc#68
+example-1.cc#69
 ::::: spelling
 ~VClass
 ::::: kind
@@ -2723,7 +2776,7 @@ destructor
 [
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:118:7", 
+    "location": "example-1.cc:120:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2731,7 +2784,7 @@ destructor
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:122:13
+example-1.cc:124:13
 ::::: comment
 (none)
 ::::: specifier
@@ -2762,7 +2815,7 @@ None
 []
 ==================
 ::::: id
-example-1.cc#69
+example-1.cc#70
 ::::: spelling
 foo
 ::::: kind
@@ -2772,7 +2825,7 @@ method
 [
   {
     "kind": "class_declaration", 
-    "location": "example-1.cc:118:7", 
+    "location": "example-1.cc:120:7", 
     "spelling": "VClass", 
     "transparent": false
   }
@@ -2780,7 +2833,7 @@ method
 ::::: parent_kind
 class_declaration
 ::::: location
-example-1.cc:123:18
+example-1.cc:125:18
 ::::: comment
 (none)
 ::::: specifier
@@ -2809,7 +2862,7 @@ virtual void foo() = 0;
 []
 ==================
 ::::: id
-example-1.cc#70
+example-1.cc#71
 ::::: spelling
 TemplateInheritanceChild
 ::::: kind
@@ -2819,13 +2872,13 @@ class_template
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:127:7
+example-1.cc:129:7
 ::::: comment
 (none)
 ::::: specifier
 []
 ::::: base_clause
-[{'access': 'public', 'definition_location': 'example-1.cc:110:8', 'spelling': 'BaseClass2<T>', 'virtual_inheritance': False}]
+[{'access': 'public', 'definition_location': 'example-1.cc:112:8', 'spelling': 'BaseClass2<T>', 'virtual_inheritance': False}]
 ::::: is_template
 True
 ::::: declaration
@@ -2838,10 +2891,10 @@ None
 ::::: is_abstract
 False
 ::::: template_args_list
-[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:127:7', 'template_spelling': 'TemplateInheritanceChild', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
+[{'type': {'spelling': 'T', 'type_info': {'type_param_decl_location': {'template_location': 'example-1.cc:129:7', 'template_spelling': 'TemplateInheritanceChild', 'param_index': 0}, 'is_function': False, 'is_array': False, 'is_type_alias': False, 'is_type_param': True, 'is_pointer': False, 'type_size': None}}, 'arg_spelling': 'T', 'default_expr': None}]
 ==================
 ::::: id
-example-1.cc#71
+example-1.cc#72
 ::::: spelling
 arrIntPtr
 ::::: kind
@@ -2851,7 +2904,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:129:6
+example-1.cc:131:6
 ::::: comment
 (none)
 ::::: type
@@ -2892,7 +2945,7 @@ True
 40
 ==================
 ::::: id
-example-1.cc#72
+example-1.cc#73
 ::::: spelling
 arrChar
 ::::: kind
@@ -2902,7 +2955,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:130:6
+example-1.cc:132:6
 ::::: comment
 (none)
 ::::: type
@@ -2932,7 +2985,7 @@ True
 6
 ==================
 ::::: id
-example-1.cc#73
+example-1.cc#74
 ::::: spelling
 arrVar
 ::::: kind
@@ -2942,7 +2995,7 @@ variable_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:132:11
+example-1.cc:134:11
 ::::: comment
 (none)
 ::::: type
@@ -2972,7 +3025,7 @@ True
 None
 ==================
 ::::: id
-example-1.cc#74
+example-1.cc#75
 ::::: spelling
 returnVoid
 ::::: kind
@@ -2982,7 +3035,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:137:1
+example-1.cc:139:1
 ::::: comment
 (none)
 ::::: specifier
@@ -3005,7 +3058,7 @@ FUNCS(returnVoid, char *)
 []
 ==================
 ::::: id
-example-1.cc#75
+example-1.cc#76
 ::::: spelling
 returnVoid
 ::::: kind
@@ -3015,7 +3068,7 @@ function_declaration
 ::::: parent_kind
 (global)
 ::::: location
-example-1.cc:137:1
+example-1.cc:139:1
 ::::: comment
 (none)
 ::::: specifier
@@ -3040,21 +3093,21 @@ FUNCS(returnVoid, char *)
 [Diagnostic #1]
 example-1.cc:22:10: error: return type 'MyClass' is an abstract class
 [Diagnostic #2]
-example-1.cc:51:10: error: redefinition of 'MyClass'
+example-1.cc:53:10: error: redefinition of 'MyClass'
 [Diagnostic #3]
-example-1.cc:86:68: error: unknown type name 'Another'
+example-1.cc:88:68: error: unknown type name 'Another'
 [Diagnostic #4]
-example-1.cc:78:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
+example-1.cc:80:17: warning: class 'Class' does not declare any constructor to initialize its non-modifiable members
 [Diagnostic #5]
-example-1.cc:101:1: error: unknown type name 'Another'
+example-1.cc:103:1: error: unknown type name 'Another'
 [Diagnostic #6]
-example-1.cc:118:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+example-1.cc:120:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
 [Diagnostic #7]
-example-1.cc:132:11: error: definition of variable with array type needs an explicit size or an initializer
+example-1.cc:134:11: error: definition of variable with array type needs an explicit size or an initializer
 [includes]
 {'depth': 1, 'included_at': 'example-1.cc:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/vector'}
 {'depth': 1, 'included_at': 'example-1.cc:3:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/map'}
 {'depth': 1, 'included_at': 'example-1.cc:4:10', 'file': './example-2.h'}
 {'depth': 2, 'included_at': './example-2.h:2:10', 'file': '/Library/Developer/CommandLineTools/usr/include/c++/v1/unordered_map'}
-[time parsing] 0.28 sec
-[time traverse] 2.36 sec
+[time parsing] 0.18 sec
+[time traverse] 1.71 sec
