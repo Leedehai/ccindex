@@ -26,15 +26,15 @@ This is a script that extracts symbols defined in C++, along with each symbol's 
 - documentary comment,
 - source location,
 - include stack,
-- etc.
+- etc (see [schema documentation](schema.md))
 
 The extracted information could be used to generate API documentations.
 
 > For functions/methods and their templates, the implementation bodies are skipped.
 
 ## 2. Required
-- [libclang](http://www.llvm.org/devmtg/2010-11/Gregor-libclang.pdf), normally came with a [Clang](http://clang.llvm.org) installation (on macOS, use command `mdfind -name libclang.dylib` to search its path), or you can choose to [build the Clang project](http://clang.llvm.org/get_started.html).
-- Python module 'clang', install: `pip install clang` or just copy-paste the [source](https://github.com/llvm-mirror/clang/tree/master/bindings/python/clang).
+- [libclang](http://www.llvm.org/devmtg/2010-11/Gregor-libclang.pdf), normally came with a [Clang](http://clang.llvm.org) installation (on macOS, use command `mdfind -name libclang.dylib` to search for its path), or you can choose to [build the Clang project](http://clang.llvm.org/get_started.html).
+- Python module 'clang', install: `pip install clang` or just copy-paste its [source](https://github.com/llvm-mirror/clang/tree/master/bindings/python/clang).
 
 ## 3. Limitation
 
@@ -67,7 +67,7 @@ result = ccindex.get("path/file.h", ["UserIncludeDir1", "UserIncludeDir2"])
 #     "traversing_time": float, in seconds, time taken to traverse the AST
 # the symbol dict:
 #     these fields are always present:
-#            "id", "spelling", "kind", "hierarchy",
+#            "id", "spelling", "kind", "hierarchy", "is_member",
 #            "parent_kind", "location", "comment", "usage"
 #     other fields are optional depending on the kind of each symbol
 # For more info on the schema or Python example, see schema.md

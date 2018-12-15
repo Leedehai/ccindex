@@ -118,6 +118,7 @@ These fields are present in every `Symbol` object.
 |`location`    | <a href="#source_location">source location</a> | the location of the symbol in source |
 |`comment`     | string                       | <a href="#documentary_comment">documentary comment</a> for that symbol |
 |`usage`       | string                       | the <a href="#usage_block">usage_block</a> inside the documentary comment |
+|`is_member`   | boolean                      | whether the symbol is a member of a <a href="#class_like">class-like</a> |
 |`hierarchy`   | array of <a href="#context">Context</a> objects | the contexts that semantically contains this symbol; order: top-down to the immediate parent |
 |<a href="#optional_fields">others..</a> |    | depending on the `kind` field |
 
@@ -260,7 +261,7 @@ guaranteed | not_guaranteed | unevaluated
 A <a href="#function_like">function-like</a> is either guaranteed to not throw any exception, or is not provided with such guarantee. Generally speaking, this guarantee is provided only if `noexcept` or `throw()` exists; however, some complicated [special rules](https://en.cppreference.com/w/cpp/language/noexcept_spec) stipulates that the guarantee is also provided to some that does not one of these two specifiers. If the compiler deems the special rules potentially valid, it will report the `unevaluated` value.
 
 ##### ● (optional) access: string
-This field is present if the symbol immediately belongs to a <a href="#class_like">class-like</a> context, in other words, its `parent_kind` field holds value `class_declaration` or `class_template`. It represents that symbol's access specifier. The possible values are:
+This field is present if the `is_member` field is `true`, i.e. symbol belongs to a <a href="#class_like">class-like</a> context, in other words, its `parent_kind` field holds value `class_declaration`, `struct_declaration`, or `class_template`. It represents that symbol's access specifier. The possible values are:
 ```
 public | protected | private
 ```
@@ -460,11 +461,11 @@ At a level, if the type is a type parameter of some template, the `location` fie
 
 ### 2.4 Which kinds have what fields: a reference
 
-For a `Symbol` object, *in addition* to the always-present fields, depending on the `kind` field's value, it has the following fields as well. For what those fields are, see the <a href="#symbol">field description</a> above.
+For a `Symbol` object, *in addition* to the always-present fields, depending on the `kind` field's value, it has the following fields as well. For what values those fields hold, see the <a href="#symbol">field description</a> above.
 
 <a name="function_like"></a>
 
-#### function-like
+#### 2.4.1 function-like
 
 `kind`:
 ```
@@ -472,7 +473,7 @@ function_declaration | constructor | destructor | conversion_function | method
 function_template
 ```
 
-For a function template, its `kind` is `function_template`, regardless of it is an independent template or a member template of some <a href="#class_like">class-like</a>. There is no such value `method_template`. To check if a function template is a member, one needs to go through the `hierarchy` field or check if the `access` field exists.
+For a function template, its `kind` is `function_template`, regardless of it is an independent template or a member template of some <a href="#class_like">class-like</a>. There is no such value `method_template`. To check if a function template is a member, one needs to (1) check the boolean field `is_member`, or (2) go through the `hierarchy` array object's `kind` field, or (3) check if the `access` field exists.
 
 In addition to those <a href="#always_present_fields">always-present fields</a>..
 
@@ -494,7 +495,7 @@ In addition to those <a href="#always_present_fields">always-present fields</a>.
 
 <a name="class_like"></a>
 
-#### class-like
+#### 2.4.2 class-like
 
 `kind`:
 ```
@@ -520,7 +521,7 @@ In addition to those <a href="#always_present_fields">always-present fields</a>.
 
 <a name="value_like"></a>
 
-#### value-like
+#### 2.4.3 value-like
 
 `kind`:
 ```
@@ -544,7 +545,7 @@ variable_declaration | field_declaration | enum_constant_declaration
 
 In addition to those <a href="#always_present_fields">always-present fields</a>..
 
-#### enum
+#### 2.4.4 enum
 
 `kind`:
 ```
@@ -571,7 +572,7 @@ In addition to those <a href="#always_present_fields">always-present fields</a>.
 
 <a name="type_alias_like"></a>
 
-#### type-alias-like
+#### 2.4.5 type-alias-like
 
 `kind`:
 ```
